@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-029",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-029",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.6262860000006185,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afb-bfbd-7e61-b25d-da528ae805c8\n--------\nuser\nFind the minimum path sum from top-left to bottom-right of a grid.\n\nFunction signature: def min_path_sum(grid: list) -> int\n\nConstraints:\n- Can only move right or down\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:35:39.959953Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10722}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:35:39.970403"
+      "run": 1,
+      "content": "def min_path_sum(grid: list) -> int:\n    if not grid or not grid[0]:\n        return 0\n\n    rows, cols = len(grid), len(grid[0])\n    dp = [0] * cols\n\n    dp[0] = grid[0][0]\n    for c in range(1, cols):\n        dp[c] = dp[c - 1] + grid[0][c]\n\n    for r in range(1, rows):\n        dp[0] += grid[r][0]\n        for c in range(1, cols):\n            dp[c] = min(dp[c], dp[c - 1]) + grid[r][c]\n\n    return dp[-1]",
+      "latency_ms": 4102.5941371917725,
+      "passed": true
     },
     {
-      "task_id": "HARD-029",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.5428947499995047,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afb-c7d6-70f3-84eb-60b358efa82f\n--------\nuser\nFind the minimum path sum from top-left to bottom-right of a grid.\n\nFunction signature: def min_path_sum(grid: list) -> int\n\nConstraints:\n- Can only move right or down\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:35:42.006325Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10720}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:35:42.016987"
+      "run": 2,
+      "content": "def min_path_sum(grid: list) -> int:\n    if not grid or not grid[0]:\n        return 0\n\n    rows, cols = len(grid), len(grid[0])\n    dp = [0] * cols\n\n    dp[0] = grid[0][0]\n    for c in range(1, cols):\n        dp[c] = dp[c - 1] + grid[0][c]\n\n    for r in range(1, rows):\n        dp[0] += grid[r][0]\n        for c in range(1, cols):\n            dp[c] = min(dp[c], dp[c - 1]) + grid[r][c]\n\n    return dp[-1]",
+      "latency_ms": 5553.48014831543,
+      "passed": true
     },
     {
-      "task_id": "HARD-029",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.3381477080001787,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afb-cfd4-74d3-a1ed-c11cca2fde9a\n--------\nuser\nFind the minimum path sum from top-left to bottom-right of a grid.\n\nFunction signature: def min_path_sum(grid: list) -> int\n\nConstraints:\n- Can only move right or down\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:35:43.847529Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10719}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:35:43.858898"
+      "run": 3,
+      "content": "def min_path_sum(grid: list) -> int:\n    if not grid or not grid[0]:\n        return 0\n\n    rows, cols = len(grid), len(grid[0])\n    dp = [0] * cols\n\n    for r in range(rows):\n        for c in range(cols):\n            if r == 0 and c == 0:\n                dp[c] = grid[r][c]\n            elif r == 0:\n                dp[c] = dp[c - 1] + grid[r][c]\n            elif c == 0:\n                dp[c] = dp[c] + grid[r][c]\n            else:\n                dp[c] = min(dp[c], dp[c - 1]) + grid[r][c]\n\n    return dp[-1]",
+      "latency_ms": 4353.2538414001465,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1542.89,
-    "p50_ms": 1542.89,
-    "p95_ms": 1617.95,
-    "p99_ms": 1624.62,
-    "mean_ms": 1502.44,
-    "std_ms": 121.06,
-    "min_ms": 1338.15,
-    "max_ms": 1626.29,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 4353.2538414001465,
+    "mean_ms": 4669.776042302449,
+    "min_ms": 4102.5941371917725,
+    "max_ms": 5553.48014831543
+  },
+  "determinism": {
+    "stability_score": 0.6666666666666667,
+    "unique_outputs": 2
+  }
 }

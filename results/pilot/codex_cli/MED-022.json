@@ -1,49 +1,40 @@
 {
   "task_id": "MED-022",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "MED-022",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.4888450830003421,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae2-528f-70a3-b7a0-25ef97f930a9\n--------\nuser\nAdd two numbers represented as strings.\n\nFunction signature: def add_strings(num1: str, num2: str) -> str\n\nConstraints:\n- Do not convert to int directly\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:07:53.475468Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12389}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:07:53.486397"
+      "run": 1,
+      "content": "def add_strings(num1: str, num2: str) -> str:\n    i, j = len(num1) - 1, len(num2) - 1\n    carry = 0\n    result = []\n\n    while i >= 0 or j >= 0 or carry:\n        d1 = ord(num1[i]) - ord('0') if i >= 0 else 0\n        d2 = ord(num2[j]) - ord('0') if j >= 0 else 0\n        total = d1 + d2 + carry\n        result.append(chr((total % 10) + ord('0')))\n        carry = total // 10\n        i -= 1\n        j -= 1\n\n    return ''.join(reversed(result))",
+      "latency_ms": 4743.133068084717,
+      "passed": true
     },
     {
-      "task_id": "MED-022",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.4358991660001266,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae2-5a20-77f1-8707-eff2d5664b09\n--------\nuser\nAdd two numbers represented as strings.\n\nFunction signature: def add_strings(num1: str, num2: str) -> str\n\nConstraints:\n- Do not convert to int directly\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:07:55.416275Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12387}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:07:55.426265"
+      "run": 2,
+      "content": "def add_strings(num1: str, num2: str) -> str:\n    i, j = len(num1) - 1, len(num2) - 1\n    carry = 0\n    out = []\n\n    while i >= 0 or j >= 0 or carry:\n        d1 = ord(num1[i]) - ord('0') if i >= 0 else 0\n        d2 = ord(num2[j]) - ord('0') if j >= 0 else 0\n        s = d1 + d2 + carry\n        out.append(chr((s % 10) + ord('0')))\n        carry = s // 10\n        i -= 1\n        j -= 1\n\n    return ''.join(reversed(out))",
+      "latency_ms": 16545.346975326538,
+      "passed": true
     },
     {
-      "task_id": "MED-022",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.5480200000001787,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae2-61b5-76d3-aec5-c3e411b94e1d\n--------\nuser\nAdd two numbers represented as strings.\n\nFunction signature: def add_strings(num1: str, num2: str) -> str\n\nConstraints:\n- Do not convert to int directly\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:07:57.467604Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12385}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:07:57.478262"
+      "run": 3,
+      "content": "def add_strings(num1: str, num2: str) -> str:\n    i, j = len(num1) - 1, len(num2) - 1\n    carry = 0\n    out = []\n\n    while i >= 0 or j >= 0 or carry:\n        d1 = ord(num1[i]) - ord('0') if i >= 0 else 0\n        d2 = ord(num2[j]) - ord('0') if j >= 0 else 0\n        s = d1 + d2 + carry\n        out.append(chr((s % 10) + ord('0')))\n        carry = s // 10\n        i -= 1\n        j -= 1\n\n    return ''.join(reversed(out))",
+      "latency_ms": 5717.334032058716,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1488.85,
-    "p50_ms": 1488.85,
-    "p95_ms": 1542.1,
-    "p99_ms": 1546.84,
-    "mean_ms": 1490.92,
-    "std_ms": 45.8,
-    "min_ms": 1435.9,
-    "max_ms": 1548.02,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 5717.334032058716,
+    "mean_ms": 9001.938025156656,
+    "min_ms": 4743.133068084717,
+    "max_ms": 16545.346975326538
+  },
+  "determinism": {
+    "stability_score": 0.6666666666666667,
+    "unique_outputs": 2
+  }
 }

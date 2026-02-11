@@ -1,4 +1,4 @@
 agent,tasks,pass_at_1_mean,latency_mean_ms,stability_mean
 claude_code,100,0.99,5930.36,0.8067
-codex_cli,100,0.5933,3102.52,0.2583
+codex_cli,100,0.9233,4236.43,0.5017
 gemini_cli,100,0.95,17219.13,0.1215

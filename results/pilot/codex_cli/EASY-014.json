@@ -1,49 +1,44 @@
 {
   "task_id": "EASY-014",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "EASY-014",
-      "agent_name": "codex_cli",
-      "run_index": 0,
+      "run": 1,
       "content": "",
-      "latency_seconds": 1.5949064589995032,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afd-eaac-74f3-a0a2-7debc1b76c77\n--------\nuser\nCheck if a list is sorted in ascending order.\n\nFunction signature: def is_sorted(nums: list) -> bool\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:38:01.991643Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10580}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:38:02.003320"
+      "latency_ms": 278.8679599761963,
+      "passed": false
     },
     {
-      "task_id": "EASY-014",
-      "agent_name": "codex_cli",
-      "run_index": 1,
+      "run": 2,
       "content": "",
-      "latency_seconds": 1.539823374999287,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afd-f2a6-79f1-97b5-e3b5f67056fe\n--------\nuser\nCheck if a list is sorted in ascending order.\n\nFunction signature: def is_sorted(nums: list) -> bool\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:38:04.037005Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10579}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:38:04.046757"
+      "latency_ms": 86.85708045959473,
+      "passed": false
     },
     {
-      "task_id": "EASY-014",
-      "agent_name": "codex_cli",
-      "run_index": 2,
+      "run": 3,
       "content": "",
-      "latency_seconds": 1.4409347920000073,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afd-fa9b-7220-b6f2-d637aa8fd836\n--------\nuser\nCheck if a list is sorted in ascending order.\n\nFunction signature: def is_sorted(nums: list) -> bool\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:38:05.980570Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10576}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:38:05.991322"
+      "latency_ms": 88.95421028137207,
+      "passed": false
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1539.82,
-    "p50_ms": 1539.82,
-    "p95_ms": 1589.4,
-    "p99_ms": 1593.8,
-    "mean_ms": 1525.22,
-    "std_ms": 63.7,
-    "min_ms": 1440.93,
-    "max_ms": 1594.91,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3,
+    "errors": [
+      "Empty code",
+      "Empty code",
+      "Empty code"
+    ]
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 88.95421028137207,
+    "mean_ms": 151.55975023905435,
+    "min_ms": 86.85708045959473,
+    "max_ms": 278.8679599761963
+  },
+  "determinism": {
+    "stability_score": 1.0,
+    "unique_outputs": 1
+  }
 }

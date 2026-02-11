@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-035",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-035",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.6318737500005227,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0a-794b-7c41-93f7-b0ea2cef64c7\n--------\nuser\nFind unique paths from top-left to bottom-right of an m x n grid.\n\nFunction signature: def unique_paths(m: int, n: int) -> int\n\nConstraints:\n- Can only move right or down\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:51:44.977383Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9758}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:51:44.987478"
+      "run": 1,
+      "content": "def unique_paths(m: int, n: int) -> int:\n    if m <= 0 or n <= 0:\n        return 0\n\n    total_steps = m + n - 2\n    k = min(m - 1, n - 1)\n    result = 1\n\n    for i in range(1, k + 1):\n        result = result * (total_steps - k + i) // i\n\n    return result",
+      "latency_ms": 3853.260040283203,
+      "passed": true
     },
     {
-      "task_id": "HARD-035",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.4547642079996876,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0a-816e-7de1-9bb5-104ad27721b3\n--------\nuser\nFind unique paths from top-left to bottom-right of an m x n grid.\n\nFunction signature: def unique_paths(m: int, n: int) -> int\n\nConstraints:\n- Can only move right or down\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:51:46.934250Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9756}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:51:46.946046"
+      "run": 2,
+      "content": "def unique_paths(m: int, n: int) -> int:\n    if m <= 0 or n <= 0:\n        return 0\n\n    total_moves = m + n - 2\n    k = min(m - 1, n - 1)\n    result = 1\n\n    for i in range(1, k + 1):\n        result = result * (total_moves - k + i) // i\n\n    return result",
+      "latency_ms": 4954.172134399414,
+      "passed": true
     },
     {
-      "task_id": "HARD-035",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.4394453749991953,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0a-8914-7642-bda5-26d75bac87b1\n--------\nuser\nFind unique paths from top-left to bottom-right of an m x n grid.\n\nFunction signature: def unique_paths(m: int, n: int) -> int\n\nConstraints:\n- Can only move right or down\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:51:48.880094Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9754}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:51:48.889548"
+      "run": 3,
+      "content": "def unique_paths(m: int, n: int) -> int:\n    dp = [1] * n\n    for _ in range(1, m):\n        for j in range(1, n):\n            dp[j] += dp[j - 1]\n    return dp[-1]",
+      "latency_ms": 3302.3500442504883,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1454.76,
-    "p50_ms": 1454.76,
-    "p95_ms": 1614.16,
-    "p99_ms": 1628.33,
-    "mean_ms": 1508.69,
-    "std_ms": 87.33,
-    "min_ms": 1439.45,
-    "max_ms": 1631.87,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 3853.260040283203,
+    "mean_ms": 4036.5940729777017,
+    "min_ms": 3302.3500442504883,
+    "max_ms": 4954.172134399414
+  },
+  "determinism": {
+    "stability_score": 0.33333333333333337,
+    "unique_outputs": 3
+  }
 }

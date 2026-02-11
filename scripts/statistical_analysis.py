@@ -384,7 +384,7 @@ def main():
     
     output_file = results_dir / "statistical_analysis.json"
     with open(output_file, 'w') as f:
-        json.dump(output, f, indent=2)
+        json.dump({k: (bool(v) if isinstance(v, np.bool_) else v) for k, v in output.items()}, f, indent=2)
     
     print(f"\n\nStatistical analysis saved to: {output_file}")
 

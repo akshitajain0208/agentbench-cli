@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-025",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-025",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 2.230179624999437,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af5-268a-7ef0-8a21-df06234eb9ac\n--------\nuser\nImplement wildcard pattern matching with '?' and '*'.\n\nFunction signature: def is_match_wildcard(s: str, p: str) -> bool\n\nConstraints:\n- '?' matches one char\n- '*' matches any sequence\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:28:27.314278Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11155}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:28:27.325169"
+      "run": 1,
+      "content": "def is_match_wildcard(s: str, p: str) -> bool:\n    i = j = 0\n    star = -1\n    match = 0\n\n    while i < len(s):\n        if j < len(p) and (p[j] == s[i] or p[j] == '?'):\n            i += 1\n            j += 1\n        elif j < len(p) and p[j] == '*':\n            star = j\n            match = i\n            j += 1\n        elif star != -1:\n            j = star + 1\n            match += 1\n            i = match\n        else:\n            return False\n\n    while j < len(p) and p[j] == '*':\n        j += 1\n\n    return j == len(p)",
+      "latency_ms": 4801.923036575317,
+      "passed": true
     },
     {
-      "task_id": "HARD-025",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.4343214999998963,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af5-2dcf-7711-815c-fcaffe0dbee9\n--------\nuser\nImplement wildcard pattern matching with '?' and '*'.\n\nFunction signature: def is_match_wildcard(s: str, p: str) -> bool\n\nConstraints:\n- '?' matches one char\n- '*' matches any sequence\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:28:29.255398Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11153}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:28:29.262912"
+      "run": 2,
+      "content": "def is_match_wildcard(s: str, p: str) -> bool:\n    m, n = len(s), len(p)\n    dp = [[False] * (n + 1) for _ in range(m + 1)]\n    dp[0][0] = True\n\n    for j in range(1, n + 1):\n        if p[j - 1] == \"*\":\n            dp[0][j] = dp[0][j - 1]\n\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if p[j - 1] == \"*\":\n                dp[i][j] = dp[i][j - 1] or dp[i - 1][j]\n            elif p[j - 1] == \"?\" or p[j - 1] == s[i - 1]:\n                dp[i][j] = dp[i - 1][j - 1]\n\n    return dp[m][n]",
+      "latency_ms": 6120.2380657196045,
+      "passed": true
     },
     {
-      "task_id": "HARD-025",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.4380705000003218,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af5-355f-7e90-a9da-2eb2a77236ba\n--------\nuser\nImplement wildcard pattern matching with '?' and '*'.\n\nFunction signature: def is_match_wildcard(s: str, p: str) -> bool\n\nConstraints:\n- '?' matches one char\n- '*' matches any sequence\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:28:31.201216Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11151}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:28:31.204887"
+      "run": 3,
+      "content": "def is_match_wildcard(s: str, p: str) -> bool:\n    i = j = 0\n    star_idx = -1\n    match_idx = 0\n\n    while i < len(s):\n        if j < len(p) and (p[j] == s[i] or p[j] == '?'):\n            i += 1\n            j += 1\n        elif j < len(p) and p[j] == '*':\n            star_idx = j\n            match_idx = i\n            j += 1\n        elif star_idx != -1:\n            j = star_idx + 1\n            match_idx += 1\n            i = match_idx\n        else:\n            return False\n\n    while j < len(p) and p[j] == '*':\n        j += 1\n\n    return j == len(p)",
+      "latency_ms": 6183.91227722168,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1438.07,
-    "p50_ms": 1438.07,
-    "p95_ms": 2150.97,
-    "p99_ms": 2214.34,
-    "mean_ms": 1700.86,
-    "std_ms": 374.29,
-    "min_ms": 1434.32,
-    "max_ms": 2230.18,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 6120.2380657196045,
+    "mean_ms": 5702.024459838867,
+    "min_ms": 4801.923036575317,
+    "max_ms": 6183.91227722168
+  },
+  "determinism": {
+    "stability_score": 0.33333333333333337,
+    "unique_outputs": 3
+  }
 }

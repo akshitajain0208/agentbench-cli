@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-021",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-021",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.5395470839994232,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aee-d8d3-7c03-87ab-c36cc5b3ea0a\n--------\nuser\nFind the kth smallest element in a sorted matrix.\n\nFunction signature: def kth_smallest_matrix(matrix: list, k: int) -> int\n\nConstraints:\n- Each row and column is sorted\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:21:34.328911Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11568}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:21:34.338913"
+      "run": 1,
+      "content": "def kth_smallest_matrix(matrix: list, k: int) -> int:\n    if not matrix or not matrix[0]:\n        raise ValueError(\"matrix must be non-empty\")\n\n    rows, cols = len(matrix), len(matrix[0])\n    left, right = matrix[0][0], matrix[rows - 1][cols - 1]\n\n    def count_leq(x: int) -> int:\n        count = 0\n        r, c = rows - 1, 0\n        while r >= 0 and c < cols:\n            if matrix[r][c] <= x:\n                count += r + 1\n                c += 1\n            else:\n                r -= 1\n        return count\n\n    while left < right:\n        mid = (left + right) // 2\n        if count_leq(mid) < k:\n            left = mid + 1\n        else:\n            right = mid\n\n    return left",
+      "latency_ms": 5164.17670249939,
+      "passed": true
     },
     {
-      "task_id": "HARD-021",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.5426275829995575,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aee-e095-7c03-8cc1-4d9706b54942\n--------\nuser\nFind the kth smallest element in a sorted matrix.\n\nFunction signature: def kth_smallest_matrix(matrix: list, k: int) -> int\n\nConstraints:\n- Each row and column is sorted\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:21:36.375449Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11566}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:21:36.385246"
+      "run": 2,
+      "content": "def kth_smallest_matrix(matrix: list, k: int) -> int:\n    n = len(matrix)\n    if n == 0 or len(matrix[0]) == 0:\n        raise ValueError(\"matrix must be non-empty\")\n\n    m = len(matrix[0])\n    if k < 1 or k > n * m:\n        raise ValueError(\"k is out of bounds\")\n\n    def count_leq(x: int) -> int:\n        count = 0\n        row, col = n - 1, 0\n        while row >= 0 and col < m:\n            if matrix[row][col] <= x:\n                count += row + 1\n                col += 1\n            else:\n                row -= 1\n        return count\n\n    lo, hi = matrix[0][0], matrix[n - 1][m - 1]\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if count_leq(mid) < k:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo",
+      "latency_ms": 7598.114013671875,
+      "passed": true
     },
     {
-      "task_id": "HARD-021",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.8517217079997863,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aee-e88c-7f02-8e16-ecd66c344351\n--------\nuser\nFind the kth smallest element in a sorted matrix.\n\nFunction signature: def kth_smallest_matrix(matrix: list, k: int) -> int\n\nConstraints:\n- Each row and column is sorted\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:21:38.728628Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11564}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:21:38.740595"
+      "run": 3,
+      "content": "def kth_smallest_matrix(matrix: list, k: int) -> int:\n    if not matrix or not matrix[0]:\n        raise ValueError(\"matrix must be non-empty\")\n\n    rows, cols = len(matrix), len(matrix[0])\n    if k < 1 or k > rows * cols:\n        raise ValueError(\"k is out of bounds\")\n\n    lo, hi = matrix[0][0], matrix[rows - 1][cols - 1]\n\n    def count_leq(x: int) -> int:\n        count = 0\n        r, c = rows - 1, 0\n        while r >= 0 and c < cols:\n            if matrix[r][c] <= x:\n                count += r + 1\n                c += 1\n            else:\n                r -= 1\n        return count\n\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if count_leq(mid) < k:\n            lo = mid + 1\n        else:\n            hi = mid\n\n    return lo",
+      "latency_ms": 7419.286727905273,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1542.63,
-    "p50_ms": 1542.63,
-    "p95_ms": 1820.81,
-    "p99_ms": 1845.54,
-    "mean_ms": 1644.63,
-    "std_ms": 146.44,
-    "min_ms": 1539.55,
-    "max_ms": 1851.72,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 7419.286727905273,
+    "mean_ms": 6727.192481358846,
+    "min_ms": 5164.17670249939,
+    "max_ms": 7598.114013671875
+  },
+  "determinism": {
+    "stability_score": 0.33333333333333337,
+    "unique_outputs": 3
+  }
 }

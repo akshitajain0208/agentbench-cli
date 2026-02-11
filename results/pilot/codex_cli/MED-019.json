@@ -1,49 +1,40 @@
 {
   "task_id": "MED-019",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "MED-019",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.4894841249997626,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4adf-ae14-7fc3-9af6-d5d311524dd6\n--------\nuser\nFind the single number in a list where every other number appears twice.\n\nFunction signature: def single_number(nums: list) -> int\n\nConstraints:\n- O(1) space using XOR\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:05:00.298095Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12562}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:05:00.306906"
+      "run": 1,
+      "content": "def single_number(nums: list) -> int:\n    result = 0\n    for num in nums:\n        result ^= num\n    return result",
+      "latency_ms": 2465.4431343078613,
+      "passed": true
     },
     {
-      "task_id": "MED-019",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.4580326249997597,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4adf-b5a5-7930-8297-9fa368df8749\n--------\nuser\nFind the single number in a list where every other number appears twice.\n\nFunction signature: def single_number(nums: list) -> int\n\nConstraints:\n- O(1) space using XOR\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:05:02.258871Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12560}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:05:02.268697"
+      "run": 2,
+      "content": "def single_number(nums: list) -> int:\n    result = 0\n    for n in nums:\n        result ^= n\n    return result",
+      "latency_ms": 2920.6600189208984,
+      "passed": true
     },
     {
-      "task_id": "MED-019",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.8462412499993661,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4adf-bd4c-7421-8c4b-0ebd32a0b1b7\n--------\nuser\nFind the single number in a list where every other number appears twice.\n\nFunction signature: def single_number(nums: list) -> int\n\nConstraints:\n- O(1) space using XOR\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:05:04.611530Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12558}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:05:04.618889"
+      "run": 3,
+      "content": "def single_number(nums: list) -> int:\n    result = 0\n    for num in nums:\n        result ^= num\n    return result",
+      "latency_ms": 2996.572971343994,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1489.48,
-    "p50_ms": 1489.48,
-    "p95_ms": 1810.57,
-    "p99_ms": 1839.11,
-    "mean_ms": 1597.92,
-    "std_ms": 176.06,
-    "min_ms": 1458.03,
-    "max_ms": 1846.24,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 2920.6600189208984,
+    "mean_ms": 2794.2253748575845,
+    "min_ms": 2465.4431343078613,
+    "max_ms": 2996.572971343994
+  },
+  "determinism": {
+    "stability_score": 0.6666666666666667,
+    "unique_outputs": 2
+  }
 }

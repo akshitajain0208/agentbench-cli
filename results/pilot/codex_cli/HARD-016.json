@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-016",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-016",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.566751624999597,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae6-28b2-75a1-94d9-d2cd37c40bc1\n--------\nuser\nImplement a basic calculator that evaluates string expressions with +, -, (, ).\n\nFunction signature: def calculate(s: str) -> int\n\nConstraints:\n- Handle parentheses\n- Handle negative numbers\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:12:04.978382Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12137}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:12:04.987518"
+      "run": 1,
+      "content": "def calculate(s: str) -> int:\n    stack = []\n    result = 0\n    num = 0\n    sign = 1\n\n    for ch in s:\n        if ch.isdigit():\n            num = num * 10 + int(ch)\n        elif ch in \"+-\":\n            result += sign * num\n            num = 0\n            sign = 1 if ch == \"+\" else -1\n        elif ch == \"(\":\n            stack.append(result)\n            stack.append(sign)\n            result = 0\n            sign = 1\n        elif ch == \")\":\n            result += sign * num\n            num = 0\n            prev_sign = stack.pop()\n            prev_result = stack.pop()\n            result = prev_result + prev_sign * result\n\n    return result + sign * num",
+      "latency_ms": 4154.16693687439,
+      "passed": true
     },
     {
-      "task_id": "HARD-016",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.5422560829993017,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae6-308f-7723-8359-df87bdb2ce0a\n--------\nuser\nImplement a basic calculator that evaluates string expressions with +, -, (, ).\n\nFunction signature: def calculate(s: str) -> int\n\nConstraints:\n- Handle parentheses\n- Handle negative numbers\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:12:07.023252Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12135}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:12:07.033619"
+      "run": 2,
+      "content": "def calculate(s: str) -> int:\n    stack = []\n    result = 0\n    sign = 1\n    i = 0\n\n    while i < len(s):\n        ch = s[i]\n\n        if ch.isdigit():\n            num = 0\n            while i < len(s) and s[i].isdigit():\n                num = num * 10 + int(s[i])\n                i += 1\n            result += sign * num\n            continue\n        elif ch == '+':\n            sign = 1\n        elif ch == '-':\n            sign = -1\n        elif ch == '(':\n            stack.append(result)\n            stack.append(sign)\n            result = 0\n            sign = 1\n        elif ch == ')':\n            prev_sign = stack.pop()\n            prev_result = stack.pop()\n            result = prev_result + prev_sign * result\n\n        i += 1\n\n    return result",
+      "latency_ms": 5294.421911239624,
+      "passed": true
     },
     {
-      "task_id": "HARD-016",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.9496357919997536,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae6-388a-7763-955c-b7dd4c6ceb0d\n--------\nuser\nImplement a basic calculator that evaluates string expressions with +, -, (, ).\n\nFunction signature: def calculate(s: str) -> int\n\nConstraints:\n- Handle parentheses\n- Handle negative numbers\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:12:09.482559Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12133}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:12:09.486952"
+      "run": 3,
+      "content": "def calculate(s: str) -> int:\n    stack = []\n    result = 0\n    num = 0\n    sign = 1\n\n    for ch in s:\n        if ch.isdigit():\n            num = num * 10 + int(ch)\n        elif ch in \"+-\":\n            result += sign * num\n            num = 0\n            sign = 1 if ch == \"+\" else -1\n        elif ch == \"(\":\n            stack.append(result)\n            stack.append(sign)\n            result = 0\n            sign = 1\n        elif ch == \")\":\n            result += sign * num\n            num = 0\n            result *= stack.pop()\n            result += stack.pop()\n\n    return result + sign * num",
+      "latency_ms": 6340.3520584106445,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1566.75,
-    "p50_ms": 1566.75,
-    "p95_ms": 1911.35,
-    "p99_ms": 1941.98,
-    "mean_ms": 1686.21,
-    "std_ms": 186.54,
-    "min_ms": 1542.26,
-    "max_ms": 1949.64,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 5294.421911239624,
+    "mean_ms": 5262.980302174886,
+    "min_ms": 4154.16693687439,
+    "max_ms": 6340.3520584106445
+  },
+  "determinism": {
+    "stability_score": 0.33333333333333337,
+    "unique_outputs": 3
+  }
 }

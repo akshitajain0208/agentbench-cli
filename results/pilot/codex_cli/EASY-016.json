@@ -1,49 +1,44 @@
 {
   "task_id": "EASY-016",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "EASY-016",
-      "agent_name": "codex_cli",
-      "run_index": 0,
+      "run": 1,
       "content": "",
-      "latency_seconds": 2.2507257919996846,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aff-9fcc-7ee1-bddb-82a836f3ccb9\n--------\nuser\nConvert temperature from Celsius to Fahrenheit.\n\nFunction signature: def celsius_to_fahrenheit(c: float) -> float\n\nConstraints:\n- Formula: F = C * 9/5 + 32\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:39:53.813530Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10469}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:39:53.824143"
+      "latency_ms": 3019.529104232788,
+      "passed": false
     },
     {
-      "task_id": "EASY-016",
-      "agent_name": "codex_cli",
-      "run_index": 1,
+      "run": 2,
       "content": "",
-      "latency_seconds": 1.4406002079995233,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aff-a76e-7c71-b985-5cc21224b36c\n--------\nuser\nConvert temperature from Celsius to Fahrenheit.\n\nFunction signature: def celsius_to_fahrenheit(c: float) -> float\n\nConstraints:\n- Formula: F = C * 9/5 + 32\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:39:55.758102Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10467}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:39:55.768518"
+      "latency_ms": 6603.689908981323,
+      "passed": false
     },
     {
-      "task_id": "EASY-016",
-      "agent_name": "codex_cli",
-      "run_index": 2,
+      "run": 3,
       "content": "",
-      "latency_seconds": 1.5443168329993568,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aff-af0d-74e0-8ede-8d87553edf64\n--------\nuser\nConvert temperature from Celsius to Fahrenheit.\n\nFunction signature: def celsius_to_fahrenheit(c: float) -> float\n\nConstraints:\n- Formula: F = C * 9/5 + 32\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:39:57.805212Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10465}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:39:57.816615"
+      "latency_ms": 3121.13618850708,
+      "passed": false
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1544.32,
-    "p50_ms": 1544.32,
-    "p95_ms": 2180.08,
-    "p99_ms": 2236.6,
-    "mean_ms": 1745.21,
-    "std_ms": 359.95,
-    "min_ms": 1440.6,
-    "max_ms": 2250.73,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3,
+    "errors": [
+      "Empty code",
+      "Empty code",
+      "Empty code"
+    ]
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 3121.13618850708,
+    "mean_ms": 4248.1184005737305,
+    "min_ms": 3019.529104232788,
+    "max_ms": 6603.689908981323
+  },
+  "determinism": {
+    "stability_score": 1.0,
+    "unique_outputs": 1
+  }
 }

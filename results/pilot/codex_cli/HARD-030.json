@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-030",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-030",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.5938829579999947,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afc-c4a6-7d11-be56-55145ddd6a96\n--------\nuser\nImplement jump game: determine if you can reach the last index.\n\nFunction signature: def can_jump(nums: list) -> bool\n\nConstraints:\n- nums[i] is max jump length from position i\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:36:46.723300Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10656}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:36:46.734728"
+      "run": 1,
+      "content": "def can_jump(nums: list) -> bool:\n    farthest = 0\n    for i, jump in enumerate(nums):\n        if i > farthest:\n            return False\n        farthest = max(farthest, i + jump)\n        if farthest >= len(nums) - 1:\n            return True\n    return True",
+      "latency_ms": 5297.076940536499,
+      "passed": true
     },
     {
-      "task_id": "HARD-030",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.4395112499996685,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afc-cca3-7d51-b61c-edd0de527692\n--------\nuser\nImplement jump game: determine if you can reach the last index.\n\nFunction signature: def can_jump(nums: list) -> bool\n\nConstraints:\n- nums[i] is max jump length from position i\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:36:48.668323Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10654}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:36:48.677973"
+      "run": 2,
+      "content": "def can_jump(nums: list) -> bool:\n    farthest = 0\n    for i, jump in enumerate(nums):\n        if i > farthest:\n            return False\n        farthest = max(farthest, i + jump)\n        if farthest >= len(nums) - 1:\n            return True\n    return True",
+      "latency_ms": 3313.135862350464,
+      "passed": true
     },
     {
-      "task_id": "HARD-030",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.7478904170002352,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afc-d436-7040-bca7-0730df4dd6be\n--------\nuser\nImplement jump game: determine if you can reach the last index.\n\nFunction signature: def can_jump(nums: list) -> bool\n\nConstraints:\n- nums[i] is max jump length from position i\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:36:50.918969Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10652}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:36:50.929870"
+      "run": 3,
+      "content": "def can_jump(nums: list) -> bool:\n    farthest = 0\n    for i, jump in enumerate(nums):\n        if i > farthest:\n            return False\n        farthest = max(farthest, i + jump)\n        if farthest >= len(nums) - 1:\n            return True\n    return True",
+      "latency_ms": 3072.812080383301,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1593.88,
-    "p50_ms": 1593.88,
-    "p95_ms": 1732.49,
-    "p99_ms": 1744.81,
-    "mean_ms": 1593.76,
-    "std_ms": 125.9,
-    "min_ms": 1439.51,
-    "max_ms": 1747.89,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 3313.135862350464,
+    "mean_ms": 3894.3416277567544,
+    "min_ms": 3072.812080383301,
+    "max_ms": 5297.076940536499
+  },
+  "determinism": {
+    "stability_score": 1.0,
+    "unique_outputs": 1
+  }
 }

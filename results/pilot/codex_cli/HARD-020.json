@@ -1,49 +1,42 @@
 {
   "task_id": "HARD-020",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-020",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.5902122080005938,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aed-e239-7e82-a8d8-7153fc8ff950\n--------\nuser\nFind the shortest path in a grid with obstacles (0=empty, 1=obstacle).\n\nFunction signature: def shortest_path(grid: list) -> int\n\nConstraints:\n- Return -1 if no path exists\n- Start top-left, end bottom-right\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:20:31.248146Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11631}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:20:31.258456"
+      "run": 1,
+      "content": "from collections import deque\n\ndef shortest_path(grid: list) -> int:\n    if not grid or not grid[0]:\n        return -1\n\n    rows, cols = len(grid), len(grid[0])\n\n    if grid[0][0] == 1 or grid[rows - 1][cols - 1] == 1:\n        return -1\n\n    if rows == 1 and cols == 1:\n        return 0\n\n    q = deque([(0, 0, 0)])  # row, col, distance\n    visited = {(0, 0)}\n    directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n\n    while q:\n        r, c, d = q.popleft()\n        for dr, dc in directions:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < rows and 0 <= nc < cols and (nr, nc) not in visited and grid[nr][nc] == 0:\n                if nr == rows - 1 and nc == cols - 1:\n                    return d + 1\n                visited.add((nr, nc))\n                q.append((nr, nc, d + 1))\n\n    return -1",
+      "latency_ms": 8319.4899559021,
+      "passed": true
     },
     {
-      "task_id": "HARD-020",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.5449867079996693,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aed-ea25-7b22-96d5-70fd5b0290d7\n--------\nuser\nFind the shortest path in a grid with obstacles (0=empty, 1=obstacle).\n\nFunction signature: def shortest_path(grid: list) -> int\n\nConstraints:\n- Return -1 if no path exists\n- Start top-left, end bottom-right\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:20:33.294292Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11629}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:20:33.307202"
+      "run": 2,
+      "content": "def shortest_path(grid: list) -> int:\n    if not grid or not grid[0]:\n        return -1\n\n    rows, cols = len(grid), len(grid[0])\n\n    if grid[0][0] == 1 or grid[rows - 1][cols - 1] == 1:\n        return -1\n\n    if rows == 1 and cols == 1:\n        return 0\n\n    q = deque([(0, 0, 0)])  # (r, c, distance)\n    visited = {(0, 0)}\n    directions = ((1, 0), (-1, 0), (0, 1), (0, -1))\n\n    while q:\n        r, c, dist = q.popleft()\n        for dr, dc in directions:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < rows and 0 <= nc < cols and (nr, nc) not in visited and grid[nr][nc] == 0:\n                if nr == rows - 1 and nc == cols - 1:\n                    return dist + 1\n                visited.add((nr, nc))\n                q.append((nr, nc, dist + 1))\n\n    return -1",
+      "latency_ms": 10825.720071792603,
+      "passed": false
     },
     {
-      "task_id": "HARD-020",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.4040755000005447,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aed-f22e-7fd2-a059-754207d64e9a\n--------\nuser\nFind the shortest path in a grid with obstacles (0=empty, 1=obstacle).\n\nFunction signature: def shortest_path(grid: list) -> int\n\nConstraints:\n- Return -1 if no path exists\n- Start top-left, end bottom-right\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:20:35.205722Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11627}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:20:35.214993"
+      "run": 3,
+      "content": "from collections import deque\n\ndef shortest_path(grid: list) -> int:\n    if not grid or not grid[0]:\n        return -1\n\n    rows, cols = len(grid), len(grid[0])\n\n    if grid[0][0] == 1 or grid[rows - 1][cols - 1] == 1:\n        return -1\n\n    if rows == 1 and cols == 1:\n        return 0\n\n    q = deque([(0, 0, 0)])  # (r, c, dist)\n    visited = {(0, 0)}\n    directions = ((1, 0), (-1, 0), (0, 1), (0, -1))\n\n    while q:\n        r, c, dist = q.popleft()\n        for dr, dc in directions:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < rows and 0 <= nc < cols and (nr, nc) not in visited and grid[nr][nc] == 0:\n                if nr == rows - 1 and nc == cols - 1:\n                    return dist + 1\n                visited.add((nr, nc))\n                q.append((nr, nc, dist + 1))\n\n    return -1",
+      "latency_ms": 7230.2398681640625,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1544.99,
-    "p50_ms": 1544.99,
-    "p95_ms": 1585.69,
-    "p99_ms": 1589.31,
-    "mean_ms": 1513.09,
-    "std_ms": 79.27,
-    "min_ms": 1404.08,
-    "max_ms": 1590.21,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 0.6666666666666666,
+    "passing_samples": 2,
+    "total_samples": 3,
+    "errors": [
+      "Traceback (most recent call last):\n  File \"/var/folders/y2/3ssr0gwx0_77n9h8yqlbxkbm0000gn/T/tmplci9fn3z.py\", line 33, in <module>\n    result = shortest_path(**inputs)\n  File \"/var/folders/y2/3ssr0gwx0_77n9h8yqlbxkbm0000gn/T/tmplci9fn3z.py\", line 14, in shortest_path\n    q = deque([(0, 0, 0)])  # (r, c, distance)\nNameError: name 'deque' is not defined\n"
+    ]
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 8319.4899559021,
+    "mean_ms": 8791.816631952921,
+    "min_ms": 7230.2398681640625,
+    "max_ms": 10825.720071792603
+  },
+  "determinism": {
+    "stability_score": 0.33333333333333337,
+    "unique_outputs": 3
+  }
 }

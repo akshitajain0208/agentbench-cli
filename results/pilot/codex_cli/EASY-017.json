@@ -1,49 +1,44 @@
 {
   "task_id": "EASY-017",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "EASY-017",
-      "agent_name": "codex_cli",
-      "run_index": 0,
+      "run": 1,
       "content": "",
-      "latency_seconds": 2.197048457999699,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b00-7585-7a21-853e-5cda871dcd5c\n--------\nuser\nFind GCD (Greatest Common Divisor) of two numbers.\n\nFunction signature: def gcd(a: int, b: int) -> int\n\nConstraints:\n- Use Euclidean algorithm\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:40:49.213750Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10413}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:40:49.223806"
+      "latency_ms": 2752.3698806762695,
+      "passed": false
     },
     {
-      "task_id": "EASY-017",
-      "agent_name": "codex_cli",
-      "run_index": 1,
+      "run": 2,
       "content": "",
-      "latency_seconds": 2.15811095799927,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b00-7fdd-7dc2-998a-11ac2f19376c\n--------\nuser\nFind GCD (Greatest Common Divisor) of two numbers.\n\nFunction signature: def gcd(a: int, b: int) -> int\n\nConstraints:\n- Use Euclidean algorithm\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:40:51.874637Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10411}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:40:51.885615"
+      "latency_ms": 2878.777027130127,
+      "passed": false
     },
     {
-      "task_id": "EASY-017",
-      "agent_name": "codex_cli",
-      "run_index": 2,
+      "run": 3,
       "content": "",
-      "latency_seconds": 1.5439058750007462,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b00-8a37-71d3-b84f-cee6d91989ad\n--------\nuser\nFind GCD (Greatest Common Divisor) of two numbers.\n\nFunction signature: def gcd(a: int, b: int) -> int\n\nConstraints:\n- Use Euclidean algorithm\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:40:53.921657Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10409}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:40:53.932423"
+      "latency_ms": 3695.971727371216,
+      "passed": false
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 2158.11,
-    "p50_ms": 2158.11,
-    "p95_ms": 2193.15,
-    "p99_ms": 2196.27,
-    "mean_ms": 1966.36,
-    "std_ms": 299.14,
-    "min_ms": 1543.91,
-    "max_ms": 2197.05,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3,
+    "errors": [
+      "Empty code",
+      "Empty code",
+      "Empty code"
+    ]
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 2878.777027130127,
+    "mean_ms": 3109.039545059204,
+    "min_ms": 2752.3698806762695,
+    "max_ms": 3695.971727371216
+  },
+  "determinism": {
+    "stability_score": 1.0,
+    "unique_outputs": 1
+  }
 }

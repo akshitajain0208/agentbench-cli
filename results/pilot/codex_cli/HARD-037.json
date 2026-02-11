@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-037",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-037",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.491052834000584,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0c-7eb5-76d3-a77b-54c5455c133c\n--------\nuser\nFind the maximum length of a subarray with sum <= k.\n\nFunction signature: def max_subarray_len(nums: list, k: int) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:53:57.292896Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9625}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:53:57.303546"
+      "run": 1,
+      "content": "def max_subarray_len(nums: list, k: int) -> int:\n    n = len(nums)\n    prefix = [0] * (n + 1)\n    for i in range(1, n + 1):\n        prefix[i] = prefix[i - 1] + nums[i - 1]\n\n    vals = sorted(set(prefix))\n    m = len(vals)\n\n    size = 1\n    while size < m:\n        size <<= 1\n    INF = 10**18\n    seg = [INF] * (2 * size)\n\n    def update(pos: int, val: int) -> None:\n        p = pos + size\n        if val < seg[p]:\n            seg[p] = val\n            p >>= 1\n            while p:\n                seg[p] = seg[p << 1] if seg[p << 1] < seg[p << 1 | 1] else seg[p << 1 | 1]\n                p >>= 1\n\n    def query(l: int, r: int) -> int:\n        if l > r:\n            return INF\n        l += size\n        r += size\n        res = INF\n        while l <= r:\n            if l & 1:\n                if seg[l] < res:\n                    res = seg[l]\n                l += 1\n            if not (r & 1):\n                if seg[r] < res:\n                    res = seg[r]\n                r -= 1\n            l >>= 1\n            r >>= 1\n        return res\n\n    def lower_bound(arr, x):\n        lo, hi = 0, len(arr)\n        while lo < hi:\n            mid = (lo + hi) // 2\n            if arr[mid] < x:\n                lo = mid + 1\n            else:\n                hi = mid\n        return lo\n\n    ans = 0\n    for i, s in enumerate(prefix):\n        t = s - k\n        left = lower_bound(vals, t)\n        j = query(left, m - 1)\n        if j != INF:\n            cand = i - j\n            if cand > ans:\n                ans = cand\n\n        pos = lower_bound(vals, s)\n        update(pos, i)\n\n    return ans",
+      "latency_ms": 21832.644939422607,
+      "passed": true
     },
     {
-      "task_id": "HARD-037",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.4737727499996254,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0c-8644-7930-9e75-6229b5a0818f\n--------\nuser\nFind the maximum length of a subarray with sum <= k.\n\nFunction signature: def max_subarray_len(nums: list, k: int) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:53:59.272082Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9623}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:53:59.281114"
+      "run": 2,
+      "content": "from bisect import bisect_left\nfrom math import inf\n\ndef max_subarray_len(nums: list, k: int) -> int:\n    n = len(nums)\n    prefix = [0]\n    s = 0\n    for x in nums:\n        s += x\n        prefix.append(s)\n\n    vals = sorted(set(prefix))\n    m = len(vals)\n\n    size = 1\n    while size < m:\n        size <<= 1\n    seg = [inf] * (2 * size)\n\n    def update(pos: int, idx: int) -> None:\n        p = pos + size\n        if idx >= seg[p]:\n            return\n        seg[p] = idx\n        p >>= 1\n        while p:\n            seg[p] = min(seg[p << 1], seg[p << 1 | 1])\n            p >>= 1\n\n    def query(l: int, r: int) -> int:\n        if l > r:\n            return inf\n        l += size\n        r += size\n        res = inf\n        while l <= r:\n            if l & 1:\n                res = min(res, seg[l])\n                l += 1\n            if not (r & 1):\n                res = min(res, seg[r])\n                r -= 1\n            l >>= 1\n            r >>= 1\n        return res\n\n    update(bisect_left(vals, 0), 0)\n    best = 0\n\n    for j in range(1, n + 1):\n        p = prefix[j]\n        t = p - k\n        pos = bisect_left(vals, t)\n        if pos < m:\n            i = query(pos, m - 1)\n            if i != inf:\n                best = max(best, j - i)\n        update(bisect_left(vals, p), j)\n\n    return best",
+      "latency_ms": 15889.791011810303,
+      "passed": true
     },
     {
-      "task_id": "HARD-037",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.816295541000727,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0c-8e00-77c1-adac-64ceb36fbbae\n--------\nuser\nFind the maximum length of a subarray with sum <= k.\n\nFunction signature: def max_subarray_len(nums: list, k: int) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:54:01.590960Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9621}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:54:01.601143"
+      "run": 3,
+      "content": "def max_subarray_len(nums: list, k: int) -> int:\n    from bisect import bisect_left\n\n    n = len(nums)\n    prefix = [0] * (n + 1)\n    for i, x in enumerate(nums, 1):\n        prefix[i] = prefix[i - 1] + x\n\n    vals = sorted(set(prefix))\n    m = len(vals)\n    INF = 10**18\n\n    size = 1\n    while size < m:\n        size <<= 1\n    seg = [INF] * (2 * size)\n\n    def update(pos: int, val: int) -> None:\n        i = pos + size\n        if val >= seg[i]:\n            return\n        seg[i] = val\n        i >>= 1\n        while i:\n            nv = seg[i << 1] if seg[i << 1] < seg[i << 1 | 1] else seg[i << 1 | 1]\n            if nv == seg[i]:\n                break\n            seg[i] = nv\n            i >>= 1\n\n    def query(l: int, r: int) -> int:\n        if l > r:\n            return INF\n        l += size\n        r += size\n        res = INF\n        while l <= r:\n            if l & 1:\n                if seg[l] < res:\n                    res = seg[l]\n                l += 1\n            if not (r & 1):\n                if seg[r] < res:\n                    res = seg[r]\n                r -= 1\n            l >>= 1\n            r >>= 1\n        return res\n\n    update(bisect_left(vals, 0), 0)\n    ans = 0\n\n    for j in range(1, n + 1):\n        cur = prefix[j]\n        l = bisect_left(vals, cur - k)\n        i = query(l, m - 1)\n        if i != INF:\n            length = j - i\n            if length > ans:\n                ans = length\n        update(bisect_left(vals, cur), j)\n\n    return ans",
+      "latency_ms": 17255.511045455933,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1491.05,
-    "p50_ms": 1491.05,
-    "p95_ms": 1783.77,
-    "p99_ms": 1809.79,
-    "mean_ms": 1593.71,
-    "std_ms": 157.55,
-    "min_ms": 1473.77,
-    "max_ms": 1816.3,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 17255.511045455933,
+    "mean_ms": 18325.982332229614,
+    "min_ms": 15889.791011810303,
+    "max_ms": 21832.644939422607
+  },
+  "determinism": {
+    "stability_score": 0.33333333333333337,
+    "unique_outputs": 3
+  }
 }

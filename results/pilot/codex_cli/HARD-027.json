@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-027",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-027",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 1.631725207999807,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af9-8e7e-7333-974c-0f061f96d074\n--------\nuser\nGiven n pairs of parentheses, generate all valid combinations.\n\nFunction signature: def generate_parentheses(n: int) -> list\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:33:16.291215Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10866}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:33:16.301528"
+      "run": 1,
+      "content": "def generate_parentheses(n: int) -> list:\n    result = []\n\n    def backtrack(current: str, open_count: int, close_count: int) -> None:\n        if len(current) == 2 * n:\n            result.append(current)\n            return\n        if open_count < n:\n            backtrack(current + \"(\", open_count + 1, close_count)\n        if close_count < open_count:\n            backtrack(current + \")\", open_count, close_count + 1)\n\n    backtrack(\"\", 0, 0)\n    return result",
+      "latency_ms": 4252.392053604126,
+      "passed": true
     },
     {
-      "task_id": "HARD-027",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.5417112920004001,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af9-969f-7191-b75a-af7000ce09e9\n--------\nuser\nGiven n pairs of parentheses, generate all valid combinations.\n\nFunction signature: def generate_parentheses(n: int) -> list\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:33:18.336826Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10864}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:33:18.346914"
+      "run": 2,
+      "content": "def generate_parentheses(n: int) -> list:\n    result = []\n\n    def backtrack(curr: str, open_count: int, close_count: int) -> None:\n        if len(curr) == 2 * n:\n            result.append(curr)\n            return\n        if open_count < n:\n            backtrack(curr + \"(\", open_count + 1, close_count)\n        if close_count < open_count:\n            backtrack(curr + \")\", open_count, close_count + 1)\n\n    backtrack(\"\", 0, 0)\n    return result",
+      "latency_ms": 6090.611934661865,
+      "passed": true
     },
     {
-      "task_id": "HARD-027",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.4983566660002907,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af9-9e9d-7872-8ec1-e1c2f076a08f\n--------\nuser\nGiven n pairs of parentheses, generate all valid combinations.\n\nFunction signature: def generate_parentheses(n: int) -> list\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:33:20.339328Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10862}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:33:20.349096"
+      "run": 3,
+      "content": "def generate_parentheses(n: int) -> list:\n    result = []\n\n    def backtrack(current: str, open_count: int, close_count: int) -> None:\n        if len(current) == 2 * n:\n            result.append(current)\n            return\n        if open_count < n:\n            backtrack(current + \"(\", open_count + 1, close_count)\n        if close_count < open_count:\n            backtrack(current + \")\", open_count, close_count + 1)\n\n    backtrack(\"\", 0, 0)\n    return result",
+      "latency_ms": 3742.5668239593506,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1541.71,
-    "p50_ms": 1541.71,
-    "p95_ms": 1622.72,
-    "p99_ms": 1629.92,
-    "mean_ms": 1557.26,
-    "std_ms": 55.55,
-    "min_ms": 1498.36,
-    "max_ms": 1631.73,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 4252.392053604126,
+    "mean_ms": 4695.19027074178,
+    "min_ms": 3742.5668239593506,
+    "max_ms": 6090.611934661865
+  },
+  "determinism": {
+    "stability_score": 0.6666666666666667,
+    "unique_outputs": 2
+  }
 }

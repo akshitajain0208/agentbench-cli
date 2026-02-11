@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-017",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-017",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 2.487148375000288,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aea-67ad-7790-9cd7-5b6754b16bba\n--------\nuser\nFind the longest valid parentheses substring.\n\nFunction signature: def longest_valid_parentheses(s: str) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:16:43.305015Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11859}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:16:43.317271"
+      "run": 1,
+      "content": "def longest_valid_parentheses(s: str) -> int:\n    max_len = 0\n    stack = [-1]\n\n    for i, ch in enumerate(s):\n        if ch == \"(\":\n            stack.append(i)\n        else:\n            stack.pop()\n            if not stack:\n                stack.append(i)\n            else:\n                max_len = max(max_len, i - stack[-1])\n\n    return max_len",
+      "latency_ms": 3274.038076400757,
+      "passed": true
     },
     {
-      "task_id": "HARD-017",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.9485377080000035,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aea-6fc9-7b22-9506-fa43403f13ab\n--------\nuser\nFind the longest valid parentheses substring.\n\nFunction signature: def longest_valid_parentheses(s: str) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:16:45.758766Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11857}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:16:45.769536"
+      "run": 2,
+      "content": "def longest_valid_parentheses(s: str) -> int:\n    max_len = 0\n    stack = [-1]\n\n    for i, ch in enumerate(s):\n        if ch == \"(\":\n            stack.append(i)\n        else:\n            stack.pop()\n            if not stack:\n                stack.append(i)\n            else:\n                max_len = max(max_len, i - stack[-1])\n\n    return max_len",
+      "latency_ms": 4598.705768585205,
+      "passed": true
     },
     {
-      "task_id": "HARD-017",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.4072022079999442,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aea-7977-7202-8499-9d9cd5f1bca1\n--------\nuser\nFind the longest valid parentheses substring.\n\nFunction signature: def longest_valid_parentheses(s: str) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:16:47.671016Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11855}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:16:47.680428"
+      "run": 3,
+      "content": "def longest_valid_parentheses(s: str) -> int:\n    max_len = 0\n    stack = [-1]\n\n    for i, ch in enumerate(s):\n        if ch == \"(\":\n            stack.append(i)\n        else:\n            stack.pop()\n            if not stack:\n                stack.append(i)\n            else:\n                max_len = max(max_len, i - stack[-1])\n\n    return max_len",
+      "latency_ms": 3957.6849937438965,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1948.54,
-    "p50_ms": 1948.54,
-    "p95_ms": 2433.29,
-    "p99_ms": 2476.38,
-    "mean_ms": 1947.63,
-    "std_ms": 440.89,
-    "min_ms": 1407.2,
-    "max_ms": 2487.15,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 3957.6849937438965,
+    "mean_ms": 3943.4762795766196,
+    "min_ms": 3274.038076400757,
+    "max_ms": 4598.705768585205
+  },
+  "determinism": {
+    "stability_score": 1.0,
+    "unique_outputs": 1
+  }
 }

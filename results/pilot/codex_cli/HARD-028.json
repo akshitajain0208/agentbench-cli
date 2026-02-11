@@ -1,49 +1,40 @@
 {
   "task_id": "HARD-028",
-  "agent_name": "codex_cli",
+  "agent": "codex_cli",
   "runs": [
     {
-      "task_id": "HARD-028",
-      "agent_name": "codex_cli",
-      "run_index": 0,
-      "content": "",
-      "latency_seconds": 2.621895166000286,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afa-87c0-7a10-a38e-aa697250fe41\n--------\nuser\nFind the maximum product of a contiguous subarray.\n\nFunction signature: def max_product_subarray(nums: list) -> int\n\nConstraints:\n- Handle negative numbers\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:34:20.188901Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10802}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:34:20.200529"
+      "run": 1,
+      "content": "def max_product_subarray(nums: list) -> int:\n    max_ending = min_ending = best = nums[0]\n\n    for x in nums[1:]:\n        if x < 0:\n            max_ending, min_ending = min_ending, max_ending\n\n        max_ending = max(x, max_ending * x)\n        min_ending = min(x, min_ending * x)\n        best = max(best, max_ending)\n\n    return best",
+      "latency_ms": 4729.870796203613,
+      "passed": true
     },
     {
-      "task_id": "HARD-028",
-      "agent_name": "codex_cli",
-      "run_index": 1,
-      "content": "",
-      "latency_seconds": 1.5424280409997664,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afa-9039-70b3-89e6-33105e42fdee\n--------\nuser\nFind the maximum product of a contiguous subarray.\n\nFunction signature: def max_product_subarray(nums: list) -> int\n\nConstraints:\n- Handle negative numbers\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:34:22.235659Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10800}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:34:22.246708"
+      "run": 2,
+      "content": "def max_product_subarray(nums: list) -> int:\n    if not nums:\n        raise ValueError(\"nums must not be empty\")\n\n    max_ending = min_ending = result = nums[0]\n\n    for n in nums[1:]:\n        if n < 0:\n            max_ending, min_ending = min_ending, max_ending\n\n        max_ending = max(n, max_ending * n)\n        min_ending = min(n, min_ending * n)\n\n        result = max(result, max_ending)\n\n    return result",
+      "latency_ms": 3687.998056411743,
+      "passed": true
     },
     {
-      "task_id": "HARD-028",
-      "agent_name": "codex_cli",
-      "run_index": 2,
-      "content": "",
-      "latency_seconds": 1.440481292000186,
-      "success": false,
-      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4afa-9836-74a0-acaf-1b326a05923c\n--------\nuser\nFind the maximum product of a contiguous subarray.\n\nFunction signature: def max_product_subarray(nums: list) -> int\n\nConstraints:\n- Handle negative numbers\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:34:24.181662Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10798}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
-      "timestamp": "2026-02-11T13:34:24.191266"
+      "run": 3,
+      "content": "def max_product_subarray(nums: list) -> int:\n    max_ending = min_ending = result = nums[0]\n\n    for n in nums[1:]:\n        if n < 0:\n            max_ending, min_ending = min_ending, max_ending\n\n        max_ending = max(n, max_ending * n)\n        min_ending = min(n, min_ending * n)\n        result = max(result, max_ending)\n\n    return result",
+      "latency_ms": 3809.741973876953,
+      "passed": true
     }
   ],
-  "pass_at_k": null,
-  "latency": {
-    "median_ms": 1542.43,
-    "p50_ms": 1542.43,
-    "p95_ms": 2513.95,
-    "p99_ms": 2600.31,
-    "mean_ms": 1868.27,
-    "std_ms": 534.52,
-    "min_ms": 1440.48,
-    "max_ms": 2621.9,
-    "samples": 3
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3,
+    "errors": []
   },
-  "determinism": null
+  "latency": {
+    "median_ms": 3809.741973876953,
+    "mean_ms": 4075.8702754974365,
+    "min_ms": 3687.998056411743,
+    "max_ms": 4729.870796203613
+  },
+  "determinism": {
+    "stability_score": 0.33333333333333337,
+    "unique_outputs": 3
+  }
 }
