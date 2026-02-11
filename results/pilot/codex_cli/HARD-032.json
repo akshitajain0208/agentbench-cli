@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-032",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-032",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.7188680839999506,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b07-04a8-7531-a501-9555506c870f\n--------\nuser\nFind minimum insertions to make a string palindrome.\n\nFunction signature: def min_insertions_palindrome(s: str) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:47:58.583502Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9984}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:47:58.595134"
+    },
+    {
+      "task_id": "HARD-032",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.5080127080000238,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b07-0d17-7193-9058-9a43d0c2909d\n--------\nuser\nFind minimum insertions to make a string palindrome.\n\nFunction signature: def min_insertions_palindrome(s: str) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:48:00.596579Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9982}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:48:00.606934"
+    },
+    {
+      "task_id": "HARD-032",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.4101525420001053,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b07-14f2-7330-9272-d997db421f9f\n--------\nuser\nFind minimum insertions to make a string palindrome.\n\nFunction signature: def min_insertions_palindrome(s: str) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:48:02.511235Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9980}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:48:02.520806"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1508.01,
+    "p50_ms": 1508.01,
+    "p95_ms": 1697.78,
+    "p99_ms": 1714.65,
+    "mean_ms": 1545.68,
+    "std_ms": 128.82,
+    "min_ms": 1410.15,
+    "max_ms": 1718.87,
+    "samples": 3
+  },
+  "determinism": null
+}

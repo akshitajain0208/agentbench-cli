@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-001",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-001",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef find_kth_largest(nums: list, k: int) -> int:\n    nums.sort(reverse=True)\n    return nums[k - 1]\n```",
+      "latency_seconds": 13.859390166999901,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:07:27.751733"
+    },
+    {
+      "task_id": "MED-001",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef find_kth_largest(nums: list, k: int) -> int:\n    \"\"\"\n    Finds the kth largest element in an unsorted list.\n\n    Args:\n        nums: The list of numbers.\n        k: The kth largest element to find.\n\n    Returns:\n        The kth largest element in the list.\n    \"\"\"\n    nums.sort()\n    return nums[len(nums) - k]\n```",
+      "latency_seconds": 14.388451083000064,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:07:42.643704"
+    },
+    {
+      "task_id": "MED-001",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef find_kth_largest(nums: list, k: int) -> int:\n    nums.sort()\n    return nums[len(nums) - k]\n```",
+      "latency_seconds": 11.224573541999916,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:07:54.371671"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 13859.39,
+    "p50_ms": 13859.39,
+    "p95_ms": 14335.54,
+    "p99_ms": 14377.87,
+    "mean_ms": 13157.47,
+    "std_ms": 1383.73,
+    "min_ms": 11224.57,
+    "max_ms": 14388.45,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-019",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-019",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef single_number(nums: list) -> int:\n    \"\"\"\n    Finds the single number in a list where every other number appears twice.\n\n    Args:\n        nums: A list of integers.\n\n    Returns:\n        The single integer that appears only once.\n    \"\"\"\n    single = 0\n    for num in nums:\n        single ^= num\n    return single\n```",
+      "latency_seconds": 11.18323112500002,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:05:15.806761"
+    },
+    {
+      "task_id": "MED-019",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef single_number(nums: list) -> int:\n    \"\"\"\n    Finds the single number in a list where every other number appears twice.\n\n    Constraints:\n    - O(1) space using XOR\n    \"\"\"\n    xor_sum = 0\n    for num in nums:\n        xor_sum ^= num\n    return xor_sum\n```",
+      "latency_seconds": 11.379784582999491,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:05:27.689912"
+    },
+    {
+      "task_id": "MED-019",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef single_number(nums: list) -> int:\n    xor_sum = 0\n    for num in nums:\n        xor_sum ^= num\n    return xor_sum\n```",
+      "latency_seconds": 10.553533750000497,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:05:38.746783"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11183.23,
+    "p50_ms": 11183.23,
+    "p95_ms": 11360.13,
+    "p99_ms": 11375.85,
+    "mean_ms": 11038.85,
+    "std_ms": 352.43,
+    "min_ms": 10553.53,
+    "max_ms": 11379.78,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

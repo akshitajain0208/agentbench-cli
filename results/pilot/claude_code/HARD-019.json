@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-019",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-019",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef count_inversions(nums: list) -> int:\n    def merge_sort(arr):\n        if len(arr) <= 1:\n            return arr, 0\n        mid = len(arr) // 2\n        left, left_inv = merge_sort(arr[:mid])\n        right, right_inv = merge_sort(arr[mid:])\n        merged = []\n        inversions = left_inv + right_inv\n        i = j = 0\n        while i < len(left) and j < len(right):\n            if left[i] <= right[j]:\n                merged.append(left[i])\n                i += 1\n            else:\n                merged.append(right[j])\n                inversions += len(left) - i\n                j += 1\n        merged.extend(left[i:])\n        merged.extend(right[j:])\n        return merged, inversions\n\n    _, result = merge_sort(nums)\n    return result\n```",
+      "latency_seconds": 7.331068208000033,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:18:50.544773"
+    },
+    {
+      "task_id": "HARD-019",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef count_inversions(nums: list) -> int:\n    def merge_sort(arr):\n        if len(arr) <= 1:\n            return arr, 0\n        mid = len(arr) // 2\n        left, left_inv = merge_sort(arr[:mid])\n        right, right_inv = merge_sort(arr[mid:])\n        merged = []\n        inversions = left_inv + right_inv\n        i = j = 0\n        while i < len(left) and j < len(right):\n            if left[i] <= right[j]:\n                merged.append(left[i])\n                i += 1\n            else:\n                merged.append(right[j])\n                inversions += len(left) - i\n                j += 1\n        merged.extend(left[i:])\n        merged.extend(right[j:])\n        return merged, inversions\n\n    _, result = merge_sort(nums)\n    return result\n```",
+      "latency_seconds": 8.09404745899974,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:18:59.142339"
+    },
+    {
+      "task_id": "HARD-019",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef count_inversions(nums: list) -> int:\n    def merge_sort(arr):\n        if len(arr) <= 1:\n            return arr, 0\n        mid = len(arr) // 2\n        left, left_inv = merge_sort(arr[:mid])\n        right, right_inv = merge_sort(arr[mid:])\n        merged = []\n        inversions = left_inv + right_inv\n        i = j = 0\n        while i < len(left) and j < len(right):\n            if left[i] <= right[j]:\n                merged.append(left[i])\n                i += 1\n            else:\n                merged.append(right[j])\n                inversions += len(left) - i\n                j += 1\n        merged.extend(left[i:])\n        merged.extend(right[j:])\n        return merged, inversions\n\n    _, result = merge_sort(nums)\n    return result\n```",
+      "latency_seconds": 7.6795492089995605,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:19:07.325395"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 7679.55,
+    "p50_ms": 7679.55,
+    "p95_ms": 8052.6,
+    "p99_ms": 8085.76,
+    "mean_ms": 7701.55,
+    "std_ms": 311.87,
+    "min_ms": 7331.07,
+    "max_ms": 8094.05,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

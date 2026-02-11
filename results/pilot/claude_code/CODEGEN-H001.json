@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H001",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H001",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef longest_increasing_subsequence(nums: list) -> int:\n    if not nums:\n        return 0\n    from bisect import bisect_left\n    tails = []\n    for num in nums:\n        pos = bisect_left(tails, num)\n        if pos == len(tails):\n            tails.append(num)\n        else:\n            tails[pos] = num\n    return len(tails)\n```",
+      "latency_seconds": 5.484293041000001,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:39:54.712715"
+    },
+    {
+      "task_id": "CODEGEN-H001",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\nimport bisect\n\ndef longest_increasing_subsequence(nums: list) -> int:\n    if not nums:\n        return 0\n    tails = []\n    for num in nums:\n        pos = bisect.bisect_left(tails, num)\n        if pos == len(tails):\n            tails.append(num)\n        else:\n            tails[pos] = num\n    return len(tails)\n```",
+      "latency_seconds": 6.5851719579999894,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:40:01.799861"
+    },
+    {
+      "task_id": "CODEGEN-H001",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef longest_increasing_subsequence(nums: list) -> int:\n    if not nums:\n        return 0\n    from bisect import bisect_left\n    tails = []\n    for num in nums:\n        pos = bisect_left(tails, num)\n        if pos == len(tails):\n            tails.append(num)\n        else:\n            tails[pos] = num\n    return len(tails)\n```",
+      "latency_seconds": 6.517484541999977,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:40:08.820085"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 6517.48,
+    "p50_ms": 6517.48,
+    "p95_ms": 6578.4,
+    "p99_ms": 6583.82,
+    "mean_ms": 6195.65,
+    "std_ms": 503.76,
+    "min_ms": 5484.29,
+    "max_ms": 6585.17,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

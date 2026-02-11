@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H004",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H004",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef word_break(s: str, word_dict: list) -> bool:\n    \"\"\"\n    Determines if a string s can be segmented into words from the dictionary.\n\n    Args:\n        s: The input string.\n        word_dict: A list of words representing the dictionary.\n\n    Returns:\n        True if s can be segmented, False otherwise.\n    \"\"\"\n    word_set = set(word_dict)\n    n = len(s)\n    dp = [False] * (n + 1)\n    dp[0] = True\n\n    for i in range(1, n + 1):\n        for j in range(i):\n            if dp[j] and s[j:i] in word_set:\n                dp[i] = True\n                break\n    return dp[n]\n\n```",
+      "latency_seconds": 15.361197749999974,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:45:52.151144"
+    },
+    {
+      "task_id": "CODEGEN-H004",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef word_break(s: str, word_dict: list) -> bool:\n    word_set = set(word_dict)\n    n = len(s)\n    dp = [False] * (n + 1)\n    dp[0] = True\n\n    for i in range(1, n + 1):\n        for j in range(i):\n            if dp[j] and s[j:i] in word_set:\n                dp[i] = True\n                break\n    return dp[n]\n```",
+      "latency_seconds": 15.92199795800002,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:46:08.576225"
+    },
+    {
+      "task_id": "CODEGEN-H004",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef word_break(s: str, word_dict: list) -> bool:\n    word_set = set(word_dict)\n    n = len(s)\n    dp = [False] * (n + 1)\n    dp[0] = True\n\n    for i in range(1, n + 1):\n        for j in range(i):\n            if dp[j] and s[j:i] in word_set:\n                dp[i] = True\n                break\n    return dp[n]\n\n```",
+      "latency_seconds": 11.489695708999989,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:46:20.568913"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 15361.2,
+    "p50_ms": 15361.2,
+    "p95_ms": 15865.92,
+    "p99_ms": 15910.78,
+    "mean_ms": 14257.63,
+    "std_ms": 1970.57,
+    "min_ms": 11489.7,
+    "max_ms": 15922.0,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

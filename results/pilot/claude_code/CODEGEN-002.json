@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-002",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "CODEGEN-002",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef is_palindrome(s: str) -> bool:\n    filtered = [c.lower() for c in s if c.isalnum()]\n    return filtered == filtered[::-1]\n```",
+      "latency_seconds": 5.109801540999996,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:35:11.543259"
+    },
+    {
+      "task_id": "CODEGEN-002",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef is_palindrome(s: str) -> bool:\n    filtered = [c.lower() for c in s if c.isalnum()]\n    return filtered == filtered[::-1]\n```",
+      "latency_seconds": 5.064394624999991,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:35:17.110332"
+    },
+    {
+      "task_id": "CODEGEN-002",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef is_palindrome(s: str) -> bool:\n    filtered = [c.lower() for c in s if c.isalnum()]\n    return filtered == filtered[::-1]\n```",
+      "latency_seconds": 5.496994666999996,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:35:23.109120"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5109.8,
+    "p50_ms": 5109.8,
+    "p95_ms": 5458.28,
+    "p99_ms": 5489.25,
+    "mean_ms": 5223.73,
+    "std_ms": 194.11,
+    "min_ms": 5064.39,
+    "max_ms": 5496.99,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

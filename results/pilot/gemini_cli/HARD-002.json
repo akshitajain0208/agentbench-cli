@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-002",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-002",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef serialize(root: list) -> str:\n    result = []\n\n    def preorder(node):\n        if node is None:\n            result.append(\"null\")\n            return\n\n        result.append(str(node[0]))\n        preorder(node[1])\n        preorder(node[2])\n\n    preorder(root)\n    return \",\".join(result)\n\n```",
+      "latency_seconds": 13.91621958299993,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:24:11.833725"
+    },
+    {
+      "task_id": "HARD-002",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef serialize(root: list) -> str:\n    \"\"\"\n    Serializes a binary tree represented as nested lists [val, left, right]\n    into a comma-separated string using preorder traversal.\n    Uses 'null' for empty nodes.\n    \"\"\"\n    result = []\n\n    def preorder_traverse(node):\n        if node is None or node == []:\n            result.append(\"null\")\n            return\n\n        result.append(str(node[0]))\n        preorder_traverse(node[1])\n        preorder_traverse(node[2])\n\n    preorder_traverse(root)\n    return \",\".join(result)\n\n```",
+      "latency_seconds": 11.024212792000071,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:24:23.360150"
+    },
+    {
+      "task_id": "HARD-002",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef serialize(root: list) -> str:\n    result = []\n\n    def preorder(node):\n        if node is None:\n            result.append(\"null\")\n            return\n\n        result.append(str(node[0]))\n        preorder(node[1])\n        preorder(node[2])\n\n    preorder(root)\n    return \",\".join(result)\n```",
+      "latency_seconds": 14.289927875000103,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:24:38.152508"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 13916.22,
+    "p50_ms": 13916.22,
+    "p95_ms": 14252.56,
+    "p99_ms": 14282.45,
+    "mean_ms": 13076.79,
+    "std_ms": 1459.39,
+    "min_ms": 11024.21,
+    "max_ms": 14289.93,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

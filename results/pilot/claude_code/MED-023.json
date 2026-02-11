@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-023",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-023",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef product_except_self(nums: list) -> list:\n    n = len(nums)\n    result = [1] * n\n    prefix = 1\n    for i in range(n):\n        result[i] = prefix\n        prefix *= nums[i]\n    suffix = 1\n    for i in range(n - 1, -1, -1):\n        result[i] *= suffix\n        suffix *= nums[i]\n    return result\n```",
+      "latency_seconds": 5.926288833999934,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:09:28.498542"
+    },
+    {
+      "task_id": "MED-023",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef product_except_self(nums: list) -> list:\n    n = len(nums)\n    result = [1] * n\n    prefix = 1\n    for i in range(n):\n        result[i] = prefix\n        prefix *= nums[i]\n    suffix = 1\n    for i in range(n - 1, -1, -1):\n        result[i] *= suffix\n        suffix *= nums[i]\n    return result\n```",
+      "latency_seconds": 5.783509708000565,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:09:34.786462"
+    },
+    {
+      "task_id": "MED-023",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef product_except_self(nums: list) -> list:\n    n = len(nums)\n    result = [1] * n\n    prefix = 1\n    for i in range(n):\n        result[i] = prefix\n        prefix *= nums[i]\n    suffix = 1\n    for i in range(n - 1, -1, -1):\n        result[i] *= suffix\n        suffix *= nums[i]\n    return result\n```",
+      "latency_seconds": 6.000826499999675,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:09:41.291132"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5926.29,
+    "p50_ms": 5926.29,
+    "p95_ms": 5993.37,
+    "p99_ms": 5999.34,
+    "mean_ms": 5903.54,
+    "std_ms": 90.17,
+    "min_ms": 5783.51,
+    "max_ms": 6000.83,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

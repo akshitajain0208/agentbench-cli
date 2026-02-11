@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-002",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-002",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef find_max(nums: list) -> int:\n    max_val = nums[0]\n    for num in nums:\n        if num > max_val:\n            max_val = num\n    return max_val\n```",
+      "latency_seconds": 11.657467457999928,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:00:58.565306"
+    },
+    {
+      "task_id": "EASY-002",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef find_max(nums: list) -> int:\n    return max(nums)\n```",
+      "latency_seconds": 9.624642916000084,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:01:08.695714"
+    },
+    {
+      "task_id": "EASY-002",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef find_max(nums: list) -> int:\n    return max(nums)\n```",
+      "latency_seconds": 10.459401667000066,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:01:19.660298"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 10459.4,
+    "p50_ms": 10459.4,
+    "p95_ms": 11537.66,
+    "p99_ms": 11633.51,
+    "mean_ms": 10580.5,
+    "std_ms": 834.3,
+    "min_ms": 9624.64,
+    "max_ms": 11657.47,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

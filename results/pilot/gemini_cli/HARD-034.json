@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-034",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-034",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef climb_stairs(n: int) -> int:\n    if n == 0:\n        return 1\n    if n == 1:\n        return 1\n\n    dp = [0] * (n + 1)\n    dp[0] = 1\n    dp[1] = 1\n\n    for i in range(2, n + 1):\n        dp[i] = dp[i - 1] + dp[i - 2]\n\n    return dp[n]\n```",
+      "latency_seconds": 11.851326375001008,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:50:44.867246"
+    },
+    {
+      "task_id": "HARD-034",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef climb_stairs(n: int) -> int:\n    if n == 0:\n        return 1\n    if n == 1:\n        return 1\n    \n    dp = [0] * (n + 1)\n    dp[0] = 1\n    dp[1] = 1\n    \n    for i in range(2, n + 1):\n        dp[i] = dp[i-1] + dp[i-2]\n        \n    return dp[n]\n```",
+      "latency_seconds": 12.579263499999797,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:50:57.949636"
+    },
+    {
+      "task_id": "HARD-034",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef climb_stairs(n: int) -> int:\n    if n == 0:\n        return 1\n    if n == 1:\n        return 1\n\n    ways_prev2 = 1\n    ways_prev1 = 1\n\n    for _ in range(2, n + 1):\n        current_ways = ways_prev1 + ways_prev2\n        ways_prev2 = ways_prev1\n        ways_prev1 = current_ways\n\n    return ways_prev1\n```",
+      "latency_seconds": 27.312589708000814,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:51:25.764976"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 12579.26,
+    "p50_ms": 12579.26,
+    "p95_ms": 25839.26,
+    "p99_ms": 27017.92,
+    "mean_ms": 17247.73,
+    "std_ms": 7123.13,
+    "min_ms": 11851.33,
+    "max_ms": 27312.59,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

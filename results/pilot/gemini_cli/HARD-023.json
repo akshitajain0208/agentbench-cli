@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-023",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-023",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef max_non_adjacent_sum(nums: list) -> int:\n    if not nums:\n        return 0\n    if len(nums) == 1:\n        return nums[0]\n\n    dp = [0] * len(nums)\n    dp[0] = nums[0]\n    dp[1] = max(nums[0], nums[1])\n\n    for i in range(2, len(nums)):\n        dp[i] = max(nums[i] + dp[i - 2], dp[i - 1])\n\n    return dp[-1]\n```",
+      "latency_seconds": 12.031864624999798,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:25:07.184771"
+    },
+    {
+      "task_id": "HARD-023",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef max_non_adjacent_sum(nums: list) -> int:\n    if not nums:\n        return 0\n    if len(nums) == 1:\n        return nums[0]\n\n    dp = [0] * len(nums)\n    dp[0] = nums[0]\n    dp[1] = max(nums[0], nums[1])\n\n    for i in range(2, len(nums)):\n        dp[i] = max(dp[i-1], nums[i] + dp[i-2])\n\n    return dp[-1]\n```",
+      "latency_seconds": 21.688502083999992,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:25:29.376338"
+    },
+    {
+      "task_id": "HARD-023",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef max_non_adjacent_sum(nums: list) -> int:\n    if not nums:\n        return 0\n    if len(nums) == 1:\n        return nums[0]\n\n    # two_back represents the maximum sum up to the element at index i-2 (inclusive).\n    # one_back represents the maximum sum up to the element at index i-1 (inclusive).\n    two_back = nums[0]\n    one_back = max(nums[0], nums[1])\n\n    # Iterate from the third element to the end of the list.\n    for i in range(2, len(nums)):\n        # Calculate the maximum sum up to the current element (nums[i]).\n        # There are two choices:\n        # 1. Include nums[i]: The sum would be nums[i] + two_back (since nums[i-1] cannot be included).\n        # 2. Exclude nums[i]: The sum would be one_back (the maximum sum up to the previous element).\n        new_max = max(one_back, nums[i] + two_back)\n\n        # Update two_back and one_back for the next iteration.\n        two_back = one_back\n        one_back = new_max\n\n    return one_back\n```",
+      "latency_seconds": 27.124089124999955,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:25:57.003592"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 21688.5,
+    "p50_ms": 21688.5,
+    "p95_ms": 26580.53,
+    "p99_ms": 27015.38,
+    "mean_ms": 20281.49,
+    "std_ms": 6241.18,
+    "min_ms": 12031.86,
+    "max_ms": 27124.09,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

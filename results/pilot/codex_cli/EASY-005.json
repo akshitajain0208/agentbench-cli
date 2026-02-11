@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-005",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "EASY-005",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef remove_duplicates(nums: list) -> list:\n    seen = set()\n    result = []\n    for num in nums:\n        if num not in seen:\n            seen.add(num)\n            result.append(num)\n    return result\n```",
+      "latency_seconds": 2.689988916999937,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:03:50.634074"
+    },
+    {
+      "task_id": "EASY-005",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef remove_duplicates(nums: list) -> list:\n    seen = set()\n    result = []\n    for num in nums:\n        if num not in seen:\n            seen.add(num)\n            result.append(num)\n    return result\n```",
+      "latency_seconds": 2.6299186249998456,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:03:53.768287"
+    },
+    {
+      "task_id": "EASY-005",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef remove_duplicates(nums: list) -> list:\n    seen = set()\n    result = []\n    for num in nums:\n        if num not in seen:\n            seen.add(num)\n            result.append(num)\n    return result\n```",
+      "latency_seconds": 2.6386652920000415,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:03:56.910678"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 2638.67,
+    "p50_ms": 2638.67,
+    "p95_ms": 2684.86,
+    "p99_ms": 2688.96,
+    "mean_ms": 2652.86,
+    "std_ms": 26.5,
+    "min_ms": 2629.92,
+    "max_ms": 2689.99,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-001",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-001",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef length_of_longest_substring(s: str) -> int:\n    char_map = {}\n    max_length = 0\n    start = 0\n\n    for end in range(len(s)):\n        char = s[end]\n        if char in char_map and char_map[char] >= start:\n            start = char_map[char] + 1\n        char_map[char] = end\n        max_length = max(max_length, end - start + 1)\n\n    return max_length\n\n```",
+      "latency_seconds": 23.767836875000285,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:22:57.812650"
+    },
+    {
+      "task_id": "HARD-001",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef length_of_longest_substring(s: str) -> int:\n    char_map = {}\n    max_length = 0\n    start = 0\n\n    for end in range(len(s)):\n        if s[end] in char_map and char_map[s[end]] >= start:\n            start = char_map[s[end]] + 1\n        char_map[s[end]] = end\n        max_length = max(max_length, end - start + 1)\n\n    return max_length\n```",
+      "latency_seconds": 10.713660582999637,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:23:09.028727"
+    },
+    {
+      "task_id": "HARD-001",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef length_of_longest_substring(s: str) -> int:\n    \"\"\"\n    Find the length of the longest substring without repeating characters.\n\n    Args:\n        s: The input string.\n\n    Returns:\n        The length of the longest substring without repeating characters.\n    \"\"\"\n    max_length = 0\n    start = 0\n    char_index_map = {}\n\n    for end in range(len(s)):\n        if s[end] in char_index_map and char_index_map[s[end]] >= start:\n            start = char_index_map[s[end]] + 1\n        char_index_map[s[end]] = end\n        max_length = max(max_length, end - start + 1)\n\n    return max_length\n```",
+      "latency_seconds": 11.433856165999714,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:23:20.965133"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11433.86,
+    "p50_ms": 11433.86,
+    "p95_ms": 22534.44,
+    "p99_ms": 23521.16,
+    "mean_ms": 15305.12,
+    "std_ms": 5991.26,
+    "min_ms": 10713.66,
+    "max_ms": 23767.84,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

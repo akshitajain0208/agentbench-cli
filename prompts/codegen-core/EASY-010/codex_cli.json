@@ -1,0 +1,8 @@
+{
+  "task_id": "EASY-010",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Check if a number is prime.\n\nFunction signature: def is_prime(n: int) -> bool\n\nConstraints:\n- n >= 0\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

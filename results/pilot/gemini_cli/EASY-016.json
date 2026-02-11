@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-016",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-016",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef celsius_to_fahrenheit(c: float) -> float:\n    return c * 9/5 + 32\n```",
+      "latency_seconds": 8.93320358300025,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:40:06.754099"
+    },
+    {
+      "task_id": "EASY-016",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef celsius_to_fahrenheit(c: float) -> float:\n    return c * 9/5 + 32\n```",
+      "latency_seconds": 14.845448541999758,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:40:22.102760"
+    },
+    {
+      "task_id": "EASY-016",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef celsius_to_fahrenheit(c: float) -> float:\n    return c * 9/5 + 32\n```",
+      "latency_seconds": 8.509081708999474,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:40:31.115321"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 8933.2,
+    "p50_ms": 8933.2,
+    "p95_ms": 14254.22,
+    "p99_ms": 14727.2,
+    "mean_ms": 10762.58,
+    "std_ms": 2892.21,
+    "min_ms": 8509.08,
+    "max_ms": 14845.45,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-005",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-005",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef trap(height: list) -> int:\n    left, right = 0, len(height) - 1\n    left_max = right_max = 0\n    water = 0\n\n    while left <= right:\n        if height[left] <= height[right]:\n            if height[left] >= left_max:\n                left_max = height[left]\n            else:\n                water += left_max - height[left]\n            left += 1\n        else:\n            if height[right] >= right_max:\n                right_max = height[right]\n            else:\n                water += right_max - height[right]\n            right -= 1\n\n    return water\n```",
+      "latency_seconds": 4.90198804099964,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:29:32.164735"
+    },
+    {
+      "task_id": "HARD-005",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef trap(height: list) -> int:\n    left, right = 0, len(height) - 1\n    left_max = right_max = 0\n    water = 0\n\n    while left <= right:\n        if height[left] <= height[right]:\n            if height[left] >= left_max:\n                left_max = height[left]\n            else:\n                water += left_max - height[left]\n            left += 1\n        else:\n            if height[right] >= right_max:\n                right_max = height[right]\n            else:\n                water += right_max - height[right]\n            right -= 1\n\n    return water\n```",
+      "latency_seconds": 3.6860565830002088,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:29:36.354400"
+    },
+    {
+      "task_id": "HARD-005",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef trap(height: list) -> int:\n    left, right = 0, len(height) - 1\n    left_max = right_max = 0\n    water = 0\n\n    while left <= right:\n        if height[left] <= height[right]:\n            if height[left] >= left_max:\n                left_max = height[left]\n            else:\n                water += left_max - height[left]\n            left += 1\n        else:\n            if height[right] >= right_max:\n                right_max = height[right]\n            else:\n                water += right_max - height[right]\n            right -= 1\n\n    return water\n```",
+      "latency_seconds": 4.8138590829998975,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:29:41.671885"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4813.86,
+    "p50_ms": 4813.86,
+    "p95_ms": 4893.18,
+    "p99_ms": 4900.23,
+    "mean_ms": 4467.3,
+    "std_ms": 553.59,
+    "min_ms": 3686.06,
+    "max_ms": 4901.99,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

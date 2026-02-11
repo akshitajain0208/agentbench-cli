@@ -1,0 +1,31 @@
+metrics:
+  core:
+    - name: "pass_at_k"
+      k_values: [1, 5, 10]
+      primary: true
+      
+    - name: "exact_match"
+      case_sensitive: false
+      
+    - name: "latency"
+      percentiles: [50, 95, 99]
+      unit: "seconds"
+      
+    - name: "hallucination_rate"
+      requires_human_eval: true
+      
+    - name: "instruction_following"
+      rubric_path: "configs/rubrics/instruction_following.yaml"
+      
+  enhanced:
+    - name: "determinism"
+      min_runs: 5
+      
+    - name: "tool_use_reliability"
+      categories:
+        - file_io
+        - shell_commands
+        - git_operations
+        
+    - name: "error_recovery"
+      max_attempts: 3

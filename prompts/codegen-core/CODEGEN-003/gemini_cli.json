@@ -1,0 +1,8 @@
+{
+  "task_id": "CODEGEN-003",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Write a function that returns a list of strings from 1 to n. For multiples of 3 use 'Fizz', for multiples of 5 use 'Buzz', for multiples of both use 'FizzBuzz'.\n\nFunction signature: def fizzbuzz(n: int) -> list\n\nConstraints:\n- Return list of strings\n- Numbers not divisible by 3 or 5 should be string representation\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

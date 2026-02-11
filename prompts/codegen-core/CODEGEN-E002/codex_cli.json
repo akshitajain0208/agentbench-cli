@@ -1,0 +1,8 @@
+{
+  "task_id": "CODEGEN-E002",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Reverse only the vowels in a string. Vowels are 'aeiouAEIOU'.\n\nFunction signature: def reverse_vowels(s: str) -> str\n\nConstraints:\n- Preserve case\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

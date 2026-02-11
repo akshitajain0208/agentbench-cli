@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-024",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-024",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.7151543749996563,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af3-2828-7ab1-8816-81c2e4e6cbb2\n--------\nuser\nFind minimum number of coins to make a given amount.\n\nFunction signature: def coin_change(coins: list, amount: int) -> int\n\nConstraints:\n- Return -1 if not possible\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:26:16.956985Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11286}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:26:16.967736"
+    },
+    {
+      "task_id": "HARD-024",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.6424982920007096,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af3-309b-7400-8d3b-a3d14cc5a437\n--------\nuser\nFind minimum number of coins to make a given amount.\n\nFunction signature: def coin_change(coins: list, amount: int) -> int\n\nConstraints:\n- Return -1 if not possible\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:26:19.103705Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11284}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:26:19.113986"
+    },
+    {
+      "task_id": "HARD-024",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.5447799579997081,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af3-38fc-72c3-a085-40c75ce351aa\n--------\nuser\nFind minimum number of coins to make a given amount.\n\nFunction signature: def coin_change(coins: list, amount: int) -> int\n\nConstraints:\n- Return -1 if not possible\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:26:21.152733Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11281}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:26:21.162549"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1642.5,
+    "p50_ms": 1642.5,
+    "p95_ms": 1707.89,
+    "p99_ms": 1713.7,
+    "mean_ms": 1634.14,
+    "std_ms": 69.81,
+    "min_ms": 1544.78,
+    "max_ms": 1715.15,
+    "samples": 3
+  },
+  "determinism": null
+}

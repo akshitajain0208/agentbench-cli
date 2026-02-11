@@ -1,0 +1,49 @@
+{
+  "task_id": "MED-022",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-022",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.4888450830003421,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae2-528f-70a3-b7a0-25ef97f930a9\n--------\nuser\nAdd two numbers represented as strings.\n\nFunction signature: def add_strings(num1: str, num2: str) -> str\n\nConstraints:\n- Do not convert to int directly\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:07:53.475468Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12389}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:07:53.486397"
+    },
+    {
+      "task_id": "MED-022",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.4358991660001266,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae2-5a20-77f1-8707-eff2d5664b09\n--------\nuser\nAdd two numbers represented as strings.\n\nFunction signature: def add_strings(num1: str, num2: str) -> str\n\nConstraints:\n- Do not convert to int directly\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:07:55.416275Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12387}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:07:55.426265"
+    },
+    {
+      "task_id": "MED-022",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.5480200000001787,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae2-61b5-76d3-aec5-c3e411b94e1d\n--------\nuser\nAdd two numbers represented as strings.\n\nFunction signature: def add_strings(num1: str, num2: str) -> str\n\nConstraints:\n- Do not convert to int directly\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:07:57.467604Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12385}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:07:57.478262"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1488.85,
+    "p50_ms": 1488.85,
+    "p95_ms": 1542.1,
+    "p99_ms": 1546.84,
+    "mean_ms": 1490.92,
+    "std_ms": 45.8,
+    "min_ms": 1435.9,
+    "max_ms": 1548.02,
+    "samples": 3
+  },
+  "determinism": null
+}

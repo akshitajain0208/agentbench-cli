@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-E002",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-E002",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef reverse_vowels(s: str) -> str:\n    vowels = \"aeiouAEIOU\"\n    s_list = list(s)\n    \n    vowel_indices = []\n    found_vowels = []\n\n    for i, char in enumerate(s_list):\n        if char in vowels:\n            vowel_indices.append(i)\n            found_vowels.append(char)\n    \n    found_vowels.reverse()\n\n    for i, char_index in enumerate(vowel_indices):\n        s_list[char_index] = found_vowels[i]\n            \n    return \"\".join(s_list)\n```",
+      "latency_seconds": 15.871200042000055,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:53:57.534594"
+    },
+    {
+      "task_id": "CODEGEN-E002",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef reverse_vowels(s: str) -> str:\n    vowels = \"aeiouAEIOU\"\n    s_list = list(s)\n    \n    vowel_indices = []\n    extracted_vowels = []\n\n    for i, char in enumerate(s_list):\n        if char in vowels:\n            vowel_indices.append(i)\n            extracted_vowels.append(char)\n    \n    extracted_vowels.reverse()\n    \n    for i in range(len(vowel_indices)):\n        s_list[vowel_indices[i]] = extracted_vowels[i]\n            \n    return \"\".join(s_list)\n```",
+      "latency_seconds": 12.249247500000138,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:54:10.287478"
+    },
+    {
+      "task_id": "CODEGEN-E002",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef reverse_vowels(s: str) -> str:\n    vowels = \"aeiouAEIOU\"\n    s_list = list(s)\n    \n    found_vowels = []\n    vowel_indices = []\n\n    for i, char in enumerate(s_list):\n        if char in vowels:\n            found_vowels.append(char)\n            vowel_indices.append(i)\n\n    found_vowels.reverse()\n\n    for i, original_index in enumerate(vowel_indices):\n        s_list[original_index] = found_vowels[i]\n\n    return \"\".join(s_list)\n```",
+      "latency_seconds": 11.390050791000021,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:54:22.180948"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 12249.25,
+    "p50_ms": 12249.25,
+    "p95_ms": 15509.0,
+    "p99_ms": 15798.76,
+    "mean_ms": 13170.17,
+    "std_ms": 1941.86,
+    "min_ms": 11390.05,
+    "max_ms": 15871.2,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

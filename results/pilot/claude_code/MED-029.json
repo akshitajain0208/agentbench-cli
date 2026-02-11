@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-029",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-029",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef next_greater_element(nums: list) -> list:\n    result = [-1] * len(nums)\n    stack = []\n    for i in range(len(nums)):\n        while stack and nums[stack[-1]] < nums[i]:\n            result[stack.pop()] = nums[i]\n        stack.append(i)\n    return result\n```",
+      "latency_seconds": 6.389875458999995,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:45:35.358735"
+    },
+    {
+      "task_id": "MED-029",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef next_greater_element(nums: list) -> list:\n    result = [-1] * len(nums)\n    stack = []\n    for i in range(len(nums)):\n        while stack and nums[stack[-1]] < nums[i]:\n            result[stack.pop()] = nums[i]\n        stack.append(i)\n    return result\n```",
+      "latency_seconds": 5.465922417000002,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:45:41.328376"
+    },
+    {
+      "task_id": "MED-029",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef next_greater_element(nums: list) -> list:\n    result = [-1] * len(nums)\n    stack = []\n    for i in range(len(nums)):\n        while stack and nums[stack[-1]] < nums[i]:\n            result[stack.pop()] = nums[i]\n        stack.append(i)\n    return result\n```",
+      "latency_seconds": 5.065995083000416,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:45:46.897956"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5465.92,
+    "p50_ms": 5465.92,
+    "p95_ms": 6297.48,
+    "p99_ms": 6371.4,
+    "mean_ms": 5640.6,
+    "std_ms": 554.41,
+    "min_ms": 5066.0,
+    "max_ms": 6389.88,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

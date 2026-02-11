@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-019",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Count inversions in an array (pairs where i < j but arr[i] > arr[j]).\n\nFunction signature: def count_inversions(nums: list) -> int\n\nConstraints:\n- O(n log n) using merge sort\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-033",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-033",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef subset_sum(nums: list, target: int) -> bool:\n    \"\"\"\n    Determines if there is a subset of 'nums' that sums up to 'target'.\n\n    Args:\n        nums: A list of integers.\n        target: The target sum.\n\n    Returns:\n        True if such a subset exists, False otherwise.\n    \"\"\"\n    dp = [False] * (target + 1)\n    dp[0] = True  # An empty subset sums to 0\n\n    for num in nums:\n        for i in range(target, num - 1, -1):\n            dp[i] = dp[i] or dp[i - num]\n    return dp[target]\n\n```",
+      "latency_seconds": 9.011837208000543,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:49:41.607776"
+    },
+    {
+      "task_id": "HARD-033",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef subset_sum(nums: list, target: int) -> bool:\n    \"\"\"\n    Checks if there is a subset of the given numbers that sums up to the target.\n\n    Args:\n        nums: A list of integers.\n        target: The target sum to achieve.\n\n    Returns:\n        True if a subset sums to the target, False otherwise.\n    \"\"\"\n    if target < 0:\n        return False\n\n    # dp[i] will be true if a sum i can be formed using a subset of nums.\n    dp = [False] * (target + 1)\n    dp[0] = True  # A sum of 0 can always be formed by choosing an empty subset.\n\n    for num in nums:\n        # Iterate backwards to ensure each number is used at most once for a given sum.\n        for i in range(target, num - 1, -1):\n            if dp[i - num]:\n                dp[i] = True\n    \n    return dp[target]\n```",
+      "latency_seconds": 15.416711959000168,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:49:57.527644"
+    },
+    {
+      "task_id": "HARD-033",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef subset_sum(nums: list, target: int) -> bool:\n    dp = [False] * (target + 1)\n    dp[0] = True\n\n    for num in nums:\n        for j in range(target, num - 1, -1):\n            dp[j] = dp[j] or dp[j - num]\n\n    return dp[target]\n```",
+      "latency_seconds": 11.35316283300017,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:50:09.384375"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11353.16,
+    "p50_ms": 11353.16,
+    "p95_ms": 15010.36,
+    "p99_ms": 15335.44,
+    "mean_ms": 11927.24,
+    "std_ms": 2646.1,
+    "min_ms": 9011.84,
+    "max_ms": 15416.71,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

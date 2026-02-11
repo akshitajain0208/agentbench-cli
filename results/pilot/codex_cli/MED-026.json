@@ -1,0 +1,49 @@
+{
+  "task_id": "MED-026",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-026",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.5267578749999302,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b02-5358-7ae2-9a7f-6081b9cd06b1\n--------\nuser\nCheck if one string is a rotation of another.\n\nFunction signature: def is_rotation(s1: str, s2: str) -> bool\n\nConstraints:\n- Same length required\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:42:50.865536Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10292}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:42:50.876076"
+    },
+    {
+      "task_id": "MED-026",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.5423572909994618,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b02-5b11-7023-9acc-7388594d97d6\n--------\nuser\nCheck if one string is a rotation of another.\n\nFunction signature: def is_rotation(s1: str, s2: str) -> bool\n\nConstraints:\n- Same length required\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:42:52.911393Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10290}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:42:52.922097"
+    },
+    {
+      "task_id": "MED-026",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.594064791999699,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b02-630d-7f00-90f1-e9b883b23eff\n--------\nuser\nCheck if one string is a rotation of another.\n\nFunction signature: def is_rotation(s1: str, s2: str) -> bool\n\nConstraints:\n- Same length required\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:42:55.010019Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10287}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:42:55.019862"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1542.36,
+    "p50_ms": 1542.36,
+    "p95_ms": 1588.89,
+    "p99_ms": 1593.03,
+    "mean_ms": 1554.39,
+    "std_ms": 28.77,
+    "min_ms": 1526.76,
+    "max_ms": 1594.06,
+    "samples": 3
+  },
+  "determinism": null
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-015",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "EASY-015",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef intersection(nums1: list, nums2: list) -> list:\n    return sorted(set(nums1) & set(nums2))\n```",
+      "latency_seconds": 4.828702374999921,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:38:43.325176"
+    },
+    {
+      "task_id": "EASY-015",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef intersection(nums1: list, nums2: list) -> list:\n    return sorted(set(nums1) & set(nums2))\n```",
+      "latency_seconds": 5.263403625000137,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:38:49.092266"
+    },
+    {
+      "task_id": "EASY-015",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef intersection(nums1: list, nums2: list) -> list:\n    return sorted(set(nums1) & set(nums2))\n```",
+      "latency_seconds": 5.26303766699948,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:38:54.857875"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5263.04,
+    "p50_ms": 5263.04,
+    "p95_ms": 5263.37,
+    "p99_ms": 5263.4,
+    "mean_ms": 5118.38,
+    "std_ms": 204.83,
+    "min_ms": 4828.7,
+    "max_ms": 5263.4,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

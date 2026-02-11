@@ -1,0 +1,49 @@
+{
+  "task_id": "MED-029",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-029",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.502845332999641,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b05-098a-7d63-a32c-9fa8e8f72f91\n--------\nuser\nFind the next greater element for each element in a list.\n\nFunction signature: def next_greater_element(nums: list) -> list\n\nConstraints:\n- Return -1 if no greater element exists\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:45:48.632722Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10114}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:45:48.642188"
+    },
+    {
+      "task_id": "MED-029",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.5441667499999312,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b05-1177-71d2-8aae-aa8e3fcaacc6\n--------\nuser\nFind the next greater element for each element in a list.\n\nFunction signature: def next_greater_element(nums: list) -> list\n\nConstraints:\n- Return -1 if no greater element exists\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:45:50.679589Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10112}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:45:50.690003"
+    },
+    {
+      "task_id": "MED-029",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.545574249999845,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b05-1975-7511-9c7c-003058e2b92d\n--------\nuser\nFind the next greater element for each element in a list.\n\nFunction signature: def next_greater_element(nums: list) -> list\n\nConstraints:\n- Return -1 if no greater element exists\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:45:52.728823Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10110}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:45:52.739358"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1544.17,
+    "p50_ms": 1544.17,
+    "p95_ms": 1545.43,
+    "p99_ms": 1545.55,
+    "mean_ms": 1530.86,
+    "std_ms": 19.82,
+    "min_ms": 1502.85,
+    "max_ms": 1545.57,
+    "samples": 3
+  },
+  "determinism": null
+}

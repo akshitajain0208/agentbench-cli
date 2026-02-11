@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-010",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Compute the edit distance (minimum operations to convert s1 to s2).\n\nFunction signature: def edit_distance(s1: str, s2: str) -> int\n\nConstraints:\n- Operations: insert, delete, replace\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

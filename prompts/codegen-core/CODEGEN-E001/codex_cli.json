@@ -1,0 +1,8 @@
+{
+  "task_id": "CODEGEN-E001",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Multiply two non-negative integers represented as strings. Return the product as a string.\n\nFunction signature: def multiply_strings(num1: str, num2: str) -> str\n\nConstraints:\n- Do not convert inputs to integer directly\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

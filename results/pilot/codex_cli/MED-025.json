@@ -1,0 +1,49 @@
+{
+  "task_id": "MED-025",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-025",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.4831463330001498,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b01-74a0-7463-88e9-90dd0b2ec039\n--------\nuser\nFlatten a dictionary with nested keys using dot notation.\n\nFunction signature: def flatten_dict(d: dict, parent_key: str = '') -> dict\n\nConstraints:\n- Use '.' as separator\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:41:53.806516Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10349}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:41:53.816280"
+    },
+    {
+      "task_id": "MED-025",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.4550035419997585,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b01-7c29-7181-a2a7-0fd2e6adccee\n--------\nuser\nFlatten a dictionary with nested keys using dot notation.\n\nFunction signature: def flatten_dict(d: dict, parent_key: str = '') -> dict\n\nConstraints:\n- Use '.' as separator\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:41:55.764130Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10347}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:41:55.774541"
+    },
+    {
+      "task_id": "MED-025",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.4509156249996522,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b01-83d2-72d3-bedf-1aa2ebec261d\n--------\nuser\nFlatten a dictionary with nested keys using dot notation.\n\nFunction signature: def flatten_dict(d: dict, parent_key: str = '') -> dict\n\nConstraints:\n- Use '.' as separator\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:41:57.718002Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10345}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:41:57.729086"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1455.0,
+    "p50_ms": 1455.0,
+    "p95_ms": 1480.33,
+    "p99_ms": 1482.58,
+    "mean_ms": 1463.02,
+    "std_ms": 14.33,
+    "min_ms": 1450.92,
+    "max_ms": 1483.15,
+    "samples": 3
+  },
+  "determinism": null
+}

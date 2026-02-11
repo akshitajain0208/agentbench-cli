@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-026",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-026",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef is_rotation(s1: str, s2: str) -> bool:\n    if len(s1) != len(s2):\n        return False\n    return s2 in s1 + s1\n```",
+      "latency_seconds": 6.358912958000474,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:42:37.350472"
+    },
+    {
+      "task_id": "MED-026",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef is_rotation(s1: str, s2: str) -> bool:\n    if len(s1) != len(s2):\n        return False\n    return s2 in s1 + s1\n```",
+      "latency_seconds": 5.357174375000795,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:42:43.211349"
+    },
+    {
+      "task_id": "MED-026",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef is_rotation(s1: str, s2: str) -> bool:\n    if len(s1) != len(s2):\n        return False\n    return s2 in s1 + s1\n```",
+      "latency_seconds": 5.392351000000417,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:42:49.107397"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5392.35,
+    "p50_ms": 5392.35,
+    "p95_ms": 6262.26,
+    "p99_ms": 6339.58,
+    "mean_ms": 5702.81,
+    "std_ms": 464.16,
+    "min_ms": 5357.17,
+    "max_ms": 6358.91,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

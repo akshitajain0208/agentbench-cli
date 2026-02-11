@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-001",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "EASY-001",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef sum_list(nums: list) -> int:\n    return sum(nums)\n```",
+      "latency_seconds": 4.648527084000079,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:59:33.068961"
+    },
+    {
+      "task_id": "EASY-001",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef sum_list(nums: list) -> int:\n    return sum(nums)\n```",
+      "latency_seconds": 4.404063582999925,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:59:37.976450"
+    },
+    {
+      "task_id": "EASY-001",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef sum_list(nums: list) -> int:\n    return sum(nums)\n```",
+      "latency_seconds": 4.5505833750000875,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:59:43.031025"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4550.58,
+    "p50_ms": 4550.58,
+    "p95_ms": 4638.73,
+    "p99_ms": 4646.57,
+    "mean_ms": 4534.39,
+    "std_ms": 100.46,
+    "min_ms": 4404.06,
+    "max_ms": 4648.53,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-037",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-037",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef max_subarray_len(nums: list, k: int) -> int:\n    max_len = 0\n    current_sum = 0\n    start = 0\n\n    for end in range(len(nums)):\n        current_sum += nums[end]\n        while current_sum > k:\n            current_sum -= nums[start]\n            start += 1\n        max_len = max(max_len, end - start + 1)\n    return max_len\n```",
+      "latency_seconds": 10.975038500000664,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:54:12.580697"
+    },
+    {
+      "task_id": "HARD-037",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef max_subarray_len(nums: list, k: int) -> int:\n    max_len = 0\n    current_sum = 0\n    left = 0\n\n    for right in range(len(nums)):\n        current_sum += nums[right]\n        while current_sum > k:\n            current_sum -= nums[left]\n            left += 1\n        max_len = max(max_len, right - left + 1)\n\n    return max_len\n```",
+      "latency_seconds": 11.38303645799897,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:54:24.467013"
+    },
+    {
+      "task_id": "HARD-037",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef max_subarray_len(nums: list, k: int) -> int:\n    max_len = 0\n    current_sum = 0\n    left = 0\n    for right in range(len(nums)):\n        current_sum += nums[right]\n        while current_sum > k:\n            current_sum -= nums[left]\n            left += 1\n        max_len = max(max_len, right - left + 1)\n    return max_len\n```",
+      "latency_seconds": 11.221891417000734,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:54:36.192439"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11221.89,
+    "p50_ms": 11221.89,
+    "p95_ms": 11366.92,
+    "p99_ms": 11379.81,
+    "mean_ms": 11193.32,
+    "std_ms": 167.79,
+    "min_ms": 10975.04,
+    "max_ms": 11383.04,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

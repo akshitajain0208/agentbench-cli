@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H001",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H001",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef longest_increasing_subsequence(nums: list) -> int:\n    if not nums:\n        return 0\n\n    tails = []\n    for x in nums:\n        left, right = 0, len(tails)\n        while left < right:\n            mid = (left + right) // 2\n            if tails[mid] < x:\n                left = mid + 1\n            else:\n                right = mid\n        if left == len(tails):\n            tails.append(x)\n        else:\n            tails[left] = x\n    return len(tails)\n```",
+      "latency_seconds": 3.511925541000039,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:40:12.621349"
+    },
+    {
+      "task_id": "CODEGEN-H001",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\nfrom bisect import bisect_left\n\ndef longest_increasing_subsequence(nums: list) -> int:\n    if not nums:\n        return 0\n\n    tails = []\n    for num in nums:\n        i = bisect_left(tails, num)\n        if i == len(tails):\n            tails.append(num)\n        else:\n            tails[i] = num\n    return len(tails)\n```",
+      "latency_seconds": 2.934108374999994,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:40:16.057352"
+    },
+    {
+      "task_id": "CODEGEN-H001",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef longest_increasing_subsequence(nums: list) -> int:\n    if not nums:\n        return 0\n\n    tails = []\n    for x in nums:\n        left, right = 0, len(tails)\n        while left < right:\n            mid = (left + right) // 2\n            if tails[mid] < x:\n                left = mid + 1\n            else:\n                right = mid\n        if left == len(tails):\n            tails.append(x)\n        else:\n            tails[left] = x\n\n    return len(tails)\n```",
+      "latency_seconds": 4.513068791000023,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:40:21.072706"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 3511.93,
+    "p50_ms": 3511.93,
+    "p95_ms": 4412.95,
+    "p99_ms": 4493.05,
+    "mean_ms": 3653.03,
+    "std_ms": 652.28,
+    "min_ms": 2934.11,
+    "max_ms": 4513.07,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

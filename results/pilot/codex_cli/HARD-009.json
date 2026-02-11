@@ -1,0 +1,54 @@
+{
+  "task_id": "HARD-009",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 4.083506540999998,
+      "success": false
+    },
+    {
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.5177811670000025,
+      "success": false
+    },
+    {
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.4363889999999984,
+      "success": false
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "pass_at_5": 0.0,
+    "pass_at_10": 0.0,
+    "total_samples": 3,
+    "passing_samples": 0,
+    "errors": [
+      "Empty code after cleaning",
+      "Empty code after cleaning",
+      "Empty code after cleaning"
+    ]
+  },
+  "latency": {
+    "median_ms": 1517.78,
+    "p50_ms": 1517.78,
+    "p95_ms": 3826.93,
+    "p99_ms": 4032.19,
+    "mean_ms": 2345.89,
+    "std_ms": 1229.13,
+    "min_ms": 1436.39,
+    "max_ms": 4083.51,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

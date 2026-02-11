@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-011",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-011",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef max_sum_subarray(nums: list, k: int) -> int:\n    if k > len(nums):\n        return -1\n    window_sum = sum(nums[:k])\n    max_sum = window_sum\n    for i in range(k, len(nums)):\n        window_sum += nums[i] - nums[i - k]\n        max_sum = max(max_sum, window_sum)\n    return max_sum\n```",
+      "latency_seconds": 5.70852108400004,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:40:31.409937"
+    },
+    {
+      "task_id": "HARD-011",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef max_sum_subarray(nums: list, k: int) -> int:\n    if k > len(nums):\n        return -1\n    window_sum = sum(nums[:k])\n    max_sum = window_sum\n    for i in range(k, len(nums)):\n        window_sum += nums[i] - nums[i - k]\n        max_sum = max(max_sum, window_sum)\n    return max_sum\n```",
+      "latency_seconds": 5.0220675840000695,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:40:36.935492"
+    },
+    {
+      "task_id": "HARD-011",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef max_sum_subarray(nums: list, k: int) -> int:\n    if k > len(nums):\n        return -1\n    window_sum = sum(nums[:k])\n    max_sum = window_sum\n    for i in range(k, len(nums)):\n        window_sum += nums[i] - nums[i - k]\n        max_sum = max(max_sum, window_sum)\n    return max_sum\n```",
+      "latency_seconds": 5.424720417000117,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:40:42.863904"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5424.72,
+    "p50_ms": 5424.72,
+    "p95_ms": 5680.14,
+    "p99_ms": 5702.85,
+    "mean_ms": 5385.1,
+    "std_ms": 281.64,
+    "min_ms": 5022.07,
+    "max_ms": 5708.52,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

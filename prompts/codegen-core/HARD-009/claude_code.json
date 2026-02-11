@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-009",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Given a list of words, find all pairs (i, j) where words[i] + words[j] is a palindrome.\n\nFunction signature: def palindrome_pairs(words: list) -> list\n\nConstraints:\n- Return list of [i, j] pairs\n- No duplicate pairs\n- Order of pairs in result doesn't matter\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

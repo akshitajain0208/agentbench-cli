@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-024",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-024",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef find_min_rotated(nums: list) -> int:\n    left, right = 0, len(nums) - 1\n\n    while left < right:\n        mid = (left + right) // 2\n\n        # If the middle element is greater than the rightmost element,\n        # it means the minimum is in the right half.\n        if nums[mid] > nums[right]:\n            left = mid + 1\n        # If the middle element is smaller than or equal to the rightmost element,\n        # it means the minimum is in the left half, including mid.\n        else:\n            right = mid\n\n    return nums[left]\n```",
+      "latency_seconds": 10.46949612499975,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:11:10.228852"
+    },
+    {
+      "task_id": "MED-024",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef find_min_rotated(nums: list) -> int:\n    \"\"\"\n    Finds the minimum element in a rotated sorted array.\n\n    Args:\n        nums: A list of integers representing the rotated sorted array.\n\n    Returns:\n        The minimum element in the array.\n    \"\"\"\n    left, right = 0, len(nums) - 1\n\n    while left < right:\n        mid = left + (right - left) // 2\n        if nums[mid] > nums[right]:\n            # The minimum is in the right half (mid+1 to right)\n            left = mid + 1\n        else:\n            # The minimum is in the left half or is mid itself (left to mid)\n            right = mid\n\n    return nums[left]\n\n```",
+      "latency_seconds": 16.548869999999624,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:11:27.281031"
+    },
+    {
+      "task_id": "MED-024",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef find_min_rotated(nums: list) -> int:\n    \"\"\"\n    Finds the minimum element in a rotated sorted array.\n\n    Constraints:\n    - O(log n) time\n    \"\"\"\n    left, right = 0, len(nums) - 1\n\n    # If the array is not rotated (or has only one element), the first element is the minimum.\n    if nums[left] <= nums[right]:\n        return nums[left]\n\n    while left <= right:\n        mid = (left + right) // 2\n\n        # Check if mid is the minimum element\n        # Case 1: nums[mid] is greater than nums[mid + 1] -> nums[mid + 1] is the minimum\n        if mid + 1 < len(nums) and nums[mid] > nums[mid + 1]:\n            return nums[mid + 1]\n        # Case 2: nums[mid - 1] is greater than nums[mid] -> nums[mid] is the minimum\n        if mid - 1 >= 0 and nums[mid - 1] > nums[mid]:\n            return nums[mid]\n\n        # Decide which half to search\n        if nums[mid] > nums[left]:\n            # The left half is sorted, the minimum must be in the right half\n            left = mid + 1\n        else:\n            # The right half is sorted, the minimum must be in the left half\n            right = mid - 1\n\n    return -1  # Should not reach here if array is valid\n```",
+      "latency_seconds": 12.175902457999655,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:11:39.960232"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 12175.9,
+    "p50_ms": 12175.9,
+    "p95_ms": 16111.57,
+    "p99_ms": 16461.41,
+    "mean_ms": 13064.76,
+    "std_ms": 2560.24,
+    "min_ms": 10469.5,
+    "max_ms": 16548.87,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

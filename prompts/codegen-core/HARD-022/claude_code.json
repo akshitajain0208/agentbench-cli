@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-022",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Decode ways: count ways to decode a digit string (1=A, 2=B, ..., 26=Z).\n\nFunction signature: def num_decodings(s: str) -> int\n\nConstraints:\n- Leading zeros invalid\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

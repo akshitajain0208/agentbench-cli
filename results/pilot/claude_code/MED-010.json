@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-010",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-010",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef permutations(nums: list) -> list:\n    if len(nums) <= 1:\n        return [nums]\n    result = []\n    for i, n in enumerate(nums):\n        for p in permutations(nums[:i] + nums[i+1:]):\n            result.append([n] + p)\n    return result\n```",
+      "latency_seconds": 5.526872375000039,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:17:31.391480"
+    },
+    {
+      "task_id": "MED-010",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef permutations(nums: list) -> list:\n    if len(nums) <= 1:\n        return [nums[:]]\n    result = []\n    for i in range(len(nums)):\n        nums[0], nums[i] = nums[i], nums[0]\n        for perm in permutations(nums[1:]):\n            result.append([nums[0]] + perm)\n        nums[0], nums[i] = nums[i], nums[0]\n    return result\n```",
+      "latency_seconds": 5.949289749999934,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:17:37.843522"
+    },
+    {
+      "task_id": "MED-010",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef permutations(nums: list) -> list:\n    if len(nums) <= 1:\n        return [nums[:]]\n    result = []\n    for i in range(len(nums)):\n        nums[0], nums[i] = nums[i], nums[0]\n        for perm in permutations(nums[1:]):\n            result.append([nums[0]] + perm)\n        nums[0], nums[i] = nums[i], nums[0]\n    return result\n```",
+      "latency_seconds": 5.7895919999996295,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:17:44.136707"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5789.59,
+    "p50_ms": 5789.59,
+    "p95_ms": 5933.32,
+    "p99_ms": 5946.1,
+    "mean_ms": 5755.25,
+    "std_ms": 174.15,
+    "min_ms": 5526.87,
+    "max_ms": 5949.29,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

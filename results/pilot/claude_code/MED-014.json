@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-014",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-014",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef find_peak(nums: list) -> int:\n    lo, hi = 0, len(nums) - 1\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if nums[mid] < nums[mid + 1]:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo\n```",
+      "latency_seconds": 5.819382540999868,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:56:55.999735"
+    },
+    {
+      "task_id": "MED-014",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef find_peak(nums: list) -> int:\n    lo, hi = 0, len(nums) - 1\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if nums[mid] < nums[mid + 1]:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo\n```",
+      "latency_seconds": 5.092639999999847,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:57:01.596169"
+    },
+    {
+      "task_id": "MED-014",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef find_peak(nums: list) -> int:\n    lo, hi = 0, len(nums) - 1\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if nums[mid] < nums[mid + 1]:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo\n```",
+      "latency_seconds": 5.566184250000333,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:57:07.665936"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5566.18,
+    "p50_ms": 5566.18,
+    "p95_ms": 5794.06,
+    "p99_ms": 5814.32,
+    "mean_ms": 5492.74,
+    "std_ms": 301.2,
+    "min_ms": 5092.64,
+    "max_ms": 5819.38,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-029",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-029",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef next_greater_element(nums: list) -> list:\n    n = len(nums)\n    result = [-1] * n\n    stack = []  # Stores indices\n\n    for i in range(n):\n        while stack and nums[stack[-1]] < nums[i]:\n            result[stack.pop()] = nums[i]\n        stack.append(i)\n    return result\n```",
+      "latency_seconds": 13.674806875000286,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:46:06.418408"
+    },
+    {
+      "task_id": "MED-029",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef next_greater_element(nums: list) -> list:\n    n = len(nums)\n    res = [-1] * n\n    stack = []  # Stores indices\n\n    for i in range(n):\n        while stack and nums[stack[-1]] < nums[i]:\n            res[stack.pop()] = nums[i]\n        stack.append(i)\n    return res\n```",
+      "latency_seconds": 13.077940500000295,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:46:19.999768"
+    },
+    {
+      "task_id": "MED-029",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef next_greater_element(nums: list) -> list:\n    n = len(nums)\n    result = [-1] * n\n    stack = []  # Stores indices\n\n    for i in range(n):\n        while stack and nums[stack[-1]] < nums[i]:\n            result[stack.pop()] = nums[i]\n        stack.append(i)\n    return result\n```",
+      "latency_seconds": 10.855929959000605,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:46:31.359298"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 13077.94,
+    "p50_ms": 13077.94,
+    "p95_ms": 13615.12,
+    "p99_ms": 13662.87,
+    "mean_ms": 12536.23,
+    "std_ms": 1212.88,
+    "min_ms": 10855.93,
+    "max_ms": 13674.81,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

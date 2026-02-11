@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-018",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-018",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef search_matrix(matrix: list, target: int) -> bool:\n    if not matrix or not matrix[0]:\n        return False\n\n    m = len(matrix)\n    n = len(matrix[0])\n\n    row = 0\n    col = n - 1\n\n    while row < m and col >= 0:\n        if matrix[row][col] == target:\n            return True\n        elif matrix[row][col] > target:\n            col -= 1\n        else:\n            row += 1\n\n    return False\n```",
+      "latency_seconds": 14.47171045899995,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:18:15.622924"
+    },
+    {
+      "task_id": "HARD-018",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef search_matrix(matrix: list, target: int) -> bool:\n    if not matrix or not matrix[0]:\n        return False\n\n    rows = len(matrix)\n    cols = len(matrix[0])\n\n    row = 0\n    col = cols - 1\n\n    while row < rows and col >= 0:\n        if matrix[row][col] == target:\n            return True\n        elif matrix[row][col] > target:\n            col -= 1\n        else:\n            row += 1\n    return False\n```",
+      "latency_seconds": 13.506030583999745,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:18:29.632217"
+    },
+    {
+      "task_id": "HARD-018",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef search_matrix(matrix: list, target: int) -> bool:\n    if not matrix or not matrix[0]:\n        return False\n\n    m = len(matrix)\n    n = len(matrix[0])\n\n    row = 0\n    col = n - 1\n\n    while row < m and col >= 0:\n        current_val = matrix[row][col]\n        if current_val == target:\n            return True\n        elif current_val < target:\n            row += 1\n        else:\n            col -= 1\n            \n    return False\n```",
+      "latency_seconds": 12.820864166999854,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:18:42.956443"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 13506.03,
+    "p50_ms": 13506.03,
+    "p95_ms": 14375.14,
+    "p99_ms": 14452.4,
+    "mean_ms": 13599.54,
+    "std_ms": 677.19,
+    "min_ms": 12820.86,
+    "max_ms": 14471.71,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

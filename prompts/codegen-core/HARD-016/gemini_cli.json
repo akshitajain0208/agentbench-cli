@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-016",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Implement a basic calculator that evaluates string expressions with +, -, (, ).\n\nFunction signature: def calculate(s: str) -> int\n\nConstraints:\n- Handle parentheses\n- Handle negative numbers\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

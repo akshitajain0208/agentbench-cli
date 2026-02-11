@@ -1,0 +1,64 @@
+{
+  "task_id": "MED-004",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-004",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef find_pairs(nums: list, target: int) -> list:\n    seen = set()\n    pairs = set()\n    for num in nums:\n        complement = target - num\n        if complement in seen:\n            pair = tuple(sorted((num, complement)))\n            pairs.add(pair)\n        seen.add(num)\n    return [list(pair) for pair in pairs]\n```",
+      "latency_seconds": 10.69521504100021,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:10:54.863023"
+    },
+    {
+      "task_id": "MED-004",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef find_pairs(nums: list, target: int) -> list:\n    nums.sort()\n    found_pairs = []\n    left, right = 0, len(nums) - 1\n\n    while left < right:\n        current_sum = nums[left] + nums[right]\n\n        if current_sum == target:\n            if nums[left] < nums[right]:\n                found_pairs.append([nums[left], nums[right]])\n\n            left_val = nums[left]\n            while left < right and nums[left] == left_val:\n                left += 1\n\n            right_val = nums[right]\n            while left < right and nums[right] == right_val:\n                right -= 1\n\n        elif current_sum < target:\n            left += 1\n        else:\n            right -= 1\n            \n    return found_pairs\n```",
+      "latency_seconds": 31.639030666000053,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:11:27.004721"
+    },
+    {
+      "task_id": "MED-004",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef find_pairs(nums: list, target: int) -> list:\n    \"\"\"\n    Find all unique pairs in a list that sum to a target value, where a < b.\n\n    Args:\n        nums: A list of integers.\n        target: The target sum.\n\n    Returns:\n        A list of lists, where each inner list [a, b] is a pair from nums\n        such that a + b = target and a < b.\n        No duplicate pairs are returned.\n    \"\"\"\n    found_pairs = []\n    unique_pairs_tracker = set()\n\n    # Sort the list to simplify handling the a < b constraint and manage duplicates more easily\n    nums.sort()\n\n    n = len(nums)\n    for i in range(n):\n        for j in range(i + 1, n):\n            num1 = nums[i]\n            num2 = nums[j]\n\n            if num1 + num2 == target:\n                # Ensure a < b and avoid duplicate pairs\n                if num1 < num2:\n                    current_pair = (num1, num2)\n                    if current_pair not in unique_pairs_tracker:\n                        unique_pairs_tracker.add(current_pair)\n                        found_pairs.append(list(current_pair))\n    return found_pairs\n```",
+      "latency_seconds": 19.875194917000044,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:11:47.383061"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.6666666666666666,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 2,
+    "errors": [
+      "Traceback (most recent call last):\n  File \"/var/folders/y2/3ssr0gwx0_77n9h8yqlbxkbm0000gn/T/tmpdi8ityui/test_solution.py\", line 6, in <module>\n    assert result_0 == expected_0, f\"Test 1 failed: got {result_0}, expected {expected_0}\"\nAssertionError: Test 1 failed: got [[2, 4], [1, 5]], expected [[1, 5], [2, 4]]\n"
+    ]
+  },
+  "latency": {
+    "median_ms": 19875.19,
+    "p50_ms": 19875.19,
+    "p95_ms": 30462.65,
+    "p99_ms": 31403.75,
+    "mean_ms": 20736.48,
+    "std_ms": 8571.94,
+    "min_ms": 10695.22,
+    "max_ms": 31639.03,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

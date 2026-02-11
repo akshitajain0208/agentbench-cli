@@ -1,0 +1,8 @@
+{
+  "task_id": "CODEGEN-M001",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Given an m x n matrix, return all elements in spiral order (clockwise).\n\nFunction signature: def spiral_order(matrix: list) -> list\n\nConstraints:\n- Handle non-square matrices\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

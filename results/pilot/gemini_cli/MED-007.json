@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-007",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-007",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef is_anagram(s1: str, s2: str) -> bool:\n    return sorted(s1) == sorted(s2)\n```",
+      "latency_seconds": 11.015820124999664,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:14:44.130976"
+    },
+    {
+      "task_id": "MED-007",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef is_anagram(s1: str, s2: str) -> bool:\n    \"\"\"\n    Check if two strings are anagrams of each other (case-sensitive).\n    \"\"\"\n    return sorted(s1) == sorted(s2)\n```",
+      "latency_seconds": 11.579655209000066,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:14:56.214066"
+    },
+    {
+      "task_id": "MED-007",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef is_anagram(s1: str, s2: str) -> bool:\n    if len(s1) != len(s2):\n        return False\n    return sorted(s1) == sorted(s2)\n```",
+      "latency_seconds": 11.266106084000057,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:15:07.983472"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11266.11,
+    "p50_ms": 11266.11,
+    "p95_ms": 11548.3,
+    "p99_ms": 11573.38,
+    "mean_ms": 11287.19,
+    "std_ms": 230.67,
+    "min_ms": 11015.82,
+    "max_ms": 11579.66,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

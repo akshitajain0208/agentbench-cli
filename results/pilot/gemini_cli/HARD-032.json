@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-032",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-032",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef min_insertions_palindrome(s: str) -> int:\n    n = len(s)\n    if n == 0:\n        return 0\n\n    # dp[i][j] stores the length of the longest palindromic subsequence of s[i...j]\n    dp = [[0] * n for _ in range(n)]\n\n    # All substrings of length 1 are palindromes of length 1\n    for i in range(n):\n        dp[i][i] = 1\n\n    # Fill the table for lengths from 2 to n\n    for length in range(2, n + 1):\n        for i in range(n - length + 1):\n            j = i + length - 1\n            if s[i] == s[j]:\n                # If characters match, they contribute 2 to the LPS, plus the LPS of the inner substring\n                if length == 2:\n                    dp[i][j] = 2\n                else:\n                    dp[i][j] = 2 + dp[i+1][j-1]\n            else:\n                # If characters don't match, take the maximum of excluding s[i] or excluding s[j]\n                dp[i][j] = max(dp[i+1][j], dp[i][j-1])\n\n    # The minimum insertions needed is the total length of the string minus the length of its longest palindromic subsequence\n    lps_length = dp[0][n-1]\n    return n - lps_length\n```",
+      "latency_seconds": 24.492993416999525,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:48:27.018479"
+    },
+    {
+      "task_id": "HARD-032",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef min_insertions_palindrome(s: str) -> int:\n    n = len(s)\n    if n <= 1:\n        return 0\n\n    dp = [[0] * n for _ in range(n)]\n\n    # L is the length of the substring\n    # Iterate over substring lengths from 2 to n\n    for L in range(2, n + 1):\n        # Iterate over starting indices\n        for i in range(n - L + 1):\n            j = i + L - 1  # Calculate the ending index\n\n            if s[i] == s[j]:\n                # If characters match, no insertion needed for current ends\n                # Rely on the subproblem dp[i+1][j-1]\n                dp[i][j] = dp[i + 1][j - 1]\n            else:\n                # If characters don't match, we need one insertion\n                # Take the minimum of inserting at the start (dp[i+1][j])\n                # or inserting at the end (dp[i][j-1])\n                dp[i][j] = 1 + min(dp[i + 1][j], dp[i][j - 1])\n\n    # The result for the entire string s is stored in dp[0][n-1]\n    return dp[0][n - 1]\n\n```",
+      "latency_seconds": 25.54586670899971,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:48:53.067126"
+    },
+    {
+      "task_id": "HARD-032",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef min_insertions_palindrome(s: str) -> int:\n    if not s:\n        return 0\n\n    n = len(s)\n    s_reversed = s[::-1]\n\n    dp = [[0] * (n + 1) for _ in range(n + 1)]\n\n    for i in range(1, n + 1):\n        for j in range(1, n + 1):\n            if s[i - 1] == s_reversed[j - 1]:\n                dp[i][j] = 1 + dp[i - 1][j - 1]\n            else:\n                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])\n\n    lcs_length = dp[n][n]\n    return n - lcs_length\n```",
+      "latency_seconds": 14.13902170900019,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:49:07.708911"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 24492.99,
+    "p50_ms": 24492.99,
+    "p95_ms": 25440.58,
+    "p99_ms": 25524.81,
+    "mean_ms": 21392.63,
+    "std_ms": 5147.05,
+    "min_ms": 14139.02,
+    "max_ms": 25545.87,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

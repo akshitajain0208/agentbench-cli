@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-001",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "CODEGEN-001",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef two_sum(nums: list, target: int) -> list:\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n```",
+      "latency_seconds": 7.0385285,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:34:02.367904"
+    },
+    {
+      "task_id": "CODEGEN-001",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef two_sum(nums: list, target: int) -> list:\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n```",
+      "latency_seconds": 5.623926082999999,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:34:08.494562"
+    },
+    {
+      "task_id": "CODEGEN-001",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef two_sum(nums: list, target: int) -> list:\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n```",
+      "latency_seconds": 5.922692916000001,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:34:14.919651"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5922.69,
+    "p50_ms": 5922.69,
+    "p95_ms": 6926.94,
+    "p99_ms": 7016.21,
+    "mean_ms": 6195.05,
+    "std_ms": 608.77,
+    "min_ms": 5623.93,
+    "max_ms": 7038.53,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

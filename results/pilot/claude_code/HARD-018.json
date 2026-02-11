@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-018",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-018",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef search_matrix(matrix: list, target: int) -> bool:\n    if not matrix or not matrix[0]:\n        return False\n    row, col = 0, len(matrix[0]) - 1\n    while row < len(matrix) and col >= 0:\n        if matrix[row][col] == target:\n            return True\n        elif matrix[row][col] > target:\n            col -= 1\n        else:\n            row += 1\n    return False\n```",
+      "latency_seconds": 6.346428957999706,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:17:38.393244"
+    },
+    {
+      "task_id": "HARD-018",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef search_matrix(matrix: list, target: int) -> bool:\n    if not matrix or not matrix[0]:\n        return False\n    row, col = 0, len(matrix[0]) - 1\n    while row < len(matrix) and col >= 0:\n        if matrix[row][col] == target:\n            return True\n        elif matrix[row][col] > target:\n            col -= 1\n        else:\n            row += 1\n    return False\n```",
+      "latency_seconds": 8.205671417000303,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:17:47.102461"
+    },
+    {
+      "task_id": "HARD-018",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef search_matrix(matrix: list, target: int) -> bool:\n    if not matrix or not matrix[0]:\n        return False\n    row, col = 0, len(matrix[0]) - 1\n    while row < len(matrix) and col >= 0:\n        if matrix[row][col] == target:\n            return True\n        elif matrix[row][col] > target:\n            col -= 1\n        else:\n            row += 1\n    return False\n```",
+      "latency_seconds": 7.369005375000597,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:17:54.974048"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 7369.01,
+    "p50_ms": 7369.01,
+    "p95_ms": 8122.0,
+    "p99_ms": 8188.94,
+    "mean_ms": 7307.04,
+    "std_ms": 760.3,
+    "min_ms": 6346.43,
+    "max_ms": 8205.67,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

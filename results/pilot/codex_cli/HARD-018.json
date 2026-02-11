@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-018",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-018",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.936235332999786,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aeb-86df-78c3-91fc-d762a01dbe8f\n--------\nuser\nGiven a matrix where each row and column is sorted, search for a target.\n\nFunction signature: def search_matrix(matrix: list, target: int) -> bool\n\nConstraints:\n- O(m + n) time\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:17:57.137166Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11786}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:17:57.148836"
+    },
+    {
+      "task_id": "HARD-018",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.5393127919996914,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aeb-902e-71b0-bf89-b7f321b1eea9\n--------\nuser\nGiven a matrix where each row and column is sorted, search for a target.\n\nFunction signature: def search_matrix(matrix: list, target: int) -> bool\n\nConstraints:\n- O(m + n) time\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:17:59.181380Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11783}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:17:59.191592"
+    },
+    {
+      "task_id": "HARD-018",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.4517980829996304,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aeb-982a-70c0-be01-10ea2d7b9642\n--------\nuser\nGiven a matrix where each row and column is sorted, search for a target.\n\nFunction signature: def search_matrix(matrix: list, target: int) -> bool\n\nConstraints:\n- O(m + n) time\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:18:01.136641Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11781}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:18:01.146997"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1539.31,
+    "p50_ms": 1539.31,
+    "p95_ms": 1896.54,
+    "p99_ms": 1928.3,
+    "mean_ms": 1642.45,
+    "std_ms": 210.79,
+    "min_ms": 1451.8,
+    "max_ms": 1936.24,
+    "samples": 3
+  },
+  "determinism": null
+}

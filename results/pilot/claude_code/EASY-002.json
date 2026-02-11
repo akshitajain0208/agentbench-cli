@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-002",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "EASY-002",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef find_max(nums: list) -> int:\n    max_val = nums[0]\n    for num in nums[1:]:\n        if num > max_val:\n            max_val = num\n    return max_val\n```",
+      "latency_seconds": 4.854556666000008,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:00:25.735521"
+    },
+    {
+      "task_id": "EASY-002",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef find_max(nums: list) -> int:\n    max_val = nums[0]\n    for num in nums[1:]:\n        if num > max_val:\n            max_val = num\n    return max_val\n```",
+      "latency_seconds": 5.569895250000172,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:00:31.809109"
+    },
+    {
+      "task_id": "EASY-002",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef find_max(nums: list) -> int:\n    max_val = nums[0]\n    for num in nums[1:]:\n        if num > max_val:\n            max_val = num\n    return max_val\n```",
+      "latency_seconds": 4.9169388340001206,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:00:37.229833"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4916.94,
+    "p50_ms": 4916.94,
+    "p95_ms": 5504.6,
+    "p99_ms": 5556.84,
+    "mean_ms": 5113.8,
+    "std_ms": 323.51,
+    "min_ms": 4854.56,
+    "max_ms": 5569.9,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

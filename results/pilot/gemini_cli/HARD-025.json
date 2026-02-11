@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-025",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-025",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef is_match_wildcard(s: str, p: str) -> bool:\n    \"\"\"\n    Checks if a string 's' matches a wildcard pattern 'p'.\n\n    '?' matches any single character.\n    '*' matches any sequence of characters (including an empty sequence).\n    \"\"\"\n    m = len(s)\n    n = len(p)\n\n    # dp[i][j] will be true if the first i characters in s\n    # match the first j characters in p\n    dp = [[False] * (n + 1) for _ in range(m + 1)]\n\n    # Base case: empty pattern can match empty string\n    dp[0][0] = True\n\n    # Deals with patterns like a* or * or ** etc. where the pattern\n    # can match an empty string.\n    for j in range(1, n + 1):\n        if p[j - 1] == '*':\n            dp[0][j] = dp[0][j - 1]\n\n    # Fill the DP table\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            # If the pattern character is '*'\n            if p[j - 1] == '*':\n                # Two cases:\n                # a) '*' is treated as an empty sequence -> dp[i][j-1]\n                # b) '*' is treated as matching one or more characters -> dp[i-1][j]\n                dp[i][j] = dp[i][j - 1] or dp[i - 1][j]\n            # If the pattern character is '?' or matches the string character\n            elif p[j - 1] == '?' or s[i - 1] == p[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1]\n            # If characters don't match and pattern is not '?' or '*'\n            else:\n                dp[i][j] = False\n\n    return dp[m][n]\n```",
+      "latency_seconds": 61.09299108399955,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:29:32.298669"
+    },
+    {
+      "task_id": "HARD-025",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef is_match_wildcard(s: str, p: str) -> bool:\n    m, n = len(s), len(p)\n    dp = [[False] * (n + 1) for _ in range(m + 1)]\n    dp[0][0] = True\n\n    for j in range(1, n + 1):\n        if p[j - 1] == '*':\n            dp[0][j] = dp[0][j - 1]\n\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if p[j - 1] == '*':\n                dp[i][j] = dp[i][j - 1] or dp[i - 1][j]\n            elif p[j - 1] == '?' or s[i - 1] == p[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1]\n\n    return dp[m][n]\n```",
+      "latency_seconds": 66.92987870900015,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:30:39.730941"
+    },
+    {
+      "task_id": "HARD-025",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef is_match_wildcard(s: str, p: str) -> bool:\n    \"\"\"\n    Checks if a string 's' matches a wildcard pattern 'p'.\n\n    '?' matches any single character.\n    '*' matches any sequence of characters (including an empty sequence).\n\n    Args:\n        s: The input string.\n        p: The wildcard pattern.\n\n    Returns:\n        True if the string matches the pattern, False otherwise.\n    \"\"\"\n    m, n = len(s), len(p)\n    \n    # dp[i][j] will be true if the first i characters of s\n    # match the first j characters of p\n    dp = [[False] * (n + 1) for _ in range(m + 1)]\n    \n    # Base case: an empty string matches an empty pattern\n    dp[0][0] = True\n    \n    # Base case: handle patterns with '*' at the beginning\n    # An empty string can match a pattern like '*' or '**'\n    for j in range(1, n + 1):\n        if p[j - 1] == '*':\n            dp[0][j] = dp[0][j - 1]\n    \n    # Fill the DP table\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if p[j - 1] == '*':\n                # If the pattern character is '*', it can either match an empty\n                # sequence (dp[i][j-1]) or match the current character of s\n                # and extend the previous match (dp[i-1][j]).\n                dp[i][j] = dp[i][j - 1] or dp[i - 1][j]\n            elif p[j - 1] == '?' or s[i - 1] == p[j - 1]:\n                # If the pattern character is '?' or matches the string\n                # character, the match depends on the previous state.\n                dp[i][j] = dp[i - 1][j - 1]\n            # else, dp[i][j] remains False by default\n            \n    return dp[m][n]\n```",
+      "latency_seconds": 68.62523204100034,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:31:48.857362"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 66929.88,
+    "p50_ms": 66929.88,
+    "p95_ms": 68455.7,
+    "p99_ms": 68591.32,
+    "mean_ms": 65549.37,
+    "std_ms": 3226.25,
+    "min_ms": 61092.99,
+    "max_ms": 68625.23,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

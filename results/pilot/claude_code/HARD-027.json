@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-027",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-027",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef generate_parentheses(n: int) -> list:\n    result = []\n\n    def backtrack(current, open_count, close_count):\n        if len(current) == 2 * n:\n            result.append(current)\n            return\n        if open_count < n:\n            backtrack(current + \"(\", open_count + 1, close_count)\n        if close_count < open_count:\n            backtrack(current + \")\", open_count, close_count + 1)\n\n    backtrack(\"\", 0, 0)\n    return result\n```",
+      "latency_seconds": 5.727671167000153,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:33:01.886446"
+    },
+    {
+      "task_id": "HARD-027",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef generate_parentheses(n: int) -> list:\n    result = []\n\n    def backtrack(current, open_count, close_count):\n        if len(current) == 2 * n:\n            result.append(current)\n            return\n        if open_count < n:\n            backtrack(current + '(', open_count + 1, close_count)\n        if close_count < open_count:\n            backtrack(current + ')', open_count, close_count + 1)\n\n    backtrack('', 0, 0)\n    return result\n```",
+      "latency_seconds": 5.720688624999639,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:33:08.110565"
+    },
+    {
+      "task_id": "HARD-027",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef generate_parentheses(n: int) -> list:\n    result = []\n\n    def backtrack(current, open_count, close_count):\n        if len(current) == 2 * n:\n            result.append(current)\n            return\n        if open_count < n:\n            backtrack(current + '(', open_count + 1, close_count)\n        if close_count < open_count:\n            backtrack(current + ')', open_count, close_count + 1)\n\n    backtrack('', 0, 0)\n    return result\n```",
+      "latency_seconds": 5.810781625000345,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:33:14.424991"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5727.67,
+    "p50_ms": 5727.67,
+    "p95_ms": 5802.47,
+    "p99_ms": 5809.12,
+    "mean_ms": 5753.05,
+    "std_ms": 40.92,
+    "min_ms": 5720.69,
+    "max_ms": 5810.78,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

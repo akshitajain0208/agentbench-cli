@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Distribution
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+
+# Large files (optional - uncomment if needed)
+# results/pilot/*/
+
+# Temp files
+*.tmp
+*.temp
+.cache/

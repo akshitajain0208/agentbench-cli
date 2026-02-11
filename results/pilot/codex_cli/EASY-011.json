@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-011",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "EASY-011",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef second_largest(nums: list) -> int:\n    largest = second = float(\"-inf\")\n    for n in nums:\n        if n > largest:\n            second = largest\n            largest = n\n        elif largest > n > second:\n            second = n\n    return int(second)\n```",
+      "latency_seconds": 7.122928208000303,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:52:20.865387"
+    },
+    {
+      "task_id": "EASY-011",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef second_largest(nums: list) -> int:\n    largest = second = float(\"-inf\")\n    for n in nums:\n        if n > largest:\n            second = largest\n            largest = n\n        elif largest > n > second:\n            second = n\n    return second\n```",
+      "latency_seconds": 2.5467893340000956,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:52:23.916202"
+    },
+    {
+      "task_id": "EASY-011",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef second_largest(nums: list) -> int:\n    largest = second = float(\"-inf\")\n    for n in nums:\n        if n > largest:\n            second = largest\n            largest = n\n        elif largest > n > second:\n            second = n\n    return int(second)\n```",
+      "latency_seconds": 2.741917292000835,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:52:27.159460"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 2741.92,
+    "p50_ms": 2741.92,
+    "p95_ms": 6684.83,
+    "p99_ms": 7035.31,
+    "mean_ms": 4137.21,
+    "std_ms": 2112.72,
+    "min_ms": 2546.79,
+    "max_ms": 7122.93,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

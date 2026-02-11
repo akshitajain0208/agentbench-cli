@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-038",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-038",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef min_jumps(nums: list) -> int:\n    if len(nums) <= 1:\n        return 0\n\n    jumps = 0\n    current_farthest = 0\n    current_end = 0\n\n    for i in range(len(nums) - 1):\n        current_farthest = max(current_farthest, i + nums[i])\n\n        if i == current_end:\n            jumps += 1\n            current_end = current_farthest\n            if current_end >= len(nums) - 1:\n                break\n    \n    return jumps\n```",
+      "latency_seconds": 13.84307033299956,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:55:14.947633"
+    },
+    {
+      "task_id": "HARD-038",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef min_jumps(nums: list) -> int:\n    n = len(nums)\n    if n <= 1:\n        return 0\n\n    jumps = 0\n    # The farthest index that can be reached with the current number of jumps\n    current_jump_end = 0\n    # The farthest index that can be reached by taking one more jump\n    # from any position within the current jump's range\n    farthest_reach = 0\n\n    # Iterate through the array until the second to last element.\n    # We don't need to jump from the last element itself.\n    for i in range(n - 1):\n        # Update the maximum reach possible from any point in the current jump's range\n        farthest_reach = max(farthest_reach, i + nums[i])\n\n        # If we have reached the end of the current jump's range,\n        # it means we must take another jump.\n        if i == current_jump_end:\n            jumps += 1\n            current_jump_end = farthest_reach\n            # If the new current_jump_end can reach or surpass the last index,\n            # we have found the minimum number of jumps.\n            if current_jump_end >= n - 1:\n                break\n    return jumps\n```",
+      "latency_seconds": 38.50121387499894,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:55:53.951441"
+    },
+    {
+      "task_id": "HARD-038",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef min_jumps(nums: list) -> int:\n    n = len(nums)\n    if n <= 1:\n        return 0\n\n    jumps = 0\n    current_jump_end = 0\n    farthest_reach = 0\n\n    for i in range(n - 1):\n        farthest_reach = max(farthest_reach, i + nums[i])\n\n        if i == current_jump_end:\n            jumps += 1\n            current_jump_end = farthest_reach\n            if current_jump_end >= n - 1:\n                break\n    \n    return jumps\n```",
+      "latency_seconds": 20.627101542000673,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:56:15.081500"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 20627.1,
+    "p50_ms": 20627.1,
+    "p95_ms": 36713.8,
+    "p99_ms": 38143.73,
+    "mean_ms": 24323.8,
+    "std_ms": 10400.49,
+    "min_ms": 13843.07,
+    "max_ms": 38501.21,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

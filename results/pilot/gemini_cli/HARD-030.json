@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-030",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-030",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef can_jump(nums: list) -> bool:\n    \"\"\"\n    Determines if it's possible to reach the last index in a jump game.\n\n    Args:\n        nums: A list of integers where nums[i] represents the maximum jump length from position i.\n\n    Returns:\n        True if the last index can be reached, False otherwise.\n    \"\"\"\n    n = len(nums)\n    max_reach = 0\n\n    for i in range(n):\n        # If the current index is beyond the maximum reachable index,\n        # it means we cannot reach this position, and thus cannot reach the end.\n        if i > max_reach:\n            return False\n\n        # Update the maximum index that can be reached.\n        max_reach = max(max_reach, i + nums[i])\n\n        # If the maximum reachable index is already at or beyond the last index,\n        # then we can definitely reach the end.\n        if max_reach >= n - 1:\n            return True\n\n    return False\n```",
+      "latency_seconds": 17.021305582999958,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:37:07.955293"
+    },
+    {
+      "task_id": "HARD-030",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef can_jump(nums: list) -> bool:\n    \"\"\"\n    Determines if it's possible to reach the last index in a jump game.\n\n    Args:\n        nums: A list of non-negative integers where each element nums[i]\n              represents the maximum jump length from position i.\n\n    Returns:\n        True if the last index can be reached, False otherwise.\n    \"\"\"\n    reachable = len(nums) - 1\n    for i in range(len(nums) - 2, -1, -1):\n        if i + nums[i] >= reachable:\n            reachable = i\n    return reachable == 0\n```",
+      "latency_seconds": 10.639300666999588,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:37:19.098693"
+    },
+    {
+      "task_id": "HARD-030",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef can_jump(nums: list) -> bool:\n    n = len(nums)\n    \n    # If the array is empty, reaching the last index is trivially true if 0 elements are considered 'reached'.\n    # However, typical problem constraints imply n >= 1. Assuming n >= 1.\n    if n == 0:\n        return False\n\n    max_reach = 0  # max_reach stores the furthest index reachable so far\n\n    for i in range(n):\n        # If the current index 'i' is beyond what we can currently reach (max_reach),\n        # it means we cannot get to this position, and thus cannot reach the end.\n        if i > max_reach:\n            return False\n\n        # Update max_reach to the furthest point we can get to from the current index.\n        # This is the maximum of the current max_reach and the reach from the current position (i + nums[i]).\n        max_reach = max(max_reach, i + nums[i])\n\n        # If max_reach has already reached or surpassed the last index,\n        # then we know the last index is reachable.\n        if max_reach >= n - 1:\n            return True\n\n    # If the loop completes, it means we have iterated through all indices\n    # without encountering a situation where 'i > max_reach'.\n    # This implies that 'max_reach' has always been able to cover 'i'.\n    # Consequently, by the time 'i' reaches 'n-1', 'max_reach' must also be\n    # at least 'n-1', and the condition 'max_reach >= n - 1' would have\n    # returned True earlier. Therefore, if the loop finishes, it means we can reach the end.\n    return True\n```",
+      "latency_seconds": 23.77789841699996,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:37:43.380356"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 17021.31,
+    "p50_ms": 17021.31,
+    "p95_ms": 23102.24,
+    "p99_ms": 23642.77,
+    "mean_ms": 17146.17,
+    "std_ms": 5364.54,
+    "min_ms": 10639.3,
+    "max_ms": 23777.9,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

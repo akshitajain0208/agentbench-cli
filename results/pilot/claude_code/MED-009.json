@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-009",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-009",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef binary_search(nums: list, target: int) -> int:\n    low, high = 0, len(nums) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n```",
+      "latency_seconds": 5.858730958999786,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:16:21.391784"
+    },
+    {
+      "task_id": "MED-009",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef binary_search(nums: list, target: int) -> int:\n    low, high = 0, len(nums) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n```",
+      "latency_seconds": 5.170231500000227,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:16:27.065782"
+    },
+    {
+      "task_id": "MED-009",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef binary_search(nums: list, target: int) -> int:\n    left, right = 0, len(nums) - 1\n    while left <= right:\n        mid = left + (right - left) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n```",
+      "latency_seconds": 5.593844125000032,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:16:33.163964"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5593.84,
+    "p50_ms": 5593.84,
+    "p95_ms": 5832.24,
+    "p99_ms": 5853.43,
+    "mean_ms": 5540.94,
+    "std_ms": 283.56,
+    "min_ms": 5170.23,
+    "max_ms": 5858.73,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-011",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "EASY-011",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef second_largest(nums: list) -> int:\n    first = second = float('-inf')\n    for n in nums:\n        if n > first:\n            second = first\n            first = n\n        elif n > second and n != first:\n            second = n\n    return second\n```",
+      "latency_seconds": 5.890544500000033,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:51:58.850952"
+    },
+    {
+      "task_id": "EASY-011",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef second_largest(nums: list) -> int:\n    first = second = float('-inf')\n    for n in nums:\n        if n > first:\n            second = first\n            first = n\n        elif n > second and n != first:\n            second = n\n    return second\n```",
+      "latency_seconds": 5.985200625000289,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:52:05.338911"
+    },
+    {
+      "task_id": "EASY-011",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef second_largest(nums: list) -> int:\n    first = second = float('-inf')\n    for n in nums:\n        if n > first:\n            second = first\n            first = n\n        elif n > second and n != first:\n            second = n\n    return second\n```",
+      "latency_seconds": 6.833070874999976,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:52:12.675002"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5985.2,
+    "p50_ms": 5985.2,
+    "p95_ms": 6748.28,
+    "p99_ms": 6816.11,
+    "mean_ms": 6236.27,
+    "std_ms": 423.77,
+    "min_ms": 5890.54,
+    "max_ms": 6833.07,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

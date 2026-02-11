@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-035",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Find unique paths from top-left to bottom-right of an m x n grid.\n\nFunction signature: def unique_paths(m: int, n: int) -> int\n\nConstraints:\n- Can only move right or down\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

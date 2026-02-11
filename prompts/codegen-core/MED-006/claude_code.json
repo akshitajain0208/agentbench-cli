@@ -1,0 +1,8 @@
+{
+  "task_id": "MED-006",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Find the first non-repeating character in a string.\n\nFunction signature: def first_unique_char(s: str) -> str\n\nConstraints:\n- Return empty string if none found\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

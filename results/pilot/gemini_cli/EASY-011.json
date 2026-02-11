@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-011",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-011",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef second_largest(nums: list) -> int:\n    largest = float('-inf')\n    second_largest = float('-inf')\n\n    for num in nums:\n        if num > largest:\n            second_largest = largest\n            largest = num\n        elif num > second_largest and num < largest:\n            second_largest = num\n    return second_largest\n```",
+      "latency_seconds": 19.730884082999182,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:52:47.151689"
+    },
+    {
+      "task_id": "EASY-011",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef second_largest(nums: list) -> int:\n    nums.sort(reverse=True)\n    largest = nums[0]\n    for num in nums:\n        if num < largest:\n            return num\n    return -1 # Should not be reached given the constraint of at least 2 distinct elements\n```",
+      "latency_seconds": 11.313388334000592,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:52:58.968653"
+    },
+    {
+      "task_id": "EASY-011",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef second_largest(nums: list) -> int:\n    unique_nums = sorted(list(set(nums)))\n    return unique_nums[-2]\n```",
+      "latency_seconds": 13.172915750000357,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:53:12.644265"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 13172.92,
+    "p50_ms": 13172.92,
+    "p95_ms": 19075.09,
+    "p99_ms": 19599.72,
+    "mean_ms": 14739.06,
+    "std_ms": 3610.46,
+    "min_ms": 11313.39,
+    "max_ms": 19730.88,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

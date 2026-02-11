@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H005",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H005",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef find_median_sorted_arrays(nums1: list, nums2: list) -> float:\n    if len(nums1) > len(nums2):\n        nums1, nums2 = nums2, nums1\n\n    m, n = len(nums1), len(nums2)\n    half = (m + n + 1) // 2\n\n    lo, hi = 0, m\n    while lo <= hi:\n        i = (lo + hi) // 2\n        j = half - i\n\n        left1 = nums1[i - 1] if i > 0 else float('-inf')\n        right1 = nums1[i] if i < m else float('inf')\n        left2 = nums2[j - 1] if j > 0 else float('-inf')\n        right2 = nums2[j] if j < n else float('inf')\n\n        if left1 <= right2 and left2 <= right1:\n            if (m + n) % 2 == 1:\n                return float(max(left1, left2))\n            return (max(left1, left2) + min(right1, right2)) / 2.0\n        elif left1 > right2:\n            hi = i - 1\n        else:\n            lo = i + 1\n```",
+      "latency_seconds": 10.882638625000027,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:46:31.733778"
+    },
+    {
+      "task_id": "CODEGEN-H005",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef find_median_sorted_arrays(nums1: list, nums2: list) -> float:\n    if len(nums1) > len(nums2):\n        nums1, nums2 = nums2, nums1\n\n    m, n = len(nums1), len(nums2)\n    half = (m + n + 1) // 2\n\n    lo, hi = 0, m\n    while lo <= hi:\n        i = (lo + hi) // 2\n        j = half - i\n\n        left1 = nums1[i - 1] if i > 0 else float('-inf')\n        right1 = nums1[i] if i < m else float('inf')\n        left2 = nums2[j - 1] if j > 0 else float('-inf')\n        right2 = nums2[j] if j < n else float('inf')\n\n        if left1 <= right2 and left2 <= right1:\n            if (m + n) % 2 == 1:\n                return float(max(left1, left2))\n            return (max(left1, left2) + min(right1, right2)) / 2.0\n        elif left1 > right2:\n            hi = i - 1\n        else:\n            lo = i + 1\n```",
+      "latency_seconds": 7.50409650000006,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:46:39.741300"
+    },
+    {
+      "task_id": "CODEGEN-H005",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef find_median_sorted_arrays(nums1: list, nums2: list) -> float:\n    if len(nums1) > len(nums2):\n        nums1, nums2 = nums2, nums1\n\n    m, n = len(nums1), len(nums2)\n    half = (m + n + 1) // 2\n\n    lo, hi = 0, m\n    while lo <= hi:\n        i = (lo + hi) // 2\n        j = half - i\n\n        left1 = nums1[i - 1] if i > 0 else float('-inf')\n        right1 = nums1[i] if i < m else float('inf')\n        left2 = nums2[j - 1] if j > 0 else float('-inf')\n        right2 = nums2[j] if j < n else float('inf')\n\n        if left1 <= right2 and left2 <= right1:\n            if (m + n) % 2 == 1:\n                return float(max(left1, left2))\n            else:\n                return (max(left1, left2) + min(right1, right2)) / 2.0\n        elif left1 > right2:\n            hi = i - 1\n        else:\n            lo = i + 1\n```",
+      "latency_seconds": 7.736186375000102,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:46:47.980750"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 7736.19,
+    "p50_ms": 7736.19,
+    "p95_ms": 10567.99,
+    "p99_ms": 10819.71,
+    "mean_ms": 8707.64,
+    "std_ms": 1540.87,
+    "min_ms": 7504.1,
+    "max_ms": 10882.64,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

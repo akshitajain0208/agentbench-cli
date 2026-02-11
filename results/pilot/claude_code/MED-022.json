@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-022",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-022",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef add_strings(num1: str, num2: str) -> str:\n    i, j = len(num1) - 1, len(num2) - 1\n    carry = 0\n    result = []\n    \n    while i >= 0 or j >= 0 or carry:\n        d1 = ord(num1[i]) - ord('0') if i >= 0 else 0\n        d2 = ord(num2[j]) - ord('0') if j >= 0 else 0\n        total = d1 + d2 + carry\n        carry = total // 10\n        result.append(str(total % 10))\n        i -= 1\n        j -= 1\n    \n    return ''.join(reversed(result))\n```",
+      "latency_seconds": 6.155504792000102,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:07:38.615213"
+    },
+    {
+      "task_id": "MED-022",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef add_strings(num1: str, num2: str) -> str:\n    i, j = len(num1) - 1, len(num2) - 1\n    carry = 0\n    result = []\n    while i >= 0 or j >= 0 or carry:\n        x = ord(num1[i]) - ord('0') if i >= 0 else 0\n        y = ord(num2[j]) - ord('0') if j >= 0 else 0\n        total = x + y + carry\n        carry = total // 10\n        result.append(str(total % 10))\n        i -= 1\n        j -= 1\n    return ''.join(reversed(result))\n```",
+      "latency_seconds": 6.086815374999787,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:07:45.205644"
+    },
+    {
+      "task_id": "MED-022",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef add_strings(num1: str, num2: str) -> str:\n    i, j = len(num1) - 1, len(num2) - 1\n    carry = 0\n    result = []\n    \n    while i >= 0 or j >= 0 or carry:\n        x = ord(num1[i]) - ord('0') if i >= 0 else 0\n        y = ord(num2[j]) - ord('0') if j >= 0 else 0\n        total = x + y + carry\n        carry = total // 10\n        result.append(str(total % 10))\n        i -= 1\n        j -= 1\n    \n    return ''.join(reversed(result))\n```",
+      "latency_seconds": 6.045591291999699,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:07:51.754787"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 6086.82,
+    "p50_ms": 6086.82,
+    "p95_ms": 6148.64,
+    "p99_ms": 6154.13,
+    "mean_ms": 6095.97,
+    "std_ms": 45.34,
+    "min_ms": 6045.59,
+    "max_ms": 6155.5,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

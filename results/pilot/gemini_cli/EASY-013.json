@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-013",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-013",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef fibonacci(n: int) -> int:\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        a, b = 0, 1\n        for _ in range(2, n + 1):\n            next_fib = a + b\n            a = b\n            b = next_fib\n        return b\n```",
+      "latency_seconds": 15.132192041999588,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:55:09.875884"
+    },
+    {
+      "task_id": "EASY-013",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef fibonacci(n: int) -> int:\n    if n < 0:\n        raise ValueError(\"Input cannot be negative\")\n    elif n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        a, b = 0, 1\n        for _ in range(2, n + 1):\n            next_fib = a + b\n            a = b\n            b = next_fib\n        return b\n```",
+      "latency_seconds": 10.345539166999515,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:55:20.724922"
+    },
+    {
+      "task_id": "EASY-013",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef fibonacci(n: int) -> int:\n    if n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        a, b = 0, 1\n        for _ in range(2, n + 1):\n            a, b = b, a + b\n        return b\n```",
+      "latency_seconds": 10.499309082999389,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:55:31.727113"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 10499.31,
+    "p50_ms": 10499.31,
+    "p95_ms": 14668.9,
+    "p99_ms": 15039.53,
+    "mean_ms": 11992.35,
+    "std_ms": 2221.09,
+    "min_ms": 10345.54,
+    "max_ms": 15132.19,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

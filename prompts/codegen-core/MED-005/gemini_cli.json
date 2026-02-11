@@ -1,0 +1,8 @@
+{
+  "task_id": "MED-005",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Implement run-length encoding for a string.\n\nFunction signature: def run_length_encode(s: str) -> str\n\nConstraints:\n- Format: char followed by count if count > 1\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

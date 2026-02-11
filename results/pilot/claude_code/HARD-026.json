@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-026",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-026",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef longest_consecutive(nums: list) -> int:\n    num_set = set(nums)\n    longest = 0\n    for n in num_set:\n        if n - 1 not in num_set:\n            length = 1\n            while n + length in num_set:\n                length += 1\n            longest = max(longest, length)\n    return longest\n```",
+      "latency_seconds": 6.145721457999571,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:31:55.286337"
+    },
+    {
+      "task_id": "HARD-026",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef longest_consecutive(nums: list) -> int:\n    num_set = set(nums)\n    longest = 0\n    for n in num_set:\n        if n - 1 not in num_set:\n            length = 1\n            while n + length in num_set:\n                length += 1\n            longest = max(longest, length)\n    return longest\n```",
+      "latency_seconds": 6.443782834000558,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:32:02.233742"
+    },
+    {
+      "task_id": "HARD-026",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef longest_consecutive(nums: list) -> int:\n    num_set = set(nums)\n    longest = 0\n    for n in num_set:\n        if n - 1 not in num_set:\n            length = 1\n            while n + length in num_set:\n                length += 1\n            longest = max(longest, length)\n    return longest\n```",
+      "latency_seconds": 6.30327487500017,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:32:09.040738"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 6303.27,
+    "p50_ms": 6303.27,
+    "p95_ms": 6429.73,
+    "p99_ms": 6440.97,
+    "mean_ms": 6297.59,
+    "std_ms": 121.75,
+    "min_ms": 6145.72,
+    "max_ms": 6443.78,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

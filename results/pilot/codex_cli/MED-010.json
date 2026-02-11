@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-010",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-010",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef permutations(nums: list) -> list:\n    result = []\n    used = [False] * len(nums)\n    path = []\n\n    def backtrack():\n        if len(path) == len(nums):\n            result.append(path[:])\n            return\n        for i in range(len(nums)):\n            if used[i]:\n                continue\n            used[i] = True\n            path.append(nums[i])\n            backtrack()\n            path.pop()\n            used[i] = False\n\n    backtrack()\n    return result\n```",
+      "latency_seconds": 3.246027290999791,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:17:47.634105"
+    },
+    {
+      "task_id": "MED-010",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef permutations(nums: list) -> list:\n    result = []\n    used = [False] * len(nums)\n    path = []\n\n    def backtrack():\n        if len(path) == len(nums):\n            result.append(path[:])\n            return\n        for i in range(len(nums)):\n            if used[i]:\n                continue\n            used[i] = True\n            path.append(nums[i])\n            backtrack()\n            path.pop()\n            used[i] = False\n\n    backtrack()\n    return result\n```",
+      "latency_seconds": 3.419947458000024,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:17:51.557773"
+    },
+    {
+      "task_id": "MED-010",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef permutations(nums: list) -> list:\n    result = []\n    used = [False] * len(nums)\n    path = []\n\n    def backtrack():\n        if len(path) == len(nums):\n            result.append(path.copy())\n            return\n        for i in range(len(nums)):\n            if used[i]:\n                continue\n            used[i] = True\n            path.append(nums[i])\n            backtrack()\n            path.pop()\n            used[i] = False\n\n    backtrack()\n    return result\n```",
+      "latency_seconds": 3.376711625000098,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:17:55.437216"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 3376.71,
+    "p50_ms": 3376.71,
+    "p95_ms": 3415.62,
+    "p99_ms": 3419.08,
+    "mean_ms": 3347.56,
+    "std_ms": 73.93,
+    "min_ms": 3246.03,
+    "max_ms": 3419.95,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

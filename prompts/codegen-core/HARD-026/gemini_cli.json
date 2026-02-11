@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-026",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Find longest consecutive sequence in unsorted array.\n\nFunction signature: def longest_consecutive(nums: list) -> int\n\nConstraints:\n- O(n) time\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": "EASY-014",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Check if a list is sorted in ascending order.\n\nFunction signature: def is_sorted(nums: list) -> bool\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

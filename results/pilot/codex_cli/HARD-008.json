@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-008",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-008",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef num_distinct(s: str, t: str) -> int:\n    m, n = len(s), len(t)\n    if n == 0:\n        return 1\n    if m < n:\n        return 0\n\n    dp = [0] * (n + 1)\n    dp[0] = 1\n\n    for ch in s:\n        for j in range(n - 1, -1, -1):\n            if ch == t[j]:\n                dp[j + 1] += dp[j]\n\n    return dp[n]\n```",
+      "latency_seconds": 4.392049000000043,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:36:10.002418"
+    },
+    {
+      "task_id": "HARD-008",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef num_distinct(s: str, t: str) -> int:\n    n = len(t)\n    dp = [0] * (n + 1)\n    dp[0] = 1\n\n    for ch in s:\n        for j in range(n - 1, -1, -1):\n            if ch == t[j]:\n                dp[j + 1] += dp[j]\n\n    return dp[n]\n```",
+      "latency_seconds": 3.0356115419999696,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:36:13.541702"
+    },
+    {
+      "task_id": "HARD-008",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef num_distinct(s: str, t: str) -> int:\n    m, n = len(s), len(t)\n    if n == 0:\n        return 1\n    if m < n:\n        return 0\n\n    dp = [0] * (n + 1)\n    dp[0] = 1\n\n    for ch_s in s:\n        for j in range(n - 1, -1, -1):\n            if ch_s == t[j]:\n                dp[j + 1] += dp[j]\n\n    return dp[n]\n```",
+      "latency_seconds": 3.8173807500002113,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:36:17.862692"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 3817.38,
+    "p50_ms": 3817.38,
+    "p95_ms": 4334.58,
+    "p99_ms": 4380.56,
+    "mean_ms": 3748.35,
+    "std_ms": 555.91,
+    "min_ms": 3035.61,
+    "max_ms": 4392.05,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

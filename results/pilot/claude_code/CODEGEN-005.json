@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-005",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "CODEGEN-005",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in mapping:\n            if not stack or stack[-1] != mapping[char]:\n                return False\n            stack.pop()\n        else:\n            stack.append(char)\n    return not stack\n```",
+      "latency_seconds": 5.194842457999982,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:38:53.502894"
+    },
+    {
+      "task_id": "CODEGEN-005",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    matching = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in matching:\n            if not stack or stack[-1] != matching[char]:\n                return False\n            stack.pop()\n        else:\n            stack.append(char)\n    return not stack\n```",
+      "latency_seconds": 5.408704583000031,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:38:59.414757"
+    },
+    {
+      "task_id": "CODEGEN-005",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in mapping:\n            if not stack or stack[-1] != mapping[char]:\n                return False\n            stack.pop()\n        else:\n            stack.append(char)\n    return not stack\n```",
+      "latency_seconds": 5.160018333000039,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:39:05.077050"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5194.84,
+    "p50_ms": 5194.84,
+    "p95_ms": 5387.32,
+    "p99_ms": 5404.43,
+    "mean_ms": 5254.52,
+    "std_ms": 109.95,
+    "min_ms": 5160.02,
+    "max_ms": 5408.7,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

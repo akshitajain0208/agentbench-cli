@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-010",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-010",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef permutations(nums: list) -> list:\n    result = []\n\n    def backtrack(start):\n        if start == len(nums):\n            result.append(nums[:])\n            return\n\n        for i in range(start, len(nums)):\n            nums[start], nums[i] = nums[i], nums[start]\n            backtrack(start + 1)\n            nums[start], nums[i] = nums[i], nums[start]\n\n    backtrack(0)\n    return result\n```",
+      "latency_seconds": 34.11020700000017,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:18:29.814112"
+    },
+    {
+      "task_id": "MED-010",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef permutations(nums: list) -> list:\n    \"\"\"\n    Generates all permutations of a list of unique integers.\n\n    Args:\n      nums: A list of unique integers.\n\n    Returns:\n      A list of lists, where each inner list is a permutation of the input list.\n    \"\"\"\n    result = []\n    \n    def backtrack(start):\n        # If we've reached the end of the list, we have a complete permutation\n        if start == len(nums):\n            result.append(list(nums))\n            return\n            \n        # Iterate through the rest of the list\n        for i in range(start, len(nums)):\n            # Swap the current element with the start element\n            nums[start], nums[i] = nums[i], nums[start]\n            # Recursively generate permutations for the rest of the list\n            backtrack(start + 1)\n            # Backtrack: swap the elements back to their original positions\n            nums[start], nums[i] = nums[i], nums[start]\n            \n    backtrack(0)\n    return result\n\n```",
+      "latency_seconds": 26.901012750000064,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:18:57.218252"
+    },
+    {
+      "task_id": "MED-010",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef permutations(nums: list) -> list:\n    result = []\n    n = len(nums)\n\n    def backtrack(start):\n        if start == n:\n            result.append(nums[:])\n            return\n\n        for i in range(start, n):\n            nums[start], nums[i] = nums[i], nums[start]\n            backtrack(start + 1)\n            nums[start], nums[i] = nums[i], nums[start]\n\n    backtrack(0)\n    return result\n```",
+      "latency_seconds": 33.94120133399974,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:19:31.661802"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 33941.2,
+    "p50_ms": 33941.2,
+    "p95_ms": 34093.31,
+    "p99_ms": 34106.83,
+    "mean_ms": 31650.81,
+    "std_ms": 3359.32,
+    "min_ms": 26901.01,
+    "max_ms": 34110.21,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

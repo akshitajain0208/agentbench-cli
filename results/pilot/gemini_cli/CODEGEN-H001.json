@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H001",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H001",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\nfrom bisect import bisect_left\n\ndef longest_increasing_subsequence(nums: list) -> int:\n    if not nums:\n        return 0\n\n    tails = []\n    for num in nums:\n        i = bisect_left(tails, num)\n        if i == len(tails):\n            tails.append(num)\n        else:\n            tails[i] = num\n            \n    return len(tails)\n```",
+      "latency_seconds": 13.528123583000024,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:40:34.851183"
+    },
+    {
+      "task_id": "CODEGEN-H001",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\nimport bisect\n\ndef longest_increasing_subsequence(nums: list) -> int:\n    \"\"\"\n    Finds the length of the longest strictly increasing subsequence in a list of integers.\n\n    Args:\n        nums: A list of integers.\n\n    Returns:\n        The length of the longest increasing subsequence. Returns 0 for an empty list.\n    \"\"\"\n    if not nums:\n        return 0\n\n    tails = []\n    for num in nums:\n        # Find the insertion point for 'num' in 'tails' to maintain sorted order.\n        # bisect_left returns an index 'i' such that all 'e' in tails[:i] are < num,\n        # and all 'e' in tails[i:] are >= num.\n        idx = bisect.bisect_left(tails, num)\n\n        if idx == len(tails):\n            # If num is greater than all elements in tails, append it.\n            # This extends the longest increasing subsequence found so far.\n            tails.append(num)\n        else:\n            # If num is less than or equal to an element at idx,\n            # it means we found a potentially shorter ending element for an increasing subsequence of the same length.\n            # Replace that element to allow for potentially longer subsequences later.\n            tails[idx] = num\n\n    return len(tails)\n```",
+      "latency_seconds": 12.12362300000001,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:40:47.478056"
+    },
+    {
+      "task_id": "CODEGEN-H001",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\nfrom bisect import bisect_left\n\ndef longest_increasing_subsequence(nums: list) -> int:\n    if not nums:\n        return 0\n\n    tails = []\n    for num in nums:\n        idx = bisect_left(tails, num)\n        if idx == len(tails):\n            tails.append(num)\n        else:\n            tails[idx] = num\n    return len(tails)\n```",
+      "latency_seconds": 12.618823999999961,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:41:00.599179"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 12618.82,
+    "p50_ms": 12618.82,
+    "p95_ms": 13437.19,
+    "p99_ms": 13509.94,
+    "mean_ms": 12756.86,
+    "std_ms": 581.63,
+    "min_ms": 12123.62,
+    "max_ms": 13528.12,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

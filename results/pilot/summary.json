@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-11T13:56:15.333920",
+  "agents": [
+    "claude_code",
+    "codex_cli",
+    "gemini_cli"
+  ],
+  "tasks": 100,
+  "runs_per_task": 3
+}

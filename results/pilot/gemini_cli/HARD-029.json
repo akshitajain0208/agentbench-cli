@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-029",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-029",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef min_path_sum(grid: list) -> int:\n    if not grid or not grid[0]:\n        return 0\n\n    rows = len(grid)\n    cols = len(grid[0])\n\n    dp = [[0] * cols for _ in range(rows)]\n\n    dp[0][0] = grid[0][0]\n\n    # Fill first row\n    for j in range(1, cols):\n        dp[0][j] = dp[0][j - 1] + grid[0][j]\n\n    # Fill first column\n    for i in range(1, rows):\n        dp[i][0] = dp[i - 1][0] + grid[i][0]\n\n    # Fill the rest of the DP table\n    for i in range(1, rows):\n        for j in range(1, cols):\n            dp[i][j] = grid[i][j] + min(dp[i - 1][j], dp[i][j - 1])\n\n    return dp[rows - 1][cols - 1]\n\n```",
+      "latency_seconds": 11.012468292000449,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:35:54.875600"
+    },
+    {
+      "task_id": "HARD-029",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef min_path_sum(grid: list) -> int:\n    \"\"\"\n    Calculates the minimum path sum from the top-left to the bottom-right of a grid.\n\n    Args:\n        grid: A list of lists of integers representing the grid.\n\n    Returns:\n        The minimum path sum.\n    \"\"\"\n    m = len(grid)\n    n = len(grid[0])\n\n    # Create a DP table to store the minimum path sum to reach each cell\n    dp = [[0 for _ in range(n)] for _ in range(m)]\n\n    # Initialize the top-left cell\n    dp[0][0] = grid[0][0]\n\n    # Fill the first row\n    for j in range(1, n):\n        dp[0][j] = dp[0][j - 1] + grid[0][j]\n\n    # Fill the first column\n    for i in range(1, m):\n        dp[i][0] = dp[i - 1][0] + grid[i][0]\n\n    # Fill the rest of the DP table\n    for i in range(1, m):\n        for j in range(1, n):\n            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]\n\n    # The bottom-right cell contains the minimum path sum\n    return dp[m - 1][n - 1]\n```",
+      "latency_seconds": 12.234379292000085,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:36:07.613242"
+    },
+    {
+      "task_id": "HARD-029",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef min_path_sum(grid: list) -> int:\n    m = len(grid)\n    n = len(grid[0])\n\n    # Initialize the first row\n    for j in range(1, n):\n        grid[0][j] += grid[0][j-1]\n\n    # Initialize the first column\n    for i in range(1, m):\n        grid[i][0] += grid[i-1][0]\n\n    # Fill the rest of the grid\n    for i in range(1, m):\n        for j in range(1, n):\n            grid[i][j] += min(grid[i-1][j], grid[i][j-1])\n\n    return grid[m-1][n-1]\n```",
+      "latency_seconds": 19.496917624999696,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:36:27.613169"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 12234.38,
+    "p50_ms": 12234.38,
+    "p95_ms": 18770.66,
+    "p99_ms": 19351.67,
+    "mean_ms": 14247.92,
+    "std_ms": 3744.97,
+    "min_ms": 11012.47,
+    "max_ms": 19496.92,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

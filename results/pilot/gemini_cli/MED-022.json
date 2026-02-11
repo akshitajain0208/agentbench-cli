@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-022",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-022",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef add_strings(num1: str, num2: str) -> str:\n    res = []\n    carry = 0\n    p1 = len(num1) - 1\n    p2 = len(num2) - 1\n\n    while p1 >= 0 or p2 >= 0 or carry:\n        x1 = ord(num1[p1]) - ord('0') if p1 >= 0 else 0\n        x2 = ord(num2[p2]) - ord('0') if p2 >= 0 else 0\n        value = (x1 + x2 + carry) % 10\n        carry = (x1 + x2 + carry) // 10\n        res.append(str(value))\n        p1 -= 1\n        p2 -= 1\n        \n    return \"\".join(res[::-1])\n```",
+      "latency_seconds": 27.69193195800017,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:08:25.177752"
+    },
+    {
+      "task_id": "MED-022",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef add_strings(num1: str, num2: str) -> str:\n    result = []\n    carry = 0\n    p1 = len(num1) - 1\n    p2 = len(num2) - 1\n\n    while p1 >= 0 or p2 >= 0 or carry:\n        digit1 = ord(num1[p1]) - ord('0') if p1 >= 0 else 0\n        digit2 = ord(num2[p2]) - ord('0') if p2 >= 0 else 0\n\n        current_sum = digit1 + digit2 + carry\n        carry = current_sum // 10\n        result.append(str(current_sum % 10))\n\n        p1 -= 1\n        p2 -= 1\n\n    return \"\".join(result[::-1])\n```",
+      "latency_seconds": 30.654130167000403,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:08:56.335192"
+    },
+    {
+      "task_id": "MED-022",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef add_strings(num1: str, num2: str) -> str:\n    \"\"\"\n    Adds two numbers represented as strings without converting them to integers directly.\n\n    Args:\n        num1: The first number as a string.\n        num2: The second number as a string.\n\n    Returns:\n        The sum of the two numbers as a string.\n    \"\"\"\n    res = []\n    i, j, carry = len(num1) - 1, len(num2) - 1, 0\n\n    while i >= 0 or j >= 0 or carry:\n        digit1 = int(num1[i]) if i >= 0 else 0\n        digit2 = int(num2[j]) if j >= 0 else 0\n        \n        current_sum = digit1 + digit2 + carry\n        carry = current_sum // 10\n        res.append(str(current_sum % 10))\n        \n        i -= 1\n        j -= 1\n    \n    return \"\".join(res[::-1])\n```",
+      "latency_seconds": 25.45132595800078,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:09:22.289436"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 27691.93,
+    "p50_ms": 27691.93,
+    "p95_ms": 30357.91,
+    "p99_ms": 30594.89,
+    "mean_ms": 27932.46,
+    "std_ms": 2130.83,
+    "min_ms": 25451.33,
+    "max_ms": 30654.13,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

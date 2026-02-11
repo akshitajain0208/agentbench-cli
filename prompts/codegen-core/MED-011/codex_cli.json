@@ -1,0 +1,8 @@
+{
+  "task_id": "MED-011",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Determine if a 9x9 Sudoku board is valid (no duplicates in rows, columns, 3x3 boxes).\n\nFunction signature: def is_valid_sudoku(board: list) -> bool\n\nConstraints:\n- Empty cells are represented by '.'\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

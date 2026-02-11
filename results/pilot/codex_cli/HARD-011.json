@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-011",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-011",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef max_sum_subarray(nums: list, k: int) -> int:\n    n = len(nums)\n    if k > n:\n        return -1\n    if k <= 0:\n        return -1\n\n    window_sum = sum(nums[:k])\n    max_sum = window_sum\n\n    for i in range(k, n):\n        window_sum += nums[i] - nums[i - k]\n        if window_sum > max_sum:\n            max_sum = window_sum\n\n    return max_sum\n```",
+      "latency_seconds": 3.416044250000141,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:40:46.525378"
+    },
+    {
+      "task_id": "HARD-011",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef max_sum_subarray(nums: list, k: int) -> int:\n    n = len(nums)\n    if k > n:\n        return -1\n    if k <= 0:\n        return 0\n\n    window_sum = sum(nums[:k])\n    max_sum = window_sum\n\n    for i in range(k, n):\n        window_sum += nums[i] - nums[i - k]\n        if window_sum > max_sum:\n            max_sum = window_sum\n\n    return max_sum\n```",
+      "latency_seconds": 3.868460832999972,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:40:50.897797"
+    },
+    {
+      "task_id": "HARD-011",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef max_sum_subarray(nums: list, k: int) -> int:\n    n = len(nums)\n    if k > n:\n        return -1\n    if k <= 0:\n        return 0\n\n    window_sum = sum(nums[:k])\n    max_sum = window_sum\n\n    for i in range(k, n):\n        window_sum += nums[i] - nums[i - k]\n        if window_sum > max_sum:\n            max_sum = window_sum\n\n    return max_sum\n```",
+      "latency_seconds": 3.567639875000168,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:40:54.969116"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 3567.64,
+    "p50_ms": 3567.64,
+    "p95_ms": 3838.38,
+    "p99_ms": 3862.44,
+    "mean_ms": 3617.38,
+    "std_ms": 188.02,
+    "min_ms": 3416.04,
+    "max_ms": 3868.46,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

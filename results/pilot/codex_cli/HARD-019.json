@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-019",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-019",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.5637090000000171,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aec-a183-7aa2-bb10-ff21afe9c2dc\n--------\nuser\nCount inversions in an array (pairs where i < j but arr[i] > arr[j]).\n\nFunction signature: def count_inversions(nums: list) -> int\n\nConstraints:\n- O(n log n) using merge sort\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:19:09.124747Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11713}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:19:09.134845"
+    },
+    {
+      "task_id": "HARD-019",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.9549770829999034,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aec-a95f-7f51-93a5-dd8c234460aa\n--------\nuser\nCount inversions in an array (pairs where i < j but arr[i] > arr[j]).\n\nFunction signature: def count_inversions(nums: list) -> int\n\nConstraints:\n- O(n log n) using merge sort\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:19:11.581144Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11711}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:19:11.593805"
+    },
+    {
+      "task_id": "HARD-019",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.6382510419998653,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4aec-b2fd-7821-a3af-328a18408f7e\n--------\nuser\nCount inversions in an array (pairs where i < j but arr[i] > arr[j]).\n\nFunction signature: def count_inversions(nums: list) -> int\n\nConstraints:\n- O(n log n) using merge sort\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:19:13.730489Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11709}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:19:13.735720"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1638.25,
+    "p50_ms": 1638.25,
+    "p95_ms": 1923.3,
+    "p99_ms": 1948.64,
+    "mean_ms": 1718.98,
+    "std_ms": 169.63,
+    "min_ms": 1563.71,
+    "max_ms": 1954.98,
+    "samples": 3
+  },
+  "determinism": null
+}

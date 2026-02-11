@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-001",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-001",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef length_of_longest_substring(s: str) -> int:\n    char_index = {}\n    max_len = 0\n    left = 0\n    for right, char in enumerate(s):\n        if char in char_index and char_index[char] >= left:\n            left = char_index[char] + 1\n        char_index[char] = right\n        max_len = max(max_len, right - left + 1)\n    return max_len\n```",
+      "latency_seconds": 5.865529667000374,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:22:07.915333"
+    },
+    {
+      "task_id": "HARD-001",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef length_of_longest_substring(s: str) -> int:\n    char_index = {}\n    max_len = 0\n    start = 0\n    for i, c in enumerate(s):\n        if c in char_index and char_index[c] >= start:\n            start = char_index[c] + 1\n        char_index[c] = i\n        max_len = max(max_len, i - start + 1)\n    return max_len\n```",
+      "latency_seconds": 5.998083625000163,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:22:14.416177"
+    },
+    {
+      "task_id": "HARD-001",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef length_of_longest_substring(s: str) -> int:\n    char_index = {}\n    max_len = 0\n    start = 0\n    for i, c in enumerate(s):\n        if c in char_index and char_index[c] >= start:\n            start = char_index[c] + 1\n        char_index[c] = i\n        max_len = max(max_len, i - start + 1)\n    return max_len\n```",
+      "latency_seconds": 6.256057167000108,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:22:21.174734"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5998.08,
+    "p50_ms": 5998.08,
+    "p95_ms": 6230.26,
+    "p99_ms": 6250.9,
+    "mean_ms": 6039.89,
+    "std_ms": 162.15,
+    "min_ms": 5865.53,
+    "max_ms": 6256.06,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

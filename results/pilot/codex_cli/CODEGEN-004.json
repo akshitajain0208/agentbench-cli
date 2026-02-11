@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-004",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-004",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef reverse_list(lst: list) -> list:\n    left, right = 0, len(lst) - 1\n    while left < right:\n        lst[left], lst[right] = lst[right], lst[left]\n        left += 1\n        right -= 1\n    return lst\n```",
+      "latency_seconds": 2.872779207999997,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:38:09.465737"
+    },
+    {
+      "task_id": "CODEGEN-004",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef reverse_list(lst: list) -> list:\n    left, right = 0, len(lst) - 1\n    while left < right:\n        lst[left], lst[right] = lst[right], lst[left]\n        left += 1\n        right -= 1\n    return lst\n```",
+      "latency_seconds": 3.4798108749999983,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:38:13.448250"
+    },
+    {
+      "task_id": "CODEGEN-004",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef reverse_list(lst: list) -> list:\n    left, right = 0, len(lst) - 1\n    while left < right:\n        lst[left], lst[right] = lst[right], lst[left]\n        left += 1\n        right -= 1\n    return lst\n```",
+      "latency_seconds": 2.7458622920000266,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:38:16.697062"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 2872.78,
+    "p50_ms": 2872.78,
+    "p95_ms": 3419.11,
+    "p99_ms": 3467.67,
+    "mean_ms": 3032.82,
+    "std_ms": 320.29,
+    "min_ms": 2745.86,
+    "max_ms": 3479.81,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

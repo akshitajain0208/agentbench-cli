@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-021",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-021",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\nimport heapq\n\ndef kth_smallest_matrix(matrix: list, k: int) -> int:\n    \"\"\"\n    Finds the kth smallest element in a sorted matrix.\n\n    Args:\n        matrix: A list of lists representing a matrix where each row and column is sorted.\n        k: The k-th smallest element to find.\n\n    Returns:\n        The k-th smallest element in the matrix.\n    \"\"\"\n    if not matrix or not matrix[0]:\n        raise ValueError(\"Matrix cannot be empty.\")\n\n    num_rows = len(matrix)\n    num_cols = len(matrix[0])\n\n    min_heap = []\n    # Add the first element of each row to the min-heap\n    # Tuple format: (value, row_index, col_index)\n    for r in range(min(num_rows, k)): # Optimization: only need to consider up to k rows if k is small\n        heapq.heappush(min_heap, (matrix[r][0], r, 0))\n\n    result = -1\n    for _ in range(k):\n        if not min_heap:\n            raise IndexError(\"k is larger than the number of elements in the matrix.\")\n        \n        result, r, c = heapq.heappop(min_heap)\n\n        # If there's a next element in the current row, add it to the heap\n        if c + 1 < num_cols:\n            heapq.heappush(min_heap, (matrix[r][c + 1], r, c + 1))\n            \n    return result\n```",
+      "latency_seconds": 14.370899458999702,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:21:53.116863"
+    },
+    {
+      "task_id": "HARD-021",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef kth_smallest_matrix(matrix: list[list[int]], k: int) -> int:\n    n = len(matrix)\n    m = len(matrix[0])\n\n    def count_less_equal(target: int) -> int:\n        count = 0\n        row = 0\n        col = m - 1\n\n        while row < n and col >= 0:\n            if matrix[row][col] <= target:\n                # All elements in the current row from index 0 to 'col' are\n                # less than or equal to 'target' (since rows are sorted).\n                # Add (col + 1) to the count and move to the next row.\n                count += (col + 1)\n                row += 1\n            else:\n                # The current element is greater than 'target'.\n                # This means all elements in the current column (and any columns\n                # to its right in the current row) are also greater than 'target'.\n                # Move left in the current row to find smaller values.\n                col -= 1\n        return count\n\n    low = matrix[0][0]\n    high = matrix[n - 1][m - 1]\n    ans = -1\n\n    while low <= high:\n        mid = low + (high - low) // 2\n        if count_less_equal(mid) >= k:\n            # If there are at least 'k' elements less than or equal to 'mid',\n            # 'mid' could be the k-th smallest. Store 'mid' as a potential answer\n            # and try to find a smaller value in the lower half.\n            ans = mid\n            high = mid - 1\n        else:\n            # If the count is less than 'k', 'mid' is too small; we need larger values.\n            # Search in the upper half.\n            low = mid + 1\n            \n    return ans\n```",
+      "latency_seconds": 37.020806915999856,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:22:30.640164"
+    },
+    {
+      "task_id": "HARD-021",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\nimport heapq\n\ndef kth_smallest_matrix(matrix: list, k: int) -> int:\n    \"\"\"\n    Finds the k-th smallest element in a sorted matrix.\n\n    Args:\n        matrix: A list of lists representing the sorted matrix. Each row and column is sorted.\n        k: The k-th smallest element to find.\n\n    Returns:\n        The k-th smallest element in the matrix.\n    \"\"\"\n    n = len(matrix)\n    if n == 0:\n        raise ValueError(\"Matrix cannot be empty\")\n    m = len(matrix[0])\n    if m == 0:\n        raise ValueError(\"Matrix cannot be empty\")\n\n    min_heap = []\n    # Add the first element of each row to the min-heap\n    # (value, row_index, col_index)\n    for r in range(min(n, k)):  # Optimization: only need to consider first min(n, k) rows\n        heapq.heappush(min_heap, (matrix[r][0], r, 0))\n\n    # Pop the smallest element k-1 times\n    for _ in range(k - 1):\n        val, r, c = heapq.heappop(min_heap)\n        if c + 1 < m:\n            heapq.heappush(min_heap, (matrix[r][c + 1], r, c + 1))\n\n    # The k-th smallest element is now the root of the heap\n    return min_heap[0][0]\n\n```",
+      "latency_seconds": 15.916611708000346,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:22:47.060144"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 15916.61,
+    "p50_ms": 15916.61,
+    "p95_ms": 34910.39,
+    "p99_ms": 36598.72,
+    "mean_ms": 22436.11,
+    "std_ms": 10332.23,
+    "min_ms": 14370.9,
+    "max_ms": 37020.81,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

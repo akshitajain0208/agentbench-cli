@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-021",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-021",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef kth_smallest_matrix(matrix: list, k: int) -> int:\n    import heapq\n    n = len(matrix)\n    min_heap = [(matrix[i][0], i, 0) for i in range(min(n, k))]\n    heapq.heapify(min_heap)\n    val = 0\n    for _ in range(k):\n        val, r, c = heapq.heappop(min_heap)\n        if c + 1 < len(matrix[r]):\n            heapq.heappush(min_heap, (matrix[r][c + 1], r, c + 1))\n    return val\n```",
+      "latency_seconds": 6.612300082999354,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:21:18.460115"
+    },
+    {
+      "task_id": "HARD-021",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef kth_smallest_matrix(matrix: list, k: int) -> int:\n    import heapq\n    n = len(matrix)\n    min_heap = [(matrix[i][0], i, 0) for i in range(min(n, k))]\n    heapq.heapify(min_heap)\n    for _ in range(k):\n        val, r, c = heapq.heappop(min_heap)\n        if c + 1 < len(matrix[r]):\n            heapq.heappush(min_heap, (matrix[r][c + 1], r, c + 1))\n    return val\n```",
+      "latency_seconds": 6.143513209000048,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:21:25.107261"
+    },
+    {
+      "task_id": "HARD-021",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef kth_smallest_matrix(matrix: list, k: int) -> int:\n    import heapq\n    n = len(matrix)\n    min_heap = [(matrix[i][0], i, 0) for i in range(min(n, k))]\n    heapq.heapify(min_heap)\n    val = 0\n    for _ in range(k):\n        val, r, c = heapq.heappop(min_heap)\n        if c + 1 < len(matrix[r]):\n            heapq.heappush(min_heap, (matrix[r][c + 1], r, c + 1))\n    return val\n```",
+      "latency_seconds": 6.945167374999983,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:21:32.555470"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 6612.3,
+    "p50_ms": 6612.3,
+    "p95_ms": 6911.88,
+    "p99_ms": 6938.51,
+    "mean_ms": 6566.99,
+    "std_ms": 328.84,
+    "min_ms": 6143.51,
+    "max_ms": 6945.17,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

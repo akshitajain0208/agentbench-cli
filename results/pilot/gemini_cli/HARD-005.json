@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-005",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-005",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef trap(height: list) -> int:\n    if not height:\n        return 0\n\n    left = 0\n    right = len(height) - 1\n    left_max = 0\n    right_max = 0\n    trapped_water = 0\n\n    while left < right:\n        if height[left] < height[right]:\n            if height[left] >= left_max:\n                left_max = height[left]\n            else:\n                trapped_water += left_max - height[left]\n            left += 1\n        else:\n            if height[right] >= right_max:\n                right_max = height[right]\n            else:\n                trapped_water += right_max - height[right]\n            right -= 1\n    return trapped_water\n```",
+      "latency_seconds": 13.173873040999752,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:29:55.091659"
+    },
+    {
+      "task_id": "HARD-005",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef trap(height: list) -> int:\n    if not height:\n        return 0\n\n    left = 0\n    right = len(height) - 1\n    left_max = 0\n    right_max = 0\n    trapped_water = 0\n\n    while left <= right:\n        if height[left] < height[right]:\n            if height[left] >= left_max:\n                left_max = height[left]\n            else:\n                trapped_water += left_max - height[left]\n            left += 1\n        else:\n            if height[right] >= right_max:\n                right_max = height[right]\n            else:\n                trapped_water += right_max - height[right]\n            right -= 1\n    return trapped_water\n```",
+      "latency_seconds": 12.009724708000249,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:30:07.604747"
+    },
+    {
+      "task_id": "HARD-005",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef trap(height: list) -> int:\n    if not height or len(height) < 3:\n        return 0\n\n    left = 0\n    right = len(height) - 1\n    left_max = 0\n    right_max = 0\n    trapped_water = 0\n\n    while left < right:\n        if height[left] < height[right]:\n            if height[left] >= left_max:\n                left_max = height[left]\n            else:\n                trapped_water += left_max - height[left]\n            left += 1\n        else:\n            if height[right] >= right_max:\n                right_max = height[right]\n            else:\n                trapped_water += right_max - height[right]\n            right -= 1\n            \n    return trapped_water\n```",
+      "latency_seconds": 14.179877042000044,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:30:22.287895"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 13173.87,
+    "p50_ms": 13173.87,
+    "p95_ms": 14079.28,
+    "p99_ms": 14159.76,
+    "mean_ms": 13121.16,
+    "std_ms": 886.74,
+    "min_ms": 12009.72,
+    "max_ms": 14179.88,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

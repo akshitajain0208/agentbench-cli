@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-E002",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "CODEGEN-E002",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef reverse_vowels(s: str) -> str:\n    s = list(s)\n    vowels = set('aeiouAEIOU')\n    i, j = 0, len(s) - 1\n    while i < j:\n        if s[i] not in vowels:\n            i += 1\n        elif s[j] not in vowels:\n            j -= 1\n        else:\n            s[i], s[j] = s[j], s[i]\n            i += 1\n            j -= 1\n    return ''.join(s)\n```",
+      "latency_seconds": 7.077839584000003,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:53:11.292344"
+    },
+    {
+      "task_id": "CODEGEN-E002",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef reverse_vowels(s: str) -> str:\n    s = list(s)\n    vowels = set('aeiouAEIOU')\n    i, j = 0, len(s) - 1\n    while i < j:\n        if s[i] not in vowels:\n            i += 1\n        elif s[j] not in vowels:\n            j -= 1\n        else:\n            s[i], s[j] = s[j], s[i]\n            i += 1\n            j -= 1\n    return ''.join(s)\n```",
+      "latency_seconds": 5.883341833000031,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:53:17.679209"
+    },
+    {
+      "task_id": "CODEGEN-E002",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef reverse_vowels(s: str) -> str:\n    s = list(s)\n    vowels = set('aeiouAEIOU')\n    i, j = 0, len(s) - 1\n    while i < j:\n        if s[i] not in vowels:\n            i += 1\n        elif s[j] not in vowels:\n            j -= 1\n        else:\n            s[i], s[j] = s[j], s[i]\n            i += 1\n            j -= 1\n    return ''.join(s)\n```",
+      "latency_seconds": 7.210184459000175,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:53:25.392971"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 7077.84,
+    "p50_ms": 7077.84,
+    "p95_ms": 7196.95,
+    "p99_ms": 7207.54,
+    "mean_ms": 6723.79,
+    "std_ms": 596.74,
+    "min_ms": 5883.34,
+    "max_ms": 7210.18,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

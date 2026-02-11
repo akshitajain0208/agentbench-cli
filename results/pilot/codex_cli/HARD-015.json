@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-015",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-015",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef min_meeting_rooms(intervals: list) -> int:\n    if not intervals:\n        return 0\n\n    starts = sorted(interval[0] for interval in intervals)\n    ends = sorted(interval[1] for interval in intervals)\n\n    rooms = 0\n    max_rooms = 0\n    i = j = 0\n    n = len(intervals)\n\n    while i < n:\n        if starts[i] < ends[j]:\n            rooms += 1\n            if rooms > max_rooms:\n                max_rooms = rooms\n            i += 1\n        else:\n            rooms -= 1\n            j += 1\n\n    return max_rooms\n```",
+      "latency_seconds": 3.9135359579995566,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:47:12.157219"
+    },
+    {
+      "task_id": "HARD-015",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "def min_meeting_rooms(intervals: list) -> int:\n    if not intervals:\n        return 0\n\n    starts = sorted(i[0] for i in intervals)\n    ends = sorted(i[1] for i in intervals)\n\n    rooms = 0\n    max_rooms = 0\n    s = e = 0\n    n = len(intervals)\n\n    while s < n:\n        if starts[s] < ends[e]:\n            rooms += 1\n            max_rooms = max(max_rooms, rooms)\n            s += 1\n        else:\n            rooms -= 1\n            e += 1\n\n    return max_rooms",
+      "latency_seconds": 5.690759874999458,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:47:18.351467"
+    },
+    {
+      "task_id": "HARD-015",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef min_meeting_rooms(intervals: list) -> int:\n    if not intervals:\n        return 0\n\n    starts = sorted(i[0] for i in intervals)\n    ends = sorted(i[1] for i in intervals)\n\n    rooms = 0\n    max_rooms = 0\n    s = e = 0\n    n = len(intervals)\n\n    while s < n:\n        if starts[s] < ends[e]:\n            rooms += 1\n            max_rooms = max(max_rooms, rooms)\n            s += 1\n        else:\n            rooms -= 1\n            e += 1\n\n    return max_rooms\n```",
+      "latency_seconds": 4.510671125000044,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:47:23.363961"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4510.67,
+    "p50_ms": 4510.67,
+    "p95_ms": 5572.75,
+    "p99_ms": 5667.16,
+    "mean_ms": 4704.99,
+    "std_ms": 738.44,
+    "min_ms": 3913.54,
+    "max_ms": 5690.76,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

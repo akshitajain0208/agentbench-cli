@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-M003",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-M003",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef rotate(matrix: list) -> list:\n    n = len(matrix)\n\n    for i in range(n):\n        for j in range(i + 1, n):\n            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n\n    for row in matrix:\n        row.reverse()\n\n    return matrix\n```",
+      "latency_seconds": 3.9456875840000976,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:58:40.637651"
+    },
+    {
+      "task_id": "CODEGEN-M003",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef rotate(matrix: list) -> list:\n    n = len(matrix)\n    for i in range(n):\n        for j in range(i + 1, n):\n            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n    for row in matrix:\n        row.reverse()\n    return matrix\n```",
+      "latency_seconds": 5.099002417000065,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:58:46.240083"
+    },
+    {
+      "task_id": "CODEGEN-M003",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef rotate(matrix: list) -> list:\n    n = len(matrix)\n    for i in range(n):\n        for j in range(i + 1, n):\n            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n    for row in matrix:\n        row.reverse()\n    return matrix\n```",
+      "latency_seconds": 3.3717478339999616,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:58:50.115429"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 3945.69,
+    "p50_ms": 3945.69,
+    "p95_ms": 4983.67,
+    "p99_ms": 5075.94,
+    "mean_ms": 4138.81,
+    "std_ms": 718.25,
+    "min_ms": 3371.75,
+    "max_ms": 5099.0,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

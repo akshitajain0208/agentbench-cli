@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-038",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-038",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef min_jumps(nums: list) -> int:\n    n = len(nums)\n    if n <= 1:\n        return 0\n    jumps = 0\n    current_end = 0\n    farthest = 0\n    for i in range(n - 1):\n        farthest = max(farthest, i + nums[i])\n        if i == current_end:\n            jumps += 1\n            current_end = farthest\n            if current_end >= n - 1:\n                break\n    return jumps\n```",
+      "latency_seconds": 5.764107458999206,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:54:42.207823"
+    },
+    {
+      "task_id": "HARD-038",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef min_jumps(nums: list) -> int:\n    n = len(nums)\n    if n <= 1:\n        return 0\n    jumps = 0\n    current_end = 0\n    farthest = 0\n    for i in range(n - 1):\n        farthest = max(farthest, i + nums[i])\n        if i == current_end:\n            jumps += 1\n            current_end = farthest\n            if current_end >= n - 1:\n                break\n    return jumps\n```",
+      "latency_seconds": 5.7831537080001,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:54:48.494833"
+    },
+    {
+      "task_id": "HARD-038",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef min_jumps(nums: list) -> int:\n    n = len(nums)\n    if n <= 1:\n        return 0\n    jumps = 0\n    current_end = 0\n    farthest = 0\n    for i in range(n - 1):\n        farthest = max(farthest, i + nums[i])\n        if i == current_end:\n            jumps += 1\n            current_end = farthest\n            if current_end >= n - 1:\n                break\n    return jumps\n```",
+      "latency_seconds": 5.975097416998324,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:54:54.973544"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5783.15,
+    "p50_ms": 5783.15,
+    "p95_ms": 5955.9,
+    "p99_ms": 5971.26,
+    "mean_ms": 5840.79,
+    "std_ms": 95.29,
+    "min_ms": 5764.11,
+    "max_ms": 5975.1,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-001",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-001",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef two_sum(nums: list, target: int) -> list:\n    num_map = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in num_map:\n            return [num_map[complement], i]\n        num_map[num] = i\n    return [] # Should not be reached based on problem constraints (exactly one solution)\n```",
+      "latency_seconds": 13.384764875000002,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:34:43.665730"
+    },
+    {
+      "task_id": "CODEGEN-001",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef two_sum(nums: list, target: int) -> list:\n    num_map = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in num_map:\n            return [num_map[complement], i]\n        num_map[num] = i\n\n```",
+      "latency_seconds": 10.14649575,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:34:54.314766"
+    },
+    {
+      "task_id": "CODEGEN-001",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef two_sum(nums: list, target: int) -> list:\n    num_map = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in num_map:\n            return [num_map[complement], i]\n        num_map[num] = i\n```",
+      "latency_seconds": 11.361870875000008,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:35:06.178800"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11361.87,
+    "p50_ms": 11361.87,
+    "p95_ms": 13182.48,
+    "p99_ms": 13344.31,
+    "mean_ms": 11631.04,
+    "std_ms": 1335.65,
+    "min_ms": 10146.5,
+    "max_ms": 13384.76,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

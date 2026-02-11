@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-013",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-013",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef rotate_list(nums: list, k: int) -> list:\n    n = len(nums)\n    if n == 0:\n        return nums\n    k = k % n\n    if k == 0:\n        return nums\n    nums[:] = nums[-k:] + nums[:-k]\n    return nums\n```",
+      "latency_seconds": 5.498293542000283,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:55:37.483074"
+    },
+    {
+      "task_id": "MED-013",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef rotate_list(nums: list, k: int) -> list:\n    n = len(nums)\n    if n == 0:\n        return nums\n    k = k % n\n    if k == 0:\n        return nums\n    nums[:] = nums[-k:] + nums[:-k]\n    return nums\n```",
+      "latency_seconds": 5.151207207999505,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:55:43.137221"
+    },
+    {
+      "task_id": "MED-013",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef rotate_list(nums: list, k: int) -> list:\n    n = len(nums)\n    if n == 0:\n        return nums\n    k = k % n\n    if k == 0:\n        return nums\n    nums[:] = nums[-k:] + nums[:-k]\n    return nums\n```",
+      "latency_seconds": 5.259811917000661,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:55:48.900363"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5259.81,
+    "p50_ms": 5259.81,
+    "p95_ms": 5474.45,
+    "p99_ms": 5493.52,
+    "mean_ms": 5303.1,
+    "std_ms": 144.97,
+    "min_ms": 5151.21,
+    "max_ms": 5498.29,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

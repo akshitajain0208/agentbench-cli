@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-003",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-003",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef count_occurrences(nums: list, target: int) -> int:\n    \"\"\"\n    Count occurrences of a target value in a list.\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num == target:\n            count += 1\n    return count\n```",
+      "latency_seconds": 11.886701541000093,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:02:03.218054"
+    },
+    {
+      "task_id": "EASY-003",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef count_occurrences(nums: list, target: int) -> int:\n    return nums.count(target)\n```",
+      "latency_seconds": 11.036939290999953,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:02:14.758660"
+    },
+    {
+      "task_id": "EASY-003",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef count_occurrences(nums: list, target: int) -> int:\n    \"\"\"\n    Count occurrences of a target value in a list.\n    \"\"\"\n    count = 0\n    for num in nums:\n        if num == target:\n            count += 1\n    return count\n```",
+      "latency_seconds": 10.334970542000065,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:02:25.596952"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11036.94,
+    "p50_ms": 11036.94,
+    "p95_ms": 11801.73,
+    "p99_ms": 11869.71,
+    "mean_ms": 11086.2,
+    "std_ms": 634.45,
+    "min_ms": 10334.97,
+    "max_ms": 11886.7,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

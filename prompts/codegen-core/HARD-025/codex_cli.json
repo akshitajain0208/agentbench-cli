@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-025",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Implement wildcard pattern matching with '?' and '*'.\n\nFunction signature: def is_match_wildcard(s: str, p: str) -> bool\n\nConstraints:\n- '?' matches one char\n- '*' matches any sequence\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-012",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "EASY-012",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef count_vowels(s: str) -> int:\n    vowels = set(\"aeiouAEIOU\")\n    return sum(1 for ch in s if ch in vowels)\n```",
+      "latency_seconds": 4.1130681249997,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:53:37.831556"
+    },
+    {
+      "task_id": "EASY-012",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef count_vowels(s: str) -> int:\n    vowels = set(\"aeiouAEIOU\")\n    return sum(1 for ch in s if ch in vowels)\n```",
+      "latency_seconds": 2.494277666999551,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:53:40.829063"
+    },
+    {
+      "task_id": "EASY-012",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef count_vowels(s: str) -> int:\n    return sum(1 for ch in s if ch in \"aeiouAEIOU\")\n```",
+      "latency_seconds": 2.501685125000222,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:53:43.833893"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 2501.69,
+    "p50_ms": 2501.69,
+    "p95_ms": 3951.93,
+    "p99_ms": 4080.84,
+    "mean_ms": 3036.34,
+    "std_ms": 761.37,
+    "min_ms": 2494.28,
+    "max_ms": 4113.07,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

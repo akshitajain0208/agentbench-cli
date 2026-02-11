@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-031",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Find the longest common subsequence of two strings.\n\nFunction signature: def longest_common_subsequence(s1: str, s2: str) -> int\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

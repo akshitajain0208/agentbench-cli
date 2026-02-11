@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-003",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-003",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef merge_intervals(intervals: list) -> list:\n    if not intervals:\n        return []\n\n    # Sort intervals by their start times\n    intervals.sort(key=lambda x: x[0])\n\n    merged_intervals = [intervals[0]]\n\n    for current_start, current_end in intervals[1:]:\n        last_merged_start, last_merged_end = merged_intervals[-1]\n\n        # If the current interval overlaps with the last merged interval\n        if current_start <= last_merged_end:\n            # Merge the current interval into the last merged interval\n            merged_intervals[-1][1] = max(last_merged_end, current_end)\n        else:\n            # If no overlap, add the current interval as a new merged interval\n            merged_intervals.append([current_start, current_end])\n\n    return merged_intervals\n```",
+      "latency_seconds": 14.993424958000105,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:09:46.038917"
+    },
+    {
+      "task_id": "MED-003",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef merge_intervals(intervals: list) -> list:\n    if not intervals:\n        return []\n\n    # Sort the intervals based on their start times\n    intervals.sort(key=lambda x: x[0])\n\n    merged = []\n    for interval in intervals:\n        # If the merged list is empty or if the current interval does not overlap with the previous one,\n        # simply append it.\n        if not merged or interval[0] > merged[-1][1]:\n            merged.append(interval)\n        else:\n            # Otherwise, there is an overlap, so merge the current and previous intervals.\n            # Update the end time of the last merged interval.\n            merged[-1][1] = max(merged[-1][1], interval[1])\n\n    return merged\n```",
+      "latency_seconds": 12.843067917000099,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:09:59.385347"
+    },
+    {
+      "task_id": "MED-003",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef merge_intervals(intervals: list) -> list:\n    if not intervals:\n        return []\n\n    # Sort the intervals by their start times\n    intervals.sort(key=lambda x: x[0])\n\n    merged_intervals = [intervals[0]]\n\n    for current_start, current_end in intervals[1:]:\n        last_merged_start, last_merged_end = merged_intervals[-1]\n\n        # If the current interval overlaps with the last merged interval\n        if current_start <= last_merged_end:\n            # Merge them by updating the end time of the last merged interval\n            merged_intervals[-1] = [last_merged_start, max(last_merged_end, current_end)]\n        else:\n            # Otherwise, add the current interval to the merged list\n            merged_intervals.append([current_start, current_end])\n\n    return merged_intervals\n```",
+      "latency_seconds": 11.123942208999779,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:10:11.012883"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 12843.07,
+    "p50_ms": 12843.07,
+    "p95_ms": 14778.39,
+    "p99_ms": 14950.42,
+    "mean_ms": 12986.81,
+    "std_ms": 1582.98,
+    "min_ms": 11123.94,
+    "max_ms": 14993.42,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

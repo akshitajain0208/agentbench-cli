@@ -1,0 +1,8 @@
+{
+  "task_id": "MED-023",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Find product of all elements except self without using division.\n\nFunction signature: def product_except_self(nums: list) -> list\n\nConstraints:\n- O(n) time, no division\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

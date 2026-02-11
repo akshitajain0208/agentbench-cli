@@ -1,0 +1,49 @@
+{
+  "task_id": "MED-021",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-021",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.5192181250004069,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae1-660b-75f3-b201-0276ba52e9df\n--------\nuser\nFind the length of the last word in a string.\n\nFunction signature: def length_of_last_word(s: str) -> int\n\nConstraints:\n- Words are separated by spaces\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:06:52.956580Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12449}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:06:52.967291"
+    },
+    {
+      "task_id": "MED-021",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.5441185829995447,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae1-6db9-7f11-9778-6f800e244864\n--------\nuser\nFind the length of the last word in a string.\n\nFunction signature: def length_of_last_word(s: str) -> int\n\nConstraints:\n- Words are separated by spaces\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:06:55.004289Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12447}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:06:55.015055"
+    },
+    {
+      "task_id": "MED-021",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.6449884580006255,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae1-75bb-7c40-91e0-9ac3994452fb\n--------\nuser\nFind the length of the last word in a string.\n\nFunction signature: def length_of_last_word(s: str) -> int\n\nConstraints:\n- Words are separated by spaces\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:06:57.153370Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12445}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:06:57.163884"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1544.12,
+    "p50_ms": 1544.12,
+    "p95_ms": 1634.9,
+    "p99_ms": 1642.97,
+    "mean_ms": 1569.44,
+    "std_ms": 54.38,
+    "min_ms": 1519.22,
+    "max_ms": 1644.99,
+    "samples": 3
+  },
+  "determinism": null
+}

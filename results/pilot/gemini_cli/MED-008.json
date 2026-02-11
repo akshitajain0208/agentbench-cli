@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-008",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-008",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef missing_number(nums: list) -> int:\n    n = len(nums)\n    expected_sum = n * (n + 1) // 2\n    actual_sum = sum(nums)\n    return expected_sum - actual_sum\n```",
+      "latency_seconds": 13.106431082999734,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:15:51.500276"
+    },
+    {
+      "task_id": "MED-008",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef missing_number(nums: list) -> int:\n    n = len(nums)\n    expected_sum = n * (n + 1) // 2\n    actual_sum = sum(nums)\n    return expected_sum - actual_sum\n```",
+      "latency_seconds": 11.057137167000292,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:16:03.061767"
+    },
+    {
+      "task_id": "MED-008",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef missing_number(nums: list) -> int:\n    n = len(nums)\n    missing = n\n    for i, num in enumerate(nums):\n        missing ^= i ^ num\n    return missing\n```",
+      "latency_seconds": 11.711646167000254,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:16:15.276893"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11711.65,
+    "p50_ms": 11711.65,
+    "p95_ms": 12966.95,
+    "p99_ms": 13078.54,
+    "mean_ms": 11958.4,
+    "std_ms": 854.62,
+    "min_ms": 11057.14,
+    "max_ms": 13106.43,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

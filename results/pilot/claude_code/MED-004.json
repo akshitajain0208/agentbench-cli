@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-004",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-004",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef find_pairs(nums: list, target: int) -> list:\n    seen = set()\n    pairs = set()\n    for num in nums:\n        complement = target - num\n        if complement in seen:\n            pairs.add((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return [list(p) for p in sorted(pairs)]\n```",
+      "latency_seconds": 5.296144875000209,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:10:16.590395"
+    },
+    {
+      "task_id": "MED-004",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef find_pairs(nums: list, target: int) -> list:\n    seen = set()\n    pairs = set()\n    for num in nums:\n        complement = target - num\n        if complement in seen:\n            pairs.add((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return [list(p) for p in sorted(pairs)]\n```",
+      "latency_seconds": 5.594313083000088,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:10:22.688302"
+    },
+    {
+      "task_id": "MED-004",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef find_pairs(nums: list, target: int) -> list:\n    seen = set()\n    pairs = set()\n    for num in nums:\n        complement = target - num\n        if complement in seen:\n            pairs.add((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return [list(pair) for pair in sorted(pairs)]\n```",
+      "latency_seconds": 5.451070832999903,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:10:28.642988"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5451.07,
+    "p50_ms": 5451.07,
+    "p95_ms": 5579.99,
+    "p99_ms": 5591.45,
+    "mean_ms": 5447.18,
+    "std_ms": 121.76,
+    "min_ms": 5296.14,
+    "max_ms": 5594.31,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

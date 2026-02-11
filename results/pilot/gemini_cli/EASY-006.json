@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-006",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-006",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef title_case(s: str) -> str:\n    return s.title()\n```",
+      "latency_seconds": 10.58411095800011,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:05:15.000556"
+    },
+    {
+      "task_id": "EASY-006",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef title_case(s: str) -> str:\n    return s.title()\n```",
+      "latency_seconds": 9.552198208999926,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:05:25.056509"
+    },
+    {
+      "task_id": "EASY-006",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef title_case(s: str) -> str:\n    return s.title()\n```",
+      "latency_seconds": 10.615048042000126,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:05:36.175650"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 10584.11,
+    "p50_ms": 10584.11,
+    "p95_ms": 10611.95,
+    "p99_ms": 10614.43,
+    "mean_ms": 10250.45,
+    "std_ms": 493.9,
+    "min_ms": 9552.2,
+    "max_ms": 10615.05,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

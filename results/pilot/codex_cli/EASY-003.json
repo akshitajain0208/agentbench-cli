@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-003",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "EASY-003",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef count_occurrences(nums: list, target: int) -> int:\n    return sum(1 for num in nums if num == target)\n```",
+      "latency_seconds": 3.0915244999998777,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:01:45.401874"
+    },
+    {
+      "task_id": "EASY-003",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef count_occurrences(nums: list, target: int) -> int:\n    return nums.count(target)\n```",
+      "latency_seconds": 2.4299372909999875,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:01:48.335884"
+    },
+    {
+      "task_id": "EASY-003",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef count_occurrences(nums: list, target: int) -> int:\n    return nums.count(target)\n```",
+      "latency_seconds": 2.2429304999998294,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:01:51.082760"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 2429.94,
+    "p50_ms": 2429.94,
+    "p95_ms": 3025.37,
+    "p99_ms": 3078.29,
+    "mean_ms": 2588.13,
+    "std_ms": 364.05,
+    "min_ms": 2242.93,
+    "max_ms": 3091.52,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

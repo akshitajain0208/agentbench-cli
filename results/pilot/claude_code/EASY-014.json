@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-014",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "EASY-014",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef is_sorted(nums: list) -> bool:\n    return all(nums[i] <= nums[i + 1] for i in range(len(nums) - 1))\n```",
+      "latency_seconds": 5.4424735839993446,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:37:49.106698"
+    },
+    {
+      "task_id": "EASY-014",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef is_sorted(nums: list) -> bool:\n    return all(nums[i] <= nums[i + 1] for i in range(len(nums) - 1))\n```",
+      "latency_seconds": 5.14302916700035,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:37:54.753234"
+    },
+    {
+      "task_id": "EASY-014",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef is_sorted(nums: list) -> bool:\n    return all(nums[i] <= nums[i + 1] for i in range(len(nums) - 1))\n```",
+      "latency_seconds": 4.908976749999965,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:38:00.165940"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5143.03,
+    "p50_ms": 5143.03,
+    "p95_ms": 5412.53,
+    "p99_ms": 5436.48,
+    "mean_ms": 5164.83,
+    "std_ms": 218.34,
+    "min_ms": 4908.98,
+    "max_ms": 5442.47,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

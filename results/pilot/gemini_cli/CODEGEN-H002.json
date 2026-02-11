@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H002",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H002",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef flatten(nested_list: list) -> list:\n    \"\"\"\n    Deep flattens a nested list of integers.\n\n    Args:\n        nested_list: A list that may contain integers or other lists of integers.\n\n    Returns:\n        A new list containing all integers from the nested_list, flattened.\n    \"\"\"\n    result = []\n    for item in nested_list:\n        if isinstance(item, list):\n            result.extend(flatten(item))\n        else:\n            result.append(item)\n    return result\n```",
+      "latency_seconds": 10.957749542000045,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:41:41.257559"
+    },
+    {
+      "task_id": "CODEGEN-H002",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef flatten(nested_list: list) -> list:\n    \"\"\"\n    Deep flattens a nested list of integers.\n\n    Args:\n        nested_list: A list that may contain integers or other lists,\n                     which in turn may contain integers or other lists.\n\n    Returns:\n        A flattened list of integers, preserving the original order.\n    \"\"\"\n    flat_list = []\n    for element in nested_list:\n        if isinstance(element, list):\n            flat_list.extend(flatten(element))\n        else:\n            flat_list.append(element)\n    return flat_list\n```",
+      "latency_seconds": 10.474329249999982,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:41:52.235066"
+    },
+    {
+      "task_id": "CODEGEN-H002",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef flatten(nested_list: list) -> list:\n    \"\"\"\n    Deep flattens a nested list of integers.\n\n    Args:\n        nested_list: A list that may contain integers or other nested lists of integers.\n\n    Returns:\n        A flattened list of integers, preserving the original order.\n    \"\"\"\n    flattened = []\n    for element in nested_list:\n        if isinstance(element, list):\n            flattened.extend(flatten(element))\n        else:\n            flattened.append(element)\n    return flattened\n```",
+      "latency_seconds": 10.843306208000001,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:42:03.581278"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 10843.31,
+    "p50_ms": 10843.31,
+    "p95_ms": 10946.31,
+    "p99_ms": 10955.46,
+    "mean_ms": 10758.46,
+    "std_ms": 206.27,
+    "min_ms": 10474.33,
+    "max_ms": 10957.75,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

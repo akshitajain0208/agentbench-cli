@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H003",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H003",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef combination_sum(candidates: list, target: int) -> list:\n    candidates = sorted(set(candidates))\n    result = []\n\n    def backtrack(start: int, remaining: int, path: list):\n        if remaining == 0:\n            result.append(path[:])\n            return\n        for i in range(start, len(candidates)):\n            val = candidates[i]\n            if val > remaining:\n                break\n            path.append(val)\n            backtrack(i, remaining - val, path)\n            path.pop()\n\n    backtrack(0, target, [])\n    return result\n```",
+      "latency_seconds": 5.108460374999936,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:42:27.698469"
+    },
+    {
+      "task_id": "CODEGEN-H003",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef combination_sum(candidates: list, target: int) -> list:\n    candidates = sorted(set(candidates))\n    result = []\n\n    def backtrack(start: int, remaining: int, path: list):\n        if remaining == 0:\n            result.append(path.copy())\n            return\n        for i in range(start, len(candidates)):\n            val = candidates[i]\n            if val > remaining:\n                break\n            path.append(val)\n            backtrack(i, remaining - val, path)\n            path.pop()\n\n    backtrack(0, target, [])\n    return result\n```",
+      "latency_seconds": 4.895461750000095,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:42:33.096524"
+    },
+    {
+      "task_id": "CODEGEN-H003",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef combination_sum(candidates: list, target: int) -> list:\n    candidates = sorted(set(candidates))\n    result = []\n\n    def backtrack(start: int, remaining: int, path: list):\n        if remaining == 0:\n            result.append(path[:])\n            return\n        for i in range(start, len(candidates)):\n            val = candidates[i]\n            if val > remaining:\n                break\n            path.append(val)\n            backtrack(i, remaining - val, path)  # reuse allowed\n            path.pop()\n\n    backtrack(0, target, [])\n    return result\n```",
+      "latency_seconds": 4.276773666000054,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:42:37.875901"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4895.46,
+    "p50_ms": 4895.46,
+    "p95_ms": 5087.16,
+    "p99_ms": 5104.2,
+    "mean_ms": 4760.23,
+    "std_ms": 352.74,
+    "min_ms": 4276.77,
+    "max_ms": 5108.46,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

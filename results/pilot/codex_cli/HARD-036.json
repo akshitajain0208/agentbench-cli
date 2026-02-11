@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-036",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-036",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.5043577920005191,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0b-8ddd-7b92-957c-2ca0b2b41d32\n--------\nuser\nCheck if a string can be segmented into dictionary words.\n\nFunction signature: def can_segment(s: str, word_dict: list) -> bool\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:52:55.647513Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9687}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:52:55.657639"
+    },
+    {
+      "task_id": "HARD-036",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.3651524999986577,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0b-957b-74d2-abea-4ac5fcf3a17a\n--------\nuser\nCheck if a string can be segmented into dictionary words.\n\nFunction signature: def can_segment(s: str, word_dict: list) -> bool\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:52:57.516463Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9685}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:52:57.526635"
+    },
+    {
+      "task_id": "HARD-036",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.7203892079996876,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0b-9cca-7960-88ca-d884a1137d15\n--------\nuser\nCheck if a string can be segmented into dictionary words.\n\nFunction signature: def can_segment(s: str, word_dict: list) -> bool\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:52:59.740412Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9683}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:52:59.750703"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1504.36,
+    "p50_ms": 1504.36,
+    "p95_ms": 1698.79,
+    "p99_ms": 1716.07,
+    "mean_ms": 1529.97,
+    "std_ms": 146.15,
+    "min_ms": 1365.15,
+    "max_ms": 1720.39,
+    "samples": 3
+  },
+  "determinism": null
+}

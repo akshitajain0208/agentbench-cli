@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-016",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-016",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.566751624999597,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae6-28b2-75a1-94d9-d2cd37c40bc1\n--------\nuser\nImplement a basic calculator that evaluates string expressions with +, -, (, ).\n\nFunction signature: def calculate(s: str) -> int\n\nConstraints:\n- Handle parentheses\n- Handle negative numbers\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:12:04.978382Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12137}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:12:04.987518"
+    },
+    {
+      "task_id": "HARD-016",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.5422560829993017,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae6-308f-7723-8359-df87bdb2ce0a\n--------\nuser\nImplement a basic calculator that evaluates string expressions with +, -, (, ).\n\nFunction signature: def calculate(s: str) -> int\n\nConstraints:\n- Handle parentheses\n- Handle negative numbers\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:12:07.023252Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12135}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:12:07.033619"
+    },
+    {
+      "task_id": "HARD-016",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.9496357919997536,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae6-388a-7763-955c-b7dd4c6ceb0d\n--------\nuser\nImplement a basic calculator that evaluates string expressions with +, -, (, ).\n\nFunction signature: def calculate(s: str) -> int\n\nConstraints:\n- Handle parentheses\n- Handle negative numbers\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:12:09.482559Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12133}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:12:09.486952"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1566.75,
+    "p50_ms": 1566.75,
+    "p95_ms": 1911.35,
+    "p99_ms": 1941.98,
+    "mean_ms": 1686.21,
+    "std_ms": 186.54,
+    "min_ms": 1542.26,
+    "max_ms": 1949.64,
+    "samples": 3
+  },
+  "determinism": null
+}

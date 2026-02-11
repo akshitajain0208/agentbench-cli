@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-016",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-016",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef calculate(s: str) -> int:\n    stack = []\n    operand = 0\n    res = 0\n    sign = 1\n\n    for ch in s:\n        if ch.isdigit():\n            operand = (operand * 10) + int(ch)\n        elif ch == '+':\n            res += sign * operand\n            sign = 1\n            operand = 0\n        elif ch == '-':\n            res += sign * operand\n            sign = -1\n            operand = 0\n        elif ch == '(':\n            stack.append(res)\n            stack.append(sign)\n            sign = 1\n            res = 0\n        elif ch == ')':\n            res += sign * operand\n            res *= stack.pop()\n            res += stack.pop()\n            operand = 0\n            \n    return res + sign * operand\n```",
+      "latency_seconds": 46.358912790999966,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:12:55.847478"
+    },
+    {
+      "task_id": "HARD-016",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 120.02976341700014,
+      "success": false,
+      "error_message": "Timeout after 120s",
+      "timestamp": "2026-02-11T13:14:56.379363"
+    },
+    {
+      "task_id": "HARD-016",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef calculate(s: str) -> int:\n    total = 0\n    i, signs = 0, [1, 1]\n    while i < len(s):\n        c = s[i]\n        if c.isdigit():\n            start = i\n            while i < len(s) and s[i].isdigit():\n                i += 1\n            total += signs.pop() * int(s[start:i])\n            continue\n        if c in '+-(':\n            signs += signs[-1] if c == '+' else -signs[-1] if c == '-' else signs[-1],\n        elif c == ')':\n            signs.pop()\n        i += 1\n    return total\n```",
+      "latency_seconds": 84.27494187499997,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:16:21.157235"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 2,
+    "passing_samples": 2,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 84274.94,
+    "p50_ms": 84274.94,
+    "p95_ms": 116454.28,
+    "p99_ms": 119314.67,
+    "mean_ms": 83554.54,
+    "std_ms": 30080.31,
+    "min_ms": 46358.91,
+    "max_ms": 120029.76,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.5,
+    "unique_outputs": 2,
+    "total_outputs": 2,
+    "most_common_frequency": 0.5,
+    "stability_score": 0.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H005",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H005",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef find_median_sorted_arrays(nums1: list, nums2: list) -> float:\n    if len(nums1) > len(nums2):\n        nums1, nums2 = nums2, nums1\n\n    m, n = len(nums1), len(nums2)\n    total = m + n\n    half = (total + 1) // 2\n\n    left, right = 0, m\n    while left <= right:\n        i = (left + right) // 2\n        j = half - i\n\n        a_left = nums1[i - 1] if i > 0 else float(\"-inf\")\n        a_right = nums1[i] if i < m else float(\"inf\")\n        b_left = nums2[j - 1] if j > 0 else float(\"-inf\")\n        b_right = nums2[j] if j < n else float(\"inf\")\n\n        if a_left <= b_right and b_left <= a_right:\n            if total % 2:\n                return float(max(a_left, b_left))\n            return (max(a_left, b_left) + min(a_right, b_right)) / 2.0\n        elif a_left > b_right:\n            right = i - 1\n        else:\n            left = i + 1\n\n    raise ValueError(\"Input arrays must be sorted.\")\n```",
+      "latency_seconds": 6.46970962499995,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:46:54.715909"
+    },
+    {
+      "task_id": "CODEGEN-H005",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef find_median_sorted_arrays(nums1: list, nums2: list) -> float:\n    if len(nums1) > len(nums2):\n        nums1, nums2 = nums2, nums1\n\n    m, n = len(nums1), len(nums2)\n    total = m + n\n    half = (total + 1) // 2\n\n    lo, hi = 0, m\n    while lo <= hi:\n        i = (lo + hi) // 2\n        j = half - i\n\n        left1 = float(\"-inf\") if i == 0 else nums1[i - 1]\n        right1 = float(\"inf\") if i == m else nums1[i]\n        left2 = float(\"-inf\") if j == 0 else nums2[j - 1]\n        right2 = float(\"inf\") if j == n else nums2[j]\n\n        if left1 <= right2 and left2 <= right1:\n            if total % 2:\n                return float(max(left1, left2))\n            return (max(left1, left2) + min(right1, right2)) / 2.0\n        elif left1 > right2:\n            hi = i - 1\n        else:\n            lo = i + 1\n\n    raise ValueError(\"Input arrays must be sorted.\")\n```",
+      "latency_seconds": 7.111895750000031,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:47:02.330995"
+    },
+    {
+      "task_id": "CODEGEN-H005",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef find_median_sorted_arrays(nums1: list, nums2: list) -> float:\n    if len(nums1) > len(nums2):\n        nums1, nums2 = nums2, nums1\n\n    m, n = len(nums1), len(nums2)\n    total = m + n\n    half = (total + 1) // 2\n\n    left, right = 0, m\n    while left <= right:\n        i = (left + right) // 2\n        j = half - i\n\n        a_left = nums1[i - 1] if i > 0 else float(\"-inf\")\n        a_right = nums1[i] if i < m else float(\"inf\")\n        b_left = nums2[j - 1] if j > 0 else float(\"-inf\")\n        b_right = nums2[j] if j < n else float(\"inf\")\n\n        if a_left <= b_right and b_left <= a_right:\n            if total % 2:\n                return float(max(a_left, b_left))\n            return (max(a_left, b_left) + min(a_right, b_right)) / 2.0\n        elif a_left > b_right:\n            right = i - 1\n        else:\n            left = i + 1\n\n    raise ValueError(\"Input arrays must be sorted.\")\n```",
+      "latency_seconds": 5.966042541000093,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:47:08.799990"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 6469.71,
+    "p50_ms": 6469.71,
+    "p95_ms": 7047.68,
+    "p99_ms": 7099.05,
+    "mean_ms": 6515.88,
+    "std_ms": 468.93,
+    "min_ms": 5966.04,
+    "max_ms": 7111.9,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

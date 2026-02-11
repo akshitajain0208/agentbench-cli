@@ -1,0 +1,10 @@
+agent,difficulty,tasks,pass_at_1_mean
+claude_code,easy,20,1.0
+claude_code,hard,43,0.9767
+claude_code,medium,37,1.0
+codex_cli,easy,20,0.75
+codex_cli,hard,43,0.4264
+codex_cli,medium,37,0.7027
+gemini_cli,easy,20,1.0
+gemini_cli,hard,43,0.9147
+gemini_cli,medium,37,0.964

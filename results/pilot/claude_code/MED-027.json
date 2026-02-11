@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-027",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-027",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef subsets(nums: list) -> list:\n    result = [[]]\n    for num in nums:\n        result += [subset + [num] for subset in result]\n    return result\n```",
+      "latency_seconds": 5.13084283399985,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:43:36.834114"
+    },
+    {
+      "task_id": "MED-027",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef subsets(nums: list) -> list:\n    result = [[]]\n    for num in nums:\n        result += [subset + [num] for subset in result]\n    return result\n```",
+      "latency_seconds": 5.357070750000275,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:43:42.694821"
+    },
+    {
+      "task_id": "MED-027",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef subsets(nums: list) -> list:\n    result = [[]]\n    for num in nums:\n        result += [subset + [num] for subset in result]\n    return result\n```",
+      "latency_seconds": 5.7886556250005015,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:43:48.987164"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5357.07,
+    "p50_ms": 5357.07,
+    "p95_ms": 5745.5,
+    "p99_ms": 5780.02,
+    "mean_ms": 5425.52,
+    "std_ms": 272.88,
+    "min_ms": 5130.84,
+    "max_ms": 5788.66,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-022",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-022",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef num_decodings(s: str) -> int:\n    n = len(s)\n    if n == 0:\n        return 1\n\n    dp = [0] * (n + 1)\n    dp[0] = 1  # Base case: One way to decode an empty string\n\n    for i in range(1, n + 1):\n        # Case 1: Decode s[i-1] as a single digit\n        if s[i-1] != '0':\n            dp[i] += dp[i-1]\n\n        # Case 2: Decode s[i-2:i] as a two-digit number\n        if i >= 2:\n            two_digit_num = int(s[i-2:i])\n            if 10 <= two_digit_num <= 26:\n                dp[i] += dp[i-2]\n\n    return dp[n]\n\n```",
+      "latency_seconds": 25.569607916000678,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:23:39.444479"
+    },
+    {
+      "task_id": "HARD-022",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef num_decodings(s: str) -> int:\n    \"\"\"\n    Counts the number of ways to decode a digit string.\n    '1' maps to 'A', '2' maps to 'B', ..., '26' maps to 'Z'.\n    Leading zeros are invalid (e.g., \"01\" cannot be decoded, but \"10\" can).\n\n    Args:\n        s: The digit string to decode.\n\n    Returns:\n        The number of ways to decode the string.\n    \"\"\"\n    n = len(s)\n    if n == 0:\n        return 1  # Empty string has one way to decode (do nothing)\n\n    # dp[i] stores the number of ways to decode the substring s[0...i-1]\n    dp = [0] * (n + 1)\n    dp[0] = 1  # Base case: empty string has one way to decode\n\n    # dp[1] depends on the first character\n    if s[0] != '0':\n        dp[1] = 1\n    else:\n        dp[1] = 0\n\n    for i in range(2, n + 1):\n        # Case 1: Decode the last single digit s[i-1]\n        # If the current digit is not '0', it can be decoded independently\n        if s[i - 1] != '0':\n            dp[i] += dp[i - 1]\n\n        # Case 2: Decode the last two digits s[i-2:i]\n        # Extract the two-digit number\n        two_digit_num = int(s[i - 2:i])\n\n        # If the first digit of the two-digit number is not '0'\n        # and the number is between 10 and 26 (inclusive)\n        if s[i - 2] != '0' and 10 <= two_digit_num <= 26:\n            dp[i] += dp[i - 2]\n\n    return dp[n]\n\n```",
+      "latency_seconds": 22.719419584000207,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:24:02.666759"
+    },
+    {
+      "task_id": "HARD-022",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef num_decodings(s: str) -> int:\n    n = len(s)\n    if n == 0:\n        return 0  # Or 1, depending on interpretation of empty string, but constraints usually imply non-empty.\n\n    # dp[i] will store the number of ways to decode s[0...i-1]\n    dp = [0] * (n + 1)\n\n    # Base case: empty string has one way to decode (convention for DP)\n    dp[0] = 1\n\n    for i in range(1, n + 1):\n        # Check for single digit decoding\n        # If the current digit is not '0', it can be decoded by itself.\n        if s[i - 1] != '0':\n            dp[i] = dp[i - 1]\n\n        # Check for two digit decoding\n        # If we have at least two digits, consider the last two digits.\n        if i >= 2:\n            two_digits = int(s[i - 2:i])\n            # If the two-digit number is between 10 and 26 (inclusive),\n            # it can be decoded as a single letter.\n            if 10 <= two_digits <= 26:\n                dp[i] += dp[i - 2]\n\n    return dp[n]\n\n```",
+      "latency_seconds": 27.774789332999717,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:24:30.944300"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 25569.61,
+    "p50_ms": 25569.61,
+    "p95_ms": 27554.27,
+    "p99_ms": 27730.69,
+    "mean_ms": 25354.61,
+    "std_ms": 2069.44,
+    "min_ms": 22719.42,
+    "max_ms": 27774.79,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

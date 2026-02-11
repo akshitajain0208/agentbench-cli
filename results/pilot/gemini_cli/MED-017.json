@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-017",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-017",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "def my_atoi(s: str) -> int:\n    s = s.lstrip()\n    if not s:\n        return 0\n\n    sign = 1\n    i = 0\n    if s[i] == '+':\n        i += 1\n    elif s[i] == '-':\n        sign = -1\n        i += 1\n\n    num = 0\n    INT_MAX = 2**31 - 1\n    INT_MIN = -2**31\n\n    while i < len(s) and s[i].isdigit():\n        digit = int(s[i])\n\n        if num > (INT_MAX - digit) // 10:\n            return INT_MAX if sign == 1 else INT_MIN\n\n        num = num * 10 + digit\n        i += 1\n\n    return sign * num",
+      "latency_seconds": 41.71220425000047,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:02:43.537542"
+    },
+    {
+      "task_id": "MED-017",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef my_atoi(s: str) -> int:\n    s = s.lstrip()\n    if not s:\n        return 0\n\n    sign = 1\n    i = 0\n    if s[0] in ('-', '+'):\n        if s[0] == '-':\n            sign = -1\n        i = 1\n\n    num = 0\n    INT_MAX = 2**31 - 1\n    INT_MIN = -2**31\n\n    while i < len(s) and s[i].isdigit():\n        digit = int(s[i])\n\n        if num > (INT_MAX - digit) // 10:\n            return INT_MAX if sign == 1 else INT_MIN\n\n        num = num * 10 + digit\n        i += 1\n\n    return sign * num\n```",
+      "latency_seconds": 20.56727899999987,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:03:04.607829"
+    },
+    {
+      "task_id": "MED-017",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef my_atoi(s: str) -> int:\n    s = s.lstrip()\n    if not s:\n        return 0\n\n    i = 0\n    sign = 1\n    \n    if s[i] == '+':\n        i += 1\n    elif s[i] == '-':\n        sign = -1\n        i += 1\n        \n    res = 0\n    while i < len(s) and s[i].isdigit():\n        res = res * 10 + int(s[i])\n        i += 1\n        \n    res *= sign\n    \n    INT_MIN, INT_MAX = -2**31, 2**31 - 1\n    if res < INT_MIN:\n        return INT_MIN\n    if res > INT_MAX:\n        return INT_MAX\n        \n    return res\n```",
+      "latency_seconds": 34.0361659579994,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:03:39.146655"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 34036.17,
+    "p50_ms": 34036.17,
+    "p95_ms": 40944.6,
+    "p99_ms": 41558.68,
+    "mean_ms": 32105.22,
+    "std_ms": 8739.69,
+    "min_ms": 20567.28,
+    "max_ms": 41712.2,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

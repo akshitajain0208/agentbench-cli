@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-016",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-016",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef majority_element(nums: list) -> int:\n    count = 0\n    candidate = 0\n    for num in nums:\n        if count == 0:\n            candidate = num\n        if num == candidate:\n            count += 1\n        else:\n            count -= 1\n    return candidate\n```",
+      "latency_seconds": 11.69120487500004,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:01:02.264052"
+    },
+    {
+      "task_id": "MED-016",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef majority_element(nums: list) -> int:\n    \"\"\"\n    Finds the majority element in a list of numbers.\n    The majority element appears more than n/2 times.\n\n    Args:\n        nums: A list of integers.\n\n    Returns:\n        The majority element.\n    \"\"\"\n    candidate = 0\n    count = 0\n\n    for num in nums:\n        if count == 0:\n            candidate = num\n        if num == candidate:\n            count += 1\n        else:\n            count -= 1\n    return candidate\n```",
+      "latency_seconds": 10.862527291999868,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:01:13.630458"
+    },
+    {
+      "task_id": "MED-016",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef majority_element(nums: list) -> int:\n    \"\"\"\n    Finds the majority element in a list of numbers.\n\n    The majority element is the element that appears more than \u230an / 2\u230b times.\n    It is guaranteed that the majority element always exists in the array.\n\n    Args:\n        nums: A list of integers.\n\n    Returns:\n        The majority element.\n    \"\"\"\n    count = 0\n    candidate = None\n\n    for num in nums:\n        if count == 0:\n            candidate = num\n        if num == candidate:\n            count += 1\n        else:\n            count -= 1\n    return candidate\n```",
+      "latency_seconds": 10.780625332999989,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:01:24.914384"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 10862.53,
+    "p50_ms": 10862.53,
+    "p95_ms": 11608.34,
+    "p99_ms": 11674.63,
+    "mean_ms": 11111.45,
+    "std_ms": 411.31,
+    "min_ms": 10780.63,
+    "max_ms": 11691.2,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

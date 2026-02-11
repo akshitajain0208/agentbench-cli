@@ -1,0 +1,49 @@
+{
+  "task_id": "MED-023",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-023",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 2.9546793750005236,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae4-0496-7611-8ad5-a45c22d28041\n--------\nuser\nFind product of all elements except self without using division.\n\nFunction signature: def product_except_self(nums: list) -> list\n\nConstraints:\n- O(n) time, no division\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:09:44.583312Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12278}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:09:44.595330"
+    },
+    {
+      "task_id": "MED-023",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.44265812499998,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae4-0c25-7891-ad20-e6603824c99d\n--------\nuser\nFind product of all elements except self without using division.\n\nFunction signature: def product_except_self(nums: list) -> list\n\nConstraints:\n- O(n) time, no division\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:09:46.530122Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12276}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:09:46.541753"
+    },
+    {
+      "task_id": "MED-023",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.4391234579998127,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae4-13c1-7c32-91d1-dae3bcf7fdbf\n--------\nuser\nFind product of all elements except self without using division.\n\nFunction signature: def product_except_self(nums: list) -> list\n\nConstraints:\n- O(n) time, no division\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:09:48.474538Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12274}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:09:48.484601"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1442.66,
+    "p50_ms": 1442.66,
+    "p95_ms": 2803.48,
+    "p99_ms": 2924.44,
+    "mean_ms": 1945.49,
+    "std_ms": 713.61,
+    "min_ms": 1439.12,
+    "max_ms": 2954.68,
+    "samples": 3
+  },
+  "determinism": null
+}

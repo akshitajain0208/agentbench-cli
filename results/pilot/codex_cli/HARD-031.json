@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-031",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-031",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.716385665999951,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b06-0099-7261-94a5-98f759d396f1\n--------\nuser\nFind the longest common subsequence of two strings.\n\nFunction signature: def longest_common_subsequence(s1: str, s2: str) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:46:52.018329Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10051}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:46:52.027291"
+    },
+    {
+      "task_id": "HARD-031",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.546079458999884,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b06-090e-70a3-bc7d-ff64a0e21f40\n--------\nuser\nFind the longest common subsequence of two strings.\n\nFunction signature: def longest_common_subsequence(s1: str, s2: str) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:46:54.067519Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10048}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:46:54.077303"
+    },
+    {
+      "task_id": "HARD-031",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.5437647919998199,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b06-1110-7cf2-b046-9512d9308bf4\n--------\nuser\nFind the longest common subsequence of two strings.\n\nFunction signature: def longest_common_subsequence(s1: str, s2: str) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:46:56.114994Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10046}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:46:56.124798"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1546.08,
+    "p50_ms": 1546.08,
+    "p95_ms": 1699.36,
+    "p99_ms": 1712.98,
+    "mean_ms": 1602.08,
+    "std_ms": 80.83,
+    "min_ms": 1543.76,
+    "max_ms": 1716.39,
+    "samples": 3
+  },
+  "determinism": null
+}

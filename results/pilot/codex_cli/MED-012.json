@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-012",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-012",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef roman_to_int(s: str) -> int:\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n\n    for i, ch in enumerate(s):\n        if i + 1 < len(s) and values[ch] < values[s[i + 1]]:\n            total -= values[ch]\n        else:\n            total += values[ch]\n\n    return total\n```",
+      "latency_seconds": 4.5002366250000705,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:21:18.086093"
+    },
+    {
+      "task_id": "MED-012",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef roman_to_int(s: str) -> int:\n    values = {\"I\": 1, \"V\": 5, \"X\": 10, \"L\": 50, \"C\": 100, \"D\": 500, \"M\": 1000}\n    total = 0\n\n    for i, ch in enumerate(s):\n        if i + 1 < len(s) and values[ch] < values[s[i + 1]]:\n            total -= values[ch]\n        else:\n            total += values[ch]\n\n    return total\n```",
+      "latency_seconds": 3.3176188329998695,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:21:21.907313"
+    },
+    {
+      "task_id": "MED-012",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef roman_to_int(s: str) -> int:\n    values = {\"I\": 1, \"V\": 5, \"X\": 10, \"L\": 50, \"C\": 100, \"D\": 500, \"M\": 1000}\n    total = 0\n    prev = 0\n\n    for ch in reversed(s):\n        val = values[ch]\n        if val < prev:\n            total -= val\n        else:\n            total += val\n            prev = val\n\n    return total\n```",
+      "latency_seconds": 3.4959622920000584,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:21:25.907158"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 3495.96,
+    "p50_ms": 3495.96,
+    "p95_ms": 4399.81,
+    "p99_ms": 4480.15,
+    "mean_ms": 3771.27,
+    "std_ms": 520.57,
+    "min_ms": 3317.62,
+    "max_ms": 4500.24,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-006",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-006",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef longest_palindrome(s: str) -> str:\n    if not s:\n        return \"\"\n    start, max_len = 0, 1\n    for i in range(len(s)):\n        for l, r in [(i, i), (i, i + 1)]:\n            while l >= 0 and r < len(s) and s[l] == s[r]:\n                if r - l + 1 > max_len:\n                    start, max_len = l, r - l + 1\n                l -= 1\n                r += 1\n    return s[start:start + max_len]\n```",
+      "latency_seconds": 6.185834499999601,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:30:28.751213"
+    },
+    {
+      "task_id": "HARD-006",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef longest_palindrome(s: str) -> str:\n    if not s:\n        return \"\"\n    start, max_len = 0, 1\n    for i in range(len(s)):\n        for lo, hi in [(i, i), (i, i + 1)]:\n            while lo >= 0 and hi < len(s) and s[lo] == s[hi]:\n                if hi - lo + 1 > max_len:\n                    start, max_len = lo, hi - lo + 1\n                lo -= 1\n                hi += 1\n    return s[start:start + max_len]\n```",
+      "latency_seconds": 6.028274833000069,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:30:35.283098"
+    },
+    {
+      "task_id": "HARD-006",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef longest_palindrome(s: str) -> str:\n    if not s:\n        return \"\"\n    start, max_len = 0, 1\n    for i in range(len(s)):\n        for l, r in [(i, i), (i, i + 1)]:\n            while l >= 0 and r < len(s) and s[l] == s[r]:\n                if r - l + 1 > max_len:\n                    start, max_len = l, r - l + 1\n                l -= 1\n                r += 1\n    return s[start:start + max_len]\n```",
+      "latency_seconds": 5.974833374999889,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:30:41.761520"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 6028.27,
+    "p50_ms": 6028.27,
+    "p95_ms": 6170.08,
+    "p99_ms": 6182.68,
+    "mean_ms": 6062.98,
+    "std_ms": 89.57,
+    "min_ms": 5974.83,
+    "max_ms": 6185.83,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

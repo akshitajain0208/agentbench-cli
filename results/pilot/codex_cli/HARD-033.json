@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-033",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-033",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.6446525830006067,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b08-62e8-7f70-b380-dc4327e41af1\n--------\nuser\nFind if there's a subset that sums to target.\n\nFunction signature: def subset_sum(nums: list, target: int) -> bool\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:49:28.182684Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9894}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:49:28.193248"
+    },
+    {
+      "task_id": "HARD-033",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.9527757500000007,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b08-6b15-7300-ae10-a25aef7c92d8\n--------\nuser\nFind if there's a subset that sums to target.\n\nFunction signature: def subset_sum(nums: list, target: int) -> bool\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:49:30.637002Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9892}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:49:30.649823"
+    },
+    {
+      "task_id": "HARD-033",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.4382868749999034,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b08-74ad-7050-8315-978a386c7ec2\n--------\nuser\nFind if there's a subset that sums to target.\n\nFunction signature: def subset_sum(nums: list, target: int) -> bool\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:49:32.582430Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9890}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:49:32.591771"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1644.65,
+    "p50_ms": 1644.65,
+    "p95_ms": 1921.96,
+    "p99_ms": 1946.61,
+    "mean_ms": 1678.57,
+    "std_ms": 211.4,
+    "min_ms": 1438.29,
+    "max_ms": 1952.78,
+    "samples": 3
+  },
+  "determinism": null
+}

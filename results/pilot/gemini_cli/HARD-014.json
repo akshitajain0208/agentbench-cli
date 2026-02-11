@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-014",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-014",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef largest_rectangle_histogram(heights: list) -> int:\n    \"\"\"\n    Finds the maximum rectangle area in a histogram.\n\n    Args:\n        heights: A list of integers representing the heights of the histogram bars.\n\n    Returns:\n        The maximum rectangle area.\n    \"\"\"\n    stack = []  # Stores indices of bars\n    max_area = 0\n    # Append a 0 to heights to ensure all bars in the stack are processed at the end\n    heights_extended = heights + [0] \n\n    for i, h in enumerate(heights_extended):\n        start_index = i\n        while stack and heights_extended[stack[-1]] > h:\n            popped_index = stack.pop()\n            height_val = heights_extended[popped_index]\n            width = i if not stack else (i - stack[-1] - 1)\n            max_area = max(max_area, height_val * width)\n            start_index = popped_index  # Update start_index to potentially push it back later\n        \n        # If the current height 'h' is greater than or equal to the height at the top of the stack,\n        # or if the stack is empty, push the current index.\n        # This handles cases where we've processed smaller bars and now need to push a new index\n        # representing a potential starting point for a larger rectangle.\n        if not stack or heights_extended[stack[-1]] <= h:\n            stack.append(i)\n        \n    return max_area\n\n```",
+      "latency_seconds": 20.95624874999976,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:46:24.060256"
+    },
+    {
+      "task_id": "HARD-014",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef largest_rectangle_histogram(heights: list) -> int:\n    \"\"\"\n    Finds the maximum rectangle area in a histogram.\n\n    Args:\n        heights: A list of integers representing the heights of the histogram bars.\n\n    Returns:\n        The maximum rectangle area.\n    \"\"\"\n    stack = []\n    max_area = 0\n    n = len(heights)\n\n    for i in range(n):\n        while stack and heights[stack[-1]] > heights[i]:\n            h = heights[stack.pop()]\n            w = i if not stack else i - stack[-1] - 1\n            max_area = max(max_area, h * w)\n        stack.append(i)\n\n    while stack:\n        h = heights[stack.pop()]\n        w = n if not stack else n - stack[-1] - 1\n        max_area = max(max_area, h * w)\n\n    return max_area\n```",
+      "latency_seconds": 11.343061792000299,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:46:35.906663"
+    },
+    {
+      "task_id": "HARD-014",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef largest_rectangle_histogram(heights: list) -> int:\n    stack = []\n    max_area = 0\n    heights.append(0)  # Append 0 to ensure all bars in the stack are processed\n\n    for i, h in enumerate(heights):\n        start_index = i\n        while stack and heights[stack[-1]] > h:\n            popped_index = stack.pop()\n            popped_height = heights[popped_index]\n            width = i - (stack[-1] + 1 if stack else 0)\n            max_area = max(max_area, popped_height * width)\n            start_index = popped_index  # This is incorrect for start_index logic\n\n        # Correct logic for pushing: only push if not already part of an extended rectangle\n        # No, just push the current index. The while loop handles the \"extension\" effectively.\n        stack.append(i)\n\n    # Corrected logic for the main loop:\n    # We need to correctly calculate the width.\n    # When an element is popped, it means we found the right boundary (current `i`).\n    # The left boundary is either the previous element in the stack (if any) + 1,\n    # or 0 if the stack becomes empty.\n\n    stack = []\n    max_area = 0\n    # Add a 0 at the end to force processing of all elements in the stack\n    modified_heights = heights + [0]\n\n    for i, h in enumerate(modified_heights):\n        while stack and modified_heights[stack[-1]] > h:\n            popped_height_index = stack.pop()\n            height = modified_heights[popped_height_index]\n            width = i if not stack else i - stack[-1] - 1\n            max_area = max(max_area, height * width)\n        stack.append(i)\n\n    return max_area\n```",
+      "latency_seconds": 13.152533665999727,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:46:49.562367"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 13152.53,
+    "p50_ms": 13152.53,
+    "p95_ms": 20175.88,
+    "p99_ms": 20800.17,
+    "mean_ms": 15150.61,
+    "std_ms": 4171.14,
+    "min_ms": 11343.06,
+    "max_ms": 20956.25,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

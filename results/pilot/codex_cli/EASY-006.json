@@ -1,0 +1,66 @@
+{
+  "task_id": "EASY-006",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "EASY-006",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef title_case(s: str) -> str:\n    return \" \".join(word[:1].upper() + word[1:] for word in s.split(\" \"))\n```",
+      "latency_seconds": 3.8682291249999707,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:04:56.563404"
+    },
+    {
+      "task_id": "EASY-006",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef title_case(s: str) -> str:\n    return \" \".join(word[:1].upper() + word[1:] for word in s.split(\" \"))\n```",
+      "latency_seconds": 3.9919735409998793,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:05:01.058954"
+    },
+    {
+      "task_id": "EASY-006",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef title_case(s: str) -> str:\n    return \" \".join(word[:1].upper() + word[1:] for word in s.split(\" \"))\n```",
+      "latency_seconds": 2.5896844999999757,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:05:04.152027"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "pass_at_5": 0.0,
+    "pass_at_10": 0.0,
+    "total_samples": 3,
+    "passing_samples": 0,
+    "errors": [
+      "Traceback (most recent call last):\n  File \"/var/folders/y2/3ssr0gwx0_77n9h8yqlbxkbm0000gn/T/tmp3_8y6cuc/test_solution.py\", line 11, in <module>\n    assert result_1 == expected_1, f\"Test 2 failed: got {result_1}, expected {expected_1}\"\nAssertionError: Test 2 failed: got HELLO, expected Hello\n",
+      "Traceback (most recent call last):\n  File \"/var/folders/y2/3ssr0gwx0_77n9h8yqlbxkbm0000gn/T/tmp0fwc9u42/test_solution.py\", line 11, in <module>\n    assert result_1 == expected_1, f\"Test 2 failed: got {result_1}, expected {expected_1}\"\nAssertionError: Test 2 failed: got HELLO, expected Hello\n",
+      "Traceback (most recent call last):\n  File \"/var/folders/y2/3ssr0gwx0_77n9h8yqlbxkbm0000gn/T/tmp15r_34wr/test_solution.py\", line 11, in <module>\n    assert result_1 == expected_1, f\"Test 2 failed: got {result_1}, expected {expected_1}\"\nAssertionError: Test 2 failed: got HELLO, expected Hello\n"
+    ]
+  },
+  "latency": {
+    "median_ms": 3868.23,
+    "p50_ms": 3868.23,
+    "p95_ms": 3979.6,
+    "p99_ms": 3989.5,
+    "mean_ms": 3483.3,
+    "std_ms": 633.89,
+    "min_ms": 2589.68,
+    "max_ms": 3991.97,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

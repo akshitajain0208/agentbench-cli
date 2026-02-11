@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H003",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H003",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef combination_sum(candidates: list, target: int) -> list:\n    result = []\n    candidates.sort()\n\n    def backtrack(start, current, remaining):\n        if remaining == 0:\n            result.append(list(current))\n            return\n        for i in range(start, len(candidates)):\n            if candidates[i] > remaining:\n                break\n            current.append(candidates[i])\n            backtrack(i, current, remaining - candidates[i])\n            current.pop()\n\n    backtrack(0, [], target)\n    return result\n```",
+      "latency_seconds": 5.949314416999982,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:42:09.788319"
+    },
+    {
+      "task_id": "CODEGEN-H003",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef combination_sum(candidates: list, target: int) -> list:\n    result = []\n    candidates.sort()\n\n    def backtrack(start, current, remaining):\n        if remaining == 0:\n            result.append(list(current))\n            return\n        for i in range(start, len(candidates)):\n            if candidates[i] > remaining:\n                break\n            current.append(candidates[i])\n            backtrack(i, current, remaining - candidates[i])\n            current.pop()\n\n    backtrack(0, [], target)\n    return result\n```",
+      "latency_seconds": 5.728689332999977,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:42:16.019771"
+    },
+    {
+      "task_id": "CODEGEN-H003",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef combination_sum(candidates: list, target: int) -> list:\n    result = []\n    candidates.sort()\n\n    def backtrack(start, path, remaining):\n        if remaining == 0:\n            result.append(list(path))\n            return\n        for i in range(start, len(candidates)):\n            if candidates[i] > remaining:\n                break\n            path.append(candidates[i])\n            backtrack(i, path, remaining - candidates[i])\n            path.pop()\n\n    backtrack(0, [], target)\n    return result\n```",
+      "latency_seconds": 5.81964825,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:42:22.341346"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5819.65,
+    "p50_ms": 5819.65,
+    "p95_ms": 5936.35,
+    "p99_ms": 5946.72,
+    "mean_ms": 5832.55,
+    "std_ms": 90.53,
+    "min_ms": 5728.69,
+    "max_ms": 5949.31,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

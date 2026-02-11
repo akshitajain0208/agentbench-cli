@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-001",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-001",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "def find_kth_largest(nums: list, k: int) -> int:\n    target = len(nums) - k\n    left, right = 0, len(nums) - 1\n\n    while True:\n        pivot = nums[right]\n        store = left\n        for i in range(left, right):\n            if nums[i] <= pivot:\n                nums[store], nums[i] = nums[i], nums[store]\n                store += 1\n        nums[store], nums[right] = nums[right], nums[store]\n\n        if store == target:\n            return nums[store]\n        if store < target:\n            left = store + 1\n        else:\n            right = store - 1",
+      "latency_seconds": 4.065141332999929,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:07:02.085623"
+    },
+    {
+      "task_id": "MED-001",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "def find_kth_largest(nums: list, k: int) -> int:\n    target = len(nums) - k\n    left, right = 0, len(nums) - 1\n\n    while True:\n        pivot = nums[right]\n        store = left\n\n        for i in range(left, right):\n            if nums[i] < pivot:\n                nums[store], nums[i] = nums[i], nums[store]\n                store += 1\n\n        nums[store], nums[right] = nums[right], nums[store]\n\n        if store == target:\n            return nums[store]\n        if store < target:\n            left = store + 1\n        else:\n            right = store - 1",
+      "latency_seconds": 6.457230250000066,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:07:09.046829"
+    },
+    {
+      "task_id": "MED-001",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef find_kth_largest(nums: list, k: int) -> int:\n    left, right = 0, len(nums) - 1\n    target = len(nums) - k\n\n    while True:\n        pivot = nums[right]\n        i = left\n        for j in range(left, right):\n            if nums[j] <= pivot:\n                nums[i], nums[j] = nums[j], nums[i]\n                i += 1\n        nums[i], nums[right] = nums[right], nums[i]\n\n        if i == target:\n            return nums[i]\n        if i < target:\n            left = i + 1\n        else:\n            right = i - 1\n```",
+      "latency_seconds": 4.091737125000009,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:07:13.642248"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4091.74,
+    "p50_ms": 4091.74,
+    "p95_ms": 6220.68,
+    "p99_ms": 6409.92,
+    "mean_ms": 4871.37,
+    "std_ms": 1121.43,
+    "min_ms": 4065.14,
+    "max_ms": 6457.23,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-027",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-027",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef generate_parentheses(n: int) -> list[str]:\n    result = []\n\n    def backtrack(current_string, open_count, close_count):\n        if len(current_string) == 2 * n:\n            result.append(current_string)\n            return\n\n        if open_count < n:\n            backtrack(current_string + \"(\", open_count + 1, close_count)\n\n        if close_count < open_count:\n            backtrack(current_string + \")\", open_count, close_count + 1)\n\n    backtrack(\"\", 0, 0)\n    return result\n\n```",
+      "latency_seconds": 13.473144624999804,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:33:33.826416"
+    },
+    {
+      "task_id": "HARD-027",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef generate_parentheses(n: int) -> list:\n    result = []\n\n    def backtrack(current_string, open_count, close_count):\n        if len(current_string) == 2 * n:\n            result.append(current_string)\n            return\n\n        if open_count < n:\n            backtrack(current_string + \"(\", open_count + 1, close_count)\n\n        if close_count < open_count:\n            backtrack(current_string + \")\", open_count, close_count + 1)\n\n    backtrack(\"\", 0, 0)\n    return result\n```",
+      "latency_seconds": 11.993214999999509,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:33:46.322866"
+    },
+    {
+      "task_id": "HARD-027",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef generate_parentheses(n: int) -> list:\n    result = []\n\n    def backtrack(current_string, open_count, close_count):\n        if len(current_string) == 2 * n:\n            result.append(current_string)\n            return\n\n        if open_count < n:\n            backtrack(current_string + \"(\", open_count + 1, close_count)\n\n        if close_count < open_count:\n            backtrack(current_string + \")\", open_count, close_count + 1)\n\n    backtrack(\"\", 0, 0)\n    return result\n\n```",
+      "latency_seconds": 11.584090958999695,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:33:58.410328"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11993.21,
+    "p50_ms": 11993.21,
+    "p95_ms": 13325.15,
+    "p99_ms": 13443.55,
+    "mean_ms": 12350.15,
+    "std_ms": 811.45,
+    "min_ms": 11584.09,
+    "max_ms": 13473.14,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

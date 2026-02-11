@@ -1,0 +1,23 @@
+experiment:
+  name: "pilot_v0.1"
+  version: "0.1.0"
+  
+  runs_per_task: 5
+  temperature: 0.0
+  max_tokens: 1024
+  
+  task_suites:
+    - codegen-core
+    - cli-workflow
+    
+  agents:
+    - claude_code
+    - codex_cli
+    - gemini_cli
+
+random_seeds: [42, 123, 456, 789, 1011]
+
+output:
+  results_dir: "results/v0.1.0"
+  log_level: "INFO"
+  save_raw_outputs: true

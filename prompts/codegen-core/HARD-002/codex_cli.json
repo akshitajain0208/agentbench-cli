@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-002",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Implement a function to serialize a binary tree represented as nested lists [val, left, right] into a comma-separated string using preorder traversal. Use 'null' for empty nodes.\n\nFunction signature: def serialize(root: list) -> str\n\nConstraints:\n- None represents empty node\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

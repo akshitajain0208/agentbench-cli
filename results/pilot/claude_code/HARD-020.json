@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-020",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-020",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef shortest_path(grid: list) -> int:\n    if not grid or not grid[0] or grid[0][0] == 1 or grid[-1][-1] == 1:\n        return -1\n    rows, cols = len(grid), len(grid[0])\n    if rows == 1 and cols == 1:\n        return 0\n    from collections import deque\n    queue = deque([(0, 0, 0)])\n    visited = {(0, 0)}\n    while queue:\n        r, c, dist = queue.popleft()\n        for dr, dc in ((0, 1), (0, -1), (1, 0), (-1, 0)):\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == 0 and (nr, nc) not in visited:\n                if nr == rows - 1 and nc == cols - 1:\n                    return dist + 1\n                visited.add((nr, nc))\n                queue.append((nr, nc, dist + 1))\n    return -1\n```",
+      "latency_seconds": 7.319979375000003,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:20:13.648945"
+    },
+    {
+      "task_id": "HARD-020",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\nfrom collections import deque\n\ndef shortest_path(grid: list) -> int:\n    if not grid or not grid[0]:\n        return -1\n    rows, cols = len(grid), len(grid[0])\n    if grid[0][0] == 1 or grid[rows - 1][cols - 1] == 1:\n        return -1\n    if rows == 1 and cols == 1:\n        return 0\n    queue = deque([(0, 0, 0)])\n    visited = {(0, 0)}\n    while queue:\n        r, c, dist = queue.popleft()\n        for dr, dc in ((0, 1), (0, -1), (1, 0), (-1, 0)):\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == 0 and (nr, nc) not in visited:\n                if nr == rows - 1 and nc == cols - 1:\n                    return dist + 1\n                visited.add((nr, nc))\n                queue.append((nr, nc, dist + 1))\n    return -1\n```",
+      "latency_seconds": 7.323954917000265,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:20:21.476508"
+    },
+    {
+      "task_id": "HARD-020",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\nfrom collections import deque\n\ndef shortest_path(grid: list) -> int:\n    if not grid or not grid[0]:\n        return -1\n    rows, cols = len(grid), len(grid[0])\n    if grid[0][0] == 1 or grid[rows - 1][cols - 1] == 1:\n        return -1\n    if rows == 1 and cols == 1:\n        return 0\n    queue = deque([(0, 0, 0)])\n    visited = {(0, 0)}\n    while queue:\n        r, c, dist = queue.popleft()\n        for dr, dc in ((0, 1), (0, -1), (1, 0), (-1, 0)):\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == 0 and (nr, nc) not in visited:\n                if nr == rows - 1 and nc == cols - 1:\n                    return dist + 1\n                visited.add((nr, nc))\n                queue.append((nr, nc, dist + 1))\n    return -1\n```",
+      "latency_seconds": 7.442861833999814,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:20:29.423056"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 7323.95,
+    "p50_ms": 7323.95,
+    "p95_ms": 7430.97,
+    "p99_ms": 7440.48,
+    "mean_ms": 7362.27,
+    "std_ms": 57.01,
+    "min_ms": 7319.98,
+    "max_ms": 7442.86,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

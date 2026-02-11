@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-005",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-005",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    pairs = {')': '(', ']': '[', '}': '{'}\n    \n    for ch in s:\n        if ch in pairs.values():\n            stack.append(ch)\n        elif ch in pairs:\n            if not stack or stack[-1] != pairs[ch]:\n                return False\n            stack.pop()\n        else:\n            return False\n    \n    return not stack\n```",
+      "latency_seconds": 3.8254172500000436,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:39:09.147559"
+    },
+    {
+      "task_id": "CODEGEN-005",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    pairs = {')': '(', '}': '{', ']': '['}\n\n    for ch in s:\n        if ch in pairs.values():\n            stack.append(ch)\n        elif ch in pairs:\n            if not stack or stack.pop() != pairs[ch]:\n                return False\n        else:\n            return False\n\n    return not stack\n```",
+      "latency_seconds": 4.546825374999969,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:39:14.197120"
+    },
+    {
+      "task_id": "CODEGEN-005",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    pairs = {')': '(', ']': '[', '}': '{'}\n\n    for ch in s:\n        if ch in pairs.values():\n            stack.append(ch)\n        elif ch in pairs:\n            if not stack or stack[-1] != pairs[ch]:\n                return False\n            stack.pop()\n        else:\n            return False\n\n    return len(stack) == 0\n```",
+      "latency_seconds": 3.0528834170000323,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:39:17.752897"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 3825.42,
+    "p50_ms": 3825.42,
+    "p95_ms": 4474.68,
+    "p99_ms": 4532.4,
+    "mean_ms": 3808.38,
+    "std_ms": 610.02,
+    "min_ms": 3052.88,
+    "max_ms": 4546.83,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

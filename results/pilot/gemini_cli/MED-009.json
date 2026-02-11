@@ -1,0 +1,64 @@
+{
+  "task_id": "MED-009",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-009",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef binary_search(nums: list, target: int) -> int:\n    left, right = 0, len(nums) - 1\n\n    while left <= right:\n        mid = left + (right - left) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n```",
+      "latency_seconds": 11.085297292000178,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:16:57.511682"
+    },
+    {
+      "task_id": "MED-009",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef binary_search(nums: list, target: int) -> int:\n    \"\"\"\n    Implements binary search to find the index of a target in a sorted list.\n\n    Args:\n        nums: A sorted list of integers.\n        target: The integer to search for.\n\n    Returns:\n        The index of the target if found, otherwise -1.\n    \"\"\"\n    low = 0\n    high = len(nums) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n```",
+      "latency_seconds": 10.649116624999806,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:17:08.664388"
+    },
+    {
+      "task_id": "MED-009",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "I am unable to directly write the code to a file as I do not have a `write_file` or `run_shell_command` tool available in my current set of tools. Therefore, I cannot implement the binary search function as requested.",
+      "latency_seconds": 16.444368250000025,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:17:25.611809"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.6666666666666666,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 2,
+    "errors": [
+      "Traceback (most recent call last):\n  File \"/var/folders/y2/3ssr0gwx0_77n9h8yqlbxkbm0000gn/T/tmpqeca953q/test_solution.py\", line 1, in <module>\n    from solution import *\n  File \"/private/var/folders/y2/3ssr0gwx0_77n9h8yqlbxkbm0000gn/T/tmpqeca953q/solution.py\", line 1\n    I am unable to directly write the code to a file as I do not have a `write_file` or `run_shell_command` tool available in my current set of tools. Therefore, I cannot implement the binary search function as requested.\n      ^\nSyntaxError: invalid syntax\n"
+    ]
+  },
+  "latency": {
+    "median_ms": 11085.3,
+    "p50_ms": 11085.3,
+    "p95_ms": 15908.46,
+    "p99_ms": 16337.19,
+    "mean_ms": 12726.26,
+    "std_ms": 2635.12,
+    "min_ms": 10649.12,
+    "max_ms": 16444.37,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-007",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-007",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef is_anagram(s1: str, s2: str) -> bool:\n    if len(s1) != len(s2):\n        return False\n\n    counts = {}\n    for ch in s1:\n        counts[ch] = counts.get(ch, 0) + 1\n\n    for ch in s2:\n        if ch not in counts:\n            return False\n        counts[ch] -= 1\n        if counts[ch] == 0:\n            del counts[ch]\n\n    return not counts\n```",
+      "latency_seconds": 4.1967646660000355,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:14:26.733046"
+    },
+    {
+      "task_id": "MED-007",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef is_anagram(s1: str, s2: str) -> bool:\n    return sorted(s1) == sorted(s2)\n```",
+      "latency_seconds": 2.7140452919998097,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:14:29.950679"
+    },
+    {
+      "task_id": "MED-007",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef is_anagram(s1: str, s2: str) -> bool:\n    if len(s1) != len(s2):\n        return False\n    return sorted(s1) == sorted(s2)\n```",
+      "latency_seconds": 2.4142717500003528,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:14:32.868974"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 2714.05,
+    "p50_ms": 2714.05,
+    "p95_ms": 4048.49,
+    "p99_ms": 4167.11,
+    "mean_ms": 3108.36,
+    "std_ms": 779.29,
+    "min_ms": 2414.27,
+    "max_ms": 4196.76,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

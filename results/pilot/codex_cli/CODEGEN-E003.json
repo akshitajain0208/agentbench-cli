@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-E003",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-E003",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef my_pow(x: float, n: int) -> float:\n    if n == 0:\n        return 1.0\n\n    exp = n\n    if exp < 0:\n        x = 1.0 / x\n        exp = -exp\n\n    result = 1.0\n    while exp > 0:\n        if exp & 1:\n            result *= x\n        x *= x\n        exp >>= 1\n\n    return result\n```",
+      "latency_seconds": 3.6100387920000685,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:54:43.659401"
+    },
+    {
+      "task_id": "CODEGEN-E003",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef my_pow(x: float, n: int) -> float:\n    if n == 0:\n        return 1.0\n\n    exp = n\n    if exp < 0:\n        x = 1.0 / x\n        exp = -exp\n\n    result = 1.0\n    while exp > 0:\n        if exp & 1:\n            result *= x\n        x *= x\n        exp >>= 1\n\n    return result\n```",
+      "latency_seconds": 3.9933867499998996,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:54:48.156324"
+    },
+    {
+      "task_id": "CODEGEN-E003",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef my_pow(x: float, n: int) -> float:\n    if n == 0:\n        return 1.0\n\n    exp = n\n    base = x\n    if exp < 0:\n        base = 1.0 / base\n        exp = -exp\n\n    result = 1.0\n    while exp > 0:\n        if exp & 1:\n            result *= base\n        base *= base\n        exp >>= 1\n\n    return result\n```",
+      "latency_seconds": 3.4797695830000066,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:54:52.139108"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 3610.04,
+    "p50_ms": 3610.04,
+    "p95_ms": 3955.05,
+    "p99_ms": 3985.72,
+    "mean_ms": 3694.4,
+    "std_ms": 218.0,
+    "min_ms": 3479.77,
+    "max_ms": 3993.39,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

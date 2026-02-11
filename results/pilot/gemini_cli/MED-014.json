@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-014",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-014",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef find_peak(nums: list) -> int:\n    left = 0\n    right = len(nums) - 1\n\n    while left < right:\n        mid = left + (right - left) // 2\n        if nums[mid] < nums[mid + 1]:\n            left = mid + 1\n        else:\n            right = mid\n\n    return left\n```",
+      "latency_seconds": 17.990687624999737,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:57:38.475606"
+    },
+    {
+      "task_id": "MED-014",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef find_peak(nums: list) -> int:\n    left, right = 0, len(nums) - 1\n\n    while left < right:\n        mid = left + (right - left) // 2\n        if nums[mid] < nums[mid + 1]:\n            left = mid + 1\n        else:\n            right = mid\n    return left\n```",
+      "latency_seconds": 21.32183495800018,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:58:00.300325"
+    },
+    {
+      "task_id": "MED-014",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef find_peak(nums: list) -> int:\n    left, right = 0, len(nums) - 1\n\n    while left < right:\n        mid = left + (right - left) // 2\n        if nums[mid] > nums[mid + 1]:\n            # Peak is in the left half including mid\n            right = mid\n        else:\n            # Peak is in the right half excluding mid\n            left = mid + 1\n    return left\n```",
+      "latency_seconds": 15.062163999999939,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:58:15.865733"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 17990.69,
+    "p50_ms": 17990.69,
+    "p95_ms": 20988.72,
+    "p99_ms": 21255.21,
+    "mean_ms": 18124.9,
+    "std_ms": 2557.26,
+    "min_ms": 15062.16,
+    "max_ms": 21321.83,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-M003",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "CODEGEN-M003",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef rotate(matrix: list) -> list:\n    n = len(matrix)\n    for i in range(n):\n        for j in range(i + 1, n):\n            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n    for i in range(n):\n        matrix[i].reverse()\n    return matrix\n```",
+      "latency_seconds": 5.12394775000007,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:58:19.893296"
+    },
+    {
+      "task_id": "CODEGEN-M003",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef rotate(matrix: list) -> list:\n    n = len(matrix)\n    for i in range(n):\n        for j in range(i + 1, n):\n            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n    for i in range(n):\n        matrix[i].reverse()\n    return matrix\n```",
+      "latency_seconds": 8.443587084,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:58:28.839532"
+    },
+    {
+      "task_id": "CODEGEN-M003",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef rotate(matrix: list) -> list:\n    n = len(matrix)\n    for i in range(n):\n        for j in range(i + 1, n):\n            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n    for i in range(n):\n        matrix[i].reverse()\n    return matrix\n```",
+      "latency_seconds": 7.103787833000069,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:58:36.446897"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 7103.79,
+    "p50_ms": 7103.79,
+    "p95_ms": 8309.61,
+    "p99_ms": 8416.79,
+    "mean_ms": 6890.44,
+    "std_ms": 1363.61,
+    "min_ms": 5123.95,
+    "max_ms": 8443.59,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

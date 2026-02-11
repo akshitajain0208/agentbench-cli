@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-037",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-037",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.491052834000584,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0c-7eb5-76d3-a77b-54c5455c133c\n--------\nuser\nFind the maximum length of a subarray with sum <= k.\n\nFunction signature: def max_subarray_len(nums: list, k: int) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:53:57.292896Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9625}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:53:57.303546"
+    },
+    {
+      "task_id": "HARD-037",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.4737727499996254,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0c-8644-7930-9e75-6229b5a0818f\n--------\nuser\nFind the maximum length of a subarray with sum <= k.\n\nFunction signature: def max_subarray_len(nums: list, k: int) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:53:59.272082Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9623}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:53:59.281114"
+    },
+    {
+      "task_id": "HARD-037",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.816295541000727,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0c-8e00-77c1-adac-64ceb36fbbae\n--------\nuser\nFind the maximum length of a subarray with sum <= k.\n\nFunction signature: def max_subarray_len(nums: list, k: int) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:54:01.590960Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9621}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:54:01.601143"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1491.05,
+    "p50_ms": 1491.05,
+    "p95_ms": 1783.77,
+    "p99_ms": 1809.79,
+    "mean_ms": 1593.71,
+    "std_ms": 157.55,
+    "min_ms": 1473.77,
+    "max_ms": 1816.3,
+    "samples": 3
+  },
+  "determinism": null
+}

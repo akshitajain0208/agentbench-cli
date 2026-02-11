@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-007",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-007",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef max_profit(k: int, prices: list) -> int:\n    n = len(prices)\n\n    # Handle edge cases\n    if n == 0 or k == 0:\n        return 0\n\n    # Optimization for large k: equivalent to unlimited transactions\n    # If 2 * k >= n, it means we can make as many transactions as possible\n    # (at most n/2 transactions are possible in total as each transaction\n    # involves a buy and a sell, consuming at least 2 days).\n    # In this scenario, the problem simplifies to \"Best Time to Buy and Sell Stock II\",\n    # where we just sum up all positive price differences.\n    if 2 * k >= n:\n        max_profit_val = 0\n        for i in range(1, n):\n            if prices[i] > prices[i-1]:\n                max_profit_val += prices[i] - prices[i-1]\n        return max_profit_val\n\n    # Dynamic Programming approach for limited transactions\n    # dp[j][0] represents the maximum profit with 'j' completed transactions, ending without holding a stock.\n    # dp[j][1] represents the maximum profit with 'j' completed transactions, ending with holding a stock.\n    # Note: 'j' in dp[j][1] means that we are currently in the 'j'-th transaction,\n    # having already performed j-1 full transactions (buy+sell) and currently hold a stock.\n    # The actual buy operation for the j-th transaction happens when we transition from dp[j-1][0].\n    dp = [[0, -float('inf')] for _ in range(k + 1)]\n\n    for price in prices:\n        # Iterate from k down to 1. This ensures that when calculating dp[j][1],\n        # dp[j-1][0] refers to the value from the previous price iteration,\n        # preventing the use of a value that has already been updated with the current price.\n        for j in range(k, 0, -1):\n            # Option 1: Not holding stock today.\n            #   - Either we were not holding stock yesterday and did nothing (dp[j][0]).\n            #   - Or we were holding stock yesterday and sold it today (dp[j][1] + price).\n            dp[j][0] = max(dp[j][0], dp[j][1] + price)\n\n            # Option 2: Holding stock today.\n            #   - Either we were holding stock yesterday and did nothing (dp[j][1]).\n            #   - Or we were not holding stock yesterday (after j-1 transactions) and bought stock today (dp[j-1][0] - price).\n            dp[j][1] = max(dp[j][1], dp[j-1][0] - price)\n\n    # The maximum profit will be found when we have completed k transactions and are not holding any stock.\n    return dp[k][0]\n\n```",
+      "latency_seconds": 23.3762811659999,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:34:37.672945"
+    },
+    {
+      "task_id": "HARD-007",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef max_profit(k: int, prices: list) -> int:\n    n = len(prices)\n\n    # Edge cases\n    if n < 2 or k == 0:\n        return 0\n\n    # If k is very large, it means we can make as many transactions as possible.\n    # This simplifies to summing all positive differences.\n    # A single transaction involves one buy and one sell. So, at most n // 2 transactions are possible.\n    if k >= n // 2:\n        max_total_profit = 0\n        for i in range(1, n):\n            if prices[i] > prices[i-1]:\n                max_total_profit += prices[i] - prices[i-1]\n        return max_total_profit\n\n    # DP approach for general k\n    # buy[j] stores the maximum profit after j transactions, ending with a buy.\n    # sell[j] stores the maximum profit after j transactions, ending with a sell.\n    # Initialize buy with negative infinity to represent an invalid state or debt.\n    # Initialize sell with 0 as no profit before any transactions.\n    buy = [float('-inf')] * (k + 1)\n    sell = [0] * (k + 1)\n\n    for price in prices:\n        # Iterate backward from k down to 1.\n        # This ensures that when calculating buy[j] and sell[j],\n        # sell[j-1] and buy[j] (from the current day) are based on values from the previous day's calculations\n        # for transaction j-1, or the current day's calculation for buy[j] before updating sell[j].\n        for j in range(k, 0, -1):\n            # buy[j] is the max profit ending with a buy for the j-th transaction.\n            # It can be either the previous buy[j] (no transaction today)\n            # or buying today using profit from (j-1)-th sell (sell[j-1] - price).\n            buy[j] = max(buy[j], sell[j-1] - price)\n            \n            # sell[j] is the max profit ending with a sell for the j-th transaction.\n            # It can be either the previous sell[j] (no transaction today)\n            # or selling today using profit from current buy[j] (buy[j] + price).\n            # Note: buy[j] here is the value calculated for the current 'price'.\n            sell[j] = max(sell[j], buy[j] + price)\n            \n    # The maximum profit will be the maximum profit after k transactions, ending with a sell.\n    return sell[k]\n\n```",
+      "latency_seconds": 28.014734999999746,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:35:06.190646"
+    },
+    {
+      "task_id": "HARD-007",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\nimport math\n\ndef max_profit(k: int, prices: list) -> int:\n    n = len(prices)\n\n    if n == 0 or k == 0:\n        return 0\n\n    # If k is very large (effectively unlimited transactions),\n    # the problem simplifies to summing up all positive price differences.\n    # A transaction involves one buy and one sell. So with n prices,\n    # there can be at most n/2 transactions (buy, sell, buy, sell...).\n    # If k is greater than or equal to n // 2, we can make as many transactions as possible.\n    if k >= n // 2:\n        max_total_profit = 0\n        for i in range(1, n):\n            if prices[i] > prices[i-1]:\n                max_total_profit += prices[i] - prices[i-1]\n        return max_total_profit\n\n    # dp_not_holding[t] represents the maximum profit after 't' completed transactions,\n    # where the last action was a sell, meaning we are not currently holding a stock.\n    # dp_holding[t] represents the maximum profit after 't' buy operations (and 't-1' sell operations),\n    # where the last action was a buy, meaning we are currently holding a stock.\n    \n    # Initialize dp_not_holding with 0 profit for all transactions (no transactions yet or just completed).\n    # Initialize dp_holding with negative infinity, as holding a stock initially means negative profit.\n    dp_not_holding = [0] * (k + 1)\n    dp_holding = [-math.inf] * (k + 1)\n\n    for price in prices:\n        # Iterate backward to ensure that when dp_holding[t] uses dp_not_holding[t-1],\n        # it refers to the state before considering the current 'price' for the (t-1)-th transaction.\n        for t in range(k, 0, -1):\n            # Option 1 for dp_holding[t]:\n            # Either we were already holding a stock (dp_holding[t] from previous price)\n            # or we buy a stock on the current day. To buy for the t-th transaction,\n            # we must have completed t-1 transactions and not held a stock (dp_not_holding[t-1]).\n            dp_holding[t] = max(dp_holding[t], dp_not_holding[t-1] - price)\n\n            # Option 2 for dp_not_holding[t]:\n            # Either we were already not holding a stock (dp_not_holding[t] from previous price)\n            # or we sell a stock on the current day. To sell for the t-th transaction,\n            # we must have been holding a stock (dp_holding[t] which was updated using current price if bought).\n            dp_not_holding[t] = max(dp_not_holding[t], dp_holding[t] + price)\n\n    # The maximum profit is achieved when we have completed 'k' transactions and are not holding any stock.\n    return dp_not_holding[k]\n\n```",
+      "latency_seconds": 40.244480291999935,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:35:46.937720"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 28014.73,
+    "p50_ms": 28014.73,
+    "p95_ms": 39021.51,
+    "p99_ms": 39999.89,
+    "mean_ms": 30545.17,
+    "std_ms": 7115.07,
+    "min_ms": 23376.28,
+    "max_ms": 40244.48,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

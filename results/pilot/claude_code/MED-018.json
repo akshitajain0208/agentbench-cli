@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-018",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-018",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef generate_pascal(n: int) -> list:\n    if n <= 0:\n        return []\n    triangle = [[1]]\n    for i in range(1, n):\n        row = [1]\n        for j in range(1, i):\n            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])\n        row.append(1)\n        triangle.append(row)\n    return triangle\n```",
+      "latency_seconds": 5.535753416999796,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:03:44.967611"
+    },
+    {
+      "task_id": "MED-018",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef generate_pascal(n: int) -> list:\n    if n <= 0:\n        return []\n    triangle = [[1]]\n    for i in range(1, n):\n        row = [1]\n        for j in range(1, i):\n            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])\n        row.append(1)\n        triangle.append(row)\n    return triangle\n```",
+      "latency_seconds": 5.900929833000191,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:03:51.371208"
+    },
+    {
+      "task_id": "MED-018",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef generate_pascal(n: int) -> list:\n    if n <= 0:\n        return []\n    triangle = [[1]]\n    for i in range(1, n):\n        prev = triangle[-1]\n        row = [1]\n        for j in range(1, i):\n            row.append(prev[j - 1] + prev[j])\n        row.append(1)\n        triangle.append(row)\n    return triangle\n```",
+      "latency_seconds": 5.646083333000206,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:03:57.520900"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5646.08,
+    "p50_ms": 5646.08,
+    "p95_ms": 5875.45,
+    "p99_ms": 5895.83,
+    "mean_ms": 5694.26,
+    "std_ms": 152.92,
+    "min_ms": 5535.75,
+    "max_ms": 5900.93,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-017",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-017",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef longest_valid_parentheses(s: str) -> int:\n    max_len = 0\n    stack = [-1]  # Initialize stack with -1 to handle the base case for length calculation\n\n    for i, char in enumerate(s):\n        if char == '(':\n            stack.append(i)\n        else:  # char == ')'\n            stack.pop()\n            if not stack:\n                # If stack is empty, it means the current ')' has no matching '('\n                # to its left in the current valid sequence.\n                # So, push the current index as a new base for future calculations.\n                stack.append(i)\n            else:\n                # If stack is not empty, a matching '(' was found.\n                # The length of the current valid substring is current_index - stack.top().\n                max_len = max(max_len, i - stack[-1])\n    return max_len\n```",
+      "latency_seconds": 21.795084499999575,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:17:09.479468"
+    },
+    {
+      "task_id": "HARD-017",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef longest_valid_parentheses(s: str) -> int:\n    max_len = 0\n    stack = [-1]  # Initialize stack with -1 to handle base cases\n    for i, char in enumerate(s):\n        if char == '(':\n            stack.append(i)\n        else:\n            if len(stack) > 1:\n                stack.pop()\n                max_len = max(max_len, i - stack[-1])\n            else:\n                stack[0] = i  # Reset the base of the valid substring search\n    return max_len\n```",
+      "latency_seconds": 10.405048167000132,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:17:20.388717"
+    },
+    {
+      "task_id": "HARD-017",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef longest_valid_parentheses(s: str) -> int:\n    stack = [-1]\n    max_len = 0\n    for i, char in enumerate(s):\n        if char == '(':\n            stack.append(i)\n        else:\n            stack.pop()\n            if not stack:\n                stack.append(i)\n            else:\n                max_len = max(max_len, i - stack[-1])\n    return max_len\n```",
+      "latency_seconds": 10.877919582999311,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:17:31.769968"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 10877.92,
+    "p50_ms": 10877.92,
+    "p95_ms": 20703.37,
+    "p99_ms": 21576.74,
+    "mean_ms": 14359.35,
+    "std_ms": 5261.4,
+    "min_ms": 10405.05,
+    "max_ms": 21795.08,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

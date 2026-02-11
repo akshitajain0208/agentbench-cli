@@ -1,0 +1,8 @@
+{
+  "task_id": "CODEGEN-002",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Write a function that checks if a given string is a palindrome, considering only alphanumeric characters and ignoring case.\n\nFunction signature: def is_palindrome(s: str) -> bool\n\nConstraints:\n- Ignore non-alphanumeric characters\n- Case-insensitive comparison\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

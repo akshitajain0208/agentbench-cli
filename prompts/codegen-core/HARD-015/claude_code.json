@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-015",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Given an array of meeting intervals [start, end], find minimum meeting rooms required.\n\nFunction signature: def min_meeting_rooms(intervals: list) -> int\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

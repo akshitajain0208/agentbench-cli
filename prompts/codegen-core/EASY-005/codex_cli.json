@@ -1,0 +1,8 @@
+{
+  "task_id": "EASY-005",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Remove all duplicates from a list while preserving order.\n\nFunction signature: def remove_duplicates(nums: list) -> list\n\nConstraints:\n- Preserve first occurrence order\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

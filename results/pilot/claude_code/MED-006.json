@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-006",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-006",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef first_unique_char(s: str) -> str:\n    from collections import Counter\n    count = Counter(s)\n    for char in s:\n        if count[char] == 1:\n            return char\n    return \"\"\n```",
+      "latency_seconds": 5.035753167000166,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:13:10.318902"
+    },
+    {
+      "task_id": "MED-006",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef first_unique_char(s: str) -> str:\n    from collections import Counter\n    count = Counter(s)\n    for c in s:\n        if count[c] == 1:\n            return c\n    return \"\"\n```",
+      "latency_seconds": 6.146937083000012,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:13:16.969260"
+    },
+    {
+      "task_id": "MED-006",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef first_unique_char(s: str) -> str:\n    from collections import Counter\n    count = Counter(s)\n    for char in s:\n        if count[char] == 1:\n            return char\n    return \"\"\n```",
+      "latency_seconds": 5.320265583000037,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:13:22.793239"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5320.27,
+    "p50_ms": 5320.27,
+    "p95_ms": 6064.27,
+    "p99_ms": 6130.4,
+    "mean_ms": 5500.99,
+    "std_ms": 471.29,
+    "min_ms": 5035.75,
+    "max_ms": 6146.94,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

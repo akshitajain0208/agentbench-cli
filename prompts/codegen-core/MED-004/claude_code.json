@@ -1,0 +1,8 @@
+{
+  "task_id": "MED-004",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Find all pairs in a list that sum to a target value.\n\nFunction signature: def find_pairs(nums: list, target: int) -> list\n\nConstraints:\n- Return list of lists [a, b] where a < b\n- No duplicate pairs\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

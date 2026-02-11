@@ -1,0 +1,8 @@
+{
+  "task_id": "MED-020",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Count the number of set bits (1s) in an integer.\n\nFunction signature: def count_bits(n: int) -> int\n\nConstraints:\n- n >= 0\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

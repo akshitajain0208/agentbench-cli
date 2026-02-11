@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-018",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Given a matrix where each row and column is sorted, search for a target.\n\nFunction signature: def search_matrix(matrix: list, target: int) -> bool\n\nConstraints:\n- O(m + n) time\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

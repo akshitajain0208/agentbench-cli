@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-015",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-015",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef intersection(nums1: list, nums2: list) -> list:\n    set1 = set(nums1)\n    set2 = set(nums2)\n    \n    # Find the intersection of the two sets\n    intersected_set = set1.intersection(set2)\n    \n    # Convert the set back to a list and sort it\n    result = sorted(list(intersected_set))\n    \n    return result\n```",
+      "latency_seconds": 14.057116584000141,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:39:15.041824"
+    },
+    {
+      "task_id": "EASY-015",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef intersection(nums1: list, nums2: list) -> list:\n    \"\"\"\n    Finds the intersection of two lists, returning only unique and sorted elements.\n    \"\"\"\n    set1 = set(nums1)\n    set2 = set(nums2)\n    \n    # Find the intersection of the two sets\n    intersected_set = set1.intersection(set2)\n    \n    # Convert to list and sort\n    result = sorted(list(intersected_set))\n    \n    return result\n```",
+      "latency_seconds": 9.788576582999667,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:39:25.333838"
+    },
+    {
+      "task_id": "EASY-015",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef intersection(nums1: list, nums2: list) -> list:\n    set1 = set(nums1)\n    set2 = set(nums2)\n    result = list(set1.intersection(set2))\n    result.sort()\n    return result\n```",
+      "latency_seconds": 9.536804040999414,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:39:35.374031"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 9788.58,
+    "p50_ms": 9788.58,
+    "p95_ms": 13630.26,
+    "p99_ms": 13971.75,
+    "mean_ms": 11127.5,
+    "std_ms": 2074.1,
+    "min_ms": 9536.8,
+    "max_ms": 14057.12,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

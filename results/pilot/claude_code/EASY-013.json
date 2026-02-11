@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-013",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "EASY-013",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef fibonacci(n: int) -> int:\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n```",
+      "latency_seconds": 5.403774999999769,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:54:25.123840"
+    },
+    {
+      "task_id": "EASY-013",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef fibonacci(n: int) -> int:\n    if n <= 0:\n        return 0\n    if n == 1:\n        return 1\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n```",
+      "latency_seconds": 6.047245082999325,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:54:31.673939"
+    },
+    {
+      "task_id": "EASY-013",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef fibonacci(n: int) -> int:\n    if n <= 0:\n        return 0\n    if n == 1:\n        return 1\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n```",
+      "latency_seconds": 5.41835891699975,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:54:37.595685"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5418.36,
+    "p50_ms": 5418.36,
+    "p95_ms": 5984.36,
+    "p99_ms": 6034.67,
+    "mean_ms": 5623.13,
+    "std_ms": 299.96,
+    "min_ms": 5403.77,
+    "max_ms": 6047.25,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

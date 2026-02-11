@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-002",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-002",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef longest_common_prefix(strs: list) -> str:\n    if not strs:\n        return \"\"\n\n    prefix = strs[0]\n    for s in strs[1:]:\n        while not s.startswith(prefix):\n            prefix = prefix[:-1]\n            if not prefix:\n                return \"\"\n    return prefix\n```",
+      "latency_seconds": 3.038338666999607,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:08:14.747626"
+    },
+    {
+      "task_id": "MED-002",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef longest_common_prefix(strs: list) -> str:\n    if not strs:\n        return \"\"\n\n    prefix = strs[0]\n    for s in strs[1:]:\n        while not s.startswith(prefix):\n            prefix = prefix[:-1]\n            if not prefix:\n                return \"\"\n    return prefix\n```",
+      "latency_seconds": 3.16521316699982,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:08:18.416504"
+    },
+    {
+      "task_id": "MED-002",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef longest_common_prefix(strs: list) -> str:\n    if not strs:\n        return \"\"\n\n    prefix = strs[0]\n    for s in strs[1:]:\n        while not s.startswith(prefix):\n            prefix = prefix[:-1]\n            if not prefix:\n                return \"\"\n    return prefix\n```",
+      "latency_seconds": 2.972584791999907,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:08:21.892980"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 3038.34,
+    "p50_ms": 3038.34,
+    "p95_ms": 3152.53,
+    "p99_ms": 3162.68,
+    "mean_ms": 3058.71,
+    "std_ms": 79.95,
+    "min_ms": 2972.58,
+    "max_ms": 3165.21,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-022",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-022",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 2.7994918329995926,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af0-4e43-7ac1-8864-b482d0f26f1f\n--------\nuser\nDecode ways: count ways to decode a digit string (1=A, 2=B, ..., 26=Z).\n\nFunction signature: def num_decodings(s: str) -> int\n\nConstraints:\n- Leading zeros invalid\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:23:09.866770Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11473}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:23:09.877220"
+    },
+    {
+      "task_id": "HARD-022",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.4417952080002578,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af0-55c8-7872-bd14-cff7ccd8cef7\n--------\nuser\nDecode ways: count ways to decode a digit string (1=A, 2=B, ..., 26=Z).\n\nFunction signature: def num_decodings(s: str) -> int\n\nConstraints:\n- Leading zeros invalid\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:23:11.813604Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11471}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:23:11.822742"
+    },
+    {
+      "task_id": "HARD-022",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.5448907090003559,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af0-5d62-7c73-afa3-bc3999f34759\n--------\nuser\nDecode ways: count ways to decode a digit string (1=A, 2=B, ..., 26=Z).\n\nFunction signature: def num_decodings(s: str) -> int\n\nConstraints:\n- Leading zeros invalid\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:23:13.860732Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":11469}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:23:13.871341"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1544.89,
+    "p50_ms": 1544.89,
+    "p95_ms": 2674.03,
+    "p99_ms": 2774.4,
+    "mean_ms": 1928.73,
+    "std_ms": 617.16,
+    "min_ms": 1441.8,
+    "max_ms": 2799.49,
+    "samples": 3
+  },
+  "determinism": null
+}

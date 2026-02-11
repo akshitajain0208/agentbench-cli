@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-003",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-003",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef min_window(s: str, t: str) -> str:\n    if not s or not t or len(t) > len(s):\n        return \"\"\n\n    need = {}\n    for ch in t:\n        need[ch] = need.get(ch, 0) + 1\n\n    have = {}\n    required = len(need)\n    formed = 0\n\n    left = 0\n    best_len = float(\"inf\")\n    best_start = 0\n\n    for right, ch in enumerate(s):\n        have[ch] = have.get(ch, 0) + 1\n\n        if ch in need and have[ch] == need[ch]:\n            formed += 1\n\n        while formed == required:\n            window_len = right - left + 1\n            if window_len < best_len:\n                best_len = window_len\n                best_start = left\n\n            left_ch = s[left]\n            have[left_ch] -= 1\n            if left_ch in need and have[left_ch] < need[left_ch]:\n                formed -= 1\n            left += 1\n\n    if best_len == float(\"inf\"):\n        return \"\"\n    return s[best_start:best_start + best_len]\n```",
+      "latency_seconds": 5.560576709000088,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:25:07.426529"
+    },
+    {
+      "task_id": "HARD-003",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef min_window(s: str, t: str) -> str:\n    if not s or not t:\n        return \"\"\n\n    need = {}\n    for ch in t:\n        need[ch] = need.get(ch, 0) + 1\n\n    missing = len(t)\n    left = 0\n    best_start = 0\n    best_len = float(\"inf\")\n\n    for right, ch in enumerate(s):\n        if ch in need:\n            if need[ch] > 0:\n                missing -= 1\n            need[ch] -= 1\n\n        while missing == 0:\n            window_len = right - left + 1\n            if window_len < best_len:\n                best_len = window_len\n                best_start = left\n\n            left_ch = s[left]\n            if left_ch in need:\n                need[left_ch] += 1\n                if need[left_ch] > 0:\n                    missing += 1\n            left += 1\n\n    return \"\" if best_len == float(\"inf\") else s[best_start:best_start + best_len]\n```",
+      "latency_seconds": 5.523251208000147,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:25:13.451442"
+    },
+    {
+      "task_id": "HARD-003",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef min_window(s: str, t: str) -> str:\n    if not s or not t or len(t) > len(s):\n        return \"\"\n\n    need = {}\n    for ch in t:\n        need[ch] = need.get(ch, 0) + 1\n\n    missing = len(t)\n    left = 0\n    best_start = 0\n    best_len = float(\"inf\")\n\n    for right, ch in enumerate(s):\n        if ch in need:\n            if need[ch] > 0:\n                missing -= 1\n            need[ch] -= 1\n\n        while missing == 0:\n            window_len = right - left + 1\n            if window_len < best_len:\n                best_len = window_len\n                best_start = left\n\n            left_ch = s[left]\n            if left_ch in need:\n                need[left_ch] += 1\n                if need[left_ch] > 0:\n                    missing += 1\n            left += 1\n\n    return \"\" if best_len == float(\"inf\") else s[best_start:best_start + best_len]\n```",
+      "latency_seconds": 5.4126717919998555,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:25:19.366698"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5523.25,
+    "p50_ms": 5523.25,
+    "p95_ms": 5556.84,
+    "p99_ms": 5559.83,
+    "mean_ms": 5498.83,
+    "std_ms": 62.8,
+    "min_ms": 5412.67,
+    "max_ms": 5560.58,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

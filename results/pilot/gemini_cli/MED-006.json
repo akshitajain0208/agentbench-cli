@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-006",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-006",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef first_unique_char(s: str) -> str:\n    char_count = {}\n    for char in s:\n        char_count[char] = char_count.get(char, 0) + 1\n\n    for char in s:\n        if char_count[char] == 1:\n            return char\n    return \"\"\n```",
+      "latency_seconds": 10.635552541999914,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:13:44.213692"
+    },
+    {
+      "task_id": "MED-006",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef first_unique_char(s: str) -> str:\n    char_counts = {}\n    for char in s:\n        char_counts[char] = char_counts.get(char, 0) + 1\n\n    for char in s:\n        if char_counts[char] == 1:\n            return char\n    return \"\"\n```",
+      "latency_seconds": 10.661389500000041,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:13:55.378659"
+    },
+    {
+      "task_id": "MED-006",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef first_unique_char(s: str) -> str:\n    char_count = {}\n    for char in s:\n        char_count[char] = char_count.get(char, 0) + 1\n\n    for char in s:\n        if char_count[char] == 1:\n            return char\n    return \"\"\n```",
+      "latency_seconds": 10.507454249999682,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:14:06.389460"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 10635.55,
+    "p50_ms": 10635.55,
+    "p95_ms": 10658.81,
+    "p99_ms": 10660.87,
+    "mean_ms": 10601.47,
+    "std_ms": 67.31,
+    "min_ms": 10507.45,
+    "max_ms": 10661.39,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

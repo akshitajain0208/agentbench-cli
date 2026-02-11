@@ -1,0 +1,8 @@
+{
+  "task_id": "CODEGEN-E003",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Implement pow(x, n), calculating x raised to power n.\n\nFunction signature: def my_pow(x: float, n: int) -> float\n\nConstraints:\n- Handle negative exponents\n- O(log n) time\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

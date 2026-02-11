@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-013",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-013",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef divide(dividend: int, divisor: int) -> int:\n    INT_MAX = 2**31 - 1\n    INT_MIN = -(2**31)\n\n    if divisor == 0:\n        return INT_MAX\n\n    if dividend == INT_MIN and divisor == -1:\n        return INT_MAX\n\n    negative = (dividend < 0) != (divisor < 0)\n\n    a = abs(dividend)\n    b = abs(divisor)\n\n    result = 0\n    while a >= b:\n        temp = b\n        multiple = 1\n        while a >= (temp << 1):\n            temp <<= 1\n            multiple <<= 1\n        a -= temp\n        result += multiple\n\n    if negative:\n        result = -result\n\n    return max(INT_MIN, min(INT_MAX, result))\n```",
+      "latency_seconds": 6.624811290999787,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:42:53.132457"
+    },
+    {
+      "task_id": "HARD-013",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef divide(dividend: int, divisor: int) -> int:\n    INT_MAX = 2147483647\n    INT_MIN = -2147483648\n\n    if divisor == 0:\n        return INT_MAX\n\n    if dividend == INT_MIN and divisor == -1:\n        return INT_MAX\n\n    negative = (dividend < 0) != (divisor < 0)\n\n    a = abs(dividend)\n    b = abs(divisor)\n\n    result = 0\n    while a >= b:\n        temp = b\n        multiple = 1\n        while a >= (temp << 1):\n            temp <<= 1\n            multiple <<= 1\n        a -= temp\n        result += multiple\n\n    if negative:\n        result = -result\n\n    return max(INT_MIN, min(INT_MAX, result))\n```",
+      "latency_seconds": 6.860998250000193,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:43:00.497090"
+    },
+    {
+      "task_id": "HARD-013",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef divide(dividend: int, divisor: int) -> int:\n    MAX_INT = 2147483647\n    MIN_INT = -2147483648\n\n    if divisor == 0:\n        return MAX_INT\n\n    if dividend == MIN_INT and divisor == -1:\n        return MAX_INT\n\n    negative = (dividend < 0) ^ (divisor < 0)\n\n    a = abs(dividend)\n    b = abs(divisor)\n\n    result = 0\n    while a >= b:\n        temp = b\n        count = 1\n        while a >= (temp << 1):\n            temp <<= 1\n            count <<= 1\n        a -= temp\n        result += count\n\n    if negative:\n        result = -result\n\n    return max(MIN_INT, min(MAX_INT, result))\n```",
+      "latency_seconds": 6.749121666999599,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:43:07.749755"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 6749.12,
+    "p50_ms": 6749.12,
+    "p95_ms": 6849.81,
+    "p99_ms": 6858.76,
+    "mean_ms": 6744.98,
+    "std_ms": 96.47,
+    "min_ms": 6624.81,
+    "max_ms": 6861.0,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

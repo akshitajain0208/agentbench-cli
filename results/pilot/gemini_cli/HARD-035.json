@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-035",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-035",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef unique_paths(m: int, n: int) -> int:\n    dp = [[0 for _ in range(n)] for _ in range(m)]\n\n    # Initialize the first row and first column\n    for i in range(m):\n        dp[i][0] = 1\n    for j in range(n):\n        dp[0][j] = 1\n\n    # Fill the DP table\n    for i in range(1, m):\n        for j in range(1, n):\n            dp[i][j] = dp[i - 1][j] + dp[i][j - 1]\n\n    return dp[m - 1][n - 1]\n\n```",
+      "latency_seconds": 12.725350624999919,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:52:01.618899"
+    },
+    {
+      "task_id": "HARD-035",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\nimport math\n\ndef unique_paths(m: int, n: int) -> int:\n    \"\"\"\n    Calculates the number of unique paths from the top-left to the bottom-right\n    of an m x n grid, moving only right or down.\n    \"\"\"\n    # To reach the bottom-right cell from the top-left cell in an m x n grid,\n    # one must make (m-1) downward moves and (n-1) rightward moves.\n    # The total number of moves will be (m-1) + (n-1).\n    # This is a combinatorial problem: choosing (m-1) positions for the\n    # downward moves (or (n-1) for rightward moves) out of the total moves.\n    \n    total_moves = (m - 1) + (n - 1)\n    down_moves_needed = m - 1\n    \n    # Use math.comb to calculate \"total_moves choose down_moves_needed\"\n    # This efficiently computes total_moves! / (down_moves_needed! * (total_moves - down_moves_needed)!)\n    return math.comb(total_moves, down_moves_needed)\n\n```",
+      "latency_seconds": 19.790429000000586,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:52:21.912393"
+    },
+    {
+      "task_id": "HARD-035",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\nimport math\n\ndef unique_paths(m: int, n: int) -> int:\n    total_steps = (m - 1) + (n - 1)\n    down_steps = m - 1\n    return math.comb(total_steps, down_steps)\n```",
+      "latency_seconds": 13.856426583999564,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:52:36.272389"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 13856.43,
+    "p50_ms": 13856.43,
+    "p95_ms": 19197.03,
+    "p99_ms": 19671.75,
+    "mean_ms": 15457.4,
+    "std_ms": 3098.51,
+    "min_ms": 12725.35,
+    "max_ms": 19790.43,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

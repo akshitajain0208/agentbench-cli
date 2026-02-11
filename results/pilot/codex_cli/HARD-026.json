@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-026",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-026",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.5862787089999983,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af8-8f20-7712-9a8a-840a1d57a67c\n--------\nuser\nFind longest consecutive sequence in unsorted array.\n\nFunction signature: def longest_consecutive(nums: list) -> int\n\nConstraints:\n- O(n) time\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:32:10.864549Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10932}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:32:10.875453"
+    },
+    {
+      "task_id": "HARD-026",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.4298024580002675,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af8-970f-7a91-8eee-0d0751a05229\n--------\nuser\nFind longest consecutive sequence in unsorted array.\n\nFunction signature: def longest_consecutive(nums: list) -> int\n\nConstraints:\n- O(n) time\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:32:12.800041Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10930}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:32:12.809258"
+    },
+    {
+      "task_id": "HARD-026",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.5436534579994259,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4af8-9e95-7483-a511-376d0b046d22\n--------\nuser\nFind longest consecutive sequence in unsorted array.\n\nFunction signature: def longest_consecutive(nums: list) -> int\n\nConstraints:\n- O(n) time\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:32:14.846197Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":10928}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:32:14.856709"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1543.65,
+    "p50_ms": 1543.65,
+    "p95_ms": 1582.02,
+    "p99_ms": 1585.43,
+    "mean_ms": 1519.91,
+    "std_ms": 66.05,
+    "min_ms": 1429.8,
+    "max_ms": 1586.28,
+    "samples": 3
+  },
+  "determinism": null
+}

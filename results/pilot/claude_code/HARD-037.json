@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-037",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-037",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef max_subarray_len(nums: list, k: int) -> int:\n    max_len = 0\n    current_sum = 0\n    left = 0\n    for right in range(len(nums)):\n        current_sum += nums[right]\n        while current_sum > k and left <= right:\n            current_sum -= nums[left]\n            left += 1\n        max_len = max(max_len, right - left + 1)\n    return max_len\n```",
+      "latency_seconds": 5.834018915998968,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:53:43.480091"
+    },
+    {
+      "task_id": "HARD-037",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef max_subarray_len(nums: list, k: int) -> int:\n    max_len = 0\n    current_sum = 0\n    left = 0\n    for right in range(len(nums)):\n        current_sum += nums[right]\n        while current_sum > k and left <= right:\n            current_sum -= nums[left]\n            left += 1\n        max_len = max(max_len, right - left + 1)\n    return max_len\n```",
+      "latency_seconds": 5.475910333998399,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:53:49.459863"
+    },
+    {
+      "task_id": "HARD-037",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef max_subarray_len(nums: list, k: int) -> int:\n    max_len = 0\n    current_sum = 0\n    left = 0\n    for right in range(len(nums)):\n        current_sum += nums[right]\n        while current_sum > k and left <= right:\n            current_sum -= nums[left]\n            left += 1\n        max_len = max(max_len, right - left + 1)\n    return max_len\n```",
+      "latency_seconds": 5.605227166999612,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:53:55.568730"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5605.23,
+    "p50_ms": 5605.23,
+    "p95_ms": 5811.14,
+    "p99_ms": 5829.44,
+    "mean_ms": 5638.39,
+    "std_ms": 148.07,
+    "min_ms": 5475.91,
+    "max_ms": 5834.02,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

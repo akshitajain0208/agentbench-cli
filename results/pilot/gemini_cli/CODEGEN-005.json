@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-005",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-005",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    mapping = {\")\": \"(\", \"}\": \"{\", \"]\": \"[\"}\n\n    for char in s:\n        if char in mapping.values():\n            stack.append(char)\n        elif char in mapping:\n            if not stack or stack.pop() != mapping[char]:\n                return False\n        # Ignore any other characters not being a parenthesis\n        else:\n            continue\n\n    return not stack\n```",
+      "latency_seconds": 9.742580792000012,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:39:27.743196"
+    },
+    {
+      "task_id": "CODEGEN-005",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    mapping = {\")\": \"(\", \"}\": \"{\", \"]\": \"[\"}\n\n    for char in s:\n        if char in mapping.values():\n            stack.append(char)\n        elif char in mapping.keys():\n            if not stack or mapping[char] != stack.pop():\n                return False\n        # Ignore any other characters\n        \n    return not stack\n```",
+      "latency_seconds": 10.32777362500002,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:39:38.573141"
+    },
+    {
+      "task_id": "CODEGEN-005",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    mapping = {\")\": \"(\", \"}\": \"{\", \"]\": \"[\"}\n\n    for char in s:\n        if char in mapping.values():  # It's an opening bracket\n            stack.append(char)\n        elif char in mapping.keys():  # It's a closing bracket\n            if not stack or mapping[char] != stack.pop():\n                return False\n        # Ignore any other characters\n    \n    return not stack\n\n```",
+      "latency_seconds": 9.89534304099999,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:39:48.970891"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 9895.34,
+    "p50_ms": 9895.34,
+    "p95_ms": 10284.53,
+    "p99_ms": 10319.13,
+    "mean_ms": 9988.57,
+    "std_ms": 247.83,
+    "min_ms": 9742.58,
+    "max_ms": 10327.77,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

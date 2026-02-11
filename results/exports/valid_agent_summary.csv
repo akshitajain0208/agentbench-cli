@@ -1,0 +1,4 @@
+agent,valid_tasks,pass_at_1,latency_ms,stability
+claude_code,100,0.99,5930.36,0.8067
+codex_cli,62,0.957,4047.15,0.4167
+gemini_cli,100,0.95,17219.13,0.1215

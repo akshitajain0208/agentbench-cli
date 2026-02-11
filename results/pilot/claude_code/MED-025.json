@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-025",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-025",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef flatten_dict(d: dict, parent_key: str = '') -> dict:\n    items = {}\n    for k, v in d.items():\n        new_key = f\"{parent_key}.{k}\" if parent_key else k\n        if isinstance(v, dict):\n            items.update(flatten_dict(v, new_key))\n        else:\n            items[new_key] = v\n    return items\n```",
+      "latency_seconds": 7.034401916000206,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:41:37.926801"
+    },
+    {
+      "task_id": "MED-025",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef flatten_dict(d: dict, parent_key: str = '') -> dict:\n    items = {}\n    for k, v in d.items():\n        new_key = f\"{parent_key}.{k}\" if parent_key else k\n        if isinstance(v, dict):\n            items.update(flatten_dict(v, new_key))\n        else:\n            items[new_key] = v\n    return items\n```",
+      "latency_seconds": 7.049730499999896,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:41:45.480110"
+    },
+    {
+      "task_id": "MED-025",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef flatten_dict(d: dict, parent_key: str = '') -> dict:\n    items = {}\n    for k, v in d.items():\n        new_key = f\"{parent_key}.{k}\" if parent_key else k\n        if isinstance(v, dict):\n            items.update(flatten_dict(v, new_key))\n        else:\n            items[new_key] = v\n    return items\n```",
+      "latency_seconds": 6.09834308399968,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:41:52.082130"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 7034.4,
+    "p50_ms": 7034.4,
+    "p95_ms": 7048.2,
+    "p99_ms": 7049.42,
+    "mean_ms": 6727.49,
+    "std_ms": 444.92,
+    "min_ms": 6098.34,
+    "max_ms": 7049.73,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

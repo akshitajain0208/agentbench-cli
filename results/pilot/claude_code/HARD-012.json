@@ -1,0 +1,64 @@
+{
+  "task_id": "HARD-012",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-012",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef num_islands(grid: list) -> int:\n    if not grid:\n        return 0\n    rows, cols = len(grid), len(grid[0])\n    count = 0\n\n    def dfs(r, c):\n        if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] != \"1\":\n            return\n        grid[r][c] = \"0\"\n        dfs(r + 1, c)\n        dfs(r - 1, c)\n        dfs(r, c + 1)\n        dfs(r, c - 1)\n\n    for r in range(rows):\n        for c in range(cols):\n            if grid[r][c] == \"1\":\n                count += 1\n                dfs(r, c)\n    return count\n```",
+      "latency_seconds": 6.3238448750003045,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:41:36.079501"
+    },
+    {
+      "task_id": "HARD-012",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef num_islands(grid: list) -> int:\n    if not grid or not grid[0]:\n        return 0\n    rows, cols = len(grid), len(grid[0])\n    count = 0\n\n    def dfs(r, c):\n        if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] != 1:\n            return\n        grid[r][c] = -1\n        dfs(r + 1, c)\n        dfs(r - 1, c)\n        dfs(r, c + 1)\n        dfs(r, c - 1)\n\n    for r in range(rows):\n        for c in range(cols):\n            if grid[r][c] == 1:\n                count += 1\n                dfs(r, c)\n    return count\n```",
+      "latency_seconds": 6.42477133400007,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:41:43.007853"
+    },
+    {
+      "task_id": "HARD-012",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef num_islands(grid: list) -> int:\n    if not grid:\n        return 0\n    rows, cols = len(grid), len(grid[0])\n    count = 0\n\n    def dfs(r, c):\n        if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] != \"1\":\n            return\n        grid[r][c] = \"0\"\n        dfs(r + 1, c)\n        dfs(r - 1, c)\n        dfs(r, c + 1)\n        dfs(r, c - 1)\n\n    for r in range(rows):\n        for c in range(cols):\n            if grid[r][c] == \"1\":\n                count += 1\n                dfs(r, c)\n    return count\n```",
+      "latency_seconds": 6.876347417000034,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:41:50.387817"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.6666666666666666,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 2,
+    "errors": [
+      "Traceback (most recent call last):\n  File \"/var/folders/y2/3ssr0gwx0_77n9h8yqlbxkbm0000gn/T/tmp1x4bw_5b/test_solution.py\", line 6, in <module>\n    assert result_0 == expected_0, f\"Test 1 failed: got {result_0}, expected {expected_0}\"\nAssertionError: Test 1 failed: got 0, expected 3\n"
+    ]
+  },
+  "latency": {
+    "median_ms": 6424.77,
+    "p50_ms": 6424.77,
+    "p95_ms": 6831.19,
+    "p99_ms": 6867.32,
+    "mean_ms": 6541.65,
+    "std_ms": 240.22,
+    "min_ms": 6323.84,
+    "max_ms": 6876.35,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

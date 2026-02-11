@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-002",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-002",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef serialize(root: list) -> str:\n    result = []\n\n    def preorder(node):\n        if node is None:\n            result.append(\"null\")\n            return\n        val, left, right = node\n        result.append(str(val))\n        preorder(left)\n        preorder(right)\n\n    preorder(root)\n    return \",\".join(result)\n```",
+      "latency_seconds": 7.320590875000107,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:23:48.654910"
+    },
+    {
+      "task_id": "HARD-002",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef serialize(root: list) -> str:\n    result = []\n\n    def dfs(node):\n        if node is None:\n            result.append(\"null\")\n            return\n        val, left, right = node\n        result.append(str(val))\n        dfs(left)\n        dfs(right)\n\n    dfs(root)\n    return \",\".join(result)\n```",
+      "latency_seconds": 2.899125333000029,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:23:52.056650"
+    },
+    {
+      "task_id": "HARD-002",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "def serialize(root: list) -> str:\n    vals = []\n\n    def dfs(node):\n        if node is None:\n            vals.append(\"null\")\n            return\n        val, left, right = node\n        vals.append(str(val))\n        dfs(left)\n        dfs(right)\n\n    dfs(root)\n    return \",\".join(vals)",
+      "latency_seconds": 5.112245332999919,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:23:57.671361"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5112.25,
+    "p50_ms": 5112.25,
+    "p95_ms": 7099.76,
+    "p99_ms": 7276.42,
+    "mean_ms": 5110.65,
+    "std_ms": 1805.06,
+    "min_ms": 2899.13,
+    "max_ms": 7320.59,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "task_id": "MED-020",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-020",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.512971999999536,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae0-88d9-76a0-98c0-819a1ecbb5cd\n--------\nuser\nCount the number of set bits (1s) in an integer.\n\nFunction signature: def count_bits(n: int) -> int\n\nConstraints:\n- n >= 0\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:05:56.328840Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12506}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:05:56.338505"
+    },
+    {
+      "task_id": "MED-020",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.4408672499994282,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae0-9084-7f03-bad8-13745a1facd9\n--------\nuser\nCount the number of set bits (1s) in an integer.\n\nFunction signature: def count_bits(n: int) -> int\n\nConstraints:\n- n >= 0\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:05:58.273084Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12504}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:05:58.283002"
+    },
+    {
+      "task_id": "MED-020",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.4362647090001701,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae0-981e-7361-a1d4-275923b14f5e\n--------\nuser\nCount the number of set bits (1s) in an integer.\n\nFunction signature: def count_bits(n: int) -> int\n\nConstraints:\n- n >= 0\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:06:00.216798Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12502}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:06:00.223006"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1440.87,
+    "p50_ms": 1440.87,
+    "p95_ms": 1505.76,
+    "p99_ms": 1511.53,
+    "mean_ms": 1463.37,
+    "std_ms": 35.13,
+    "min_ms": 1436.26,
+    "max_ms": 1512.97,
+    "samples": 3
+  },
+  "determinism": null
+}

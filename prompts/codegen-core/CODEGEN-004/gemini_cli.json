@@ -1,0 +1,8 @@
+{
+  "task_id": "CODEGEN-004",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Write a function that reverses a list in-place and returns it.\n\nFunction signature: def reverse_list(lst: list) -> list\n\nConstraints:\n- Modify the list in-place\n- Return the reversed list\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

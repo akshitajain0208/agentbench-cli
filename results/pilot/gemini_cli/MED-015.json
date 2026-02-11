@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-015",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-015",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef has_cycle_pattern(nums: list, k: int) -> bool:\n    if k <= 0:\n        return False\n\n    # A pattern of length k cannot \"repeat\" if the list is not long enough to contain\n    # at least one full pattern plus one element to show repetition.\n    # Therefore, the list must have at least k + 1 elements.\n    if len(nums) <= k:\n        return False\n\n    # Check if elements from index k onwards follow the pattern established by the first k elements\n    for i in range(k, len(nums)):\n        if nums[i] != nums[i % k]:\n            return False\n\n    return True\n```",
+      "latency_seconds": 31.38841499999944,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:59:38.017475"
+    },
+    {
+      "task_id": "MED-015",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef has_cycle_pattern(nums: list, k: int) -> bool:\n    n = len(nums)\n\n    if k <= 0:\n        return False\n    if n == 0:\n        return False\n    if k > n:\n        return False\n    if n % k != 0:\n        return False\n\n    first_pattern = nums[:k]\n\n    for i in range(k, n, k):\n        current_pattern = nums[i:i + k]\n        if current_pattern != first_pattern:\n            return False\n            \n    return True\n```",
+      "latency_seconds": 13.074442083999202,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:59:51.595208"
+    },
+    {
+      "task_id": "MED-015",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef has_cycle_pattern(nums: list, k: int) -> bool:\n    \"\"\"\n    Checks if a list has a cycle pattern of length k.\n\n    A cycle pattern of length k repeats if the initial k elements\n    form a pattern that is repeated at least once in the subsequent elements,\n    and all elements in the list conform to this repeating pattern.\n\n    Args:\n        nums: The list to check for a cycle pattern.\n        k: The length of the pattern.\n\n    Returns:\n        True if a pattern of length k repeats throughout the list, False otherwise.\n    \"\"\"\n    if k <= 0:\n        return False\n    if len(nums) < 2 * k:  # A pattern must appear at least twice to \"repeat\"\n        return False\n\n    for i in range(k, len(nums)):\n        if nums[i] != nums[i - k]:\n            return False\n    return True\n```",
+      "latency_seconds": 25.418466082999657,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:00:17.516678"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 25418.47,
+    "p50_ms": 25418.47,
+    "p95_ms": 30791.42,
+    "p99_ms": 31269.02,
+    "mean_ms": 23293.77,
+    "std_ms": 7626.1,
+    "min_ms": 13074.44,
+    "max_ms": 31388.41,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

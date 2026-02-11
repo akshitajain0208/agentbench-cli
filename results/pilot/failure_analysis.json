@@ -1,0 +1,111 @@
+{
+  "summary": {
+    "total_failures": 14,
+    "tasks_failed_by_all": 1,
+    "tasks_failed_by_some": 10
+  },
+  "all_agents_failed": {
+    "HARD-009": [
+      {
+        "agent": "codex_cli",
+        "pass_at_1": 0.0
+      },
+      {
+        "agent": "claude_code",
+        "pass_at_1": 0.0
+      },
+      {
+        "agent": "gemini_cli",
+        "pass_at_1": 0.6666666666666666
+      }
+    ]
+  },
+  "some_agents_failed": {
+    "EASY-006": [
+      {
+        "agent": "codex_cli",
+        "pass_at_1": 0.0
+      }
+    ],
+    "HARD-012": [
+      {
+        "agent": "codex_cli",
+        "pass_at_1": 0.33333333333333326
+      },
+      {
+        "agent": "claude_code",
+        "pass_at_1": 0.6666666666666666
+      }
+    ],
+    "HARD-020": [
+      {
+        "agent": "gemini_cli",
+        "pass_at_1": 0.0
+      }
+    ],
+    "MED-027": [
+      {
+        "agent": "gemini_cli",
+        "pass_at_1": 0.33333333333333326
+      }
+    ],
+    "HARD-006": [
+      {
+        "agent": "gemini_cli",
+        "pass_at_1": 0.0
+      }
+    ],
+    "HARD-028": [
+      {
+        "agent": "gemini_cli",
+        "pass_at_1": 0.6666666666666666
+      }
+    ],
+    "MED-004": [
+      {
+        "agent": "gemini_cli",
+        "pass_at_1": 0.6666666666666666
+      }
+    ],
+    "HARD-003": [
+      {
+        "agent": "gemini_cli",
+        "pass_at_1": 0.33333333333333326
+      }
+    ],
+    "HARD-015": [
+      {
+        "agent": "gemini_cli",
+        "pass_at_1": 0.6666666666666666
+      }
+    ],
+    "MED-009": [
+      {
+        "agent": "gemini_cli",
+        "pass_at_1": 0.6666666666666666
+      }
+    ]
+  },
+  "by_agent": {
+    "codex_cli": [
+      "EASY-006",
+      "HARD-009",
+      "HARD-012"
+    ],
+    "claude_code": [
+      "HARD-009",
+      "HARD-012"
+    ],
+    "gemini_cli": [
+      "HARD-003",
+      "HARD-006",
+      "HARD-009",
+      "HARD-015",
+      "HARD-020",
+      "HARD-028",
+      "MED-004",
+      "MED-009",
+      "MED-027"
+    ]
+  }
+}

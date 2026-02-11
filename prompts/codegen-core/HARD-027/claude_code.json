@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-027",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Given n pairs of parentheses, generate all valid combinations.\n\nFunction signature: def generate_parentheses(n: int) -> list\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

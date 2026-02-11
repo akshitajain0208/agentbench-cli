@@ -1,0 +1,49 @@
+{
+  "task_id": "MED-024",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-024",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.5004483749999054,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae5-1423-7181-8d41-039188628975\n--------\nuser\nFind minimum in a rotated sorted array.\n\nFunction signature: def find_min_rotated(nums: list) -> int\n\nConstraints:\n- O(log n) time\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:10:54.116108Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12208}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:10:54.127714"
+    },
+    {
+      "task_id": "MED-024",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.541326458000185,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae5-1bc2-7383-b5dd-8479a5a1827b\n--------\nuser\nFind minimum in a rotated sorted array.\n\nFunction signature: def find_min_rotated(nums: list) -> int\n\nConstraints:\n- O(log n) time\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:10:56.162525Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12206}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:10:56.172766"
+    },
+    {
+      "task_id": "MED-024",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 3.0785975000007966,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4ae5-23bf-7ac3-a072-6f6bf33d75c3\n--------\nuser\nFind minimum in a rotated sorted array.\n\nFunction signature: def find_min_rotated(nums: list) -> int\n\nConstraints:\n- O(log n) time\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:10:59.745355Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795263,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":12204}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:10:59.755327"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1541.33,
+    "p50_ms": 1541.33,
+    "p95_ms": 2924.87,
+    "p99_ms": 3047.85,
+    "mean_ms": 2040.12,
+    "std_ms": 734.5,
+    "min_ms": 1500.45,
+    "max_ms": 3078.6,
+    "samples": 3
+  },
+  "determinism": null
+}

@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-038",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-038",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 1.6859942089995457,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0d-66c1-7ac2-9203-72ad81587000\n--------\nuser\nFind the minimum number of jumps to reach the end.\n\nFunction signature: def min_jumps(nums: list) -> int\n\nConstraints:\n- nums[i] is max jump length from i\n- Always reachable\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:54:56.891137Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9566}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:54:56.901838"
+    },
+    {
+      "task_id": "HARD-038",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.4388444160013023,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0d-6f19-7481-962b-e877d38314c9\n--------\nuser\nFind the minimum number of jumps to reach the end.\n\nFunction signature: def min_jumps(nums: list) -> int\n\nConstraints:\n- nums[i] is max jump length from i\n- Always reachable\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:54:58.833244Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9564}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:54:58.844359"
+    },
+    {
+      "task_id": "HARD-038",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.752305250000063,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b0d-76a2-7d73-abfb-2cd39cb43902\n--------\nuser\nFind the minimum number of jumps to reach the end.\n\nFunction signature: def min_jumps(nums: list) -> int\n\nConstraints:\n- nums[i] is max jump length from i\n- Always reachable\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:55:01.086394Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9562}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:55:01.099908"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1685.99,
+    "p50_ms": 1685.99,
+    "p95_ms": 1745.67,
+    "p99_ms": 1750.98,
+    "mean_ms": 1625.71,
+    "std_ms": 134.88,
+    "min_ms": 1438.84,
+    "max_ms": 1752.31,
+    "samples": 3
+  },
+  "determinism": null
+}

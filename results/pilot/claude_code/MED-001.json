@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-001",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-001",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef find_kth_largest(nums: list, k: int) -> int:\n    nums.sort(reverse=True)\n    return nums[k - 1]\n```",
+      "latency_seconds": 4.835956957999997,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:06:46.397430"
+    },
+    {
+      "task_id": "MED-001",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef find_kth_largest(nums: list, k: int) -> int:\n    nums.sort(reverse=True)\n    return nums[k - 1]\n```",
+      "latency_seconds": 4.732174750000013,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:06:51.633310"
+    },
+    {
+      "task_id": "MED-001",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef find_kth_largest(nums: list, k: int) -> int:\n    nums.sort(reverse=True)\n    return nums[k - 1]\n```",
+      "latency_seconds": 5.63454995799998,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:06:57.771885"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4835.96,
+    "p50_ms": 4835.96,
+    "p95_ms": 5554.69,
+    "p99_ms": 5618.58,
+    "mean_ms": 5067.56,
+    "std_ms": 403.15,
+    "min_ms": 4732.17,
+    "max_ms": 5634.55,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

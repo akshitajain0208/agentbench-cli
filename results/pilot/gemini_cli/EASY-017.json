@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-017",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-017",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef gcd(a: int, b: int) -> int:\n    while b:\n        a, b = b, a % b\n    return a\n```",
+      "latency_seconds": 10.768449791999956,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:41:04.705254"
+    },
+    {
+      "task_id": "EASY-017",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef gcd(a: int, b: int) -> int:\n    \"\"\"\n    Calculates the Greatest Common Divisor (GCD) of two numbers using the Euclidean algorithm.\n    \"\"\"\n    while b:\n        a, b = b, a % b\n    return a\n```",
+      "latency_seconds": 9.724775249999766,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:41:14.933829"
+    },
+    {
+      "task_id": "EASY-017",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "I seem to have made a mistake in my previous attempt. I will use `run_shell_command` to create the `gcd.py` file and populate it with the function implementation.\nMy apologies. It appears I do not have direct file writing capabilities with the tools provided. I can only read, list, and search files. I cannot create `gcd.py`.\n\nTherefore, I will output the implementation directly in my response as requested.\n\n```python\ndef gcd(a: int, b: int) -> int:\n    while b:\n        a, b = b, a % b\n    return a\n```",
+      "latency_seconds": 15.17769487500027,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:41:30.614778"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 10768.45,
+    "p50_ms": 10768.45,
+    "p95_ms": 14736.77,
+    "p99_ms": 15089.51,
+    "mean_ms": 11890.31,
+    "std_ms": 2363.26,
+    "min_ms": 9724.78,
+    "max_ms": 15177.69,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

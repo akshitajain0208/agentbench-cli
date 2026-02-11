@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-E002",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-E002",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef reverse_vowels(s: str) -> str:\n    vowels = set(\"aeiouAEIOU\")\n    chars = list(s)\n    i, j = 0, len(chars) - 1\n\n    while i < j:\n        while i < j and chars[i] not in vowels:\n            i += 1\n        while i < j and chars[j] not in vowels:\n            j -= 1\n        if i < j:\n            chars[i], chars[j] = chars[j], chars[i]\n            i += 1\n            j -= 1\n\n    return \"\".join(chars)\n```",
+      "latency_seconds": 3.7267300420000993,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:53:29.379973"
+    },
+    {
+      "task_id": "CODEGEN-E002",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef reverse_vowels(s: str) -> str:\n    vowels = set(\"aeiouAEIOU\")\n    chars = list(s)\n    i, j = 0, len(chars) - 1\n\n    while i < j:\n        while i < j and chars[i] not in vowels:\n            i += 1\n        while i < j and chars[j] not in vowels:\n            j -= 1\n        if i < j:\n            chars[i], chars[j] = chars[j], chars[i]\n            i += 1\n            j -= 1\n\n    return \"\".join(chars)\n```",
+      "latency_seconds": 6.829248500000176,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:53:36.712726"
+    },
+    {
+      "task_id": "CODEGEN-E002",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef reverse_vowels(s: str) -> str:\n    vowels = set(\"aeiouAEIOU\")\n    chars = list(s)\n    i, j = 0, len(chars) - 1\n\n    while i < j:\n        while i < j and chars[i] not in vowels:\n            i += 1\n        while i < j and chars[j] not in vowels:\n            j -= 1\n        if i < j:\n            chars[i], chars[j] = chars[j], chars[i]\n            i += 1\n            j -= 1\n\n    return \"\".join(chars)\n```",
+      "latency_seconds": 4.199037041999873,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:53:41.415408"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4199.04,
+    "p50_ms": 4199.04,
+    "p95_ms": 6566.23,
+    "p99_ms": 6776.64,
+    "mean_ms": 4918.34,
+    "std_ms": 1364.91,
+    "min_ms": 3726.73,
+    "max_ms": 6829.25,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

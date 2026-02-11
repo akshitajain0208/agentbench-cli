@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-017",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "MED-017",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef my_atoi(s: str) -> int:\n    s = s.lstrip()\n    if not s:\n        return 0\n    sign = 1\n    i = 0\n    if s[i] in ('+', '-'):\n        sign = -1 if s[i] == '-' else 1\n        i += 1\n    result = 0\n    while i < len(s) and s[i].isdigit():\n        result = result * 10 + int(s[i])\n        i += 1\n    result *= sign\n    return max(-2**31, min(2**31 - 1, result))\n```",
+      "latency_seconds": 5.68513429199993,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:01:30.862579"
+    },
+    {
+      "task_id": "MED-017",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef my_atoi(s: str) -> int:\n    s = s.lstrip()\n    if not s:\n        return 0\n    sign = 1\n    i = 0\n    if s[0] in ('+', '-'):\n        sign = -1 if s[0] == '-' else 1\n        i = 1\n    result = 0\n    while i < len(s) and s[i].isdigit():\n        result = result * 10 + int(s[i])\n        i += 1\n    result *= sign\n    return max(-(2**31), min(result, 2**31 - 1))\n```",
+      "latency_seconds": 6.522718250000253,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:01:37.888056"
+    },
+    {
+      "task_id": "MED-017",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef my_atoi(s: str) -> int:\n    s = s.lstrip()\n    if not s:\n        return 0\n    sign = 1\n    i = 0\n    if s[0] in ('+', '-'):\n        sign = -1 if s[0] == '-' else 1\n        i = 1\n    result = 0\n    while i < len(s) and s[i].isdigit():\n        result = result * 10 + int(s[i])\n        i += 1\n    result *= sign\n    return max(-(2**31), min(2**31 - 1, result))\n```",
+      "latency_seconds": 6.8735117920004996,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:01:45.265136"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 6522.72,
+    "p50_ms": 6522.72,
+    "p95_ms": 6838.43,
+    "p99_ms": 6866.5,
+    "mean_ms": 6360.45,
+    "std_ms": 498.54,
+    "min_ms": 5685.13,
+    "max_ms": 6873.51,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

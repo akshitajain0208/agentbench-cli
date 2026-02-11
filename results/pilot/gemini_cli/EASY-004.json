@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-004",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-004",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef is_numeric(s: str) -> bool:\n    if not s:\n        return False\n    return s.isdigit()\n```",
+      "latency_seconds": 11.592133999999987,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:03:05.715298"
+    },
+    {
+      "task_id": "EASY-004",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef is_numeric(s: str) -> bool:\n    \"\"\"\n    Checks if a string contains only digits.\n\n    Args:\n        s: The input string.\n\n    Returns:\n        True if the string contains only digits, False otherwise.\n    \"\"\"\n    return s.isdigit()\n```",
+      "latency_seconds": 11.11725479100005,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:03:17.336056"
+    },
+    {
+      "task_id": "EASY-004",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef is_numeric(s: str) -> bool:\n    if not s:\n        return False\n    return s.isdigit()\n```",
+      "latency_seconds": 13.03417612499993,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:03:30.873264"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11592.13,
+    "p50_ms": 11592.13,
+    "p95_ms": 12889.97,
+    "p99_ms": 13005.34,
+    "mean_ms": 11914.52,
+    "std_ms": 815.11,
+    "min_ms": 11117.25,
+    "max_ms": 13034.18,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-008",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-008",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef num_distinct(s: str, t: str) -> int:\n    m, n = len(s), len(t)\n\n    # dp[i][j] will be the number of distinct subsequences of s[:i] that equal t[:j]\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n\n    # Base case: An empty string t can be formed in 1 way (by deleting all characters from s)\n    for i in range(m + 1):\n        dp[i][0] = 1\n\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if s[i - 1] == t[j - 1]:\n                # If s[i-1] matches t[j-1], we have two options:\n                # 1. Use s[i-1] to match t[j-1]: dp[i-1][j-1] ways\n                # 2. Don't use s[i-1] (delete it): dp[i-1][j] ways\n                dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]\n            else:\n                # If s[i-1] does not match t[j-1], we must delete s[i-1]\n                dp[i][j] = dp[i - 1][j]\n\n    return dp[m][n]\n```",
+      "latency_seconds": 14.128984916000263,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:36:32.239403"
+    },
+    {
+      "task_id": "HARD-008",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef num_distinct(s: str, t: str) -> int:\n    n = len(s)\n    m = len(t)\n\n    # dp[i][j] will be the number of distinct subsequences of s[:i] that equal t[:j]\n    dp = [[0] * (m + 1) for _ in range(n + 1)]\n\n    # Base case: an empty string t is a subsequence of any string s in one way (by deleting all characters)\n    for i in range(n + 1):\n        dp[i][0] = 1\n\n    for i in 1, n + 1):\n        for j in 1, m + 1):\n            if s[i - 1] == t[j - 1]:\n                # If s[i-1] matches t[j-1], we have two options:\n                # 1. Use s[i-1] to match t[j-1]: dp[i-1][j-1] ways\n                # 2. Don't use s[i-1] (delete it): dp[i-1][j] ways\n                dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]\n            else:\n                # If s[i-1] does not match t[j-1], we must delete s[i-1]\n                dp[i][j] = dp[i - 1][j]\n\n    return dp[n][m]\n\n```\n```python\ndef num_distinct(s: str, t: str) -> int:\n    n = len(s)\n    m = len(t)\n\n    # dp[i][j] will be the number of distinct subsequences of s[:i] that equal t[:j]\n    dp = [[0] * (m + 1) for _ in range(n + 1)]\n\n    # Base case: an empty string t is a subsequence of any string s in one way (by deleting all characters)\n    for i in range(n + 1):\n        dp[i][0] = 1\n\n    for i in range(1, n + 1):\n        for j in range(1, m + 1):\n            if s[i - 1] == t[j - 1]:\n                # If s[i-1] matches t[j-1], we have two options:\n                # 1. Use s[i-1] to match t[j-1]: dp[i-1][j-1] ways\n                # 2. Don't use s[i-1] (delete it): dp[i-1][j] ways\n                dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]\n            else:\n                # If s[i-1] does not match t[j-1], we must delete s[i-1]\n                dp[i][j] = dp[i - 1][j]\n\n    return dp[n][m]\n\n```",
+      "latency_seconds": 13.381019750000178,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:36:46.123679"
+    },
+    {
+      "task_id": "HARD-008",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef num_distinct(s: str, t: str) -> int:\n    m, n = len(s), len(t)\n\n    # dp[i][j] will be the number of distinct subsequences of s[:i] that equal t[:j]\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n\n    # Base case: an empty string t is a subsequence of any string s exactly once (by deleting all characters of s)\n    for i in range(m + 1):\n        dp[i][0] = 1\n\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if s[i - 1] == t[j - 1]:\n                # If characters match, we have two options:\n                # 1. Use s[i-1] to match t[j-1]: then we need to find subsequences of s[:i-1] that equal t[:j-1] (dp[i-1][j-1])\n                # 2. Don't use s[i-1]: then we need to find subsequences of s[:i-1] that equal t[:j] (dp[i-1][j])\n                dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]\n            else:\n                # If characters don't match, we can only not use s[i-1]\n                # so we need to find subsequences of s[:i-1] that equal t[:j]\n                dp[i][j] = dp[i - 1][j]\n    return dp[m][n]\n\n```",
+      "latency_seconds": 11.075699582999732,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:36:57.702699"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 13381.02,
+    "p50_ms": 13381.02,
+    "p95_ms": 14054.19,
+    "p99_ms": 14114.03,
+    "mean_ms": 12861.9,
+    "std_ms": 1299.42,
+    "min_ms": 11075.7,
+    "max_ms": 14128.98,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

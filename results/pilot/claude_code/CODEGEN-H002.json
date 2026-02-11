@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H002",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H002",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef flatten(nested_list: list) -> list:\n    result = []\n    for item in nested_list:\n        if isinstance(item, list):\n            result.extend(flatten(item))\n        else:\n            result.append(item)\n    return result\n```",
+      "latency_seconds": 5.305412666000052,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:41:06.164940"
+    },
+    {
+      "task_id": "CODEGEN-H002",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef flatten(nested_list: list) -> list:\n    result = []\n    for item in nested_list:\n        if isinstance(item, list):\n            result.extend(flatten(item))\n        else:\n            result.append(item)\n    return result\n```",
+      "latency_seconds": 4.735804916999996,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:41:11.403365"
+    },
+    {
+      "task_id": "CODEGEN-H002",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef flatten(nested_list: list) -> list:\n    result = []\n    for item in nested_list:\n        if isinstance(item, list):\n            result.extend(flatten(item))\n        else:\n            result.append(item)\n    return result\n```",
+      "latency_seconds": 5.109345458000007,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:41:17.014201"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5109.35,
+    "p50_ms": 5109.35,
+    "p95_ms": 5285.81,
+    "p99_ms": 5301.49,
+    "mean_ms": 5050.19,
+    "std_ms": 236.27,
+    "min_ms": 4735.8,
+    "max_ms": 5305.41,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

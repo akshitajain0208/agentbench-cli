@@ -1,0 +1,8 @@
+{
+  "task_id": "MED-025",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Flatten a dictionary with nested keys using dot notation.\n\nFunction signature: def flatten_dict(d: dict, parent_key: str = '') -> dict\n\nConstraints:\n- Use '.' as separator\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

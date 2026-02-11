@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-013",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-013",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef divide(dividend: int, divisor: int) -> int:\n    INT_MAX = 2**31 - 1\n    INT_MIN = -2**31\n\n    # Handle the specific overflow case where result of division would be INT_MIN when divided by -1\n    # -2**31 / -1 should be 2**31, which is greater than INT_MAX\n    if dividend == INT_MIN and divisor == -1:\n        return INT_MAX\n\n    # Determine the sign of the result\n    # XOR operation (^) returns true if signs are different, false if same\n    is_negative = (dividend < 0) != (divisor < 0)\n\n    # Work with absolute values for division\n    abs_dividend = abs(dividend)\n    abs_divisor = abs(divisor)\n\n    quotient = 0\n    # Iterate from the highest possible bit (31 for 32-bit integers) down to 0\n    # This performs binary long division using bit shifts and subtractions\n    for i in range(31, -1, -1):\n        # Check if abs_divisor * (2^i) can be subtracted from the current abs_dividend\n        # (abs_divisor << i) is equivalent to abs_divisor * (2^i)\n        if (abs_divisor << i) <= abs_dividend:\n            abs_dividend -= (abs_divisor << i)\n            # If it can be subtracted, add 2^i to the quotient\n            quotient += (1 << i)\n\n    # Apply the determined sign to the quotient\n    if is_negative:\n        quotient = -quotient\n\n    # Final check for overflow against INT_MAX and INT_MIN\n    # The problem specifies returning 2^31-1 for *any* overflow\n    if quotient > INT_MAX or quotient < INT_MIN:\n        return INT_MAX\n\n    return quotient\n```",
+      "latency_seconds": 35.79091179199986,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:44:03.460923"
+    },
+    {
+      "task_id": "HARD-013",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef divide(dividend: int, divisor: int) -> int:\n    INT_MAX = 2**31 - 1\n    INT_MIN = -2**31\n\n    if divisor == 0:\n        # Per typical problem constraints, division by zero is not expected to be handled\n        # by returning INT_MAX unless explicitly stated. Python will raise ZeroDivisionError.\n        # Assuming valid divisor as per standard integer division problems.\n        pass\n\n    if dividend == INT_MIN and divisor == -1:\n        return INT_MAX\n\n    negative_result = (dividend < 0) != (divisor < 0)\n\n    abs_dividend = abs(dividend)\n    abs_divisor = abs(divisor)\n\n    quotient = 0\n    for i in range(31, -1, -1):\n        if (abs_divisor << i) <= abs_dividend:\n            abs_dividend -= (abs_divisor << i)\n            quotient |= (1 << i)\n\n    if negative_result:\n        quotient = -quotient\n\n    if not (INT_MIN <= quotient <= INT_MAX):\n        return INT_MAX\n\n    return quotient\n```",
+      "latency_seconds": 33.5517640829994,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:44:37.515683"
+    },
+    {
+      "task_id": "HARD-013",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef divide(dividend: int, divisor: int) -> int:\n    INT_MAX = 2**31 - 1\n    INT_MIN = -2**31\n\n    # Handle specific overflow case where result is 2^31, which is INT_MAX + 1\n    if dividend == INT_MIN and divisor == -1:\n        return INT_MAX\n\n    # Determine the sign of the result\n    # If dividend and divisor have different signs, the result is negative\n    sign = -1 if (dividend < 0) != (divisor < 0) else 1\n\n    # Work with absolute values for the main division logic\n    # Python's abs() handles INT_MIN correctly by returning 2**31\n    abs_dividend = abs(dividend)\n    abs_divisor = abs(divisor)\n\n    quotient = 0\n\n    # Perform division using bit shifts (repeated subtraction of multiples of divisor)\n    while abs_dividend >= abs_divisor:\n        temp_divisor = abs_divisor\n        multiple = 1\n\n        # Find the largest multiple of divisor (temp_divisor = divisor * 2^k)\n        # that is less than or equal to the current abs_dividend.\n        # The condition `temp_divisor <= (INT_MAX >> 1)` prevents `temp_divisor << 1`\n        # from overflowing a hypothetical 32-bit integer representation of temp_divisor.\n        while (temp_divisor <= (INT_MAX >> 1)) and (abs_dividend >= (temp_divisor << 1)):\n            temp_divisor <<= 1\n            multiple <<= 1\n\n        abs_dividend -= temp_divisor\n        quotient += multiple\n\n    # Apply the determined sign to the quotient\n    result = quotient * sign\n\n    return result\n```",
+      "latency_seconds": 50.955657333999625,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:45:28.973676"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 35790.91,
+    "p50_ms": 35790.91,
+    "p95_ms": 49439.18,
+    "p99_ms": 50652.36,
+    "mean_ms": 40099.44,
+    "std_ms": 7730.74,
+    "min_ms": 33551.76,
+    "max_ms": 50955.66,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

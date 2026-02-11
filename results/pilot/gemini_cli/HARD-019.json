@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-019",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "HARD-019",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef count_inversions(nums: list) -> int:\n    def _merge_sort_and_count(arr, l, r):\n        inversions = 0\n        if l < r:\n            m = (l + r) // 2\n            inversions += _merge_sort_and_count(arr, l, m)\n            inversions += _merge_sort_and_count(arr, m + 1, r)\n            inversions += _merge_and_count_inversions(arr, l, m, r)\n        return inversions\n\n    def _merge_and_count_inversions(arr, l, m, r):\n        temp = []\n        i, j = l, m + 1\n        inversions = 0\n\n        while i <= m and j <= r:\n            if arr[i] <= arr[j]:\n                temp.append(arr[i])\n                i += 1\n            else:\n                temp.append(arr[j])\n                inversions += (m - i + 1)\n                j += 1\n\n        while i <= m:\n            temp.append(arr[i])\n            i += 1\n\n        while j <= r:\n            temp.append(arr[j])\n            j += 1\n\n        for k in range(len(temp)):\n            arr[l + k] = temp[k]\n        \n        return inversions\n\n    # Create a copy to avoid modifying the original list if that's not desired,\n    # though merge sort typically modifies in place.\n    # For this problem, it's fine to modify the input list.\n    return _merge_sort_and_count(nums, 0, len(nums) - 1)\n\n```\nI'll write this into a file named `count_inversions.py`.\n```python\ndef count_inversions(nums: list) -> int:\n    def _merge_sort_and_count(arr, l, r):\n        inversions = 0\n        if l < r:\n            m = (l + r) // 2\n            inversions += _merge_sort_and_count(arr, l, m)\n            inversions += _merge_sort_and_count(arr, m + 1, r)\n            inversions += _merge_and_count_inversions(arr, l, m, r)\n        return inversions\n\n    def _merge_and_count_inversions(arr, l, m, r):\n        temp = []\n        i, j = l, m + 1\n        inversions = 0\n\n        while i <= m and j <= r:\n            if arr[i] <= arr[j]:\n                temp.append(arr[i])\n                i += 1\n            else:\n                temp.append(arr[j])\n                inversions += (m - i + 1)\n                j += 1\n\n        while i <= m:\n            temp.append(arr[i])\n            i += 1\n\n        while j <= r:\n            temp.append(arr[j])\n            j += 1\n\n        for k in range(len(temp)):\n            arr[l + k] = temp[k]\n        \n        return inversions\n\n    # It's generally good practice to work on a copy if the original list\n    # shouldn't be modified, but for this algorithm, in-place modification\n    # is often assumed or handled by passing indices.\n    # The current implementation modifies `nums` in place.\n    return _merge_sort_and_count(nums, 0, len(nums) - 1)\n\n```",
+      "latency_seconds": 21.380004125000596,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:19:35.118590"
+    },
+    {
+      "task_id": "HARD-019",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef count_inversions(nums: list) -> int:\n    def merge_sort_and_count(arr: list) -> tuple[list, int]:\n        n = len(arr)\n        if n <= 1:\n            return arr, 0\n\n        mid = n // 2\n        left_half, left_inversions = merge_sort_and_count(arr[:mid])\n        right_half, right_inversions = merge_sort_and_count(arr[mid:])\n\n        merged_arr = []\n        inversions = left_inversions + right_inversions\n        i = 0  # pointer for left_half\n        j = 0  # pointer for right_half\n\n        while i < len(left_half) and j < len(right_half):\n            if left_half[i] <= right_half[j]:\n                merged_arr.append(left_half[i])\n                i += 1\n            else:\n                merged_arr.append(right_half[j])\n                j += 1\n                # If an element from the right half is smaller than an element from the left half,\n                # then it's smaller than all remaining elements in the left half.\n                inversions += (len(left_half) - i)\n\n        # Add remaining elements\n        merged_arr.extend(left_half[i:])\n        merged_arr.extend(right_half[j:])\n\n        return merged_arr, inversions\n\n    _, total_inversions = merge_sort_and_count(nums)\n    return total_inversions\n```",
+      "latency_seconds": 12.597604542000227,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:19:48.219534"
+    },
+    {
+      "task_id": "HARD-019",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef count_inversions(nums: list) -> int:\n    def merge_and_count_inversions(left: list, right: list) -> tuple[list, int]:\n        merged_array = []\n        inversions_count = 0\n        i = 0  # Pointer for the left array\n        j = 0  # Pointer for the right array\n\n        while i < len(left) and j < len(right):\n            if left[i] <= right[j]:\n                merged_array.append(left[i])\n                i += 1\n            else:\n                merged_array.append(right[j])\n                inversions_count += len(left) - i\n                j += 1\n\n        merged_array.extend(left[i:])\n        merged_array.extend(right[j:])\n        return merged_array, inversions_count\n\n    def merge_sort_and_count(arr: list) -> tuple[list, int]:\n        if len(arr) <= 1:\n            return arr, 0\n\n        mid = len(arr) // 2\n        left_half, left_inversions = merge_sort_and_count(arr[:mid])\n        right_half, right_inversions = merge_sort_and_count(arr[mid:])\n\n        merged_half, split_inversions = merge_and_count_inversions(left_half, right_half)\n\n        total_inversions = left_inversions + right_inversions + split_inversions\n        return merged_half, total_inversions\n\n    _, total_inversions = merge_sort_and_count(nums)\n    return total_inversions\n\n```",
+      "latency_seconds": 17.352414166000017,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:20:06.075374"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 17352.41,
+    "p50_ms": 17352.41,
+    "p95_ms": 20977.25,
+    "p99_ms": 21299.45,
+    "mean_ms": 17110.01,
+    "std_ms": 3589.49,
+    "min_ms": 12597.6,
+    "max_ms": 21380.0,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

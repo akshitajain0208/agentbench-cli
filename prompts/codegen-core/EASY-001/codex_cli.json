@@ -1,0 +1,8 @@
+{
+  "task_id": "EASY-001",
+  "agent_name": "codex_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Return the sum of all elements in a list.\n\nFunction signature: def sum_list(nums: list) -> int\n\nConstraints:\n- Handle empty list (return 0)\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

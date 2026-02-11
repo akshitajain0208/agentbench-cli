@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-M003",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-M003",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef rotate(matrix: list) -> list:\n    n = len(matrix)\n\n    # Transpose the matrix\n    for i in range(n):\n        for j in range(i, n):\n            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n\n    # Reverse each row\n    for i in range(n):\n        matrix[i].reverse()\n    \n    return matrix\n```",
+      "latency_seconds": 14.017705416999888,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:59:04.380841"
+    },
+    {
+      "task_id": "CODEGEN-M003",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef rotate(matrix: list) -> list:\n    n = len(matrix)\n\n    # Transpose the matrix\n    for i in range(n):\n        for j in range(i, n):\n            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n\n    # Reverse each row\n    for i in range(n):\n        matrix[i].reverse()\n    \n    return matrix\n```",
+      "latency_seconds": 10.899166541999875,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:59:15.783822"
+    },
+    {
+      "task_id": "CODEGEN-M003",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef rotate(matrix: list) -> list:\n    n = len(matrix)\n\n    # Transpose the matrix\n    for i in range(n):\n        for j in range(i, n):\n            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n\n    # Reverse each row\n    for row in matrix:\n        row.reverse()\n        \n    return matrix\n```",
+      "latency_seconds": 11.879806874999986,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:59:28.166701"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11879.81,
+    "p50_ms": 11879.81,
+    "p95_ms": 13803.92,
+    "p99_ms": 13974.95,
+    "mean_ms": 12265.56,
+    "std_ms": 1302.03,
+    "min_ms": 10899.17,
+    "max_ms": 14017.71,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

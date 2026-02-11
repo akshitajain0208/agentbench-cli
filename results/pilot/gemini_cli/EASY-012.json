@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-012",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "EASY-012",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef count_vowels(s: str) -> int:\n    vowels = \"aeiouAEIOU\"\n    count = 0\n    for char in s:\n        if char in vowels:\n            count += 1\n    return count\n```",
+      "latency_seconds": 11.690118417000122,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:53:55.777407"
+    },
+    {
+      "task_id": "EASY-012",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef count_vowels(s: str) -> int:\n    vowels = \"aeiouAEIOU\"\n    count = 0\n    for char in s:\n        if char in vowels:\n            count += 1\n    return count\n```",
+      "latency_seconds": 11.40314566699999,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:54:07.682378"
+    },
+    {
+      "task_id": "EASY-012",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef count_vowels(s: str) -> int:\n    \"\"\"\n    Counts the number of vowels in a string.\n\n    Args:\n        s: The input string.\n\n    Returns:\n        The total count of vowels (both upper and lowercase).\n    \"\"\"\n    vowels = \"aeiouAEIOU\"\n    count = 0\n    for char in s:\n        if char in vowels:\n            count += 1\n    return count\n```",
+      "latency_seconds": 11.265196375000414,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:54:19.450177"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11403.15,
+    "p50_ms": 11403.15,
+    "p95_ms": 11661.42,
+    "p99_ms": 11684.38,
+    "mean_ms": 11452.82,
+    "std_ms": 176.99,
+    "min_ms": 11265.2,
+    "max_ms": 11690.12,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-028",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-028",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef power_set_size(nums: list) -> int:\n    return 2 ** len(nums)\n```",
+      "latency_seconds": 10.158045374999347,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:45:07.295436"
+    },
+    {
+      "task_id": "MED-028",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef power_set_size(nums: list) -> int:\n    return 2 ** len(nums)\n```",
+      "latency_seconds": 9.980870833999688,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:45:17.779649"
+    },
+    {
+      "task_id": "MED-028",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef power_set_size(nums: list) -> int:\n    return 2 ** len(nums)\n```",
+      "latency_seconds": 10.429821666999487,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:45:28.712784"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 10158.05,
+    "p50_ms": 10158.05,
+    "p95_ms": 10402.64,
+    "p99_ms": 10424.39,
+    "mean_ms": 10189.58,
+    "std_ms": 184.63,
+    "min_ms": 9980.87,
+    "max_ms": 10429.82,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

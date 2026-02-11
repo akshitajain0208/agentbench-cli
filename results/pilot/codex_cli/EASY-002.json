@@ -1,0 +1,62 @@
+{
+  "task_id": "EASY-002",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "EASY-002",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef find_max(nums: list) -> int:\n    maximum = nums[0]\n    for num in nums[1:]:\n        if num > maximum:\n            maximum = num\n    return maximum\n```",
+      "latency_seconds": 2.991466916000036,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:00:40.482801"
+    },
+    {
+      "task_id": "EASY-002",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef find_max(nums: list) -> int:\n    max_val = nums[0]\n    for num in nums[1:]:\n        if num > max_val:\n            max_val = num\n    return max_val\n```",
+      "latency_seconds": 2.6821887920000336,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:00:43.668683"
+    },
+    {
+      "task_id": "EASY-002",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef find_max(nums: list) -> int:\n    maximum = nums[0]\n    for num in nums[1:]:\n        if num > maximum:\n            maximum = num\n    return maximum\n```",
+      "latency_seconds": 2.489465583000083,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:00:46.661603"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 2682.19,
+    "p50_ms": 2682.19,
+    "p95_ms": 2960.54,
+    "p99_ms": 2985.28,
+    "mean_ms": 2721.04,
+    "std_ms": 206.77,
+    "min_ms": 2489.47,
+    "max_ms": 2991.47,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.6667,
+    "unique_outputs": 2,
+    "total_outputs": 3,
+    "most_common_frequency": 0.6667,
+    "stability_score": 0.4206
+  }
+}

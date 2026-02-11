@@ -1,0 +1,49 @@
+{
+  "task_id": "HARD-034",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "HARD-034",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "",
+      "latency_seconds": 2.305465584000558,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b09-5128-75d2-af4e-b34de388d797\n--------\nuser\nFind the number of ways to climb n stairs (1 or 2 steps at a time).\n\nFunction signature: def climb_stairs(n: int) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:50:29.213968Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9833}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:50:29.225350"
+    },
+    {
+      "task_id": "HARD-034",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "",
+      "latency_seconds": 1.3841042909989483,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b09-597c-7a93-96b4-255ed2534204\n--------\nuser\nFind the number of ways to climb n stairs (1 or 2 steps at a time).\n\nFunction signature: def climb_stairs(n: int) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:50:31.104294Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795262,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9831}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:50:31.113154"
+    },
+    {
+      "task_id": "HARD-034",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "",
+      "latency_seconds": 1.39429491699957,
+      "success": false,
+      "error_message": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c4b09-60da-7e90-aa7c-343517f2acdf\n--------\nuser\nFind the number of ways to climb n stairs (1 or 2 steps at a time).\n\nFunction signature: def climb_stairs(n: int) -> int\n\nOutput only the implementation, no explanations.\nmcp startup: no servers\n2026-02-11T04:50:32.999420Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1770795261,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":9829}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 4:34 PM.\n",
+      "timestamp": "2026-02-11T13:50:33.011482"
+    }
+  ],
+  "pass_at_k": null,
+  "latency": {
+    "median_ms": 1394.29,
+    "p50_ms": 1394.29,
+    "p95_ms": 2214.35,
+    "p99_ms": 2287.24,
+    "mean_ms": 1694.62,
+    "std_ms": 431.95,
+    "min_ms": 1384.1,
+    "max_ms": 2305.47,
+    "samples": 3
+  },
+  "determinism": null
+}

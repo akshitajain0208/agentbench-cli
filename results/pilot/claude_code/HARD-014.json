@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-014",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-014",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef largest_rectangle_histogram(heights: list) -> int:\n    stack = []\n    max_area = 0\n    for i, h in enumerate(heights):\n        start = i\n        while stack and stack[-1][1] > h:\n            idx, height = stack.pop()\n            max_area = max(max_area, height * (i - idx))\n            start = idx\n        stack.append((start, h))\n    for idx, height in stack:\n        max_area = max(max_area, height * (len(heights) - idx))\n    return max_area\n```",
+      "latency_seconds": 6.366821833000358,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:45:35.621587"
+    },
+    {
+      "task_id": "HARD-014",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef largest_rectangle_histogram(heights: list) -> int:\n    stack = []\n    max_area = 0\n    for i, h in enumerate(heights):\n        start = i\n        while stack and stack[-1][1] > h:\n            idx, height = stack.pop()\n            max_area = max(max_area, height * (i - idx))\n            start = idx\n        stack.append((start, h))\n    for idx, height in stack:\n        max_area = max(max_area, height * (len(heights) - idx))\n    return max_area\n```",
+      "latency_seconds": 5.761219332999644,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:45:41.886719"
+    },
+    {
+      "task_id": "HARD-014",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef largest_rectangle_histogram(heights: list) -> int:\n    stack = []\n    max_area = 0\n    for i, h in enumerate(heights):\n        start = i\n        while stack and stack[-1][1] > h:\n            idx, height = stack.pop()\n            max_area = max(max_area, height * (i - idx))\n            start = idx\n        stack.append((start, h))\n    for idx, height in stack:\n        max_area = max(max_area, height * (len(heights) - idx))\n    return max_area\n```",
+      "latency_seconds": 6.029581374999907,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:45:48.420036"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 6029.58,
+    "p50_ms": 6029.58,
+    "p95_ms": 6333.1,
+    "p99_ms": 6360.08,
+    "mean_ms": 6052.54,
+    "std_ms": 247.77,
+    "min_ms": 5761.22,
+    "max_ms": 6366.82,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}

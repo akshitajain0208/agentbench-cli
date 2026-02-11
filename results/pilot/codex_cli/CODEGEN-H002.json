@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H002",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H002",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef flatten(nested_list: list) -> list:\n    result = []\n    stack = [iter(nested_list)]\n\n    while stack:\n        try:\n            item = next(stack[-1])\n            if isinstance(item, list):\n                stack.append(iter(item))\n            else:\n                result.append(item)\n        except StopIteration:\n            stack.pop()\n\n    return result\n```",
+      "latency_seconds": 4.269182166999997,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:41:21.521251"
+    },
+    {
+      "task_id": "CODEGEN-H002",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef flatten(nested_list: list) -> list:\n    result = []\n\n    def _flatten(item):\n        if isinstance(item, list):\n            for sub in item:\n                _flatten(sub)\n        else:\n            result.append(item)\n\n    _flatten(nested_list)\n    return result\n```",
+      "latency_seconds": 4.342251125000018,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:41:26.365266"
+    },
+    {
+      "task_id": "CODEGEN-H002",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef flatten(nested_list: list) -> list:\n    result = []\n\n    def _flatten(item):\n        if isinstance(item, list):\n            for sub_item in item:\n                _flatten(sub_item)\n        else:\n            result.append(item)\n\n    _flatten(nested_list)\n    return result\n```",
+      "latency_seconds": 3.1833499159999974,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:41:30.051319"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4269.18,
+    "p50_ms": 4269.18,
+    "p95_ms": 4334.94,
+    "p99_ms": 4340.79,
+    "mean_ms": 3931.59,
+    "std_ms": 529.93,
+    "min_ms": 3183.35,
+    "max_ms": 4342.25,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

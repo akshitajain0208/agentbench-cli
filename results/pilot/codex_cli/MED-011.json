@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-011",
+  "agent_name": "codex_cli",
+  "runs": [
+    {
+      "task_id": "MED-011",
+      "agent_name": "codex_cli",
+      "run_index": 0,
+      "content": "```python\ndef is_valid_sudoku(board: list) -> bool:\n    rows = [set() for _ in range(9)]\n    cols = [set() for _ in range(9)]\n    boxes = [set() for _ in range(9)]\n\n    for r in range(9):\n        for c in range(9):\n            val = board[r][c]\n            if val == '.':\n                continue\n            b = (r // 3) * 3 + (c // 3)\n            if val in rows[r] or val in cols[c] or val in boxes[b]:\n                return False\n            rows[r].add(val)\n            cols[c].add(val)\n            boxes[b].add(val)\n\n    return True\n```",
+      "latency_seconds": 4.330461417000151,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:19:57.169562"
+    },
+    {
+      "task_id": "MED-011",
+      "agent_name": "codex_cli",
+      "run_index": 1,
+      "content": "```python\ndef is_valid_sudoku(board: list) -> bool:\n    rows = [set() for _ in range(9)]\n    cols = [set() for _ in range(9)]\n    boxes = [set() for _ in range(9)]\n\n    for r in range(9):\n        for c in range(9):\n            val = board[r][c]\n            if val == \".\":\n                continue\n\n            box_idx = (r // 3) * 3 + (c // 3)\n            if val in rows[r] or val in cols[c] or val in boxes[box_idx]:\n                return False\n\n            rows[r].add(val)\n            cols[c].add(val)\n            boxes[box_idx].add(val)\n\n    return True\n```",
+      "latency_seconds": 4.628972832999807,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:20:02.302204"
+    },
+    {
+      "task_id": "MED-011",
+      "agent_name": "codex_cli",
+      "run_index": 2,
+      "content": "```python\ndef is_valid_sudoku(board: list) -> bool:\n    rows = [set() for _ in range(9)]\n    cols = [set() for _ in range(9)]\n    boxes = [set() for _ in range(9)]\n\n    for r in range(9):\n        for c in range(9):\n            val = board[r][c]\n            if val == '.':\n                continue\n\n            box_idx = (r // 3) * 3 + (c // 3)\n\n            if val in rows[r] or val in cols[c] or val in boxes[box_idx]:\n                return False\n\n            rows[r].add(val)\n            cols[c].add(val)\n            boxes[box_idx].add(val)\n\n    return True\n```",
+      "latency_seconds": 4.539807207999729,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:20:07.345677"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 4539.81,
+    "p50_ms": 4539.81,
+    "p95_ms": 4620.06,
+    "p99_ms": 4627.19,
+    "mean_ms": 4499.75,
+    "std_ms": 125.12,
+    "min_ms": 4330.46,
+    "max_ms": 4628.97,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

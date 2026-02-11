@@ -1,0 +1,8 @@
+{
+  "task_id": "HARD-004",
+  "agent_name": "claude_code",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Implement regular expression matching with '.' and '*' support.\n\nFunction signature: def is_match(s: str, p: str) -> bool\n\nConstraints:\n- '.' matches any single char\n- '*' matches zero or more of preceding\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

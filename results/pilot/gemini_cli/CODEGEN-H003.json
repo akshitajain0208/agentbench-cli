@@ -1,0 +1,62 @@
+{
+  "task_id": "CODEGEN-H003",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "CODEGEN-H003",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef combination_sum(candidates: list, target: int) -> list:\n    \"\"\"\n    Finds all unique combinations of candidates that sum up to the target.\n    Each number in candidates may be used an unlimited number of times.\n\n    Args:\n        candidates: A list of distinct integers.\n        target: The target integer sum.\n\n    Returns:\n        A list of lists, where each inner list is a unique combination\n        of numbers from candidates that sums to target. Each combination\n        is sorted, and the overall list of combinations has no duplicates.\n    \"\"\"\n    result = []\n    \n    # Sort candidates to ensure combinations are generated in sorted order\n    # and to easily handle duplicate combinations.\n    candidates.sort()\n\n    def backtrack(remaining, combination, start_index):\n        if remaining == 0:\n            # If the remaining sum is 0, we have found a valid combination.\n            # Add a copy of the current combination to the result list.\n            result.append(list(combination))\n            return\n        \n        if remaining < 0:\n            # If the remaining sum is negative, this path is invalid.\n            return\n\n        # Iterate through the candidates starting from start_index.\n        for i in range(start_index, len(candidates)):\n            candidate = candidates[i]\n            \n            # Optimization: if the current candidate is greater than the\n            # remaining sum, all subsequent candidates will also be greater,\n            # so we can stop exploring this path.\n            if candidate > remaining:\n                break\n                \n            # Add the current candidate to the combination.\n            combination.append(candidate)\n            \n            # Recursively call backtrack with the updated remaining sum.\n            # We pass 'i' as the new start_index because we can reuse the same element.\n            backtrack(remaining - candidate, combination, i)\n            \n            # Backtrack: remove the last element to explore other possibilities.\n            combination.pop()\n\n    # Initial call to the backtrack function.\n    backtrack(target, [], 0)\n    \n    return result\n```",
+      "latency_seconds": 30.711170708000054,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:43:08.835768"
+    },
+    {
+      "task_id": "CODEGEN-H003",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef combination_sum(candidates: list, target: int) -> list:\n    \"\"\"\n    Finds all unique combinations of candidates that sum up to the target.\n\n    Args:\n        candidates: A list of distinct integers.\n        target: The target integer.\n\n    Returns:\n        A list of lists, where each inner list is a unique combination\n        of candidates that sums to the target. Each combination is sorted.\n    \"\"\"\n    result = []\n    \n    # Sort candidates to ensure combinations are generated in non-decreasing order\n    # and to help in pruning the search space.\n    candidates.sort()\n\n    def backtrack(start_index, current_combination, remaining_target):\n        \"\"\"\n        A recursive helper function to find combinations.\n\n        Args:\n            start_index: The index in the candidates list to start exploring from.\n            current_combination: The combination being built.\n            remaining_target: The target sum left to achieve.\n        \"\"\"\n        # If the remaining target is 0, we found a valid combination.\n        if remaining_target == 0:\n            result.append(list(current_combination))\n            return\n\n        # Iterate through the candidates starting from the start_index.\n        for i in range(start_index, len(candidates)):\n            # If the current candidate is greater than the remaining target,\n            # no further candidates (since they are sorted) can be part of\n            # this combination.\n            if candidates[i] > remaining_target:\n                break\n            \n            # Include the candidate in the current combination.\n            current_combination.append(candidates[i])\n            \n            # Recurse with the same start_index 'i' because we can reuse the\n            # same number multiple times.\n            backtrack(i, current_combination, remaining_target - candidates[i])\n            \n            # Backtrack by removing the last added candidate to explore\n            # other possibilities.\n            current_combination.pop()\n\n    backtrack(0, [], target)\n    return result\n\n```",
+      "latency_seconds": 34.56867983400002,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:43:43.906933"
+    },
+    {
+      "task_id": "CODEGEN-H003",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "I will create a new file named `solution.py` containing the Python implementation for the `combination_sum` function.\n```python\ndef combination_sum(candidates: list, target: int) -> list:\n    results = []\n\n    def backtrack(remain, comb, start):\n        if remain == 0:\n            results.append(list(comb))\n            return\n        elif remain < 0:\n            return\n\n        for i in range(start, len(candidates)):\n            candidate = candidates[i]\n            if remain - candidate < 0:\n                # Optimization: if the remaining sum is less than the current candidate,\n                # and since the list is sorted, no further candidates will work.\n                break\n            \n            comb.append(candidate)\n            # Give the next invocation a starting index of i to avoid duplicates \n            # and allow reusing the same number.\n            backtrack(remain - candidate, comb, i)\n            # Backtrack\n            comb.pop()\n\n    # Sort candidates to ensure combinations are internally sorted and to enable optimization.\n    candidates.sort()\n    backtrack(target, [], 0)\n    return results\n```",
+      "latency_seconds": 79.10107833399991,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T11:45:03.509017"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 34568.68,
+    "p50_ms": 34568.68,
+    "p95_ms": 74647.84,
+    "p99_ms": 78210.43,
+    "mean_ms": 48126.98,
+    "std_ms": 21958.54,
+    "min_ms": 30711.17,
+    "max_ms": 79101.08,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

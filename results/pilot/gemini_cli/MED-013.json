@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-013",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-013",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef rotate_list(nums: list, k: int) -> list:\n    n = len(nums)\n    if n == 0:\n        return nums\n\n    k = k % n\n    \n    if k == 0:\n        return nums\n\n    def _reverse(arr, start, end):\n        while start < end:\n            arr[start], arr[end] = arr[end], arr[start]\n            start += 1\n            end -= 1\n\n    _reverse(nums, 0, n - k - 1)\n    _reverse(nums, n - k, n - 1)\n    _reverse(nums, 0, n - 1)\n\n    return nums\n```",
+      "latency_seconds": 20.44659850000062,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:56:26.599493"
+    },
+    {
+      "task_id": "MED-013",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef rotate_list(nums: list, k: int) -> list:\n    if not nums:\n        return nums\n    \n    n = len(nums)\n    k = k % n\n    \n    if k == 0:\n        return nums\n\n    nums[:] = nums[-k:] + nums[:-k]\n    return nums\n```",
+      "latency_seconds": 11.735070332999385,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:56:38.837901"
+    },
+    {
+      "task_id": "MED-013",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef rotate_list(nums: list, k: int) -> list:\n    \"\"\"\n    Rotates a list to the right by k positions in-place.\n\n    Args:\n        nums: The list to rotate.\n        k: The number of positions to rotate to the right.\n\n    Returns:\n        The rotated list (modified in-place).\n    \"\"\"\n    if not nums:\n        return nums\n\n    n = len(nums)\n    k %= n  # Handle cases where k is larger than n\n\n    if k == 0:\n        return nums\n\n    # Slice the list and reassign in-place\n    nums[:] = nums[-k:] + nums[:-k]\n    return nums\n```",
+      "latency_seconds": 10.586658166999769,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:56:49.927917"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11735.07,
+    "p50_ms": 11735.07,
+    "p95_ms": 19575.45,
+    "p99_ms": 20272.37,
+    "mean_ms": 14256.11,
+    "std_ms": 4402.37,
+    "min_ms": 10586.66,
+    "max_ms": 20446.6,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

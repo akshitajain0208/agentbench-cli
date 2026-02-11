@@ -1,0 +1,33 @@
+agents:
+  claude_code:
+    name: "Claude Code"
+    command: "claude"
+    version: null
+    default_args: []
+    timeout_seconds: 120
+    supports_temperature: true
+    supports_system_prompt: true
+    
+  codex_cli:
+    name: "OpenAI Codex CLI"
+    command: "codex"
+    version: null
+    default_args: []
+    timeout_seconds: 120
+    supports_temperature: true
+    supports_system_prompt: true
+    
+  gemini_cli:
+    name: "Gemini CLI"
+    command: "gemini"
+    version: null
+    default_args: []
+    timeout_seconds: 120
+    supports_temperature: true
+    supports_system_prompt: true
+
+execution:
+  max_retries: 3
+  retry_delay_seconds: 5
+  sandbox_enabled: true
+  network_isolated: true

@@ -1,0 +1,62 @@
+{
+  "task_id": "MED-018",
+  "agent_name": "gemini_cli",
+  "runs": [
+    {
+      "task_id": "MED-018",
+      "agent_name": "gemini_cli",
+      "run_index": 0,
+      "content": "```python\ndef generate_pascal(n: int) -> list:\n    if n <= 0:\n        return []\n    \n    triangle = []\n    for i in range(n):\n        row = [None] * (i + 1)\n        row[0] = 1\n        row[i] = 1\n        \n        for j in range(1, i):\n            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        triangle.append(row)\n    return triangle\n```",
+      "latency_seconds": 12.49139812500016,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:04:20.896332"
+    },
+    {
+      "task_id": "MED-018",
+      "agent_name": "gemini_cli",
+      "run_index": 1,
+      "content": "```python\ndef generate_pascal(n: int) -> list:\n    if n <= 0:\n        return []\n\n    triangle = []\n    for i in range(n):\n        current_row = [1]\n        if i > 0:\n            prev_row = triangle[i - 1]\n            for j in range(1, i):\n                current_row.append(prev_row[j - 1] + prev_row[j])\n            current_row.append(1)\n        triangle.append(current_row)\n    return triangle\n```",
+      "latency_seconds": 11.515575833000185,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:04:32.915765"
+    },
+    {
+      "task_id": "MED-018",
+      "agent_name": "gemini_cli",
+      "run_index": 2,
+      "content": "```python\ndef generate_pascal(n: int) -> list:\n    if n <= 0:\n        return []\n\n    triangle = []\n    for i in range(n):\n        row = [1] * (i + 1)\n        if i > 1:\n            for j in range(1, i):\n                row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        triangle.append(row)\n    return triangle\n```",
+      "latency_seconds": 9.34528254199995,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T13:04:42.764575"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 11515.58,
+    "p50_ms": 11515.58,
+    "p95_ms": 12393.82,
+    "p99_ms": 12471.88,
+    "mean_ms": 11117.42,
+    "std_ms": 1314.89,
+    "min_ms": 9345.28,
+    "max_ms": 12491.4,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 0.3333,
+    "unique_outputs": 3,
+    "total_outputs": 3,
+    "most_common_frequency": 0.3333,
+    "stability_score": 0.0
+  }
+}

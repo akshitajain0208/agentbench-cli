@@ -1,0 +1,8 @@
+{
+  "task_id": "MED-014",
+  "agent_name": "gemini_cli",
+  "system_prompt": "You are a coding assistant. Complete tasks precisely following all constraints. Output only the requested code unless asked for explanation.",
+  "user_prompt": "Find the peak element in a list (strictly greater than neighbors).\n\nFunction signature: def find_peak(nums: list) -> int\n\nConstraints:\n- Return index of any peak\n- nums[-1] and nums[n] are -infinity\n\nOutput only the implementation, no explanations.",
+  "cli_args": {},
+  "adaptations": "Standard template, no agent-specific adaptations required."
+}

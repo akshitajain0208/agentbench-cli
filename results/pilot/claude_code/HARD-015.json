@@ -1,0 +1,62 @@
+{
+  "task_id": "HARD-015",
+  "agent_name": "claude_code",
+  "runs": [
+    {
+      "task_id": "HARD-015",
+      "agent_name": "claude_code",
+      "run_index": 0,
+      "content": "```python\ndef min_meeting_rooms(intervals: list) -> int:\n    if not intervals:\n        return 0\n    events = []\n    for start, end in intervals:\n        events.append((start, 1))\n        events.append((end, -1))\n    events.sort()\n    max_rooms = 0\n    current_rooms = 0\n    for _, delta in events:\n        current_rooms += delta\n        max_rooms = max(max_rooms, current_rooms)\n    return max_rooms\n```",
+      "latency_seconds": 6.092554582999583,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:46:55.924772"
+    },
+    {
+      "task_id": "HARD-015",
+      "agent_name": "claude_code",
+      "run_index": 1,
+      "content": "```python\ndef min_meeting_rooms(intervals: list) -> int:\n    if not intervals:\n        return 0\n    events = []\n    for start, end in intervals:\n        events.append((start, 1))\n        events.append((end, -1))\n    events.sort()\n    max_rooms = 0\n    current_rooms = 0\n    for _, delta in events:\n        current_rooms += delta\n        max_rooms = max(max_rooms, current_rooms)\n    return max_rooms\n```",
+      "latency_seconds": 5.42213937500037,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:47:01.850527"
+    },
+    {
+      "task_id": "HARD-015",
+      "agent_name": "claude_code",
+      "run_index": 2,
+      "content": "```python\ndef min_meeting_rooms(intervals: list) -> int:\n    if not intervals:\n        return 0\n    events = []\n    for start, end in intervals:\n        events.append((start, 1))\n        events.append((end, -1))\n    events.sort()\n    max_rooms = 0\n    current_rooms = 0\n    for _, delta in events:\n        current_rooms += delta\n        max_rooms = max(max_rooms, current_rooms)\n    return max_rooms\n```",
+      "latency_seconds": 5.595110291999845,
+      "success": true,
+      "error_message": null,
+      "timestamp": "2026-02-11T12:47:07.949198"
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "pass_at_5": 1.0,
+    "pass_at_10": 1.0,
+    "total_samples": 3,
+    "passing_samples": 3,
+    "errors": []
+  },
+  "latency": {
+    "median_ms": 5595.11,
+    "p50_ms": 5595.11,
+    "p95_ms": 6042.81,
+    "p99_ms": 6082.61,
+    "mean_ms": 5703.27,
+    "std_ms": 284.18,
+    "min_ms": 5422.14,
+    "max_ms": 6092.55,
+    "samples": 3
+  },
+  "determinism": {
+    "exact_match_rate": 1.0,
+    "unique_outputs": 1,
+    "total_outputs": 3,
+    "most_common_frequency": 1.0,
+    "stability_score": 1.0
+  }
+}
