@@ -1,0 +1,602 @@
+{
+  "CODEGEN-001": {
+    "task_id": "CODEGEN-001",
+    "reference_code": "def two_sum(nums: list, target: int) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def two_sum(nums: list, target: int) -> list",
+    "description": "Write a function that takes a list of integers and a target sum, and returns the indices of two numbers that add up to the target."
+  },
+  "CODEGEN-002": {
+    "task_id": "CODEGEN-002",
+    "reference_code": "def is_palindrome(s: str) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def is_palindrome(s: str) -> bool",
+    "description": "Write a function that checks if a given string is a palindrome, considering only alphanumeric characters and ignoring case."
+  },
+  "CODEGEN-003": {
+    "task_id": "CODEGEN-003",
+    "reference_code": "def fizzbuzz(n: int) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def fizzbuzz(n: int) -> list",
+    "description": "Write a function that returns a list of strings from 1 to n. For multiples of 3 use 'Fizz', for multiples of 5 use 'Buzz', for multiples of both use 'FizzBuzz'."
+  },
+  "CODEGEN-004": {
+    "task_id": "CODEGEN-004",
+    "reference_code": "def reverse_list(lst: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def reverse_list(lst: list) -> list",
+    "description": "Write a function that reverses a list in-place and returns it."
+  },
+  "CODEGEN-005": {
+    "task_id": "CODEGEN-005",
+    "reference_code": "def is_valid(s: str) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def is_valid(s: str) -> bool",
+    "description": "Write a function that determines if a string of parentheses '()', '{}', '[]' is valid. A string is valid if brackets are closed in correct order."
+  },
+  "CODEGEN-H001": {
+    "task_id": "CODEGEN-H001",
+    "reference_code": "def longest_increasing_subsequence(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def longest_increasing_subsequence(nums: list) -> int",
+    "description": "Find the length of the longest strictly increasing subsequence in a list of integers."
+  },
+  "CODEGEN-H002": {
+    "task_id": "CODEGEN-H002",
+    "reference_code": "def flatten(nested_list: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def flatten(nested_list: list) -> list",
+    "description": "Implement a function that deep flattens a nested list of integers."
+  },
+  "CODEGEN-H003": {
+    "task_id": "CODEGEN-H003",
+    "reference_code": "def combination_sum(candidates: list, target: int) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def combination_sum(candidates: list, target: int) -> list",
+    "description": "Find all unique combinations of candidates that sum to target. Each number can be used unlimited times."
+  },
+  "CODEGEN-H004": {
+    "task_id": "CODEGEN-H004",
+    "reference_code": "def word_break(s: str, word_dict: list) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def word_break(s: str, word_dict: list) -> bool",
+    "description": "Given a string s and a list of words, determine if s can be segmented into words from the dictionary."
+  },
+  "CODEGEN-H005": {
+    "task_id": "CODEGEN-H005",
+    "reference_code": "def find_median_sorted_arrays(nums1: list, nums2: list) -> float\n    # Reference implementation\n    pass",
+    "function_signature": "def find_median_sorted_arrays(nums1: list, nums2: list) -> float",
+    "description": "Find the median of two sorted arrays with O(log(m+n)) complexity."
+  },
+  "CODEGEN-E001": {
+    "task_id": "CODEGEN-E001",
+    "reference_code": "def multiply_strings(num1: str, num2: str) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def multiply_strings(num1: str, num2: str) -> str",
+    "description": "Multiply two non-negative integers represented as strings. Return the product as a string."
+  },
+  "CODEGEN-E002": {
+    "task_id": "CODEGEN-E002",
+    "reference_code": "def reverse_vowels(s: str) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def reverse_vowels(s: str) -> str",
+    "description": "Reverse only the vowels in a string. Vowels are 'aeiouAEIOU'."
+  },
+  "CODEGEN-E003": {
+    "task_id": "CODEGEN-E003",
+    "reference_code": "def my_pow(x: float, n: int) -> float\n    # Reference implementation\n    pass",
+    "function_signature": "def my_pow(x: float, n: int) -> float",
+    "description": "Implement pow(x, n), calculating x raised to power n."
+  },
+  "CODEGEN-M001": {
+    "task_id": "CODEGEN-M001",
+    "reference_code": "def spiral_order(matrix: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def spiral_order(matrix: list) -> list",
+    "description": "Given an m x n matrix, return all elements in spiral order (clockwise)."
+  },
+  "CODEGEN-M002": {
+    "task_id": "CODEGEN-M002",
+    "reference_code": "def max_subarray(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def max_subarray(nums: list) -> int",
+    "description": "Find the contiguous subarray with the largest sum."
+  },
+  "CODEGEN-M003": {
+    "task_id": "CODEGEN-M003",
+    "reference_code": "def rotate(matrix: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def rotate(matrix: list) -> list",
+    "description": "Rotate an n x n 2D matrix 90 degrees clockwise in-place."
+  },
+  "EASY-001": {
+    "task_id": "EASY-001",
+    "reference_code": "def add(a: int, b: int) -> int:\n    return a + b",
+    "function_signature": "def sum_list(nums: list) -> int",
+    "description": "Return the sum of all elements in a list."
+  },
+  "EASY-002": {
+    "task_id": "EASY-002",
+    "reference_code": "def subtract(a: int, b: int) -> int:\n    return a - b",
+    "function_signature": "def find_max(nums: list) -> int",
+    "description": "Return the maximum element in a list."
+  },
+  "EASY-003": {
+    "task_id": "EASY-003",
+    "reference_code": "def multiply(a: int, b: int) -> int:\n    return a * b",
+    "function_signature": "def count_occurrences(nums: list, target: int) -> int",
+    "description": "Count occurrences of a target value in a list."
+  },
+  "EASY-004": {
+    "task_id": "EASY-004",
+    "reference_code": "def divide(a: float, b: float) -> float:\n    return a / b",
+    "function_signature": "def is_numeric(s: str) -> bool",
+    "description": "Check if a string contains only digits."
+  },
+  "EASY-005": {
+    "task_id": "EASY-005",
+    "reference_code": "def is_even(n: int) -> bool:\n    return n % 2 == 0",
+    "function_signature": "def remove_duplicates(nums: list) -> list",
+    "description": "Remove all duplicates from a list while preserving order."
+  },
+  "EASY-006": {
+    "task_id": "EASY-006",
+    "reference_code": "def reverse_string(s: str) -> str:\n    return s[::-1]",
+    "function_signature": "def title_case(s: str) -> str",
+    "description": "Capitalize the first letter of each word in a string."
+  },
+  "EASY-007": {
+    "task_id": "EASY-007",
+    "reference_code": "def find_max(numbers: list) -> int:\n    return max(numbers)",
+    "function_signature": "def factorial(n: int) -> int",
+    "description": "Return the factorial of a non-negative integer."
+  },
+  "MED-001": {
+    "task_id": "MED-001",
+    "reference_code": "def merge_sorted(lst1: list, lst2: list) -> list:\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result",
+    "function_signature": "def find_kth_largest(nums: list, k: int) -> int",
+    "description": "Implement a function that finds the kth largest element in an unsorted list."
+  },
+  "MED-002": {
+    "task_id": "MED-002",
+    "reference_code": "def binary_search(arr: list, target: int) -> int:\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "function_signature": "def longest_common_prefix(strs: list) -> str",
+    "description": "Find the longest common prefix among a list of strings."
+  },
+  "MED-003": {
+    "task_id": "MED-003",
+    "reference_code": "def quicksort(arr: list) -> list:\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + middle + quicksort(right)",
+    "function_signature": "def merge_intervals(intervals: list) -> list",
+    "description": "Merge overlapping intervals."
+  },
+  "MED-004": {
+    "task_id": "MED-004",
+    "reference_code": "def is_valid_parentheses(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in mapping.values():\n            stack.append(char)\n        elif char in mapping:\n            if not stack or stack.pop() != mapping[char]:\n                return False\n    return len(stack) == 0",
+    "function_signature": "def find_pairs(nums: list, target: int) -> list",
+    "description": "Find all pairs in a list that sum to a target value."
+  },
+  "MED-005": {
+    "task_id": "MED-005",
+    "reference_code": "def flatten_list(nested: list) -> list:\n    result = []\n    for item in nested:\n        if isinstance(item, list):\n            result.extend(flatten_list(item))\n        else:\n            result.append(item)\n    return result",
+    "function_signature": "def run_length_encode(s: str) -> str",
+    "description": "Implement run-length encoding for a string."
+  },
+  "MED-006": {
+    "task_id": "MED-006",
+    "reference_code": "def group_anagrams(words: list) -> list:\n    from collections import defaultdict\n    groups = defaultdict(list)\n    for word in words:\n        key = ''.join(sorted(word))\n        groups[key].append(word)\n    return list(groups.values())",
+    "function_signature": "def first_unique_char(s: str) -> str",
+    "description": "Find the first non-repeating character in a string."
+  },
+  "MED-007": {
+    "task_id": "MED-007",
+    "reference_code": "def longest_common_prefix(strs: list) -> str:\n    if not strs:\n        return \"\"\n    prefix = strs[0]\n    for s in strs[1:]:\n        while not s.startswith(prefix):\n            prefix = prefix[:-1]\n            if not prefix:\n                return \"\"\n    return prefix",
+    "function_signature": "def is_anagram(s1: str, s2: str) -> bool",
+    "description": "Check if two strings are anagrams of each other."
+  },
+  "MED-008": {
+    "task_id": "MED-008",
+    "reference_code": "def rotate_matrix(matrix: list) -> list:\n    n = len(matrix)\n    return [[matrix[n-1-j][i] for j in range(n)] for i in range(n)]",
+    "function_signature": "def missing_number(nums: list) -> int",
+    "description": "Find the missing number in a list containing n distinct numbers from 0 to n."
+  },
+  "MED-009": {
+    "task_id": "MED-009",
+    "reference_code": "def spiral_order(matrix: list) -> list:\n    result = []\n    while matrix:\n        result.extend(matrix.pop(0))\n        if matrix and matrix[0]:\n            for row in matrix:\n                result.append(row.pop())\n        if matrix:\n            result.extend(matrix.pop()[::-1])\n        if matrix and matrix[0]:\n            for row in matrix[::-1]:\n                result.append(row.pop(0))\n    return result",
+    "function_signature": "def binary_search(nums: list, target: int) -> int",
+    "description": "Implement binary search that returns the index of target, or -1 if not found."
+  },
+  "MED-010": {
+    "task_id": "MED-010",
+    "reference_code": "def two_sum(nums: list, target: int) -> list:\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+    "function_signature": "def permutations(nums: list) -> list",
+    "description": "Generate all permutations of a list of unique integers."
+  },
+  "MED-011": {
+    "task_id": "MED-011",
+    "reference_code": "def is_valid_sudoku(board: list) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def is_valid_sudoku(board: list) -> bool",
+    "description": "Determine if a 9x9 Sudoku board is valid (no duplicates in rows, columns, 3x3 boxes)."
+  },
+  "MED-012": {
+    "task_id": "MED-012",
+    "reference_code": "def roman_to_int(s: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def roman_to_int(s: str) -> int",
+    "description": "Convert a Roman numeral string to an integer."
+  },
+  "HARD-001": {
+    "task_id": "HARD-001",
+    "reference_code": "def length_of_longest_substring(s: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def length_of_longest_substring(s: str) -> int",
+    "description": "Find the length of the longest substring without repeating characters."
+  },
+  "HARD-002": {
+    "task_id": "HARD-002",
+    "reference_code": "def serialize(root: list) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def serialize(root: list) -> str",
+    "description": "Implement a function to serialize a binary tree represented as nested lists [val, left, right] into a comma-separated string using preorder traversal. Use 'null' for empty nodes."
+  },
+  "HARD-003": {
+    "task_id": "HARD-003",
+    "reference_code": "def min_window(s: str, t: str) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def min_window(s: str, t: str) -> str",
+    "description": "Find the minimum window substring of s that contains all characters of t."
+  },
+  "HARD-004": {
+    "task_id": "HARD-004",
+    "reference_code": "def is_match(s: str, p: str) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def is_match(s: str, p: str) -> bool",
+    "description": "Implement regular expression matching with '.' and '*' support."
+  },
+  "HARD-005": {
+    "task_id": "HARD-005",
+    "reference_code": "def trap(height: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def trap(height: list) -> int",
+    "description": "Given n non-negative integers representing an elevation map, compute trapped rainwater."
+  },
+  "HARD-006": {
+    "task_id": "HARD-006",
+    "reference_code": "def longest_palindrome(s: str) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def longest_palindrome(s: str) -> str",
+    "description": "Find the longest palindromic substring in a string."
+  },
+  "HARD-007": {
+    "task_id": "HARD-007",
+    "reference_code": "def max_profit(k: int, prices: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def max_profit(k: int, prices: list) -> int",
+    "description": "Calculate the maximum profit from at most k stock transactions."
+  },
+  "HARD-008": {
+    "task_id": "HARD-008",
+    "reference_code": "def num_distinct(s: str, t: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def num_distinct(s: str, t: str) -> int",
+    "description": "Find the number of distinct subsequences of s that equal t."
+  },
+  "HARD-009": {
+    "task_id": "HARD-009",
+    "reference_code": "def palindrome_pairs(words: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def palindrome_pairs(words: list) -> list",
+    "description": "Given a list of words, find all pairs (i, j) where words[i] + words[j] forms a palindrome. Return unique pairs only."
+  },
+  "HARD-010": {
+    "task_id": "HARD-010",
+    "reference_code": "def edit_distance(s1: str, s2: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def edit_distance(s1: str, s2: str) -> int",
+    "description": "Compute the edit distance (minimum operations to convert s1 to s2)."
+  },
+  "HARD-011": {
+    "task_id": "HARD-011",
+    "reference_code": "def max_sum_subarray(nums: list, k: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def max_sum_subarray(nums: list, k: int) -> int",
+    "description": "Find the maximum sum of any contiguous subarray of size k."
+  },
+  "HARD-012": {
+    "task_id": "HARD-012",
+    "reference_code": "def num_islands(grid: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def num_islands(grid: list) -> int",
+    "description": "Find the number of islands in a 2D grid. Grid contains '1' (land) and '0' (water) as strings."
+  },
+  "HARD-013": {
+    "task_id": "HARD-013",
+    "reference_code": "def divide(dividend: int, divisor: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def divide(dividend: int, divisor: int) -> int",
+    "description": "Implement integer division without using /, *, or %."
+  },
+  "HARD-014": {
+    "task_id": "HARD-014",
+    "reference_code": "def largest_rectangle_histogram(heights: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def largest_rectangle_histogram(heights: list) -> int",
+    "description": "Find the maximum rectangle area in a histogram."
+  },
+  "HARD-015": {
+    "task_id": "HARD-015",
+    "reference_code": "def min_meeting_rooms(intervals: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def min_meeting_rooms(intervals: list) -> int",
+    "description": "Given an array of meeting intervals [start, end], find minimum meeting rooms required."
+  },
+  "EASY-008": {
+    "task_id": "EASY-008",
+    "reference_code": "def find_min(numbers: list) -> int:\n    return min(numbers)",
+    "function_signature": "def all_unique(nums: list) -> bool",
+    "description": "Return True if all elements in a list are unique."
+  },
+  "EASY-009": {
+    "task_id": "EASY-009",
+    "reference_code": "def count_vowels(s: str) -> int:\n    return sum(1 for c in s.lower() if c in 'aeiou')",
+    "function_signature": "def reverse_string(s: str) -> str",
+    "description": "Reverse a string."
+  },
+  "EASY-010": {
+    "task_id": "EASY-010",
+    "reference_code": "def factorial(n: int) -> int:\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
+    "function_signature": "def is_prime(n: int) -> bool",
+    "description": "Check if a number is prime."
+  },
+  "EASY-011": {
+    "task_id": "EASY-011",
+    "reference_code": "def is_palindrome(s: str) -> bool:\n    s = s.lower().replace(' ', '')\n    return s == s[::-1]",
+    "function_signature": "def second_largest(nums: list) -> int",
+    "description": "Find the second largest element in a list."
+  },
+  "EASY-012": {
+    "task_id": "EASY-012",
+    "reference_code": "def fibonacci(n: int) -> int:\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b",
+    "function_signature": "def count_vowels(s: str) -> int",
+    "description": "Count vowels in a string."
+  },
+  "EASY-013": {
+    "task_id": "EASY-013",
+    "reference_code": "def sum_list(numbers: list) -> int:\n    return sum(numbers)",
+    "function_signature": "def fibonacci(n: int) -> int",
+    "description": "Return the Fibonacci number at position n."
+  },
+  "MED-013": {
+    "task_id": "MED-013",
+    "reference_code": "def rotate_list(nums: list, k: int) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def rotate_list(nums: list, k: int) -> list",
+    "description": "Rotate a list to the right by k positions."
+  },
+  "MED-014": {
+    "task_id": "MED-014",
+    "reference_code": "def find_peak(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def find_peak(nums: list) -> int",
+    "description": "Find the peak element in a list (strictly greater than neighbors)."
+  },
+  "MED-015": {
+    "task_id": "MED-015",
+    "reference_code": "def has_cycle_pattern(nums: list, k: int) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def has_cycle_pattern(nums: list, k: int) -> bool",
+    "description": "Check if a linked list represented as a list has a cycle pattern."
+  },
+  "MED-016": {
+    "task_id": "MED-016",
+    "reference_code": "def majority_element(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def majority_element(nums: list) -> int",
+    "description": "Find the majority element (appears more than n/2 times)."
+  },
+  "MED-017": {
+    "task_id": "MED-017",
+    "reference_code": "def my_atoi(s: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def my_atoi(s: str) -> int",
+    "description": "Implement atoi: convert string to integer."
+  },
+  "MED-018": {
+    "task_id": "MED-018",
+    "reference_code": "def generate_pascal(n: int) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def generate_pascal(n: int) -> list",
+    "description": "Generate Pascal's triangle up to n rows."
+  },
+  "MED-019": {
+    "task_id": "MED-019",
+    "reference_code": "def single_number(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def single_number(nums: list) -> int",
+    "description": "Find the single number in a list where every other number appears twice."
+  },
+  "MED-020": {
+    "task_id": "MED-020",
+    "reference_code": "def count_bits(n: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def count_bits(n: int) -> int",
+    "description": "Count the number of set bits (1s) in an integer."
+  },
+  "MED-021": {
+    "task_id": "MED-021",
+    "reference_code": "def length_of_last_word(s: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def length_of_last_word(s: str) -> int",
+    "description": "Find the length of the last word in a string."
+  },
+  "MED-022": {
+    "task_id": "MED-022",
+    "reference_code": "def add_strings(num1: str, num2: str) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def add_strings(num1: str, num2: str) -> str",
+    "description": "Add two numbers represented as strings."
+  },
+  "MED-023": {
+    "task_id": "MED-023",
+    "reference_code": "def product_except_self(nums: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def product_except_self(nums: list) -> list",
+    "description": "Find product of all elements except self without using division."
+  },
+  "MED-024": {
+    "task_id": "MED-024",
+    "reference_code": "def find_min_rotated(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def find_min_rotated(nums: list) -> int",
+    "description": "Find minimum in a rotated sorted array."
+  },
+  "HARD-016": {
+    "task_id": "HARD-016",
+    "reference_code": "def calculate(s: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def calculate(s: str) -> int",
+    "description": "Implement a basic calculator that evaluates string expressions with +, -, (, )."
+  },
+  "HARD-017": {
+    "task_id": "HARD-017",
+    "reference_code": "def longest_valid_parentheses(s: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def longest_valid_parentheses(s: str) -> int",
+    "description": "Find the longest valid parentheses substring."
+  },
+  "HARD-018": {
+    "task_id": "HARD-018",
+    "reference_code": "def search_matrix(matrix: list, target: int) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def search_matrix(matrix: list, target: int) -> bool",
+    "description": "Given a matrix where each row and column is sorted, search for a target."
+  },
+  "HARD-019": {
+    "task_id": "HARD-019",
+    "reference_code": "def count_inversions(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def count_inversions(nums: list) -> int",
+    "description": "Count inversions in an array (pairs where i < j but arr[i] > arr[j])."
+  },
+  "HARD-020": {
+    "task_id": "HARD-020",
+    "reference_code": "def shortest_path(grid: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def shortest_path(grid: list) -> int",
+    "description": "Find the shortest path in a grid with obstacles (0=empty, 1=obstacle)."
+  },
+  "HARD-021": {
+    "task_id": "HARD-021",
+    "reference_code": "def kth_smallest_matrix(matrix: list, k: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def kth_smallest_matrix(matrix: list, k: int) -> int",
+    "description": "Find the kth smallest element in a sorted matrix."
+  },
+  "HARD-022": {
+    "task_id": "HARD-022",
+    "reference_code": "def num_decodings(s: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def num_decodings(s: str) -> int",
+    "description": "Decode ways: count ways to decode a digit string (1=A, 2=B, ..., 26=Z)."
+  },
+  "HARD-023": {
+    "task_id": "HARD-023",
+    "reference_code": "def max_non_adjacent_sum(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def max_non_adjacent_sum(nums: list) -> int",
+    "description": "Find the maximum sum of non-adjacent elements."
+  },
+  "HARD-024": {
+    "task_id": "HARD-024",
+    "reference_code": "def coin_change(coins: list, amount: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def coin_change(coins: list, amount: int) -> int",
+    "description": "Find minimum number of coins to make a given amount."
+  },
+  "HARD-025": {
+    "task_id": "HARD-025",
+    "reference_code": "def is_match_wildcard(s: str, p: str) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def is_match_wildcard(s: str, p: str) -> bool",
+    "description": "Implement wildcard pattern matching with '?' and '*'."
+  },
+  "HARD-026": {
+    "task_id": "HARD-026",
+    "reference_code": "def longest_consecutive(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def longest_consecutive(nums: list) -> int",
+    "description": "Find longest consecutive sequence in unsorted array."
+  },
+  "HARD-027": {
+    "task_id": "HARD-027",
+    "reference_code": "def generate_parentheses(n: int) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def generate_parentheses(n: int) -> list",
+    "description": "Given n pairs of parentheses, generate all valid combinations."
+  },
+  "HARD-028": {
+    "task_id": "HARD-028",
+    "reference_code": "def max_product_subarray(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def max_product_subarray(nums: list) -> int",
+    "description": "Find the maximum product of a contiguous subarray."
+  },
+  "HARD-029": {
+    "task_id": "HARD-029",
+    "reference_code": "def min_path_sum(grid: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def min_path_sum(grid: list) -> int",
+    "description": "Find the minimum path sum from top-left to bottom-right of a grid."
+  },
+  "HARD-030": {
+    "task_id": "HARD-030",
+    "reference_code": "def can_jump(nums: list) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def can_jump(nums: list) -> bool",
+    "description": "Implement jump game: determine if you can reach the last index."
+  },
+  "EASY-014": {
+    "task_id": "EASY-014",
+    "reference_code": "def remove_duplicates(lst: list) -> list:\n    seen = set()\n    result = []\n    for item in lst:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result",
+    "function_signature": "def is_sorted(nums: list) -> bool",
+    "description": "Check if a list is sorted in ascending order."
+  },
+  "EASY-015": {
+    "task_id": "EASY-015",
+    "reference_code": "def intersection(lst1: list, lst2: list) -> list:\n    return list(set(lst1) & set(lst2))",
+    "function_signature": "def intersection(nums1: list, nums2: list) -> list",
+    "description": "Find the intersection of two lists."
+  },
+  "EASY-016": {
+    "task_id": "EASY-016",
+    "reference_code": "def celsius_to_fahrenheit(c: float) -> float:\n    return c * 9/5 + 32",
+    "function_signature": "def celsius_to_fahrenheit(c: float) -> float",
+    "description": "Convert temperature from Celsius to Fahrenheit."
+  },
+  "EASY-017": {
+    "task_id": "EASY-017",
+    "reference_code": "def count_words(s: str) -> int:\n    return len(s.split())",
+    "function_signature": "def gcd(a: int, b: int) -> int",
+    "description": "Find GCD (Greatest Common Divisor) of two numbers."
+  },
+  "MED-025": {
+    "task_id": "MED-025",
+    "reference_code": "def flatten_dict(d: dict, parent_key: str = '') -> dict\n    # Reference implementation\n    pass",
+    "function_signature": "def flatten_dict(d: dict, parent_key: str = '') -> dict",
+    "description": "Flatten a dictionary with nested keys using dot notation."
+  },
+  "MED-026": {
+    "task_id": "MED-026",
+    "reference_code": "def is_rotation(s1: str, s2: str) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def is_rotation(s1: str, s2: str) -> bool",
+    "description": "Check if one string is a rotation of another."
+  },
+  "MED-027": {
+    "task_id": "MED-027",
+    "reference_code": "def subsets(nums: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def subsets(nums: list) -> list",
+    "description": "Find all subsets of a list."
+  },
+  "MED-028": {
+    "task_id": "MED-028",
+    "reference_code": "def power_set_size(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def power_set_size(nums: list) -> int",
+    "description": "Compute the power set size of a list."
+  },
+  "MED-029": {
+    "task_id": "MED-029",
+    "reference_code": "def next_greater_element(nums: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def next_greater_element(nums: list) -> list",
+    "description": "Find the next greater element for each element in a list."
+  },
+  "HARD-031": {
+    "task_id": "HARD-031",
+    "reference_code": "def longest_common_subsequence(s1: str, s2: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def longest_common_subsequence(s1: str, s2: str) -> int",
+    "description": "Find the longest common subsequence of two strings."
+  },
+  "HARD-032": {
+    "task_id": "HARD-032",
+    "reference_code": "def min_insertions_palindrome(s: str) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def min_insertions_palindrome(s: str) -> int",
+    "description": "Find minimum insertions to make a string palindrome."
+  },
+  "HARD-033": {
+    "task_id": "HARD-033",
+    "reference_code": "def subset_sum(nums: list, target: int) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def subset_sum(nums: list, target: int) -> bool",
+    "description": "Find if there's a subset that sums to target."
+  },
+  "HARD-034": {
+    "task_id": "HARD-034",
+    "reference_code": "def climb_stairs(n: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def climb_stairs(n: int) -> int",
+    "description": "Find the number of ways to climb n stairs (1 or 2 steps at a time)."
+  },
+  "HARD-035": {
+    "task_id": "HARD-035",
+    "reference_code": "def unique_paths(m: int, n: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def unique_paths(m: int, n: int) -> int",
+    "description": "Find unique paths from top-left to bottom-right of an m x n grid."
+  },
+  "HARD-036": {
+    "task_id": "HARD-036",
+    "reference_code": "def can_segment(s: str, word_dict: list) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def can_segment(s: str, word_dict: list) -> bool",
+    "description": "Check if a string can be segmented into dictionary words."
+  },
+  "HARD-037": {
+    "task_id": "HARD-037",
+    "reference_code": "def max_subarray_len(nums: list, k: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def max_subarray_len(nums: list, k: int) -> int",
+    "description": "Find the maximum length of a subarray with sum <= k."
+  },
+  "HARD-038": {
+    "task_id": "HARD-038",
+    "reference_code": "def min_jumps(nums: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def min_jumps(nums: list) -> int",
+    "description": "Find the minimum number of jumps to reach the end."
+  }
+}
