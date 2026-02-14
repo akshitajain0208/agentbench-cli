@@ -1,0 +1,68 @@
+{
+  "task_id": "TESTGEN-010",
+  "agent": "gemini_cli",
+  "category": "test_generation",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:42:32.557176",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef test_merge_sorted() -> bool:\n    # Test case 1: Both lists are empty\n    assert merge_sorted([], []) == [], \"Test Case 1 Failed: Merging two empty lists\"\n\n    # Test case 2: One list is empty, the other is not\n    assert merge_sorted([1, 2, 3], []) == [1, 2, 3], \"Test Case 2 Failed: Merging with an empty list (first empty)\"\n    assert merge_sorted([], [1, 2, 3]) == [1, 2, 3], \"Test Case 3 Failed: Merging with an empty list (second empty)\"\n\n    # Test case 3: Both lists have elements, no overlaps\n    assert merge_sorted([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6], \"Test Case 4 Failed: No overlaps\"\n\n    # Test case 4: Both lists have elements, with overlaps\n    assert merge_sorted([1, 2, 4], [3, 5, 6]) == [1, 2, 3, 4, 5, 6], \"Test Case 5 Failed: With overlaps\"\n\n    # Test case 5: Lists with duplicate elements\n    assert merge_sorted([1, 2, 2, 3], [2, 3, 3, 4]) == [1, 2, 2, 2, 3, 3, 3, 4], \"Test Case 6 Failed: Duplicates\"\n\n    # Test case 6: Lists of different lengths\n    assert merge_sorted([1, 5, 10], [2, 3, 4, 6, 7, 8, 9]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], \"Test Case 7 Failed: Different lengths\"\n    assert merge_sorted([2, 3, 4, 6, 7, 8, 9], [1, 5, 10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], \"Test Case 8 Failed: Different lengths (reversed)\"\n\n    # Test case 7: All elements from one list smaller than all from the other\n    assert merge_sorted([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6], \"Test Case 9 Failed: All smaller\"\n    assert merge_sorted([4, 5, 6], [1, 2, 3]) == [1, 2, 3, 4, 5, 6], \"Test Case 10 Failed: All larger\"\n\n    return True\n```\n",
+      "content": "def test_merge_sorted() -> bool:\n    # Test case 1: Both lists are empty\n    assert merge_sorted([], []) == [], \"Test Case 1 Failed: Merging two empty lists\"\n\n    # Test case 2: One list is empty, the other is not\n    assert merge_sorted([1, 2, 3], []) == [1, 2, 3], \"Test Case 2 Failed: Merging with an empty list (first empty)\"\n    assert merge_sorted([], [1, 2, 3]) == [1, 2, 3], \"Test Case 3 Failed: Merging with an empty list (second empty)\"\n\n    # Test case 3: Both lists have elements, no overlaps\n    assert merge_sorted([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6], \"Test Case 4 Failed: No overlaps\"\n\n    # Test case 4: Both lists have elements, with overlaps\n    assert merge_sorted([1, 2, 4], [3, 5, 6]) == [1, 2, 3, 4, 5, 6], \"Test Case 5 Failed: With overlaps\"\n\n    # Test case 5: Lists with duplicate elements\n    assert merge_sorted([1, 2, 2, 3], [2, 3, 3, 4]) == [1, 2, 2, 2, 3, 3, 3, 4], \"Test Case 6 Failed: Duplicates\"\n\n    # Test case 6: Lists of different lengths\n    assert merge_sorted([1, 5, 10], [2, 3, 4, 6, 7, 8, 9]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], \"Test Case 7 Failed: Different lengths\"\n    assert merge_sorted([2, 3, 4, 6, 7, 8, 9], [1, 5, 10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], \"Test Case 8 Failed: Different lengths (reversed)\"\n\n    # Test case 7: All elements from one list smaller than all from the other\n    assert merge_sorted([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6], \"Test Case 9 Failed: All smaller\"\n    assert merge_sorted([4, 5, 6], [1, 2, 3]) == [1, 2, 3, 4, 5, 6], \"Test Case 10 Failed: All larger\"\n\n    return True",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'merge_sorted' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 12136.059045791626
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef test_merge_sorted() -> bool:\n    # Test case 1: Both lists are empty\n    assert merge_sorted([], []) == [], \"Test Case 1 Failed: Both empty lists\"\n\n    # Test case 2: First list is empty\n    assert merge_sorted([], [1, 2, 3]) == [1, 2, 3], \"Test Case 2 Failed: First list empty\"\n\n    # Test case 3: Second list is empty\n    assert merge_sorted([1, 2, 3], []) == [1, 2, 3], \"Test Case 3 Failed: Second list empty\"\n\n    # Test case 4: Two lists with distinct elements\n    assert merge_sorted([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6], \"Test Case 4 Failed: Distinct elements\"\n\n    # Test case 5: Two lists with overlapping elements\n    assert merge_sorted([1, 2, 5], [2, 3, 6]) == [1, 2, 2, 3, 5, 6], \"Test Case 5 Failed: Overlapping elements\"\n\n    # Test case 6: Lists with duplicate elements within themselves\n    assert merge_sorted([1, 1, 3, 5], [2, 2, 4, 6]) == [1, 1, 2, 2, 3, 4, 5, 6], \"Test Case 6 Failed: Duplicates within lists\"\n\n    # Test case 7: Lists with negative numbers\n    assert merge_sorted([-5, -3, 0], [-4, -2, 1]) == [-5, -4, -3, -2, 0, 1], \"Test Case 7 Failed: Negative numbers\"\n\n    # Test case 8: Lists of different lengths\n    assert merge_sorted([1, 2, 3], [4, 5]) == [1, 2, 3, 4, 5], \"Test Case 8 Failed: Different lengths (list1 longer)\"\n    assert merge_sorted([4, 5], [1, 2, 3]) == [1, 2, 3, 4, 5], \"Test Case 9 Failed: Different lengths (list2 longer)\"\n\n    # Test case 10: One list contains all elements of the other\n    assert merge_sorted([1, 2, 3, 4, 5], [2, 3]) == [1, 2, 2, 3, 3, 4, 5], \"Test Case 10 Failed: One list subset of other\"\n\n    # Test case 11: Single element lists\n    assert merge_sorted([1], [2]) == [1, 2], \"Test Case 11 Failed: Single element lists (1,2)\"\n    assert merge_sorted([2], [1]) == [1, 2], \"Test Case 12 Failed: Single element lists (2,1)\"\n    assert merge_sorted([1], [1]) == [1, 1], \"Test Case 13 Failed: Single element lists (1,1)\"\n\n    return True\n```\n",
+      "content": "def test_merge_sorted() -> bool:\n    # Test case 1: Both lists are empty\n    assert merge_sorted([], []) == [], \"Test Case 1 Failed: Both empty lists\"\n\n    # Test case 2: First list is empty\n    assert merge_sorted([], [1, 2, 3]) == [1, 2, 3], \"Test Case 2 Failed: First list empty\"\n\n    # Test case 3: Second list is empty\n    assert merge_sorted([1, 2, 3], []) == [1, 2, 3], \"Test Case 3 Failed: Second list empty\"\n\n    # Test case 4: Two lists with distinct elements\n    assert merge_sorted([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6], \"Test Case 4 Failed: Distinct elements\"\n\n    # Test case 5: Two lists with overlapping elements\n    assert merge_sorted([1, 2, 5], [2, 3, 6]) == [1, 2, 2, 3, 5, 6], \"Test Case 5 Failed: Overlapping elements\"\n\n    # Test case 6: Lists with duplicate elements within themselves\n    assert merge_sorted([1, 1, 3, 5], [2, 2, 4, 6]) == [1, 1, 2, 2, 3, 4, 5, 6], \"Test Case 6 Failed: Duplicates within lists\"\n\n    # Test case 7: Lists with negative numbers\n    assert merge_sorted([-5, -3, 0], [-4, -2, 1]) == [-5, -4, -3, -2, 0, 1], \"Test Case 7 Failed: Negative numbers\"\n\n    # Test case 8: Lists of different lengths\n    assert merge_sorted([1, 2, 3], [4, 5]) == [1, 2, 3, 4, 5], \"Test Case 8 Failed: Different lengths (list1 longer)\"\n    assert merge_sorted([4, 5], [1, 2, 3]) == [1, 2, 3, 4, 5], \"Test Case 9 Failed: Different lengths (list2 longer)\"\n\n    # Test case 10: One list contains all elements of the other\n    assert merge_sorted([1, 2, 3, 4, 5], [2, 3]) == [1, 2, 2, 3, 3, 4, 5], \"Test Case 10 Failed: One list subset of other\"\n\n    # Test case 11: Single element lists\n    assert merge_sorted([1], [2]) == [1, 2], \"Test Case 11 Failed: Single element lists (1,2)\"\n    assert merge_sorted([2], [1]) == [1, 2], \"Test Case 12 Failed: Single element lists (2,1)\"\n    assert merge_sorted([1], [1]) == [1, 1], \"Test Case 13 Failed: Single element lists (1,1)\"\n\n    return True",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'merge_sorted' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 12164.45803642273
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef test_merge_sorted() -> bool:\n    # Helper function to compare results\n    def assert_equal(expected, actual, message=\"\"):\n        if expected != actual:\n            print(f\"Test failed: {message}\")\n            print(f\"Expected: {expected}, Got: {actual}\")\n            return False\n        return True\n\n    # Test case 1: Both lists are empty\n    if not assert_equal([], merge_sorted([], []), \"Test Case 1 Failed: Both empty\"): return False\n\n    # Test case 2: First list is empty\n    if not assert_equal([1, 2, 3], merge_sorted([], [1, 2, 3]), \"Test Case 2 Failed: First empty\"): return False\n\n    # Test case 3: Second list is empty\n    if not assert_equal([1, 2, 3], merge_sorted([1, 2, 3], []), \"Test Case 3 Failed: Second empty\"): return False\n\n    # Test case 4: General case with distinct elements\n    if not assert_equal([1, 2, 3, 4, 5, 6], merge_sorted([1, 3, 5], [2, 4, 6]), \"Test Case 4 Failed: Distinct elements\"): return False\n\n    # Test case 5: General case with overlapping elements\n    if not assert_equal([1, 2, 2, 3, 4, 5], merge_sorted([1, 2, 4], [2, 3, 5]), \"Test Case 5 Failed: Overlapping elements\"): return False\n\n    # Test case 6: Lists with duplicate elements\n    if not assert_equal([1, 1, 2, 2, 3, 3], merge_sorted([1, 2, 3], [1, 2, 3]), \"Test Case 6 Failed: Duplicate elements\"): return False\n\n    # Test case 7: Lists of different lengths\n    if not assert_equal([1, 2, 3, 4, 5, 6, 7], merge_sorted([1, 3, 5, 7], [2, 4, 6]), \"Test Case 7 Failed: Different lengths (1st longer)\"): return False\n    if not assert_equal([1, 2, 3, 4, 5, 6, 7], merge_sorted([2, 4, 6], [1, 3, 5, 7]), \"Test Case 8 Failed: Different lengths (2nd longer)\"): return False\n\n    # Test case 9: Negative numbers\n    if not assert_equal([-5, -3, -1, 0, 2, 4], merge_sorted([-5, -1, 2], [-3, 0, 4]), \"Test Case 9 Failed: Negative numbers\"): return False\n\n    # Test case 10: All elements from one list come before the other\n    if not assert_equal([1, 2, 3, 10, 11, 12], merge_sorted([1",
+      "content": "def test_merge_sorted() -> bool:\n    # Helper function to compare results\n    def assert_equal(expected, actual, message=\"\"):\n        if expected != actual:\n            print(f\"Test failed: {message}\")\n            print(f\"Expected: {expected}, Got: {actual}\")\n            return False\n        return True\n\n    # Test case 1: Both lists are empty\n    if not assert_equal([], merge_sorted([], []), \"Test Case 1 Failed: Both empty\"): return False\n\n    # Test case 2: First list is empty\n    if not assert_equal([1, 2, 3], merge_sorted([], [1, 2, 3]), \"Test Case 2 Failed: First empty\"): return False\n\n    # Test case 3: Second list is empty\n    if not assert_equal([1, 2, 3], merge_sorted([1, 2, 3], []), \"Test Case 3 Failed: Second empty\"): return False\n\n    # Test case 4: General case with distinct elements\n    if not assert_equal([1, 2, 3, 4, 5, 6], merge_sorted([1, 3, 5], [2, 4, 6]), \"Test Case 4 Failed: Distinct elements\"): return False\n\n    # Test case 5: General case with overlapping elements\n    if not assert_equal([1, 2, 2, 3, 4, 5], merge_sorted([1, 2, 4], [2, 3, 5]), \"Test Case 5 Failed: Overlapping elements\"): return False\n\n    # Test case 6: Lists with duplicate elements\n    if not assert_equal([1, 1, 2, 2, 3, 3], merge_sorted([1, 2, 3], [1, 2, 3]), \"Test Case 6 Failed: Duplicate elements\"): return False\n\n    # Test case 7: Lists of different lengths\n    if not assert_equal([1, 2, 3, 4, 5, 6, 7], merge_sorted([1, 3, 5, 7], [2, 4, 6]), \"Test Case 7 Failed: Different lengths (1st longer)\"): return False\n    if not assert_equal([1, 2, 3, 4, 5, 6, 7], merge_sorted([2, 4, 6], [1, 3, 5, 7]), \"Test Case 8 Failed: Different lengths (2nd longer)\"): return False\n\n    # Test case 9: Negative numbers\n    if not assert_equal([-5, -3, -1, 0, 2, 4], merge_sorted([-5, -1, 2], [-3, 0, 4]), \"Test Case 9 Failed: Negative numbers\"): return False\n\n    # Test case 10: All elements from one list come before the other\n    if not assert_equal([1, 2, 3, 10, 11, 12], merge_sorted([1, 2, 3], [10, 11, 12]), \"Test Case 10 Failed: One list entirely before other\"): return False\n    if not assert_equal([1, 2, 3, 10, 11, 12], merge_sorted([10, 11, 12], [1, 2, 3]), \"Test Case 11 Failed: Other list entirely before one\"): return False\n\n    return True",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'merge_sorted' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 13143.096923828125
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 12481.204668680826,
+    "median_ms": 12164.45803642273,
+    "min_ms": 12136.059045791626,
+    "max_ms": 13143.096923828125
+  }
+}

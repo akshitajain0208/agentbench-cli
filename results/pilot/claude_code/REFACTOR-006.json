@@ -1,0 +1,62 @@
+{
+  "task_id": "REFACTOR-006",
+  "agent": "claude_code",
+  "category": "refactoring",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T03:55:03.032155",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef get_day_name(day_num: int) -> str:\n    days = {\n        1: \"Monday\",\n        2: \"Tuesday\",\n        3: \"Wednesday\",\n        4: \"Thursday\",\n        5: \"Friday\",\n        6: \"Saturday\",\n        7: \"Sunday\",\n    }\n    return days.get(day_num, \"Invalid\")\n```\n",
+      "content": "def get_day_name(day_num: int) -> str:\n    days = {\n        1: \"Monday\",\n        2: \"Tuesday\",\n        3: \"Wednesday\",\n        4: \"Thursday\",\n        5: \"Friday\",\n        6: \"Saturday\",\n        7: \"Sunday\",\n    }\n    return days.get(day_num, \"Invalid\")",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 6096.9250202178955
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef get_day_name(day_num: int) -> str:\n    days = {\n        1: \"Monday\",\n        2: \"Tuesday\",\n        3: \"Wednesday\",\n        4: \"Thursday\",\n        5: \"Friday\",\n        6: \"Saturday\",\n        7: \"Sunday\",\n    }\n    return days.get(day_num, \"Invalid\")\n```\n",
+      "content": "def get_day_name(day_num: int) -> str:\n    days = {\n        1: \"Monday\",\n        2: \"Tuesday\",\n        3: \"Wednesday\",\n        4: \"Thursday\",\n        5: \"Friday\",\n        6: \"Saturday\",\n        7: \"Sunday\",\n    }\n    return days.get(day_num, \"Invalid\")",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 7134.980916976929
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef get_day_name(day_num: int) -> str:\n    days = {\n        1: \"Monday\",\n        2: \"Tuesday\",\n        3: \"Wednesday\",\n        4: \"Thursday\",\n        5: \"Friday\",\n        6: \"Saturday\",\n        7: \"Sunday\",\n    }\n    return days.get(day_num, \"Invalid\")\n```\n",
+      "content": "def get_day_name(day_num: int) -> str:\n    days = {\n        1: \"Monday\",\n        2: \"Tuesday\",\n        3: \"Wednesday\",\n        4: \"Thursday\",\n        5: \"Friday\",\n        6: \"Saturday\",\n        7: \"Sunday\",\n    }\n    return days.get(day_num, \"Invalid\")",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 6140.5181884765625
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 6457.474708557129,
+    "median_ms": 6140.5181884765625,
+    "min_ms": 6096.9250202178955,
+    "max_ms": 7134.980916976929
+  }
+}

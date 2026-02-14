@@ -1,0 +1,64 @@
+{
+  "task_id": "TESTGEN-003",
+  "agent": "gemini_cli",
+  "category": "test_generation",
+  "difficulty": "easy",
+  "timestamp": "2026-02-14T04:38:28.578096",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef test_factorial() -> bool:\n    def factorial(n):\n        if n <= 1:\n            return 1\n        return n * factorial(n - 1)\n\n    # Test cases\n    assert factorial(0) == 1, \"Test failed for n=0\"\n    assert factorial(1) == 1, \"Test failed for n=1\"\n    assert factorial(5) == 120, \"Test failed for n=5\"\n    assert factorial(10) == 3628800, \"Test failed for n=10\"\n    \n    return True\n```\n",
+      "content": "def test_factorial() -> bool:\n    def factorial(n):\n        if n <= 1:\n            return 1\n        return n * factorial(n - 1)\n\n    # Test cases\n    assert factorial(0) == 1, \"Test failed for n=0\"\n    assert factorial(1) == 1, \"Test failed for n=1\"\n    assert factorial(5) == 120, \"Test failed for n=5\"\n    assert factorial(10) == 3628800, \"Test failed for n=10\"\n    \n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 10262.162923812866
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\ndef test_factorial() -> bool:\n    assert factorial(0) == 1, \"Test failed for n=0\"\n    assert factorial(1) == 1, \"Test failed for n=1\"\n    assert factorial(5) == 120, \"Test failed for n=5\"\n    return True\n```\n",
+      "content": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\ndef test_factorial() -> bool:\n    assert factorial(0) == 1, \"Test failed for n=0\"\n    assert factorial(1) == 1, \"Test failed for n=1\"\n    assert factorial(5) == 120, \"Test failed for n=5\"\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 11317.170143127441
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef test_factorial() -> bool:\n    # Test case for n = 0 (edge case)\n    assert factorial(0) == 1, \"Test failed for n=0\"\n\n    # Test case for n = 1\n    assert factorial(1) == 1, \"Test failed for n=1\"\n\n    # Test case for a positive integer, e.g., n = 5\n    assert factorial(5) == 120, \"Test failed for n=5\"\n\n    return True\n```\n",
+      "content": "def test_factorial() -> bool:\n    # Test case for n = 0 (edge case)\n    assert factorial(0) == 1, \"Test failed for n=0\"\n\n    # Test case for n = 1\n    assert factorial(1) == 1, \"Test failed for n=1\"\n\n    # Test case for a positive integer, e.g., n = 5\n    assert factorial(5) == 120, \"Test failed for n=5\"\n\n    return True",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'factorial' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 10677.65188217163
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 2,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 10752.328316370646,
+    "median_ms": 10677.65188217163,
+    "min_ms": 10262.162923812866,
+    "max_ms": 11317.170143127441
+  }
+}

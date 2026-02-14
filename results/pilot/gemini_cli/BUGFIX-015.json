@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-015",
+  "agent": "gemini_cli",
+  "category": "bug_fixing",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:21:20.524297",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef rotate_90(matrix: list) -> list:\n    n = len(matrix)\n    result = [[0] * n for _ in range(n)]\n    for i in range(n):\n        for j in range(n):\n            result[j][n - 1 - i] = matrix[i][j]\n    return result\n```\n",
+      "content": "def rotate_90(matrix: list) -> list:\n    n = len(matrix)\n    result = [[0] * n for _ in range(n)]\n    for i in range(n):\n        for j in range(n):\n            result[j][n - 1 - i] = matrix[i][j]\n    return result",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 11745.223999023438
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef rotate_90(matrix: list) -> list:\n    n = len(matrix)\n    result = [[0] * n for _ in range(n)]\n    for i in range(n):\n        for j in range(n):\n            result[j][n - 1 - i] = matrix[i][j]\n    return result\n```\n",
+      "content": "def rotate_90(matrix: list) -> list:\n    n = len(matrix)\n    result = [[0] * n for _ in range(n)]\n    for i in range(n):\n        for j in range(n):\n            result[j][n - 1 - i] = matrix[i][j]\n    return result",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 11488.523960113525
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef rotate_90(matrix: list) -> list:\n    n = len(matrix)\n    result = [[0] * n for _ in range(n)]\n    for i in range(n):\n        for j in range(n):\n            result[j][n - 1 - i] = matrix[i][j]\n    return result\n```\n",
+      "content": "def rotate_90(matrix: list) -> list:\n    n = len(matrix)\n    result = [[0] * n for _ in range(n)]\n    for i in range(n):\n        for j in range(n):\n            result[j][n - 1 - i] = matrix[i][j]\n    return result",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 13174.543857574463
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 12136.097272237143,
+    "median_ms": 11745.223999023438,
+    "min_ms": 11488.523960113525,
+    "max_ms": 13174.543857574463
+  }
+}

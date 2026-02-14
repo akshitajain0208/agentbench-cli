@@ -1,0 +1,68 @@
+{
+  "task_id": "TESTGEN-015",
+  "agent": "gemini_cli",
+  "category": "test_generation",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:47:01.711778",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef test_trie() -> bool:\n    trie = Trie()\n\n    # Test insert and search\n    trie.insert(\"apple\")\n    assert trie.search(\"apple\") == True\n    assert trie.search(\"app\") == False\n    assert trie.search(\"apricot\") == False\n\n    trie.insert(\"app\")\n    assert trie.search(\"app\") == True\n\n    # Test starts_with\n    assert trie.starts_with(\"app\") == True\n    assert trie.starts_with(\"apple\") == True\n    assert trie.starts_with(\"ap\") == True\n    assert trie.starts_with(\"b\") == False\n    assert trie.starts_with(\"apricot\") == False\n\n    trie.insert(\"banana\")\n    assert trie.search(\"banana\") == True\n    assert trie.starts_with(\"ban\") == True\n    assert trie.search(\"bana\") == False\n\n    # Test edge cases\n    trie.insert(\"\")\n    assert trie.search(\"\") == True\n    assert trie.starts_with(\"\") == True\n\n    # Test with overlapping words\n    trie_overlap = Trie()\n    trie_overlap.insert(\"word\")\n    trie_overlap.insert(\"words\")\n    assert trie_overlap.search(\"word\") == True\n    assert triie_overlap.search(\"words\") == True\n    assert trie_overlap.starts_with(\"wor\") == True\n    assert trie_overlap.starts_with(\"words_long\") == True\n    assert trie_overlap.search(\"worda\") == False\n    \n    return True\n```\n",
+      "content": "def test_trie() -> bool:\n    trie = Trie()\n\n    # Test insert and search\n    trie.insert(\"apple\")\n    assert trie.search(\"apple\") == True\n    assert trie.search(\"app\") == False\n    assert trie.search(\"apricot\") == False\n\n    trie.insert(\"app\")\n    assert trie.search(\"app\") == True\n\n    # Test starts_with\n    assert trie.starts_with(\"app\") == True\n    assert trie.starts_with(\"apple\") == True\n    assert trie.starts_with(\"ap\") == True\n    assert trie.starts_with(\"b\") == False\n    assert trie.starts_with(\"apricot\") == False\n\n    trie.insert(\"banana\")\n    assert trie.search(\"banana\") == True\n    assert trie.starts_with(\"ban\") == True\n    assert trie.search(\"bana\") == False\n\n    # Test edge cases\n    trie.insert(\"\")\n    assert trie.search(\"\") == True\n    assert trie.starts_with(\"\") == True\n\n    # Test with overlapping words\n    trie_overlap = Trie()\n    trie_overlap.insert(\"word\")\n    trie_overlap.insert(\"words\")\n    assert trie_overlap.search(\"word\") == True\n    assert triie_overlap.search(\"words\") == True\n    assert trie_overlap.starts_with(\"wor\") == True\n    assert trie_overlap.starts_with(\"words_long\") == True\n    assert trie_overlap.search(\"worda\") == False\n    \n    return True",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'Trie' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 11889.80484008789
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef test_trie() -> bool:\n    trie = Trie()\n\n    # Test insert and search\n    trie.insert(\"apple\")\n    if not trie.search(\"apple\"):\n        return False\n    if trie.search(\"app\"):  # Should not be a word yet\n        return False\n    if trie.search(\"aple\"):\n        return False\n    \n    trie.insert(\"app\")\n    if not trie.search(\"app\"):\n        return False\n\n    trie.insert(\"banana\")\n    if not trie.search(\"banana\"):\n        return False\n    if trie.search(\"band\"):\n        return False\n\n    # Test starts_with\n    if not trie.starts_with(\"app\"):\n        return False\n    if not trie.starts_with(\"apple\"):\n        return False\n    if not trie.starts_with(\"banana\"):\n        return False\n    if trie.starts_with(\"bana\"):\n        return False # This should be True if \"banana\" is inserted and \"bana\" is a prefix\n    if not trie.starts_with(\"bana\"):\n        return False\n    if trie.starts_with(\"bananana\"):\n        return False\n    if trie.starts_with(\"cat\"):\n        return False\n\n    # Edge cases\n    trie.insert(\"\")\n    if not trie.search(\"\"):\n        return False\n    if not trie.starts_with(\"\"):\n        return False\n\n    # Test with words sharing prefixes\n    trie_shared = Trie()\n    trie_shared.insert(\"word\")\n    trie_shared.insert(\"world\")\n    if not trie_shared.search(\"word\"):\n        return False\n    if not trie_shared.search(\"world\"):\n        return False\n    if trie_shared.search(\"wor\"):\n        return False\n    if not trie_shared.starts_with(\"wor\"):\n        return False\n    if not trie_shared.starts_with(\"word\"):\n        return False\n    if not trie_shared.starts_with(\"world\"):\n        return False\n\n    return True\n```\n",
+      "content": "def test_trie() -> bool:\n    trie = Trie()\n\n    # Test insert and search\n    trie.insert(\"apple\")\n    if not trie.search(\"apple\"):\n        return False\n    if trie.search(\"app\"):  # Should not be a word yet\n        return False\n    if trie.search(\"aple\"):\n        return False\n    \n    trie.insert(\"app\")\n    if not trie.search(\"app\"):\n        return False\n\n    trie.insert(\"banana\")\n    if not trie.search(\"banana\"):\n        return False\n    if trie.search(\"band\"):\n        return False\n\n    # Test starts_with\n    if not trie.starts_with(\"app\"):\n        return False\n    if not trie.starts_with(\"apple\"):\n        return False\n    if not trie.starts_with(\"banana\"):\n        return False\n    if trie.starts_with(\"bana\"):\n        return False # This should be True if \"banana\" is inserted and \"bana\" is a prefix\n    if not trie.starts_with(\"bana\"):\n        return False\n    if trie.starts_with(\"bananana\"):\n        return False\n    if trie.starts_with(\"cat\"):\n        return False\n\n    # Edge cases\n    trie.insert(\"\")\n    if not trie.search(\"\"):\n        return False\n    if not trie.starts_with(\"\"):\n        return False\n\n    # Test with words sharing prefixes\n    trie_shared = Trie()\n    trie_shared.insert(\"word\")\n    trie_shared.insert(\"world\")\n    if not trie_shared.search(\"word\"):\n        return False\n    if not trie_shared.search(\"world\"):\n        return False\n    if trie_shared.search(\"wor\"):\n        return False\n    if not trie_shared.starts_with(\"wor\"):\n        return False\n    if not trie_shared.starts_with(\"word\"):\n        return False\n    if not trie_shared.starts_with(\"world\"):\n        return False\n\n    return True",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'Trie' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 11805.468082427979
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef test_trie() -> bool:\n    trie = Trie()\n\n    # Test insert and search\n    trie.insert(\"apple\")\n    assert trie.search(\"apple\") == True\n    assert trie.search(\"app\") == False\n    assert trie.search(\"aple\") == False\n    assert trie.search(\"banana\") == False\n\n    trie.insert(\"app\")\n    assert trie.search(\"app\") == True\n\n    # Test starts_with\n    assert trie.starts_with(\"apple\") == True\n    assert trie.starts_with(\"app\") == True\n    assert trie.starts_with(\"ap\") == True\n    assert trie.starts_with(\"a\") == True\n    assert trie.starts_with(\"bana\") == False\n    assert trie.starts_with(\"appl\") == True\n    assert trie.starts_with(\"apples\") == False\n\n    # Test inserting an empty string\n    trie.insert(\"\")\n    assert trie.search(\"\") == True\n    assert trie.starts_with(\"\") == True\n\n    # Test searching for non-existent words\n    assert trie.search(\"apply\") == False\n    assert trie.search(\"zebra\") == False\n\n    # Test edge cases with common prefixes\n    trie = Trie()\n    trie.insert(\"a\")\n    trie.insert(\"b\")\n    trie.insert(\"ab\")\n    assert trie.search(\"a\") == True\n    assert trie.search(\"b\") == True\n    assert trie.search(\"ab\") == True\n    assert trie.search(\"c\") == False\n    assert trie.starts_with(\"a\") == True\n    assert trie.starts_with(\"b\") == True\n    assert trie.starts_with(\"ab\") == True\n    assert trie.starts_with(\"ac\") == False\n\n    print(\"All Trie tests passed!\")\n    return True\n```\n",
+      "content": "def test_trie() -> bool:\n    trie = Trie()\n\n    # Test insert and search\n    trie.insert(\"apple\")\n    assert trie.search(\"apple\") == True\n    assert trie.search(\"app\") == False\n    assert trie.search(\"aple\") == False\n    assert trie.search(\"banana\") == False\n\n    trie.insert(\"app\")\n    assert trie.search(\"app\") == True\n\n    # Test starts_with\n    assert trie.starts_with(\"apple\") == True\n    assert trie.starts_with(\"app\") == True\n    assert trie.starts_with(\"ap\") == True\n    assert trie.starts_with(\"a\") == True\n    assert trie.starts_with(\"bana\") == False\n    assert trie.starts_with(\"appl\") == True\n    assert trie.starts_with(\"apples\") == False\n\n    # Test inserting an empty string\n    trie.insert(\"\")\n    assert trie.search(\"\") == True\n    assert trie.starts_with(\"\") == True\n\n    # Test searching for non-existent words\n    assert trie.search(\"apply\") == False\n    assert trie.search(\"zebra\") == False\n\n    # Test edge cases with common prefixes\n    trie = Trie()\n    trie.insert(\"a\")\n    trie.insert(\"b\")\n    trie.insert(\"ab\")\n    assert trie.search(\"a\") == True\n    assert trie.search(\"b\") == True\n    assert trie.search(\"ab\") == True\n    assert trie.search(\"c\") == False\n    assert trie.starts_with(\"a\") == True\n    assert trie.starts_with(\"b\") == True\n    assert trie.starts_with(\"ab\") == True\n    assert trie.starts_with(\"ac\") == False\n\n    print(\"All Trie tests passed!\")\n    return True",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'Trie' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 11944.864988327026
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 11880.045970280966,
+    "median_ms": 11889.80484008789,
+    "min_ms": 11805.468082427979,
+    "max_ms": 11944.864988327026
+  }
+}

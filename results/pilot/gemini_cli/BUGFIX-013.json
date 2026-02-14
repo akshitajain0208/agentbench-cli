@@ -1,0 +1,71 @@
+{
+  "task_id": "BUGFIX-013",
+  "agent": "gemini_cli",
+  "category": "bug_fixing",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:20:04.277884",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache[key]\n        del cache[key]  # Remove to re-insert at the end\n        cache[key] = value  # Re-insert to mark as most recently used\n        return cache, value\n    return cache, None\n```\n",
+      "content": "def lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache[key]\n        del cache[key]  # Remove to re-insert at the end\n        cache[key] = value  # Re-insert to mark as most recently used\n        return cache, value\n    return cache, None",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [{'a': 1, 'b': 2}, 1], got ({'b': 2, 'a': 1}, 1)",
+          "Test 1: expected [{'a': 1}, None], got ({'a': 1}, None)"
+        ],
+        "success": false
+      },
+      "latency_ms": 12538.09380531311
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache.pop(key)  # Remove and get the value\n        cache[key] = value      # Re-insert to mark as most recently used\n        return cache, value\n    return cache, None\n```\n",
+      "content": "def lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache.pop(key)  # Remove and get the value\n        cache[key] = value      # Re-insert to mark as most recently used\n        return cache, value\n    return cache, None",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [{'a': 1, 'b': 2}, 1], got ({'b': 2, 'a': 1}, 1)",
+          "Test 1: expected [{'a': 1}, None], got ({'a': 1}, None)"
+        ],
+        "success": false
+      },
+      "latency_ms": 12490.84210395813
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache[key]\n        # Move to end (most recent)\n        del cache[key]\n        cache[key] = value\n        return cache, value\n    return cache, None\n```\n",
+      "content": "def lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache[key]\n        # Move to end (most recent)\n        del cache[key]\n        cache[key] = value\n        return cache, value\n    return cache, None",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [{'a': 1, 'b': 2}, 1], got ({'b': 2, 'a': 1}, 1)",
+          "Test 1: expected [{'a': 1}, None], got ({'a': 1}, None)"
+        ],
+        "success": false
+      },
+      "latency_ms": 47514.8561000824
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 24181.264003117878,
+    "median_ms": 12538.09380531311,
+    "min_ms": 12490.84210395813,
+    "max_ms": 47514.8561000824
+  }
+}

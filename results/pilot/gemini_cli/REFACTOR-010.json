@@ -1,0 +1,71 @@
+{
+  "task_id": "REFACTOR-010",
+  "agent": "gemini_cli",
+  "category": "refactoring",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:33:28.392155",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\nfrom typing import Iterator\n\ndef get_even_squares(n: int) -> Iterator[int]:\n    for i in range(n):\n        if i % 2 == 0:\n            yield i * i\n```\n",
+      "content": "from typing import Iterator\n\ndef get_even_squares(n: int) -> Iterator[int]:\n    for i in range(n):\n        if i % 2 == 0:\n            yield i * i",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [0, 4, 16, 36, 64], got <generator object get_even_squares at 0x7f86184cbcf0>",
+          "Test 1: expected [0, 4, 16], got <generator object get_even_squares at 0x7f86184cbb30>"
+        ],
+        "success": false
+      },
+      "latency_ms": 29029.598236083984
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef get_even_squares(n: int) -> list:\n    for i in range(n):\n        square = i * i\n        if square % 2 == 0:\n            yield square\n```\n",
+      "content": "def get_even_squares(n: int) -> list:\n    for i in range(n):\n        square = i * i\n        if square % 2 == 0:\n            yield square",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [0, 4, 16, 36, 64], got <generator object get_even_squares at 0x7f86184cbcf0>",
+          "Test 1: expected [0, 4, 16], got <generator object get_even_squares at 0x7f86184cbb30>"
+        ],
+        "success": false
+      },
+      "latency_ms": 28328.99570465088
+    },
+    {
+      "run": 3,
+      "output": "```python\nfrom typing import Iterator\n\ndef get_even_squares(n: int) -> Iterator[int]:\n    for i in range(n):\n        square = i * i\n        if square % 2 == 0:\n            yield square\n```\n",
+      "content": "from typing import Iterator\n\ndef get_even_squares(n: int) -> Iterator[int]:\n    for i in range(n):\n        square = i * i\n        if square % 2 == 0:\n            yield square",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [0, 4, 16, 36, 64], got <generator object get_even_squares at 0x7f86184cbcf0>",
+          "Test 1: expected [0, 4, 16], got <generator object get_even_squares at 0x7f86184cbb30>"
+        ],
+        "success": false
+      },
+      "latency_ms": 13276.259183883667
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 23544.95104153951,
+    "median_ms": 28328.99570465088,
+    "min_ms": 13276.259183883667,
+    "max_ms": 29029.598236083984
+  }
+}

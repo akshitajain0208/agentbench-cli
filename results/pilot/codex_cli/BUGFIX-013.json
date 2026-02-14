@@ -1,0 +1,71 @@
+{
+  "task_id": "BUGFIX-013",
+  "agent": "codex_cli",
+  "category": "bug_fixing",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:08:47.924686",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value  # move to end (most recent)\n        return cache, value\n    return cache, None\n```\n",
+      "content": "def lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value  # move to end (most recent)\n        return cache, value\n    return cache, None",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [{'a': 1, 'b': 2}, 1], got ({'b': 2, 'a': 1}, 1)",
+          "Test 1: expected [{'a': 1}, None], got ({'a': 1}, None)"
+        ],
+        "success": false
+      },
+      "latency_ms": 4010.1051330566406
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value\n        return cache, value\n    return cache, None\n```\n",
+      "content": "def lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value\n        return cache, value\n    return cache, None",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [{'a': 1, 'b': 2}, 1], got ({'b': 2, 'a': 1}, 1)",
+          "Test 1: expected [{'a': 1}, None], got ({'a': 1}, None)"
+        ],
+        "success": false
+      },
+      "latency_ms": 3630.242109298706
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value  # move to end (most recent)\n        return cache, value\n    return cache, None\n```\n",
+      "content": "def lru_cache_get(cache: dict, capacity: int, key: str) -> tuple:\n    # cache is a dict, returns (new_cache, value)\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value  # move to end (most recent)\n        return cache, value\n    return cache, None",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [{'a': 1, 'b': 2}, 1], got ({'b': 2, 'a': 1}, 1)",
+          "Test 1: expected [{'a': 1}, None], got ({'a': 1}, None)"
+        ],
+        "success": false
+      },
+      "latency_ms": 4095.3710079193115
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 3911.906083424886,
+    "median_ms": 4010.1051330566406,
+    "min_ms": 3630.242109298706,
+    "max_ms": 4095.3710079193115
+  }
+}

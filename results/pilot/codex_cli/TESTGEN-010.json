@@ -1,0 +1,68 @@
+{
+  "task_id": "TESTGEN-010",
+  "agent": "codex_cli",
+  "category": "test_generation",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:11:53.140107",
+  "runs": [
+    {
+      "run": 1,
+      "output": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c586a-a1cd-74a0-9a3e-43688f2ee55b\n--------\nuser\nWrite a test function for the following code.\n\nWrite tests for merge sorted lists function.\n\nCode to test:\n```python\ndef merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result\n```\n\nFunction signature: def test_merge_sorted() -> bool\n\nReturn ONLY the test function that returns True if all tests pass, no explanations.\nmcp startup: no servers\n2026-02-13T19:11:50.365786Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1771270659,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":260749}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Feb 17th, 2026 4:37 AM.\n",
+      "content": "def merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Function test_merge_sorted not found"
+        ],
+        "success": false
+      },
+      "latency_ms": 1326.160192489624
+    },
+    {
+      "run": 2,
+      "output": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c586a-a6fb-7961-890a-602bcbb4e2fa\n--------\nuser\nWrite a test function for the following code.\n\nWrite tests for merge sorted lists function.\n\nCode to test:\n```python\ndef merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result\n```\n\nFunction signature: def test_merge_sorted() -> bool\n\nReturn ONLY the test function that returns True if all tests pass, no explanations.\nmcp startup: no servers\n2026-02-13T19:11:51.635000Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1771270659,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":260748}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Feb 17th, 2026 4:37 AM.\n",
+      "content": "def merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Function test_merge_sorted not found"
+        ],
+        "success": false
+      },
+      "latency_ms": 1268.1820392608643
+    },
+    {
+      "run": 3,
+      "output": "OpenAI Codex v0.98.0 (research preview)\n--------\nworkdir: /Users/sarthakverma/agentbench-cli\nmodel: gpt-5.3-codex\nprovider: openai\napproval: never\nsandbox: workspace-write [workdir, /tmp, $TMPDIR]\nreasoning effort: none\nreasoning summaries: auto\nsession id: 019c586a-abf1-7700-8669-463f253e675a\n--------\nuser\nWrite a test function for the following code.\n\nWrite tests for merge sorted lists function.\n\nCode to test:\n```python\ndef merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result\n```\n\nFunction signature: def test_merge_sorted() -> bool\n\nReturn ONLY the test function that returns True if all tests pass, no explanations.\nmcp startup: no servers\n2026-02-13T19:11:53.129577Z ERROR codex_api::endpoint::responses: error=http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1771270658,\\\"eligible_promo\\\":null,\\\"resets_in_seconds\\\":260746}}\")\nERROR: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Feb 17th, 2026 4:37 AM.\n",
+      "content": "def merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Function test_merge_sorted not found"
+        ],
+        "success": false
+      },
+      "latency_ms": 1494.3749904632568
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 1362.905740737915,
+    "median_ms": 1326.160192489624,
+    "min_ms": 1268.1820392608643,
+    "max_ms": 1494.3749904632568
+  }
+}

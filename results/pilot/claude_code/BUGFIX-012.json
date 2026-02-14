@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-012",
+  "agent": "claude_code",
+  "category": "bug_fixing",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T03:50:45.891347",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node in visited:\n            continue\n        visited.add(node)\n        if node == target:\n            return True\n        for neighbor in graph.get(node, []):\n            stack.append(neighbor)\n    return False\n```\n",
+      "content": "def dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node in visited:\n            continue\n        visited.add(node)\n        if node == target:\n            return True\n        for neighbor in graph.get(node, []):\n            stack.append(neighbor)\n    return False",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 6289.283275604248
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node in visited:\n            continue\n        visited.add(node)\n        if node == target:\n            return True\n        for neighbor in graph.get(node, []):\n            stack.append(neighbor)\n    return False\n```\n",
+      "content": "def dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node in visited:\n            continue\n        visited.add(node)\n        if node == target:\n            return True\n        for neighbor in graph.get(node, []):\n            stack.append(neighbor)\n    return False",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 7719.839096069336
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node in visited:\n            continue\n        visited.add(node)\n        if node == target:\n            return True\n        for neighbor in graph.get(node, []):\n            stack.append(neighbor)\n    return False\n```\n",
+      "content": "def dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node in visited:\n            continue\n        visited.add(node)\n        if node == target:\n            return True\n        for neighbor in graph.get(node, []):\n            stack.append(neighbor)\n    return False",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 5910.238027572632
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 6639.786799748738,
+    "median_ms": 6289.283275604248,
+    "min_ms": 5910.238027572632,
+    "max_ms": 7719.839096069336
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "task_id": "TESTGEN-013",
+  "agent": "gemini_cli",
+  "category": "test_generation",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:45:19.108731",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef test_is_valid_expression() -> bool:\n    def is_valid_expression(s):\n        stack = []\n        mapping = {')': '(', '}': '{', ']': '['}\n        for char in s:\n            if char in '({[':\n                stack.append(char)\n            elif char in ')}]':\n                if not stack or stack.pop() != mapping[char]:\n                    return False\n        return len(stack) == 0\n\n    # Test cases\n    assert is_valid_expression(\"()\") == True, \"Test Case 1 Failed: ()\"\n    assert is_valid_expression(\"()[]{}\") == True, \"Test Case 2 Failed: ()[]{}\"\n    assert is_valid_expression(\"{[]}\") == True, \"Test Case 3 Failed: {[]}\"\n    assert is_valid_expression(\"({[]})\") == True, \"Test Case 4 Failed: ({[]})\"\n    assert is_valid_expression(\"\") == True, \"Test Case 5 Failed: Empty string\"\n    assert is_valid_expression(\"((()))\") == True, \"Test Case 6 Failed: ((()))\"\n    assert is_valid_expression(\"({[()]})\") == True, \"Test Case 7 Failed: ({[()]})\"\n    assert is_valid_expression(\"(){[]} \") == True, \"Test Case 8 Failed: (){[]} \"\n\n    assert is_valid_expression(\"(\") == False, \"Test Case 9 Failed: (\"\n    assert is_valid_expression(\"]\") == False, \"Test Case 10 Failed: ]\"\n    assert is_valid_expression(\"([)]\") == False, \"Test Case 11 Failed: ([)]\"\n    assert is_valid_expression(\"{[}\") == False, \"Test Case 12 Failed: {[}\"\n    assert is_valid_expression(\"(()\") == False, \"Test Case 13 Failed: (()\"\n    assert is_valid_expression(\"({)}\") == False, \"Test Case 14 Failed: ({)}\"\n    assert is_valid_expression(\"(]\") == False, \"Test Case 15 Failed: (]\"\n    assert is_valid_expression(\"{(})\") == False, \"Test Case 16 Failed: {(})\"\n    assert is_valid_expression(\"][\") == False, \"Test Case 17 Failed: ][\"\n    assert is_valid_expression(\"{{]]\") == False, \"Test Case 18 Failed: {{]]\"\n\n    return True\n```\n",
+      "content": "def test_is_valid_expression() -> bool:\n    def is_valid_expression(s):\n        stack = []\n        mapping = {')': '(', '}': '{', ']': '['}\n        for char in s:\n            if char in '({[':\n                stack.append(char)\n            elif char in ')}]':\n                if not stack or stack.pop() != mapping[char]:\n                    return False\n        return len(stack) == 0\n\n    # Test cases\n    assert is_valid_expression(\"()\") == True, \"Test Case 1 Failed: ()\"\n    assert is_valid_expression(\"()[]{}\") == True, \"Test Case 2 Failed: ()[]{}\"\n    assert is_valid_expression(\"{[]}\") == True, \"Test Case 3 Failed: {[]}\"\n    assert is_valid_expression(\"({[]})\") == True, \"Test Case 4 Failed: ({[]})\"\n    assert is_valid_expression(\"\") == True, \"Test Case 5 Failed: Empty string\"\n    assert is_valid_expression(\"((()))\") == True, \"Test Case 6 Failed: ((()))\"\n    assert is_valid_expression(\"({[()]})\") == True, \"Test Case 7 Failed: ({[()]})\"\n    assert is_valid_expression(\"(){[]} \") == True, \"Test Case 8 Failed: (){[]} \"\n\n    assert is_valid_expression(\"(\") == False, \"Test Case 9 Failed: (\"\n    assert is_valid_expression(\"]\") == False, \"Test Case 10 Failed: ]\"\n    assert is_valid_expression(\"([)]\") == False, \"Test Case 11 Failed: ([)]\"\n    assert is_valid_expression(\"{[}\") == False, \"Test Case 12 Failed: {[}\"\n    assert is_valid_expression(\"(()\") == False, \"Test Case 13 Failed: (()\"\n    assert is_valid_expression(\"({)}\") == False, \"Test Case 14 Failed: ({)}\"\n    assert is_valid_expression(\"(]\") == False, \"Test Case 15 Failed: (]\"\n    assert is_valid_expression(\"{(})\") == False, \"Test Case 16 Failed: {(})\"\n    assert is_valid_expression(\"][\") == False, \"Test Case 17 Failed: ][\"\n    assert is_valid_expression(\"{{]]\") == False, \"Test Case 18 Failed: {{]]\"\n\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 12684.514045715332
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef test_is_valid_expression() -> bool:\n    test_cases = [\n        (\"()\", True),\n        (\"()[]{}\", True),\n        (\"{[]}\", True),\n        (\"([{}])\", True),\n        (\"\", True),  # Empty string is a valid expression\n        (\"(\", False),\n        (\"]\", False),\n        (\"([)]\", False),\n        (\"{[}]\", False),\n        (\"((\", False),\n        (\")))\", False),\n        (\"{\", False),\n        (\"}}\", False),\n        (\"{[\", False),\n        (\"{([]})\", False),\n    ]\n\n    for expression, expected in test_cases:\n        if is_valid_expression(expression) != expected:\n            return False\n    return True\n```\n",
+      "content": "def test_is_valid_expression() -> bool:\n    test_cases = [\n        (\"()\", True),\n        (\"()[]{}\", True),\n        (\"{[]}\", True),\n        (\"([{}])\", True),\n        (\"\", True),  # Empty string is a valid expression\n        (\"(\", False),\n        (\"]\", False),\n        (\"([)]\", False),\n        (\"{[}]\", False),\n        (\"((\", False),\n        (\")))\", False),\n        (\"{\", False),\n        (\"}}\", False),\n        (\"{[\", False),\n        (\"{([]})\", False),\n    ]\n\n    for expression, expected in test_cases:\n        if is_valid_expression(expression) != expected:\n            return False\n    return True",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'is_valid_expression' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 11055.243968963623
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef test_is_valid_expression() -> bool:\n    test_cases = [\n        (\"()\", True),\n        (\"()[]{}\", True),\n        (\"{[]}\", True),\n        (\"([{}])\", True),\n        (\"\", True),\n        (\"(\", False),\n        (\")\", False),\n        (\"([)]\", False),\n        (\"{[}]\", False),\n        (\"]\", False),\n        (\"((\", False),\n        (\")))\", False),\n        (\"({[\", False),\n        (\"}])\", False),\n        (\"({)}\", False)\n    ]\n\n    for expression, expected_result in test_cases:\n        actual_result = is_valid_expression(expression)\n        assert actual_result == expected_result, f\"Expression: '{expression}', Expected: {expected_result}, Got: {actual_result}\"\n    return True\n\ndef is_valid_expression(s):\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in '({[':\n            stack.append(char)\n        elif char in ')}]':\n            if not stack or stack.pop() != mapping[char]:\n                return False\n    return len(stack) == 0\n```\n",
+      "content": "def test_is_valid_expression() -> bool:\n    test_cases = [\n        (\"()\", True),\n        (\"()[]{}\", True),\n        (\"{[]}\", True),\n        (\"([{}])\", True),\n        (\"\", True),\n        (\"(\", False),\n        (\")\", False),\n        (\"([)]\", False),\n        (\"{[}]\", False),\n        (\"]\", False),\n        (\"((\", False),\n        (\")))\", False),\n        (\"({[\", False),\n        (\"}])\", False),\n        (\"({)}\", False)\n    ]\n\n    for expression, expected_result in test_cases:\n        actual_result = is_valid_expression(expression)\n        assert actual_result == expected_result, f\"Expression: '{expression}', Expected: {expected_result}, Got: {actual_result}\"\n    return True\n\ndef is_valid_expression(s):\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in '({[':\n            stack.append(char)\n        elif char in ')}]':\n            if not stack or stack.pop() != mapping[char]:\n                return False\n    return len(stack) == 0",
+      "passed": true,
+      "test_results": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 10905.784130096436
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 2,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 11548.514048258463,
+    "median_ms": 11055.243968963623,
+    "min_ms": 10905.784130096436,
+    "max_ms": 12684.514045715332
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "task_id": "REFACTOR-008",
+  "agent": "gemini_cli",
+  "category": "refactoring",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:31:48.555265",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))\n```\n",
+      "content": "def combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [[1, 'a'], [2, 'b'], [3, 'c']], got [(1, 'a'), (2, 'b'), (3, 'c')]",
+          "Test 1: expected [[1, 'x'], [2, 'y']], got [(1, 'x'), (2, 'y')]"
+        ],
+        "success": false
+      },
+      "latency_ms": 11419.142007827759
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))\n```\n",
+      "content": "def combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [[1, 'a'], [2, 'b'], [3, 'c']], got [(1, 'a'), (2, 'b'), (3, 'c')]",
+          "Test 1: expected [[1, 'x'], [2, 'y']], got [(1, 'x'), (2, 'y')]"
+        ],
+        "success": false
+      },
+      "latency_ms": 10848.649978637695
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))\n```\n",
+      "content": "def combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [[1, 'a'], [2, 'b'], [3, 'c']], got [(1, 'a'), (2, 'b'), (3, 'c')]",
+          "Test 1: expected [[1, 'x'], [2, 'y']], got [(1, 'x'), (2, 'y')]"
+        ],
+        "success": false
+      },
+      "latency_ms": 11232.746124267578
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 11166.84603691101,
+    "median_ms": 11232.746124267578,
+    "min_ms": 10848.649978637695,
+    "max_ms": 11419.142007827759
+  }
+}

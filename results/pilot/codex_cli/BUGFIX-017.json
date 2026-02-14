@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-017",
+  "agent": "codex_cli",
+  "category": "bug_fixing",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:09:29.443071",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef reverse_words(s: str) -> str:\n    return \" \".join(s.split()[::-1])\n```\n",
+      "content": "def reverse_words(s: str) -> str:\n    return \" \".join(s.split()[::-1])",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 3278.0189514160156
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef reverse_words(s: str) -> str:\n    return \" \".join(s.split()[::-1])\n```\n",
+      "content": "def reverse_words(s: str) -> str:\n    return \" \".join(s.split()[::-1])",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 2563.2529258728027
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef reverse_words(s: str) -> str:\n    return \" \".join(s.split()[::-1])\n```\n",
+      "content": "def reverse_words(s: str) -> str:\n    return \" \".join(s.split()[::-1])",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 2017.9619789123535
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 2619.744618733724,
+    "median_ms": 2563.2529258728027,
+    "min_ms": 2017.9619789123535,
+    "max_ms": 3278.0189514160156
+  }
+}

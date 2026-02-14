@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-014",
+  "agent": "codex_cli",
+  "category": "bug_fixing",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:08:58.509882",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef is_balanced(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in \"({[\":\n            stack.append(char)\n        elif char in \")}]\":\n            if not stack:\n                return False\n            if stack.pop() != mapping[char]:\n                return False\n    return len(stack) == 0\n```\n",
+      "content": "def is_balanced(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in \"({[\":\n            stack.append(char)\n        elif char in \")}]\":\n            if not stack:\n                return False\n            if stack.pop() != mapping[char]:\n                return False\n    return len(stack) == 0",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 3293.02716255188
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef is_balanced(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in \"({[\":\n            stack.append(char)\n        elif char in \")}]\":\n            if not stack:\n                return False\n            if stack.pop() != mapping[char]:\n                return False\n    return len(stack) == 0\n```\n",
+      "content": "def is_balanced(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in \"({[\":\n            stack.append(char)\n        elif char in \")}]\":\n            if not stack:\n                return False\n            if stack.pop() != mapping[char]:\n                return False\n    return len(stack) == 0",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 3610.668182373047
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef is_balanced(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in \"({[\":\n            stack.append(char)\n        elif char in \")}]\":\n            if not stack:\n                return False\n            if stack.pop() != mapping[char]:\n                return False\n    return len(stack) == 0\n```\n",
+      "content": "def is_balanced(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in \"({[\":\n            stack.append(char)\n        elif char in \")}]\":\n            if not stack:\n                return False\n            if stack.pop() != mapping[char]:\n                return False\n    return len(stack) == 0",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 3676.612138748169
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 3526.7691612243652,
+    "median_ms": 3610.668182373047,
+    "min_ms": 3293.02716255188,
+    "max_ms": 3676.612138748169
+  }
+}

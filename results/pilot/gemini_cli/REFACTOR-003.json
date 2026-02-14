@@ -1,0 +1,62 @@
+{
+  "task_id": "REFACTOR-003",
+  "agent": "gemini_cli",
+  "category": "refactoring",
+  "difficulty": "easy",
+  "timestamp": "2026-02-14T04:29:05.774483",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef validate_user(user: dict) -> bool:\n    if user is None:\n        return False\n    if not user.get('name'):\n        return False\n    if user.get('age', 0) < 18:\n        return False\n    return True\n```\n",
+      "content": "def validate_user(user: dict) -> bool:\n    if user is None:\n        return False\n    if not user.get('name'):\n        return False\n    if user.get('age', 0) < 18:\n        return False\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 11573.15731048584
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef validate_user(user: dict) -> bool:\n    if user is None:\n        return False\n    if not user.get('name'):\n        return False\n    if user.get('age', 0) < 18:\n        return False\n    return True\n```\n",
+      "content": "def validate_user(user: dict) -> bool:\n    if user is None:\n        return False\n    if not user.get('name'):\n        return False\n    if user.get('age', 0) < 18:\n        return False\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 13006.8838596344
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef validate_user(user: dict) -> bool:\n    if user is None:\n        return False\n    if not user.get('name'):\n        return False\n    if user.get('age', 0) < 18:\n        return False\n    return True\n```\n",
+      "content": "def validate_user(user: dict) -> bool:\n    if user is None:\n        return False\n    if not user.get('name'):\n        return False\n    if user.get('age', 0) < 18:\n        return False\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 12238.20424079895
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 12272.748470306396,
+    "median_ms": 12238.20424079895,
+    "min_ms": 11573.15731048584,
+    "max_ms": 13006.8838596344
+  }
+}

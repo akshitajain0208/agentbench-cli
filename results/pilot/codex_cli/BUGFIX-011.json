@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-011",
+  "agent": "codex_cli",
+  "category": "bug_fixing",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:08:21.991272",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef quicksort(arr: list) -> list:\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + middle + quicksort(right)\n```\n",
+      "content": "def quicksort(arr: list) -> list:\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + middle + quicksort(right)",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 5594.950199127197
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef quicksort(arr: list) -> list:\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + middle + quicksort(right)\n```\n",
+      "content": "def quicksort(arr: list) -> list:\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + middle + quicksort(right)",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 3631.5672397613525
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef quicksort(arr: list) -> list:\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + middle + quicksort(right)\n```\n",
+      "content": "def quicksort(arr: list) -> list:\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + middle + quicksort(right)",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 4836.2109661102295
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 4687.576134999593,
+    "median_ms": 4836.2109661102295,
+    "min_ms": 3631.5672397613525,
+    "max_ms": 5594.950199127197
+  }
+}

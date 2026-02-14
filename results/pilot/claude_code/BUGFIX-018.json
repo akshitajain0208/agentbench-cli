@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-018",
+  "agent": "claude_code",
+  "category": "bug_fixing",
+  "difficulty": "easy",
+  "timestamp": "2026-02-14T03:52:33.504560",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef average(numbers):\n    if not numbers:\n        return 0\n    return sum(numbers) / len(numbers)\n```\n",
+      "content": "def average(numbers):\n    if not numbers:\n        return 0\n    return sum(numbers) / len(numbers)",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 5766.849040985107
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef average(numbers):\n    if not numbers:\n        return 0\n    return sum(numbers) / len(numbers)\n```\n",
+      "content": "def average(numbers):\n    if not numbers:\n        return 0\n    return sum(numbers) / len(numbers)",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 5963.366985321045
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef average(numbers):\n    if not numbers:\n        return 0\n    return sum(numbers) / len(numbers)\n```\n",
+      "content": "def average(numbers):\n    if not numbers:\n        return 0\n    return sum(numbers) / len(numbers)",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 6675.047874450684
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 6135.087966918945,
+    "median_ms": 5963.366985321045,
+    "min_ms": 5766.849040985107,
+    "max_ms": 6675.047874450684
+  }
+}

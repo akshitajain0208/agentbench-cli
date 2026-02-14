@@ -1,0 +1,71 @@
+{
+  "task_id": "REFACTOR-008",
+  "agent": "claude_code",
+  "category": "refactoring",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T03:55:37.397440",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))\n```\n",
+      "content": "def combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [[1, 'a'], [2, 'b'], [3, 'c']], got [(1, 'a'), (2, 'b'), (3, 'c')]",
+          "Test 1: expected [[1, 'x'], [2, 'y']], got [(1, 'x'), (2, 'y')]"
+        ],
+        "success": false
+      },
+      "latency_ms": 5624.130964279175
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))\n```\n",
+      "content": "def combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [[1, 'a'], [2, 'b'], [3, 'c']], got [(1, 'a'), (2, 'b'), (3, 'c')]",
+          "Test 1: expected [[1, 'x'], [2, 'y']], got [(1, 'x'), (2, 'y')]"
+        ],
+        "success": false
+      },
+      "latency_ms": 5925.372123718262
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))\n```\n",
+      "content": "def combine_lists(list1: list, list2: list) -> list:\n    return list(zip(list1, list2))",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [[1, 'a'], [2, 'b'], [3, 'c']], got [(1, 'a'), (2, 'b'), (3, 'c')]",
+          "Test 1: expected [[1, 'x'], [2, 'y']], got [(1, 'x'), (2, 'y')]"
+        ],
+        "success": false
+      },
+      "latency_ms": 5750.025033950806
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 5766.509373982747,
+    "median_ms": 5750.025033950806,
+    "min_ms": 5624.130964279175,
+    "max_ms": 5925.372123718262
+  }
+}

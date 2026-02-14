@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-010",
+  "agent": "claude_code",
+  "category": "bug_fixing",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T03:50:06.255664",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result\n```\n",
+      "content": "def merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 6231.425046920776
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result\n```\n",
+      "content": "def merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 9247.98607826233
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result\n```\n",
+      "content": "def merge_sorted(lst1, lst2):\n    result = []\n    i = j = 0\n    while i < len(lst1) and j < len(lst2):\n        if lst1[i] <= lst2[j]:\n            result.append(lst1[i])\n            i += 1\n        else:\n            result.append(lst2[j])\n            j += 1\n    result.extend(lst1[i:])\n    result.extend(lst2[j:])\n    return result",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 7200.22988319397
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 7559.880336125691,
+    "median_ms": 7200.22988319397,
+    "min_ms": 6231.425046920776,
+    "max_ms": 9247.98607826233
+  }
+}

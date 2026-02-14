@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-009",
+  "agent": "gemini_cli",
+  "category": "bug_fixing",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:17:00.738870",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef count_occurrences(lst, target):\n    count = 0  # Fix: start count at 0\n    for item in lst:\n        if item == target:\n            count += 1\n    return count\n```\n",
+      "content": "def count_occurrences(lst, target):\n    count = 0  # Fix: start count at 0\n    for item in lst:\n        if item == target:\n            count += 1\n    return count",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 9681.49995803833
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef count_occurrences(lst, target):\n    count = 0\n    for item in lst:\n        if item == target:\n            count += 1\n    return count\n```\n",
+      "content": "def count_occurrences(lst, target):\n    count = 0\n    for item in lst:\n        if item == target:\n            count += 1\n    return count",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 9442.955017089844
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef count_occurrences(lst, target):\n    count = 0  # Fix: should start at 0\n    for item in lst:\n        if item == target:\n            count += 1\n    return count\n```\n",
+      "content": "def count_occurrences(lst, target):\n    count = 0  # Fix: should start at 0\n    for item in lst:\n        if item == target:\n            count += 1\n    return count",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 9307.575941085815
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 9477.343638737997,
+    "median_ms": 9442.955017089844,
+    "min_ms": 9307.575941085815,
+    "max_ms": 9681.49995803833
+  }
+}

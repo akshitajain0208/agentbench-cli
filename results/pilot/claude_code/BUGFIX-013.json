@@ -1,0 +1,71 @@
+{
+  "task_id": "BUGFIX-013",
+  "agent": "claude_code",
+  "category": "bug_fixing",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T03:51:03.193647",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef lru_cache_get(cache, capacity, key):\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value\n        return cache, value\n    return cache, None\n```\n",
+      "content": "def lru_cache_get(cache, capacity, key):\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value\n        return cache, value\n    return cache, None",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [{'a': 1, 'b': 2}, 1], got ({'b': 2, 'a': 1}, 1)",
+          "Test 1: expected [{'a': 1}, None], got ({'a': 1}, None)"
+        ],
+        "success": false
+      },
+      "latency_ms": 5848.146915435791
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef lru_cache_get(cache, capacity, key):\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value\n        return cache, value\n    return cache, None\n```\n",
+      "content": "def lru_cache_get(cache, capacity, key):\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value\n        return cache, value\n    return cache, None",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [{'a': 1, 'b': 2}, 1], got ({'b': 2, 'a': 1}, 1)",
+          "Test 1: expected [{'a': 1}, None], got ({'a': 1}, None)"
+        ],
+        "success": false
+      },
+      "latency_ms": 5680.768013000488
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef lru_cache_get(cache, capacity, key):\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value\n        return cache, value\n    return cache, None\n```\n",
+      "content": "def lru_cache_get(cache, capacity, key):\n    if key in cache:\n        value = cache.pop(key)\n        cache[key] = value\n        return cache, value\n    return cache, None",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected [{'a': 1, 'b': 2}, 1], got ({'b': 2, 'a': 1}, 1)",
+          "Test 1: expected [{'a': 1}, None], got ({'a': 1}, None)"
+        ],
+        "success": false
+      },
+      "latency_ms": 5769.441843032837
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 5766.118923823039,
+    "median_ms": 5769.441843032837,
+    "min_ms": 5680.768013000488,
+    "max_ms": 5848.146915435791
+  }
+}

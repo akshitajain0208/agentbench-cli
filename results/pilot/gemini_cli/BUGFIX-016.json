@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-016",
+  "agent": "gemini_cli",
+  "category": "bug_fixing",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:21:53.432441",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\nimport math\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True\n```\n",
+      "content": "import math\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 11103.16801071167
+    },
+    {
+      "run": 2,
+      "output": "```python\nimport math\n\ndef is_prime(n: int) -> bool:\n    if n < 2:\n        return False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True\n```\n",
+      "content": "import math\n\ndef is_prime(n: int) -> bool:\n    if n < 2:\n        return False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 10632.699251174927
+    },
+    {
+      "run": 3,
+      "output": "```python\nimport math\n\ndef is_prime(n: int) -> bool:\n    if n < 2:\n        return False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True\n```\n",
+      "content": "import math\n\ndef is_prime(n: int) -> bool:\n    if n < 2:\n        return False\n    for i in range(2, int(math.sqrt(n)) + 1):\n        if n % i == 0:\n            return False\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 11162.517070770264
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 10966.12811088562,
+    "median_ms": 11103.16801071167,
+    "min_ms": 10632.699251174927,
+    "max_ms": 11162.517070770264
+  }
+}

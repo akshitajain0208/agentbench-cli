@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-001",
+  "agent": "gemini_cli",
+  "category": "bug_fixing",
+  "difficulty": "easy",
+  "timestamp": "2026-02-14T04:12:51.956581",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef count_to_n(n: int) -> list:\n    result = []\n    for i in range(1, n + 1):\n        result.append(i)\n    return result\n```\n",
+      "content": "def count_to_n(n: int) -> list:\n    result = []\n    for i in range(1, n + 1):\n        result.append(i)\n    return result",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 14688.843965530396
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef count_to_n(n: int) -> list:\n    result = []\n    for i in range(1, n + 1):\n        result.append(i)\n    return result\n```\n",
+      "content": "def count_to_n(n: int) -> list:\n    result = []\n    for i in range(1, n + 1):\n        result.append(i)\n    return result",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 12788.73586654663
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef count_to_n(n: int) -> list:\n    result = []\n    for i in range(1, n + 1):\n        result.append(i)\n    return result\n```\n",
+      "content": "def count_to_n(n: int) -> list:\n    result = []\n    for i in range(1, n + 1):\n        result.append(i)\n    return result",
+      "passed": true,
+      "test_results": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 10546.800136566162
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 12674.793322881063,
+    "median_ms": 12788.73586654663,
+    "min_ms": 10546.800136566162,
+    "max_ms": 14688.843965530396
+  }
+}

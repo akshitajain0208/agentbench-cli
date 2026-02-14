@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-008",
+  "agent": "gemini_cli",
+  "category": "bug_fixing",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:16:32.303927",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef fibonacci(n):\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n-1) + fibonacci(n-2)\n```\n",
+      "content": "def fibonacci(n):\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n-1) + fibonacci(n-2)",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 9972.736120223999
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef fibonacci(n):\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n-1) + fibonacci(n-2)\n```\n",
+      "content": "def fibonacci(n):\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n-1) + fibonacci(n-2)",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 9953.245878219604
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef fibonacci(n):\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n-1) + fibonacci(n-2)\n```\n",
+      "content": "def fibonacci(n):\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n-1) + fibonacci(n-2)",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 13634.160041809082
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 11186.714013417562,
+    "median_ms": 9972.736120223999,
+    "min_ms": 9953.245878219604,
+    "max_ms": 13634.160041809082
+  }
+}

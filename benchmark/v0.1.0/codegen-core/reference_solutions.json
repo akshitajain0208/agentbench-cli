@@ -598,5 +598,305 @@
     "reference_code": "def min_jumps(nums: list) -> int\n    # Reference implementation\n    pass",
     "function_signature": "def min_jumps(nums: list) -> int",
     "description": "Find the minimum number of jumps to reach the end."
+  },
+  "BUGFIX-001": {
+    "task_id": "BUGFIX-001",
+    "reference_code": "def count_to_n(n: int) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def count_to_n(n: int) -> list",
+    "description": "Fix the off-by-one error in this function that should return numbers from 1 to n inclusive."
+  },
+  "BUGFIX-002": {
+    "task_id": "BUGFIX-002",
+    "reference_code": "def multiply(a: int, b: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def multiply(a: int, b: int) -> int",
+    "description": "Fix the wrong operator in this function that should multiply two numbers."
+  },
+  "BUGFIX-003": {
+    "task_id": "BUGFIX-003",
+    "reference_code": "def sum_list(numbers: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def sum_list(numbers: list) -> int",
+    "description": "Fix the indentation error causing early return."
+  },
+  "BUGFIX-004": {
+    "task_id": "BUGFIX-004",
+    "reference_code": "def find_max(numbers: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def find_max(numbers: list) -> int",
+    "description": "Fix the comparison operator bug in this max function."
+  },
+  "BUGFIX-005": {
+    "task_id": "BUGFIX-005",
+    "reference_code": "def greet(name: str) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def greet(name: str) -> str",
+    "description": "Fix the string concatenation bug."
+  },
+  "BUGFIX-006": {
+    "task_id": "BUGFIX-006",
+    "reference_code": "def is_palindrome(s: str) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def is_palindrome(s: str) -> bool",
+    "description": "Fix the logic error in this palindrome checker."
+  },
+  "BUGFIX-007": {
+    "task_id": "BUGFIX-007",
+    "reference_code": "def binary_search(arr: list, target: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def binary_search(arr: list, target: int) -> int",
+    "description": "Fix the boundary condition bug in binary search."
+  },
+  "BUGFIX-008": {
+    "task_id": "BUGFIX-008",
+    "reference_code": "def fibonacci(n: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def fibonacci(n: int) -> int",
+    "description": "Fix the fibonacci function that has wrong base cases."
+  },
+  "BUGFIX-009": {
+    "task_id": "BUGFIX-009",
+    "reference_code": "def count_occurrences(lst: list, target) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def count_occurrences(lst: list, target) -> int",
+    "description": "Fix the bug in this function that counts occurrences."
+  },
+  "BUGFIX-010": {
+    "task_id": "BUGFIX-010",
+    "reference_code": "def merge_sorted(lst1: list, lst2: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def merge_sorted(lst1: list, lst2: list) -> list",
+    "description": "Fix the merge function that doesn't handle empty lists."
+  },
+  "BUGFIX-011": {
+    "task_id": "BUGFIX-011",
+    "reference_code": "def quicksort(arr: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def quicksort(arr: list) -> list",
+    "description": "Fix the quicksort implementation with multiple bugs."
+  },
+  "BUGFIX-012": {
+    "task_id": "BUGFIX-012",
+    "reference_code": "def dfs(graph: dict, start: str, target: str) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def dfs(graph: dict, start: str, target: str) -> bool",
+    "description": "Fix the depth-first search that has visited tracking bug."
+  },
+  "BUGFIX-013": {
+    "task_id": "BUGFIX-013",
+    "reference_code": "def lru_cache_get(cache: dict, capacity: int, key: str) -> tuple\n    # Reference implementation\n    pass",
+    "function_signature": "def lru_cache_get(cache: dict, capacity: int, key: str) -> tuple",
+    "description": "Fix the LRU cache implementation."
+  },
+  "BUGFIX-014": {
+    "task_id": "BUGFIX-014",
+    "reference_code": "def is_balanced(s: str) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def is_balanced(s: str) -> bool",
+    "description": "Fix the balanced parentheses checker with multiple bracket types."
+  },
+  "BUGFIX-015": {
+    "task_id": "BUGFIX-015",
+    "reference_code": "def rotate_90(matrix: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def rotate_90(matrix: list) -> list",
+    "description": "Fix the matrix rotation function."
+  },
+  "BUGFIX-016": {
+    "task_id": "BUGFIX-016",
+    "reference_code": "def is_prime(n: int) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def is_prime(n: int) -> bool",
+    "description": "Fix the prime number checker."
+  },
+  "BUGFIX-017": {
+    "task_id": "BUGFIX-017",
+    "reference_code": "def reverse_words(s: str) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def reverse_words(s: str) -> str",
+    "description": "Fix the string reversal that should reverse words, not characters."
+  },
+  "BUGFIX-018": {
+    "task_id": "BUGFIX-018",
+    "reference_code": "def average(numbers: list) -> float\n    # Reference implementation\n    pass",
+    "function_signature": "def average(numbers: list) -> float",
+    "description": "Fix the average calculation with integer division bug."
+  },
+  "BUGFIX-019": {
+    "task_id": "BUGFIX-019",
+    "reference_code": "def flatten(nested: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def flatten(nested: list) -> list",
+    "description": "Fix the flatten nested list function."
+  },
+  "BUGFIX-020": {
+    "task_id": "BUGFIX-020",
+    "reference_code": "def topological_sort(graph: dict) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def topological_sort(graph: dict) -> list",
+    "description": "Fix the topological sort with cycle detection."
+  },
+  "REFACTOR-001": {
+    "task_id": "REFACTOR-001",
+    "reference_code": "def print_numbers() -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def print_numbers() -> list",
+    "description": "Refactor this repetitive code to use a loop."
+  },
+  "REFACTOR-002": {
+    "task_id": "REFACTOR-002",
+    "reference_code": "def square_numbers(numbers: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def square_numbers(numbers: list) -> list",
+    "description": "Refactor to use list comprehension instead of loop."
+  },
+  "REFACTOR-003": {
+    "task_id": "REFACTOR-003",
+    "reference_code": "def validate_user(user: dict) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def validate_user(user: dict) -> bool",
+    "description": "Refactor nested if statements to use early returns."
+  },
+  "REFACTOR-004": {
+    "task_id": "REFACTOR-004",
+    "reference_code": "def format_greeting(name: str, age: int) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def format_greeting(name: str, age: int) -> str",
+    "description": "Refactor to use f-string instead of concatenation."
+  },
+  "REFACTOR-005": {
+    "task_id": "REFACTOR-005",
+    "reference_code": "def process_data(data: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def process_data(data: list) -> list",
+    "description": "Refactor to extract repeated logic into a helper function."
+  },
+  "REFACTOR-006": {
+    "task_id": "REFACTOR-006",
+    "reference_code": "def get_day_name(day_num: int) -> str\n    # Reference implementation\n    pass",
+    "function_signature": "def get_day_name(day_num: int) -> str",
+    "description": "Refactor using dict instead of multiple if-elif statements."
+  },
+  "REFACTOR-007": {
+    "task_id": "REFACTOR-007",
+    "reference_code": "def find_index(lst: list, target) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def find_index(lst: list, target) -> int",
+    "description": "Refactor to use enumerate instead of manual index tracking."
+  },
+  "REFACTOR-008": {
+    "task_id": "REFACTOR-008",
+    "reference_code": "def combine_lists(list1: list, list2: list) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def combine_lists(list1: list, list2: list) -> list",
+    "description": "Refactor to use zip instead of index-based iteration."
+  },
+  "REFACTOR-009": {
+    "task_id": "REFACTOR-009",
+    "reference_code": "def count_chars(s: str) -> dict\n    # Reference implementation\n    pass",
+    "function_signature": "def count_chars(s: str) -> dict",
+    "description": "Refactor to use collections.Counter instead of manual counting."
+  },
+  "REFACTOR-010": {
+    "task_id": "REFACTOR-010",
+    "reference_code": "def get_even_squares(n: int) -> list\n    # Reference implementation\n    pass",
+    "function_signature": "def get_even_squares(n: int) -> list",
+    "description": "Refactor to use generator for memory efficiency."
+  },
+  "REFACTOR-011": {
+    "task_id": "REFACTOR-011",
+    "reference_code": "def rectangle_area(width: int, height: int) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def rectangle_area(width: int, height: int) -> int",
+    "description": "Refactor class to use property decorators instead of getters/setters."
+  },
+  "REFACTOR-012": {
+    "task_id": "REFACTOR-012",
+    "reference_code": "def multiply_all(numbers: list) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def multiply_all(numbers: list) -> int",
+    "description": "Refactor to use functools.reduce for aggregation."
+  },
+  "REFACTOR-013": {
+    "task_id": "REFACTOR-013",
+    "reference_code": "def process_order(order: dict) -> int\n    # Reference implementation\n    pass",
+    "function_signature": "def process_order(order: dict) -> int",
+    "description": "Refactor deeply nested code using early returns and guard clauses."
+  },
+  "REFACTOR-014": {
+    "task_id": "REFACTOR-014",
+    "reference_code": "def has_negative(numbers: list) -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def has_negative(numbers: list) -> bool",
+    "description": "Refactor to use any() and all() built-in functions."
+  },
+  "REFACTOR-015": {
+    "task_id": "REFACTOR-015",
+    "reference_code": "def group_by_length(words: list) -> dict\n    # Reference implementation\n    pass",
+    "function_signature": "def group_by_length(words: list) -> dict",
+    "description": "Refactor to use defaultdict for cleaner grouping logic."
+  },
+  "TESTGEN-001": {
+    "task_id": "TESTGEN-001",
+    "reference_code": "def test_add() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_add() -> bool",
+    "description": "Write a test function for this add function. Return a function that tests add(2,3)==5 and add(-1,1)==0."
+  },
+  "TESTGEN-002": {
+    "task_id": "TESTGEN-002",
+    "reference_code": "def test_is_even() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_is_even() -> bool",
+    "description": "Write a test function that verifies is_even correctly identifies even and odd numbers."
+  },
+  "TESTGEN-003": {
+    "task_id": "TESTGEN-003",
+    "reference_code": "def test_factorial() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_factorial() -> bool",
+    "description": "Write a test function for the factorial function including edge case n=0."
+  },
+  "TESTGEN-004": {
+    "task_id": "TESTGEN-004",
+    "reference_code": "def test_reverse_string() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_reverse_string() -> bool",
+    "description": "Write a test function for string reversal."
+  },
+  "TESTGEN-005": {
+    "task_id": "TESTGEN-005",
+    "reference_code": "def test_find_max() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_find_max() -> bool",
+    "description": "Write a test function for list max finder including empty list edge case."
+  },
+  "TESTGEN-006": {
+    "task_id": "TESTGEN-006",
+    "reference_code": "def test_is_palindrome() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_is_palindrome() -> bool",
+    "description": "Write comprehensive tests for this palindrome checker including spaces and case."
+  },
+  "TESTGEN-007": {
+    "task_id": "TESTGEN-007",
+    "reference_code": "def test_binary_search() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_binary_search() -> bool",
+    "description": "Write tests for binary search including not-found and boundary cases."
+  },
+  "TESTGEN-008": {
+    "task_id": "TESTGEN-008",
+    "reference_code": "def test_fizzbuzz() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_fizzbuzz() -> bool",
+    "description": "Write tests for FizzBuzz function."
+  },
+  "TESTGEN-009": {
+    "task_id": "TESTGEN-009",
+    "reference_code": "def test_stack() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_stack() -> bool",
+    "description": "Write tests for this stack implementation including empty stack cases."
+  },
+  "TESTGEN-010": {
+    "task_id": "TESTGEN-010",
+    "reference_code": "def test_merge_sorted() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_merge_sorted() -> bool",
+    "description": "Write tests for merge sorted lists function."
+  },
+  "TESTGEN-011": {
+    "task_id": "TESTGEN-011",
+    "reference_code": "def test_lru_cache() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_lru_cache() -> bool",
+    "description": "Write comprehensive tests for this LRU Cache implementation."
+  },
+  "TESTGEN-012": {
+    "task_id": "TESTGEN-012",
+    "reference_code": "def test_bfs() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_bfs() -> bool",
+    "description": "Write tests for graph BFS including disconnected nodes."
+  },
+  "TESTGEN-013": {
+    "task_id": "TESTGEN-013",
+    "reference_code": "def test_is_valid_expression() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_is_valid_expression() -> bool",
+    "description": "Write tests for this expression validator with nested brackets."
+  },
+  "TESTGEN-014": {
+    "task_id": "TESTGEN-014",
+    "reference_code": "def test_rate_limiter() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_rate_limiter() -> bool",
+    "description": "Write tests for this rate limiter class."
+  },
+  "TESTGEN-015": {
+    "task_id": "TESTGEN-015",
+    "reference_code": "def test_trie() -> bool\n    # Reference implementation\n    pass",
+    "function_signature": "def test_trie() -> bool",
+    "description": "Write tests for this trie (prefix tree) implementation."
   }
 }

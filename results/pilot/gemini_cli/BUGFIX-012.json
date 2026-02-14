@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-012",
+  "agent": "gemini_cli",
+  "category": "bug_fixing",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:18:51.730350",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node == target:\n            return True\n        if node not in visited:\n            visited.add(node)\n            for neighbor in graph.get(node, []):\n                if neighbor not in visited:\n                    stack.append(neighbor)\n    return False\n```\n",
+      "content": "def dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node == target:\n            return True\n        if node not in visited:\n            visited.add(node)\n            for neighbor in graph.get(node, []):\n                if neighbor not in visited:\n                    stack.append(neighbor)\n    return False",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 15267.184972763062
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node == target:\n            return True\n        if node not in visited:  # Check if node has not been visited\n            visited.add(node)\n            for neighbor in graph.get(node, []):\n                if neighbor not in visited:  # Only add unvisited neighbors to the stack\n                    stack.append(neighbor)\n    return False\n```\n",
+      "content": "def dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node == target:\n            return True\n        if node not in visited:  # Check if node has not been visited\n            visited.add(node)\n            for neighbor in graph.get(node, []):\n                if neighbor not in visited:  # Only add unvisited neighbors to the stack\n                    stack.append(neighbor)\n    return False",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 10730.080127716064
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node not in visited:\n            visited.add(node)\n            if node == target:\n                return True\n            for neighbor in graph.get(node, []):\n                stack.append(neighbor)\n    return False\n```\n",
+      "content": "def dfs(graph, start, target):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node not in visited:\n            visited.add(node)\n            if node == target:\n                return True\n            for neighbor in graph.get(node, []):\n                stack.append(neighbor)\n    return False",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 19209.568738937378
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 15068.944613138834,
+    "median_ms": 15267.184972763062,
+    "min_ms": 10730.080127716064,
+    "max_ms": 19209.568738937378
+  }
+}

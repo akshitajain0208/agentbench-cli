@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-008",
+  "agent": "claude_code",
+  "category": "bug_fixing",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T03:49:26.418488",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef fibonacci(n: int) -> int:\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n - 1) + fibonacci(n - 2)\n```\n",
+      "content": "def fibonacci(n: int) -> int:\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n - 1) + fibonacci(n - 2)",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 5616.081237792969
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef fibonacci(n: int) -> int:\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n - 1) + fibonacci(n - 2)\n```\n",
+      "content": "def fibonacci(n: int) -> int:\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n - 1) + fibonacci(n - 2)",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 6851.822853088379
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef fibonacci(n: int) -> int:\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n - 1) + fibonacci(n - 2)\n```\n",
+      "content": "def fibonacci(n: int) -> int:\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n - 1) + fibonacci(n - 2)",
+      "passed": true,
+      "test_results": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 5719.979047775269
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 6062.627712885539,
+    "median_ms": 5719.979047775269,
+    "min_ms": 5616.081237792969,
+    "max_ms": 6851.822853088379
+  }
+}

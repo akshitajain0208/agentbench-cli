@@ -1,0 +1,71 @@
+{
+  "task_id": "REFACTOR-015",
+  "agent": "gemini_cli",
+  "category": "refactoring",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:36:50.189841",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\nfrom collections import defaultdict\n\ndef group_by_length(words: list) -> dict:\n    groups = defaultdict(list)\n    for word in words:\n        groups[len(word)].append(word)\n    return dict(groups)\n```\n",
+      "content": "from collections import defaultdict\n\ndef group_by_length(words: list) -> dict:\n    groups = defaultdict(list)\n    for word in words:\n        groups[len(word)].append(word)\n    return dict(groups)",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected {'1': ['a', 'e'], '2': ['bb', 'dd'], '3': ['ccc']}, got {1: ['a', 'e'], 2: ['bb', 'dd'], 3: ['ccc']}",
+          "Test 1: expected {'5': ['hello', 'world']}, got {5: ['hello', 'world']}"
+        ],
+        "success": false
+      },
+      "latency_ms": 9832.62586593628
+    },
+    {
+      "run": 2,
+      "output": "```python\nfrom collections import defaultdict\n\ndef group_by_length(words: list) -> dict:\n    groups = defaultdict(list)\n    for word in words:\n        groups[len(word)].append(word)\n    return dict(groups)\n```\n",
+      "content": "from collections import defaultdict\n\ndef group_by_length(words: list) -> dict:\n    groups = defaultdict(list)\n    for word in words:\n        groups[len(word)].append(word)\n    return dict(groups)",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected {'1': ['a', 'e'], '2': ['bb', 'dd'], '3': ['ccc']}, got {1: ['a', 'e'], 2: ['bb', 'dd'], 3: ['ccc']}",
+          "Test 1: expected {'5': ['hello', 'world']}, got {5: ['hello', 'world']}"
+        ],
+        "success": false
+      },
+      "latency_ms": 11368.981122970581
+    },
+    {
+      "run": 3,
+      "output": "```python\nfrom collections import defaultdict\n\ndef group_by_length(words: list) -> dict:\n    groups = defaultdict(list)\n    for word in words:\n        groups[len(word)].append(word)\n    return dict(groups)\n```\n",
+      "content": "from collections import defaultdict\n\ndef group_by_length(words: list) -> dict:\n    groups = defaultdict(list)\n    for word in words:\n        groups[len(word)].append(word)\n    return dict(groups)",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 2,
+        "total": 2,
+        "errors": [
+          "Test 0: expected {'1': ['a', 'e'], '2': ['bb', 'dd'], '3': ['ccc']}, got {1: ['a', 'e'], 2: ['bb', 'dd'], 3: ['ccc']}",
+          "Test 1: expected {'5': ['hello', 'world']}, got {5: ['hello', 'world']}"
+        ],
+        "success": false
+      },
+      "latency_ms": 10584.811925888062
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 10595.472971598307,
+    "median_ms": 10584.811925888062,
+    "min_ms": 9832.62586593628,
+    "max_ms": 11368.981122970581
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "BUGFIX-020",
+  "agent": "codex_cli",
+  "category": "bug_fixing",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:10:02.528473",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef topological_sort(graph: dict) -> list:\n    visited = set()\n    visiting = set()\n    result = []\n\n    def dfs(node):\n        if node in visited:\n            return\n        if node in visiting:\n            raise ValueError(\"Graph contains a cycle\")\n        visiting.add(node)\n        for neighbor in graph.get(node, []):\n            dfs(neighbor)\n        visiting.remove(node)\n        visited.add(node)\n        result.append(node)\n\n    all_nodes = set(graph.keys())\n    for neighbors in graph.values():\n        all_nodes.update(neighbors)\n\n    for node in all_nodes:\n        if node not in visited:\n            dfs(node)\n\n    return result[::-1]\n```\n",
+      "content": "def topological_sort(graph: dict) -> list:\n    visited = set()\n    visiting = set()\n    result = []\n\n    def dfs(node):\n        if node in visited:\n            return\n        if node in visiting:\n            raise ValueError(\"Graph contains a cycle\")\n        visiting.add(node)\n        for neighbor in graph.get(node, []):\n            dfs(neighbor)\n        visiting.remove(node)\n        visited.add(node)\n        result.append(node)\n\n    all_nodes = set(graph.keys())\n    for neighbors in graph.values():\n        all_nodes.update(neighbors)\n\n    for node in all_nodes:\n        if node not in visited:\n            dfs(node)\n\n    return result[::-1]",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 7900.991916656494
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef topological_sort(graph: dict) -> list:\n    visited = set()\n    visiting = set()\n    result = []\n\n    def dfs(node):\n        if node in visiting:\n            raise ValueError(\"Cycle detected\")\n        if node in visited:\n            return\n        visiting.add(node)\n        for neighbor in graph.get(node, []):\n            dfs(neighbor)\n        visiting.remove(node)\n        visited.add(node)\n        result.append(node)\n\n    all_nodes = set(graph.keys())\n    for neighbors in graph.values():\n        all_nodes.update(neighbors)\n\n    for node in all_nodes:\n        if node not in visited:\n            dfs(node)\n\n    return result[::-1]\n```\n",
+      "content": "def topological_sort(graph: dict) -> list:\n    visited = set()\n    visiting = set()\n    result = []\n\n    def dfs(node):\n        if node in visiting:\n            raise ValueError(\"Cycle detected\")\n        if node in visited:\n            return\n        visiting.add(node)\n        for neighbor in graph.get(node, []):\n            dfs(neighbor)\n        visiting.remove(node)\n        visited.add(node)\n        result.append(node)\n\n    all_nodes = set(graph.keys())\n    for neighbors in graph.values():\n        all_nodes.update(neighbors)\n\n    for node in all_nodes:\n        if node not in visited:\n            dfs(node)\n\n    return result[::-1]",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 4362.878084182739
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef topological_sort(graph: dict) -> list:\n    visited = set()\n    visiting = set()\n    result = []\n\n    def dfs(node):\n        if node in visited:\n            return\n        if node in visiting:\n            raise ValueError(\"Cycle detected in graph\")\n        visiting.add(node)\n        for neighbor in graph.get(node, []):\n            dfs(neighbor)\n        visiting.remove(node)\n        visited.add(node)\n        result.append(node)\n\n    for node in graph:\n        if node not in visited:\n            dfs(node)\n\n    return result[::-1]\n```\n",
+      "content": "def topological_sort(graph: dict) -> list:\n    visited = set()\n    visiting = set()\n    result = []\n\n    def dfs(node):\n        if node in visited:\n            return\n        if node in visiting:\n            raise ValueError(\"Cycle detected in graph\")\n        visiting.add(node)\n        for neighbor in graph.get(node, []):\n            dfs(neighbor)\n        visiting.remove(node)\n        visited.add(node)\n        result.append(node)\n\n    for node in graph:\n        if node not in visited:\n            dfs(node)\n\n    return result[::-1]",
+      "passed": true,
+      "test_results": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 5073.905229568481
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 5779.258410135905,
+    "median_ms": 5073.905229568481,
+    "min_ms": 4362.878084182739,
+    "max_ms": 7900.991916656494
+  }
+}

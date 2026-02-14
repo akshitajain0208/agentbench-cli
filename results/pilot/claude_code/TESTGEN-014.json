@@ -1,0 +1,68 @@
+{
+  "task_id": "TESTGEN-014",
+  "agent": "claude_code",
+  "category": "test_generation",
+  "difficulty": "hard",
+  "timestamp": "2026-02-14T04:05:43.684561",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef test_rate_limiter() -> bool:\n    try:\n        # Test 1: Basic allow within limit\n        rl = RateLimiter(3, 10)\n        assert rl.is_allowed(1) == True\n        assert rl.is_allowed(2) == True\n        assert rl.is_allowed(3) == True\n\n        # Test 2: Deny when limit reached\n        assert rl.is_allowed(4) == False\n\n        # Test 3: Allow after time window expires\n        assert rl.is_allowed(12) == True\n\n        # Test 4: Single request limit\n        rl2 = RateLimiter(1, 5)\n        assert rl2.is_allowed(0) == True\n        assert rl2.is_allowed(1) == False\n        assert rl2.is_allowed(4) == False\n        assert rl2.is_allowed(5) == True\n\n        # Test 5: All requests expire at once\n        rl3 = RateLimiter(2, 10)\n        assert rl3.is_allowed(0) == True\n        assert rl3.is_allowed(1) == True\n        assert rl3.is_allowed(2) == False\n        assert rl3.is_allowed(100) == True\n        assert rl3.is_allowed(101) == True\n        assert rl3.is_allowed(102) == False\n\n        # Test 6: Requests list is cleaned up properly\n        rl4 = RateLimiter(2, 5)\n        rl4.is_allowed(1)\n        rl4.is_allowed(2)\n        rl4.is_allowed(10)\n        assert len(rl4.requests) == 1\n\n        # Test 7: Boundary - exactly at time window edge\n        rl5 = RateLimiter(1, 10)\n        assert rl5.is_allowed(0) == True\n        assert rl5.is_allowed(10) == True  # timestamp - t == time_window, not < time_window\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False\n```\n\nWait, I have a typo. Let me fix that:\n\n```python\ndef test_rate_limiter() -> bool:\n    try:\n        # Test 1: Basic allow within limit\n        rl = RateLimiter(3, 10)\n        assert rl.is_allowed(1) == True\n        assert rl.is_allowed(2) == True\n        assert rl.is_allowed(3) == True\n\n        # Test 2: Deny when limit reached\n        assert rl.is_allowed(4) == False\n\n        # Test 3: Allow after time window expires\n        assert rl.is_allowed(12) ==",
+      "content": "def test_rate_limiter() -> bool:\n    try:\n        # Test 1: Basic allow within limit\n        rl = RateLimiter(3, 10)\n        assert rl.is_allowed(1) == True\n        assert rl.is_allowed(2) == True\n        assert rl.is_allowed(3) == True\n\n        # Test 2: Deny when limit reached\n        assert rl.is_allowed(4) == False\n\n        # Test 3: Allow after time window expires\n        assert rl.is_allowed(12) == True\n\n        # Test 4: Single request limit\n        rl2 = RateLimiter(1, 5)\n        assert rl2.is_allowed(0) == True\n        assert rl2.is_allowed(1) == False\n        assert rl2.is_allowed(4) == False\n        assert rl2.is_allowed(5) == True\n\n        # Test 5: All requests expire at once\n        rl3 = RateLimiter(2, 10)\n        assert rl3.is_allowed(0) == True\n        assert rl3.is_allowed(1) == True\n        assert rl3.is_allowed(2) == False\n        assert rl3.is_allowed(100) == True\n        assert rl3.is_allowed(101) == True\n        assert rl3.is_allowed(102) == False\n\n        # Test 6: Requests list is cleaned up properly\n        rl4 = RateLimiter(2, 5)\n        rl4.is_allowed(1)\n        rl4.is_allowed(2)\n        rl4.is_allowed(10)\n        assert len(rl4.requests) == 1\n\n        # Test 7: Boundary - exactly at time window edge\n        rl5 = RateLimiter(1, 10)\n        assert rl5.is_allowed(0) == True\n        assert rl5.is_allowed(10) == True  # timestamp - t == time_window, not < time_window\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: expected True, got False"
+        ],
+        "success": false
+      },
+      "latency_ms": 15228.325843811035
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef test_rate_limiter() -> bool:\n    try:\n        # Test 1: Basic allow within limit\n        rl = RateLimiter(3, 10)\n        assert rl.is_allowed(1) == True\n        assert rl.is_allowed(2) == True\n        assert rl.is_allowed(3) == True\n\n        # Test 2: Deny when limit reached\n        assert rl.is_allowed(4) == False\n\n        # Test 3: Allow after time window expires\n        assert rl.is_allowed(11) == True  # timestamp 1 expires (11 - 1 >= 10)\n\n        # Test 4: Single request limit\n        rl2 = RateLimiter(1, 5)\n        assert rl2.is_allowed(0) == True\n        assert rl2.is_allowed(1) == False\n        assert rl2.is_allowed(4) == False\n        assert rl2.is_allowed(5) == True  # timestamp 0 expires (5 - 0 >= 5)\n\n        # Test 5: All requests expire at once\n        rl3 = RateLimiter(2, 3)\n        assert rl3.is_allowed(0) == True\n        assert rl3.is_allowed(1) == True\n        assert rl3.is_allowed(2) == False\n        assert rl3.is_allowed(10) == True  # all expired\n        assert rl3.is_allowed(11) == True\n\n        # Test 6: Requests list is properly cleaned up\n        rl4 = RateLimiter(2, 5)\n        rl4.is_allowed(1)\n        rl4.is_allowed(2)\n        rl4.is_allowed(100)  # both old ones should be purged\n        assert len(rl4.requests) == 1\n\n        # Test 7: Boundary - exact time window edge\n        rl5 = RateLimiter(1, 10)\n        assert rl5.is_allowed(0) == True\n        assert rl5.is_allowed(9) == False  # 9 - 0 = 9 < 10, not expired\n        assert rl5.is_allowed(10) == True  # 10 - 0 = 10, not < 10, so expired\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False\n```\n\nWait, I have a typo. Let me fix that:\n\n```python\ndef test_rate_limiter() -> bool:\n    try:\n        # Test 1: Basic allow within limit\n        rl = RateLimiter(3, 10)\n        assert rl.is_allowed(1) == True\n        assert rl.is_allowed(2) == True\n        assert rl.is_allowed(3) == True\n\n        # Test 2: Deny when limit reac",
+      "content": "def test_rate_limiter() -> bool:\n    try:\n        # Test 1: Basic allow within limit\n        rl = RateLimiter(3, 10)\n        assert rl.is_allowed(1) == True\n        assert rl.is_allowed(2) == True\n        assert rl.is_allowed(3) == True\n\n        # Test 2: Deny when limit reached\n        assert rl.is_allowed(4) == False\n\n        # Test 3: Allow after time window expires\n        assert rl.is_allowed(11) == True  # timestamp 1 expires (11 - 1 >= 10)\n\n        # Test 4: Single request limit\n        rl2 = RateLimiter(1, 5)\n        assert rl2.is_allowed(0) == True\n        assert rl2.is_allowed(1) == False\n        assert rl2.is_allowed(4) == False\n        assert rl2.is_allowed(5) == True  # timestamp 0 expires (5 - 0 >= 5)\n\n        # Test 5: All requests expire at once\n        rl3 = RateLimiter(2, 3)\n        assert rl3.is_allowed(0) == True\n        assert rl3.is_allowed(1) == True\n        assert rl3.is_allowed(2) == False\n        assert rl3.is_allowed(10) == True  # all expired\n        assert rl3.is_allowed(11) == True\n\n        # Test 6: Requests list is properly cleaned up\n        rl4 = RateLimiter(2, 5)\n        rl4.is_allowed(1)\n        rl4.is_allowed(2)\n        rl4.is_allowed(100)  # both old ones should be purged\n        assert len(rl4.requests) == 1\n\n        # Test 7: Boundary - exact time window edge\n        rl5 = RateLimiter(1, 10)\n        assert rl5.is_allowed(0) == True\n        assert rl5.is_allowed(9) == False  # 9 - 0 = 9 < 10, not expired\n        assert rl5.is_allowed(10) == True  # 10 - 0 = 10, not < 10, so expired\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: expected True, got False"
+        ],
+        "success": false
+      },
+      "latency_ms": 16875.993728637695
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef test_rate_limiter() -> bool:\n    try:\n        # Test 1: Basic allowance within limit\n        rl = RateLimiter(3, 10)\n        assert rl.is_allowed(1) == True\n        assert rl.is_allowed(2) == True\n        assert rl.is_allowed(3) == True\n\n        # Test 2: Reject when limit reached\n        assert rl.is_allowed(4) == False\n\n        # Test 3: Allow after time window expires\n        assert rl.is_allowed(12) == True  # timestamp 1 is now outside window\n\n        # Test 4: Single request limit\n        rl2 = RateLimiter(1, 5)\n        assert rl2.is_allowed(0) == True\n        assert rl2.is_allowed(1) == False\n        assert rl2.is_allowed(4) == False\n        assert rl2.is_allowed(5) == True  # timestamp 0 is now outside window\n\n        # Test 5: All requests expire at once\n        rl3 = RateLimiter(2, 5)\n        assert rl3.is_allowed(0) == True\n        assert rl3.is_allowed(1) == True\n        assert rl3.is_allowed(2) == False\n        assert rl3.is_allowed(100) == True\n        assert rl3.is_allowed(101) == True\n        assert rl3.is_allowed(102) == False\n\n        # Test 6: Requests list is properly cleaned up\n        rl4 = RateLimiter(2, 10)\n        rl4.is_allowed(1)\n        rl4.is_allowed(2)\n        rl4.is_allowed(50)\n        assert len(rl4.requests) == 1\n\n        # Test 7: Boundary - request exactly at window edge is excluded\n        rl5 = RateLimiter(1, 10)\n        assert rl5.is_allowed(0) == True\n        assert rl5.is_allowed(10) == True  # 10 - 0 = 10, not < 10, so old one removed\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False\n```\n\nWait, let me fix the typo:\n\n```python\ndef test_rate_limiter() -> bool:\n    try:\n        # Test 1: Basic allowance within limit\n        rl = RateLimiter(3, 10)\n        assert rl.is_allowed(1) == True\n        assert rl.is_allowed(2) == True\n        assert rl.is_allowed(3) == True\n\n        # Test 2: Reject when limit reached\n        assert rl.is_allowed(4) == False\n\n ",
+      "content": "def test_rate_limiter() -> bool:\n    try:\n        # Test 1: Basic allowance within limit\n        rl = RateLimiter(3, 10)\n        assert rl.is_allowed(1) == True\n        assert rl.is_allowed(2) == True\n        assert rl.is_allowed(3) == True\n\n        # Test 2: Reject when limit reached\n        assert rl.is_allowed(4) == False\n\n        # Test 3: Allow after time window expires\n        assert rl.is_allowed(12) == True  # timestamp 1 is now outside window\n\n        # Test 4: Single request limit\n        rl2 = RateLimiter(1, 5)\n        assert rl2.is_allowed(0) == True\n        assert rl2.is_allowed(1) == False\n        assert rl2.is_allowed(4) == False\n        assert rl2.is_allowed(5) == True  # timestamp 0 is now outside window\n\n        # Test 5: All requests expire at once\n        rl3 = RateLimiter(2, 5)\n        assert rl3.is_allowed(0) == True\n        assert rl3.is_allowed(1) == True\n        assert rl3.is_allowed(2) == False\n        assert rl3.is_allowed(100) == True\n        assert rl3.is_allowed(101) == True\n        assert rl3.is_allowed(102) == False\n\n        # Test 6: Requests list is properly cleaned up\n        rl4 = RateLimiter(2, 10)\n        rl4.is_allowed(1)\n        rl4.is_allowed(2)\n        rl4.is_allowed(50)\n        assert len(rl4.requests) == 1\n\n        # Test 7: Boundary - request exactly at window edge is excluded\n        rl5 = RateLimiter(1, 10)\n        assert rl5.is_allowed(0) == True\n        assert rl5.is_allowed(10) == True  # 10 - 0 = 10, not < 10, so old one removed\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: expected True, got False"
+        ],
+        "success": false
+      },
+      "latency_ms": 16135.48994064331
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 16079.936504364014,
+    "median_ms": 16135.48994064331,
+    "min_ms": 15228.325843811035,
+    "max_ms": 16875.993728637695
+  }
+}

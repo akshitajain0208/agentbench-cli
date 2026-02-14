@@ -1,0 +1,68 @@
+{
+  "task_id": "TESTGEN-007",
+  "agent": "claude_code",
+  "category": "test_generation",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:00:51.484685",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef test_binary_search() -> bool:\n    try:\n        # Basic found cases\n        assert binary_search([1, 2, 3, 4, 5], 3) == 2\n        assert binary_search([1, 2, 3, 4, 5], 1) == 0\n        assert binary_search([1, 2, 3, 4, 5], 5) == 4\n\n        # Not-found cases\n        assert binary_search([1, 2, 3, 4, 5], 0) == -1\n        assert binary_search([1, 2, 3, 4, 5], 6) == -1\n        assert binary_search([1, 2, 3, 4, 5], -1) == -1\n\n        # Boundary cases\n        assert binary_search([], 1) == -1\n        assert binary_search([1], 1) == 0\n        assert binary_search([1], 0) == -1\n        assert binary_search([1], 2) == -1\n\n        # Two-element array\n        assert binary_search([1, 2], 1) == 0\n        assert binary_search([1, 2], 2) == 1\n        assert binary_search([1, 2], 3) == -1\n\n        # Duplicates (returns any valid index)\n        result = binary_search([1, 2, 2, 2, 3], 2)\n        assert result in (1, 2, 3)\n\n        # Large array boundaries\n        arr = list(range(0, 1000, 2))\n        assert binary_search(arr, 0) == 0\n        assert binary_search(arr, 998) == len(arr) - 1\n        assert binary_search(arr, 1) == -1\n\n        # Negative numbers\n        assert binary_search([-5, -3, -1, 0, 2], -3) == 1\n        assert binary_search([-5, -3, -1, 0, 2], -4) == -1\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False\n```\n\nWait, I have a typo. Let me provide the corrected version:\n\n```python\ndef test_binary_search() -> bool:\n    try:\n        # Basic found cases\n        assert binary_search([1, 2, 3, 4, 5], 3) == 2\n        assert binary_search([1, 2, 3, 4, 5], 1) == 0\n        assert binary_search([1, 2, 3, 4, 5], 5) == 4\n\n        # Not-found cases\n        assert binary_search([1, 2, 3, 4, 5], 0) == -1\n        assert binary_search([1, 2, 3, 4, 5], 6) == -1\n        assert binary_search([1, 2, 3, 4, 5], -1) == -1\n\n        # Boundary cases\n        assert binary_search([], 1) == -1\n        assert binary_search(",
+      "content": "def test_binary_search() -> bool:\n    try:\n        # Basic found cases\n        assert binary_search([1, 2, 3, 4, 5], 3) == 2\n        assert binary_search([1, 2, 3, 4, 5], 1) == 0\n        assert binary_search([1, 2, 3, 4, 5], 5) == 4\n\n        # Not-found cases\n        assert binary_search([1, 2, 3, 4, 5], 0) == -1\n        assert binary_search([1, 2, 3, 4, 5], 6) == -1\n        assert binary_search([1, 2, 3, 4, 5], -1) == -1\n\n        # Boundary cases\n        assert binary_search([], 1) == -1\n        assert binary_search([1], 1) == 0\n        assert binary_search([1], 0) == -1\n        assert binary_search([1], 2) == -1\n\n        # Two-element array\n        assert binary_search([1, 2], 1) == 0\n        assert binary_search([1, 2], 2) == 1\n        assert binary_search([1, 2], 3) == -1\n\n        # Duplicates (returns any valid index)\n        result = binary_search([1, 2, 2, 2, 3], 2)\n        assert result in (1, 2, 3)\n\n        # Large array boundaries\n        arr = list(range(0, 1000, 2))\n        assert binary_search(arr, 0) == 0\n        assert binary_search(arr, 998) == len(arr) - 1\n        assert binary_search(arr, 1) == -1\n\n        # Negative numbers\n        assert binary_search([-5, -3, -1, 0, 2], -3) == 1\n        assert binary_search([-5, -3, -1, 0, 2], -4) == -1\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: expected True, got False"
+        ],
+        "success": false
+      },
+      "latency_ms": 14927.391052246094
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef test_binary_search() -> bool:\n    try:\n        # Basic found cases\n        assert binary_search([1, 2, 3, 4, 5], 3) == 2\n        assert binary_search([1, 2, 3, 4, 5], 1) == 0\n        assert binary_search([1, 2, 3, 4, 5], 5) == 4\n\n        # Not-found cases\n        assert binary_search([1, 2, 3, 4, 5], 0) == -1\n        assert binary_search([1, 2, 3, 4, 5], 6) == -1\n        assert binary_search([1, 2, 3, 4, 5], -1) == -1\n\n        # Boundary cases\n        assert binary_search([], 1) == -1\n        assert binary_search([1], 1) == 0\n        assert binary_search([1], 0) == -1\n        assert binary_search([1], 2) == -1\n\n        # Two-element array\n        assert binary_search([1, 2], 1) == 0\n        assert binary_search([1, 2], 2) == 1\n        assert binary_search([1, 2], 3) == -1\n\n        # Duplicates (returns any valid index)\n        result = binary_search([1, 2, 2, 2, 3], 2)\n        assert result in (1, 2, 3)\n\n        # Large array\n        large = list(range(0, 1000, 2))\n        assert binary_search(large, 0) == 0\n        assert binary_search(large, 998) == 499\n        assert binary_search(large, 500) == 250\n        assert binary_search(large, 1) == -1\n\n        # Negative numbers\n        assert binary_search([-5, -3, -1, 0, 2], -3) == 1\n        assert binary_search([-5, -3, -1, 0, 2], -4) == -1\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False\n```\n\nWait, I have a typo. Here's the corrected version:\n\n```python\ndef test_binary_search() -> bool:\n    try:\n        # Basic found cases\n        assert binary_search([1, 2, 3, 4, 5], 3) == 2\n        assert binary_search([1, 2, 3, 4, 5], 1) == 0\n        assert binary_search([1, 2, 3, 4, 5], 5) == 4\n\n        # Not-found cases\n        assert binary_search([1, 2, 3, 4, 5], 0) == -1\n        assert binary_search([1, 2, 3, 4, 5], 6) == -1\n        assert binary_search([1, 2, 3, 4, 5], -1) == -1\n\n        # Boundary cases\n        assert binary_search([], 1) == -1\n ",
+      "content": "def test_binary_search() -> bool:\n    try:\n        # Basic found cases\n        assert binary_search([1, 2, 3, 4, 5], 3) == 2\n        assert binary_search([1, 2, 3, 4, 5], 1) == 0\n        assert binary_search([1, 2, 3, 4, 5], 5) == 4\n\n        # Not-found cases\n        assert binary_search([1, 2, 3, 4, 5], 0) == -1\n        assert binary_search([1, 2, 3, 4, 5], 6) == -1\n        assert binary_search([1, 2, 3, 4, 5], -1) == -1\n\n        # Boundary cases\n        assert binary_search([], 1) == -1\n        assert binary_search([1], 1) == 0\n        assert binary_search([1], 0) == -1\n        assert binary_search([1], 2) == -1\n\n        # Two-element array\n        assert binary_search([1, 2], 1) == 0\n        assert binary_search([1, 2], 2) == 1\n        assert binary_search([1, 2], 3) == -1\n\n        # Duplicates (returns any valid index)\n        result = binary_search([1, 2, 2, 2, 3], 2)\n        assert result in (1, 2, 3)\n\n        # Large array\n        large = list(range(0, 1000, 2))\n        assert binary_search(large, 0) == 0\n        assert binary_search(large, 998) == 499\n        assert binary_search(large, 500) == 250\n        assert binary_search(large, 1) == -1\n\n        # Negative numbers\n        assert binary_search([-5, -3, -1, 0, 2], -3) == 1\n        assert binary_search([-5, -3, -1, 0, 2], -4) == -1\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: expected True, got False"
+        ],
+        "success": false
+      },
+      "latency_ms": 14861.731052398682
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef test_binary_search() -> bool:\n    try:\n        # Basic found cases\n        assert binary_search([1, 2, 3, 4, 5], 3) == 2\n        assert binary_search([1, 2, 3, 4, 5], 1) == 0\n        assert binary_search([1, 2, 3, 4, 5], 5) == 4\n\n        # Not found cases\n        assert binary_search([1, 2, 3, 4, 5], 0) == -1\n        assert binary_search([1, 2, 3, 4, 5], 6) == -1\n        assert binary_search([1, 2, 3, 4, 5], -1) == -1\n\n        # Boundary cases\n        assert binary_search([], 1) == -1\n        assert binary_search([1], 1) == 0\n        assert binary_search([1], 0) == -1\n        assert binary_search([1], 2) == -1\n\n        # Two elements\n        assert binary_search([1, 3], 1) == 0\n        assert binary_search([1, 3], 3) == 1\n        assert binary_search([1, 3], 2) == -1\n\n        # Duplicates (returns any valid index)\n        assert binary_search([1, 2, 2, 2, 3], 2) in (1, 2, 3)\n\n        # Negative numbers\n        assert binary_search([-5, -3, -1, 0, 2], -3) == 1\n        assert binary_search([-5, -3, -1, 0, 2], -4) == -1\n\n        # Large array boundary\n        arr = list(range(0, 1000, 2))\n        assert binary_search(arr, 0) == 0\n        assert binary_search(arr, 998) == 499\n        assert binary_search(arr, 500) == 250\n        assert binary_search(arr, 1) == -1\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False\n```\n",
+      "content": "def test_binary_search() -> bool:\n    try:\n        # Basic found cases\n        assert binary_search([1, 2, 3, 4, 5], 3) == 2\n        assert binary_search([1, 2, 3, 4, 5], 1) == 0\n        assert binary_search([1, 2, 3, 4, 5], 5) == 4\n\n        # Not found cases\n        assert binary_search([1, 2, 3, 4, 5], 0) == -1\n        assert binary_search([1, 2, 3, 4, 5], 6) == -1\n        assert binary_search([1, 2, 3, 4, 5], -1) == -1\n\n        # Boundary cases\n        assert binary_search([], 1) == -1\n        assert binary_search([1], 1) == 0\n        assert binary_search([1], 0) == -1\n        assert binary_search([1], 2) == -1\n\n        # Two elements\n        assert binary_search([1, 3], 1) == 0\n        assert binary_search([1, 3], 3) == 1\n        assert binary_search([1, 3], 2) == -1\n\n        # Duplicates (returns any valid index)\n        assert binary_search([1, 2, 2, 2, 3], 2) in (1, 2, 3)\n\n        # Negative numbers\n        assert binary_search([-5, -3, -1, 0, 2], -3) == 1\n        assert binary_search([-5, -3, -1, 0, 2], -4) == -1\n\n        # Large array boundary\n        arr = list(range(0, 1000, 2))\n        assert binary_search(arr, 0) == 0\n        assert binary_search(arr, 998) == 499\n        assert binary_search(arr, 500) == 250\n        assert binary_search(arr, 1) == -1\n\n        return True\n    except AssertionError:\n        return False\n    except Exception:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: expected True, got False"
+        ],
+        "success": false
+      },
+      "latency_ms": 10609.454870223999
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 13466.192324956259,
+    "median_ms": 14861.731052398682,
+    "min_ms": 10609.454870223999,
+    "max_ms": 14927.391052246094
+  }
+}

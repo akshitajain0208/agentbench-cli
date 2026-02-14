@@ -1,0 +1,64 @@
+{
+  "task_id": "TESTGEN-006",
+  "agent": "gemini_cli",
+  "category": "test_generation",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:40:10.648057",
+  "runs": [
+    {
+      "run": 1,
+      "output": "```python\ndef is_palindrome(s):\n    cleaned = ''.join(c.lower() for c in s if c.isalnum())\n    return cleaned == cleaned[::-1]\n\ndef test_is_palindrome() -> bool:\n    # Test cases for palindromes\n    assert is_palindrome(\"madam\") == True\n    assert is_palindrome(\"racecar\") == True\n    assert is_palindrome(\"A man a plan a canal Panama\") == True\n    assert is_palindrome(\"Madam\") == True\n    assert is_palindrome(\"No lemon, no melon\") == True\n    assert is_palindrome(\"Was it a car or a cat I saw?\") == True\n    assert is_palindrome(\"12321\") == True\n    assert is_palindrome(\"Able was I ere I saw Elba\") == True\n    assert is_palindrome(\"Mr. Owl ate my metal worm.\") == True\n\n    # Test cases for non-palindromes\n    assert is_palindrome(\"hello\") == False\n    assert is_palindrome(\"world\") == False\n    assert is_palindrome(\"not a palindrome\") == False\n    assert is_palindrome(\"A b C\") == False\n    assert is_palindrome(\"12345\") == False\n\n    # Edge cases\n    assert is_palindrome(\"\") == True  # Empty string is a palindrome\n    assert is_palindrome(\" \") == True # String with only spaces\n    assert is_palindrome(\"  \") == True # String with multiple spaces\n    assert is_palindrome(\"a\") == True # Single character\n    assert is_palindrome(\"ab\") == False\n    assert is_palindrome(\"aa\") == True\n    assert is_palindrome(\"!@#$\") == True # Only non-alphanumeric chars (cleaned becomes empty)\n    assert is_palindrome(\"A!b@b#A\") == True # Palindrome with special characters\n\n    return True\n```\n",
+      "content": "def is_palindrome(s):\n    cleaned = ''.join(c.lower() for c in s if c.isalnum())\n    return cleaned == cleaned[::-1]\n\ndef test_is_palindrome() -> bool:\n    # Test cases for palindromes\n    assert is_palindrome(\"madam\") == True\n    assert is_palindrome(\"racecar\") == True\n    assert is_palindrome(\"A man a plan a canal Panama\") == True\n    assert is_palindrome(\"Madam\") == True\n    assert is_palindrome(\"No lemon, no melon\") == True\n    assert is_palindrome(\"Was it a car or a cat I saw?\") == True\n    assert is_palindrome(\"12321\") == True\n    assert is_palindrome(\"Able was I ere I saw Elba\") == True\n    assert is_palindrome(\"Mr. Owl ate my metal worm.\") == True\n\n    # Test cases for non-palindromes\n    assert is_palindrome(\"hello\") == False\n    assert is_palindrome(\"world\") == False\n    assert is_palindrome(\"not a palindrome\") == False\n    assert is_palindrome(\"A b C\") == False\n    assert is_palindrome(\"12345\") == False\n\n    # Edge cases\n    assert is_palindrome(\"\") == True  # Empty string is a palindrome\n    assert is_palindrome(\" \") == True # String with only spaces\n    assert is_palindrome(\"  \") == True # String with multiple spaces\n    assert is_palindrome(\"a\") == True # Single character\n    assert is_palindrome(\"ab\") == False\n    assert is_palindrome(\"aa\") == True\n    assert is_palindrome(\"!@#$\") == True # Only non-alphanumeric chars (cleaned becomes empty)\n    assert is_palindrome(\"A!b@b#A\") == True # Palindrome with special characters\n\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 12235.237121582031
+    },
+    {
+      "run": 2,
+      "output": "```python\ndef test_is_palindrome() -> bool:\n    # Test cases for palindromes\n    assert is_palindrome(\"madam\") == True\n    assert is_palindrome(\"Racecar\") == True\n    assert is_palindrome(\"A man, a plan, a canal: Panama\") == True\n    assert is_palindrome(\"No lemon, no melon\") == True\n    assert is_palindrome(\"Was it a car or a cat I saw?\") == True\n    assert is_palindrome(\"\") == True  # Empty string is a palindrome\n    assert is_palindrome(\"a\") == True  # Single character is a palindrome\n    assert is_palindrome(\"121\") == True\n    assert is_palindrome(\"M\") == True\n    assert is_palindrome(\"  \") == True # Only spaces, becomes empty after cleaning\n\n    # Test cases for non-palindromes\n    assert is_palindrome(\"hello\") == False\n    assert is_palindrome(\"world\") == False\n    assert is_palindrome(\"Python\") == False\n    assert is_palindrome(\"abcde\") == False\n    assert is_palindrome(\"abacaba\") == True # Palindrome\n    assert is_palindrome(\"abccba\") == True # Palindrome\n    assert is_palindrome(\"race a car\") == False # Non-palindrome because of ' '\n    assert is_palindrome(\"not a palindrome\") == False\n\n    # Test cases with numbers and special characters\n    assert is_palindrome(\"Madam, I'm Adam\") == True\n    assert is_palindrome(\"0P\") == False\n    assert is_palindrome(\"A-B-A\") == True\n    assert is_palindrome(\"Eva, can I stab bats in a cave?\") == True\n    assert is_palindrome(\"123ab321\") == False\n\n    return True\n```\n",
+      "content": "def test_is_palindrome() -> bool:\n    # Test cases for palindromes\n    assert is_palindrome(\"madam\") == True\n    assert is_palindrome(\"Racecar\") == True\n    assert is_palindrome(\"A man, a plan, a canal: Panama\") == True\n    assert is_palindrome(\"No lemon, no melon\") == True\n    assert is_palindrome(\"Was it a car or a cat I saw?\") == True\n    assert is_palindrome(\"\") == True  # Empty string is a palindrome\n    assert is_palindrome(\"a\") == True  # Single character is a palindrome\n    assert is_palindrome(\"121\") == True\n    assert is_palindrome(\"M\") == True\n    assert is_palindrome(\"  \") == True # Only spaces, becomes empty after cleaning\n\n    # Test cases for non-palindromes\n    assert is_palindrome(\"hello\") == False\n    assert is_palindrome(\"world\") == False\n    assert is_palindrome(\"Python\") == False\n    assert is_palindrome(\"abcde\") == False\n    assert is_palindrome(\"abacaba\") == True # Palindrome\n    assert is_palindrome(\"abccba\") == True # Palindrome\n    assert is_palindrome(\"race a car\") == False # Non-palindrome because of ' '\n    assert is_palindrome(\"not a palindrome\") == False\n\n    # Test cases with numbers and special characters\n    assert is_palindrome(\"Madam, I'm Adam\") == True\n    assert is_palindrome(\"0P\") == False\n    assert is_palindrome(\"A-B-A\") == True\n    assert is_palindrome(\"Eva, can I stab bats in a cave?\") == True\n    assert is_palindrome(\"123ab321\") == False\n\n    return True",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'is_palindrome' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 12295.248031616211
+    },
+    {
+      "run": 3,
+      "output": "```python\ndef is_palindrome(s):\n    cleaned = ''.join(c.lower() for c in s if c.isalnum())\n    return cleaned == cleaned[::-1]\n\ndef test_is_palindrome() -> bool:\n    test_cases = {\n        \"madam\": True,\n        \"Madam\": True,\n        \"A man, a plan, a canal: Panama\": True,\n        \"Racecar\": True,\n        \"No lemon, no melon\": True,\n        \"Eva, can I see bees in a cave?\": True,\n        \"hello\": False,\n        \"world\": False,\n        \"\": True,\n        \"a\": True,\n        \"Ab\": False,\n        \"Was it a car or a cat I saw?\": True,\n        \"12321\": True,\n        \"12345\": False,\n        \"!@#$\": True, # Should be treated as an empty string after cleaning\n        \"  \": True,  # Should be treated as an empty string after cleaning\n        \"A.B.A\": True\n    }\n\n    for input_string, expected_output in test_cases.items():\n        if is_palindrome(input_string) != expected_output:\n            print(f\"Test failed for input: '{input_string}'. Expected: {expected_output}, Got: {is_palindrome(input_string)}\")\n            return False\n    return True\n```\n",
+      "content": "def is_palindrome(s):\n    cleaned = ''.join(c.lower() for c in s if c.isalnum())\n    return cleaned == cleaned[::-1]\n\ndef test_is_palindrome() -> bool:\n    test_cases = {\n        \"madam\": True,\n        \"Madam\": True,\n        \"A man, a plan, a canal: Panama\": True,\n        \"Racecar\": True,\n        \"No lemon, no melon\": True,\n        \"Eva, can I see bees in a cave?\": True,\n        \"hello\": False,\n        \"world\": False,\n        \"\": True,\n        \"a\": True,\n        \"Ab\": False,\n        \"Was it a car or a cat I saw?\": True,\n        \"12321\": True,\n        \"12345\": False,\n        \"!@#$\": True, # Should be treated as an empty string after cleaning\n        \"  \": True,  # Should be treated as an empty string after cleaning\n        \"A.B.A\": True\n    }\n\n    for input_string, expected_output in test_cases.items():\n        if is_palindrome(input_string) != expected_output:\n            print(f\"Test failed for input: '{input_string}'. Expected: {expected_output}, Got: {is_palindrome(input_string)}\")\n            return False\n    return True",
+      "passed": true,
+      "test_results": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 11849.800109863281
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 2,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 12126.761754353842,
+    "median_ms": 12235.237121582031,
+    "min_ms": 11849.800109863281,
+    "max_ms": 12295.248031616211
+  }
+}

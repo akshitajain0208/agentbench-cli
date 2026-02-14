@@ -1,0 +1,68 @@
+{
+  "task_id": "TESTGEN-005",
+  "agent": "claude_code",
+  "category": "test_generation",
+  "difficulty": "easy",
+  "timestamp": "2026-02-14T03:59:28.452246",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef test_find_max() -> bool:\n    try:\n        assert find_max([1, 2, 3]) == 3\n        assert find_max([-1, -2, -3]) == -1\n        assert find_max([42]) == 42\n        assert find_max([]) is None\n        assert find_max([5, 5, 5]) == 5\n        assert find_max([-10, 0, 10]) == 10\n        return True\n    except AssertionError:\n        return False\n```\n",
+      "content": "def test_find_max() -> bool:\n    try:\n        assert find_max([1, 2, 3]) == 3\n        assert find_max([-1, -2, -3]) == -1\n        assert find_max([42]) == 42\n        assert find_max([]) is None\n        assert find_max([5, 5, 5]) == 5\n        assert find_max([-10, 0, 10]) == 10\n        return True\n    except AssertionError:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'find_max' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 6617.3717975616455
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef test_find_max() -> bool:\n    try:\n        assert find_max([1, 2, 3]) == 3\n        assert find_max([-1, -2, -3]) == -1\n        assert find_max([42]) == 42\n        assert find_max([]) is None\n        assert find_max([5, 5, 5]) == 5\n        assert find_max([-10, 0, 10]) == 10\n        return True\n    except AssertionError:\n        return False\n```\n",
+      "content": "def test_find_max() -> bool:\n    try:\n        assert find_max([1, 2, 3]) == 3\n        assert find_max([-1, -2, -3]) == -1\n        assert find_max([42]) == 42\n        assert find_max([]) is None\n        assert find_max([5, 5, 5]) == 5\n        assert find_max([-10, 0, 10]) == 10\n        return True\n    except AssertionError:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'find_max' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 7003.58772277832
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef test_find_max() -> bool:\n    try:\n        assert find_max([1, 2, 3]) == 3\n        assert find_max([-1, -2, -3]) == -1\n        assert find_max([5]) == 5\n        assert find_max([]) is None\n        assert find_max([0, 0, 0]) == 0\n        assert find_max([-1, 0, 1]) == 1\n        return True\n    except AssertionError:\n        return False\n```\n\nWait, let me fix the typo:\n\n```python\ndef test_find_max() -> bool:\n    try:\n        assert find_max([1, 2, 3]) == 3\n        assert find_max([-1, -2, -3]) == -1\n        assert find_max([5]) == 5\n        assert find_max([]) is None\n        assert find_max([0, 0, 0]) == 0\n        assert find_max([-1, 0, 1]) == 1\n        return True\n    except AssertionError:\n        return False\n```\n",
+      "content": "def test_find_max() -> bool:\n    try:\n        assert find_max([1, 2, 3]) == 3\n        assert find_max([-1, -2, -3]) == -1\n        assert find_max([5]) == 5\n        assert find_max([]) is None\n        assert find_max([0, 0, 0]) == 0\n        assert find_max([-1, 0, 1]) == 1\n        return True\n    except AssertionError:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'find_max' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 8033.304929733276
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 7218.088150024414,
+    "median_ms": 7003.58772277832,
+    "min_ms": 6617.3717975616455,
+    "max_ms": 8033.304929733276
+  }
+}

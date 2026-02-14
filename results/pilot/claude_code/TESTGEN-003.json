@@ -1,0 +1,62 @@
+{
+  "task_id": "TESTGEN-003",
+  "agent": "claude_code",
+  "category": "test_generation",
+  "difficulty": "easy",
+  "timestamp": "2026-02-14T03:58:47.821637",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef test_factorial() -> bool:\n    def factorial(n):\n        if n <= 1:\n            return 1\n        return n * factorial(n - 1)\n\n    return (\n        factorial(0) == 1\n        and factorial(1) == 1\n        and factorial(2) == 2\n        and factorial(3) == 6\n        and factorial(4) == 24\n        and factorial(5) == 120\n        and factorial(10) == 3628800\n    )\n```\n",
+      "content": "def test_factorial() -> bool:\n    def factorial(n):\n        if n <= 1:\n            return 1\n        return n * factorial(n - 1)\n\n    return (\n        factorial(0) == 1\n        and factorial(1) == 1\n        and factorial(2) == 2\n        and factorial(3) == 6\n        and factorial(4) == 24\n        and factorial(5) == 120\n        and factorial(10) == 3628800\n    )",
+      "passed": true,
+      "test_results": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 6418.69330406189
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef test_factorial() -> bool:\n    def factorial(n):\n        if n <= 1:\n            return 1\n        return n * factorial(n - 1)\n\n    return (\n        factorial(0) == 1\n        and factorial(1) == 1\n        and factorial(2) == 2\n        and factorial(3) == 6\n        and factorial(4) == 24\n        and factorial(5) == 120\n        and factorial(10) == 3628800\n    )\n```\n",
+      "content": "def test_factorial() -> bool:\n    def factorial(n):\n        if n <= 1:\n            return 1\n        return n * factorial(n - 1)\n\n    return (\n        factorial(0) == 1\n        and factorial(1) == 1\n        and factorial(2) == 2\n        and factorial(3) == 6\n        and factorial(4) == 24\n        and factorial(5) == 120\n        and factorial(10) == 3628800\n    )",
+      "passed": true,
+      "test_results": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 6148.7720012664795
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef test_factorial() -> bool:\n    def factorial(n):\n        if n <= 1:\n            return 1\n        return n * factorial(n - 1)\n\n    return (\n        factorial(0) == 1\n        and factorial(1) == 1\n        and factorial(2) == 2\n        and factorial(3) == 6\n        and factorial(4) == 24\n        and factorial(5) == 120\n        and factorial(10) == 3628800\n    )\n```\n",
+      "content": "def test_factorial() -> bool:\n    def factorial(n):\n        if n <= 1:\n            return 1\n        return n * factorial(n - 1)\n\n    return (\n        factorial(0) == 1\n        and factorial(1) == 1\n        and factorial(2) == 2\n        and factorial(3) == 6\n        and factorial(4) == 24\n        and factorial(5) == 120\n        and factorial(10) == 3628800\n    )",
+      "passed": true,
+      "test_results": {
+        "passed": 1,
+        "failed": 0,
+        "total": 1,
+        "errors": [],
+        "success": true
+      },
+      "latency_ms": 6349.871873855591
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 1.0,
+    "passing_samples": 3,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 6305.779059727986,
+    "median_ms": 6349.871873855591,
+    "min_ms": 6148.7720012664795,
+    "max_ms": 6418.69330406189
+  }
+}

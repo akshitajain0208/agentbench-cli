@@ -1,0 +1,68 @@
+{
+  "task_id": "TESTGEN-009",
+  "agent": "claude_code",
+  "category": "test_generation",
+  "difficulty": "medium",
+  "timestamp": "2026-02-14T04:01:47.909337",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef test_stack() -> bool:\n    try:\n        # Test empty stack\n        s = Stack()\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test push and peek\n        s.push(1)\n        assert s.is_empty() == False\n        assert s.peek() == 1\n\n        # Test multiple pushes\n        s.push(2)\n        s.push(3)\n        assert s.peek() == 3\n\n        # Test pop\n        assert s.pop() == 3\n        assert s.pop() == 2\n        assert s.pop() == 1\n\n        # Test empty after popping all\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test mixed operations\n        s.push(\"a\")\n        s.push(\"b\")\n        assert s.peek() == \"b\"\n        assert s.pop() == \"b\"\n        assert s.peek() == \"a\"\n        s.push(\"c\")\n        assert s.pop() == \"c\"\n        assert s.pop() == \"a\"\n        assert s.is_empty() == True\n\n        return True\n    except AssertionError:\n        return False\n```\n\nWait, I have a typo. Here's the corrected version:\n\n```python\ndef test_stack() -> bool:\n    try:\n        # Test empty stack\n        s = Stack()\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test push and peek\n        s.push(1)\n        assert s.is_empty() == False\n        assert s.peek() == 1\n\n        # Test multiple pushes\n        s.push(2)\n        s.push(3)\n        assert s.peek() == 3\n\n        # Test pop\n        assert s.pop() == 3\n        assert s.pop() == 2\n        assert s.pop() == 1\n\n        # Test empty after popping all\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test mixed operations\n        s.push(\"a\")\n        s.push(\"b\")\n        assert s.peek() == \"b\"\n        assert s.pop() == \"b\"\n        assert s.peek() == \"a\"\n        s.push(\"c\")\n        assert s.pop() == \"c\"\n        assert s.pop() == \"a\"\n        assert s.is_empty() == True\n\n        return True",
+      "content": "def test_stack() -> bool:\n    try:\n        # Test empty stack\n        s = Stack()\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test push and peek\n        s.push(1)\n        assert s.is_empty() == False\n        assert s.peek() == 1\n\n        # Test multiple pushes\n        s.push(2)\n        s.push(3)\n        assert s.peek() == 3\n\n        # Test pop\n        assert s.pop() == 3\n        assert s.pop() == 2\n        assert s.pop() == 1\n\n        # Test empty after popping all\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test mixed operations\n        s.push(\"a\")\n        s.push(\"b\")\n        assert s.peek() == \"b\"\n        assert s.pop() == \"b\"\n        assert s.peek() == \"a\"\n        s.push(\"c\")\n        assert s.pop() == \"c\"\n        assert s.pop() == \"a\"\n        assert s.is_empty() == True\n\n        return True\n    except AssertionError:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'Stack' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 11195.843935012817
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef test_stack() -> bool:\n    try:\n        # Test empty stack\n        s = Stack()\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test push and peek\n        s.push(1)\n        assert s.is_empty() == False\n        assert s.peek() == 1\n\n        # Test multiple pushes\n        s.push(2)\n        s.push(3)\n        assert s.peek() == 3\n\n        # Test pop\n        assert s.pop() == 3\n        assert s.pop() == 2\n        assert s.pop() == 1\n\n        # Test empty after popping all\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test mixed operations\n        s.push(\"a\")\n        s.push(\"b\")\n        assert s.peek() == \"b\"\n        s.pop()\n        assert s.peek() == \"a\"\n        assert s.is_empty() == False\n        s.pop()\n        assert s.is_empty() == True\n\n        return True\n    except AssertionError:\n        return False\n```\n\nWait, I have a typo. Here's the corrected version:\n\n```python\ndef test_stack() -> bool:\n    try:\n        # Test empty stack\n        s = Stack()\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test push and peek\n        s.push(1)\n        assert s.is_empty() == False\n        assert s.peek() == 1\n\n        # Test multiple pushes\n        s.push(2)\n        s.push(3)\n        assert s.peek() == 3\n\n        # Test pop\n        assert s.pop() == 3\n        assert s.pop() == 2\n        assert s.pop() == 1\n\n        # Test empty after popping all\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test mixed operations\n        s.push(\"a\")\n        s.push(\"b\")\n        assert s.peek() == \"b\"\n        s.pop()\n        assert s.peek() == \"a\"\n        assert s.is_empty() == False\n        s.pop()\n        assert s.is_empty() == True\n\n        return True\n    except AssertionError:\n        return False\n```\n",
+      "content": "def test_stack() -> bool:\n    try:\n        # Test empty stack\n        s = Stack()\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test push and peek\n        s.push(1)\n        assert s.is_empty() == False\n        assert s.peek() == 1\n\n        # Test multiple pushes\n        s.push(2)\n        s.push(3)\n        assert s.peek() == 3\n\n        # Test pop\n        assert s.pop() == 3\n        assert s.pop() == 2\n        assert s.pop() == 1\n\n        # Test empty after popping all\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test mixed operations\n        s.push(\"a\")\n        s.push(\"b\")\n        assert s.peek() == \"b\"\n        s.pop()\n        assert s.peek() == \"a\"\n        assert s.is_empty() == False\n        s.pop()\n        assert s.is_empty() == True\n\n        return True\n    except AssertionError:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'Stack' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 10851.940155029297
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef test_stack() -> bool:\n    try:\n        # Test empty stack\n        s = Stack()\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test push and peek\n        s.push(1)\n        assert s.is_empty() == False\n        assert s.peek() == 1\n\n        # Test multiple pushes\n        s.push(2)\n        s.push(3)\n        assert s.peek() == 3\n\n        # Test pop\n        assert s.pop() == 3\n        assert s.pop() == 2\n        assert s.pop() == 1\n\n        # Test empty after popping all\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test mixed operations\n        s.push(\"a\")\n        s.push(\"b\")\n        assert s.peek() == \"b\"\n        assert s.pop() == \"b\"\n        assert s.peek() == \"a\"\n        s.push(\"c\")\n        assert s.pop() == \"c\"\n        assert s.pop() == \"a\"\n        assert s.is_empty() == True\n\n        return True\n    except AssertionError:\n        return False\n```\n\nWait, let me fix the typo:\n\n```python\ndef test_stack() -> bool:\n    try:\n        # Test empty stack\n        s = Stack()\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test push and peek\n        s.push(1)\n        assert s.is_empty() == False\n        assert s.peek() == 1\n\n        # Test multiple pushes\n        s.push(2)\n        s.push(3)\n        assert s.peek() == 3\n\n        # Test pop\n        assert s.pop() == 3\n        assert s.pop() == 2\n        assert s.pop() == 1\n\n        # Test empty after popping all\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test mixed operations\n        s.push(\"a\")\n        s.push(\"b\")\n        assert s.peek() == \"b\"\n        assert s.pop() == \"b\"\n        assert s.peek() == \"a\"\n        s.push(\"c\")\n        assert s.pop() == \"c\"\n        assert s.pop() == \"a\"\n        assert s.is_empty() == True\n\n        return True\n    except AssertionErr",
+      "content": "def test_stack() -> bool:\n    try:\n        # Test empty stack\n        s = Stack()\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test push and peek\n        s.push(1)\n        assert s.is_empty() == False\n        assert s.peek() == 1\n\n        # Test multiple pushes\n        s.push(2)\n        s.push(3)\n        assert s.peek() == 3\n\n        # Test pop\n        assert s.pop() == 3\n        assert s.pop() == 2\n        assert s.pop() == 1\n\n        # Test empty after popping all\n        assert s.is_empty() == True\n        assert s.pop() is None\n        assert s.peek() is None\n\n        # Test mixed operations\n        s.push(\"a\")\n        s.push(\"b\")\n        assert s.peek() == \"b\"\n        assert s.pop() == \"b\"\n        assert s.peek() == \"a\"\n        s.push(\"c\")\n        assert s.pop() == \"c\"\n        assert s.pop() == \"a\"\n        assert s.is_empty() == True\n\n        return True\n    except AssertionError:\n        return False",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'Stack' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 11851.660966873169
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 11299.815018971762,
+    "median_ms": 11195.843935012817,
+    "min_ms": 10851.940155029297,
+    "max_ms": 11851.660966873169
+  }
+}

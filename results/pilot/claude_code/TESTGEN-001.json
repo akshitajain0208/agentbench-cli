@@ -1,0 +1,68 @@
+{
+  "task_id": "TESTGEN-001",
+  "agent": "claude_code",
+  "category": "test_generation",
+  "difficulty": "easy",
+  "timestamp": "2026-02-14T03:58:04.404932",
+  "runs": [
+    {
+      "run": 1,
+      "output": "\n\n```python\ndef test_add() -> bool:\n    return add(2, 3) == 5 and add(-1, 1) == 0\n```\n",
+      "content": "def test_add() -> bool:\n    return add(2, 3) == 5 and add(-1, 1) == 0",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'add' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 5635.308027267456
+    },
+    {
+      "run": 2,
+      "output": "\n\n```python\ndef test_add() -> bool:\n    return add(2, 3) == 5 and add(-1, 1) == 0\n```\n",
+      "content": "def test_add() -> bool:\n    return add(2, 3) == 5 and add(-1, 1) == 0",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'add' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 5565.41109085083
+    },
+    {
+      "run": 3,
+      "output": "\n\n```python\ndef test_add() -> bool:\n    return add(2, 3) == 5 and add(-1, 1) == 0\n```\n",
+      "content": "def test_add() -> bool:\n    return add(2, 3) == 5 and add(-1, 1) == 0",
+      "passed": false,
+      "test_results": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1,
+        "errors": [
+          "Test 0: NameError: name 'add' is not defined"
+        ],
+        "success": false
+      },
+      "latency_ms": 5980.770111083984
+    }
+  ],
+  "pass_at_k": {
+    "pass_at_1": 0.0,
+    "passing_samples": 0,
+    "total_samples": 3
+  },
+  "latency": {
+    "mean_ms": 5727.163076400757,
+    "median_ms": 5635.308027267456,
+    "min_ms": 5565.41109085083,
+    "max_ms": 5980.770111083984
+  }
+}
