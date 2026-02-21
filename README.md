@@ -122,13 +122,3 @@ Covers the Pass@k estimator, code extraction logic for all three agents, and com
 ## License
 
 MIT. See LICENSE for details.
-
-## Citation
-
-```
-@article{agentbench-cli-2024,
-  title={AgentBench-CLI: Benchmarking Console-Based AI Coding Agents},
-  author={AgentBench-CLI Authors},
-  year={2024}
-}
-```
